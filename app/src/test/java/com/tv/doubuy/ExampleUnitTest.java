@@ -1,4 +1,4 @@
-package com.douby.apple;
+package com.tv.doubuy;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package com.douby.apple;
+package com.tv.doubuy;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
