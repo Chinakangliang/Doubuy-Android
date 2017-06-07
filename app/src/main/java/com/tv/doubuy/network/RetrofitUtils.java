@@ -2,8 +2,9 @@ package com.tv.doubuy.network;
 
 import android.content.Context;
 
-
-import com.tv.doubuy.requestModel.LoginRequestModel;
+import com.tv.doubuy.model.requestModel.BindMobileModel;
+import com.tv.doubuy.model.requestModel.LoginRequestModel;
+import com.tv.doubuy.model.requestModel.SignupModel;
 
 import java.net.CookieHandler;
 import java.net.CookieManager;
@@ -69,18 +70,43 @@ public class RetrofitUtils {
         mApiService = mRetrofit.create(APIService.class);
     }
 
-//
-//    public void setUserLogin(ProgressSubscriber subscriber) {
-//
-//        toSubscribe(mApiService.setUserLogin(0,10), subscriber);
-//    }
-
+    /**
+     * 验证码
+     */
 
     public void setUserCode(LoginRequestModel loginRequestModel, ProgressSubscriber subscriber) {
 
         toSubscribe(mApiService.setUserSendCode(loginRequestModel), subscriber);
 
     }
+
+    /**
+     * 手机号注册
+     */
+    public void setUserSigin(SignupModel signupModel, ProgressSubscriber subscriber) {
+
+        toSubscribe(mApiService.setUserSigin(signupModel), subscriber);
+
+    }
+
+    /**
+     * 微信登录返回的CODE传给后台
+     */
+    public void setUserWXCode(String wxCode, ProgressSubscriber subscriber) {
+
+        toSubscribe(mApiService.setWechatCode(wxCode), subscriber);
+
+    }
+
+
+    /**
+     * 微信登录绑定手机
+     */
+    public void setBindMobile(BindMobileModel bindMobile, ProgressSubscriber subscriber) {
+
+        toSubscribe(mApiService.bindMobile(bindMobile), subscriber);
+    }
+
 
     private <T> void toSubscribe(Observable<T> o, Subscriber s) {
         o.subscribeOn(Schedulers.io())

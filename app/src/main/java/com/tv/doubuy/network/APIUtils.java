@@ -1,11 +1,17 @@
 package com.tv.doubuy.network;
 
+import com.google.gson.Gson;
+
 /**
  * api请求工具类
  */
 public class APIUtils {
 
     private static APIUtils mInstance;
+
+
+    public static Gson gson = new Gson();
+
 
     public static APIUtils getInstance() {
         if (mInstance == null) {

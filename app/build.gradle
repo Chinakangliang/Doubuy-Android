@@ -3,6 +3,16 @@ apply plugin: 'android-apt'
 
 
 android {
+
+    signingConfigs {
+        release {
+            keyAlias 'com.tv.doubuy'
+            keyPassword 'com.tv.doubuy'
+            storeFile file('./doubuy.jks')
+            storePassword 'com.tv.doubuy'
+        }
+    }
+
     compileSdkVersion 25
     buildToolsVersion "25.0.3"
 
@@ -17,6 +27,7 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
     }
 }
@@ -24,6 +35,8 @@ android {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
+    testCompile 'junit:junit:4.12'
+    apt 'com.jakewharton:butterknife-compiler:8.4.0'
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.squareup.retrofit2:retrofit:2.1.0'
     compile 'io.reactivex:rxandroid:1.2.1'
@@ -40,8 +53,17 @@ dependencies {
     compile 'com.umeng.analytics:analytics:latest.integration'
     compile 'com.anthonycr.grant:permissions:1.0'
     compile 'com.youth.banner:banner:1.4.9'
-    testCompile 'junit:junit:4.12'
-    apt 'com.jakewharton:butterknife-compiler:8.4.0'
     compile 'com.android.support:design:25.3.1'
     compile 'com.android.support:support-v4:25.3.1'
+    compile files('libs/SocialSDK_WeChat_Simplify.jar')
+    compile files('libs/umeng_social_api.jar')
+    compile files('libs/umeng_social_net.jar')
+    compile files('libs/umeng_social_tool.jar')
+
+    compile 'com.tencent.mm.opensdk:wechat-sdk-android-with-mta:+'
+    compile 'com.facebook.fresco:animated-gif:0.12.0'
+
+    compile 'com.facebook.fresco:fresco:1.1.0'
+    compile 'com.facebook.fresco:imagepipeline-okhttp:1.1.0'
+
 }

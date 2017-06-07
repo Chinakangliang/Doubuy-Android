@@ -1,11 +1,14 @@
 package com.tv.doubuy.network;
 
 
-
-import com.tv.doubuy.requestModel.LoginRequestModel;
+import com.tv.doubuy.base.BaseResponse;
+import com.tv.doubuy.model.requestModel.BindMobileModel;
+import com.tv.doubuy.model.requestModel.LoginRequestModel;
+import com.tv.doubuy.model.requestModel.SignupModel;
 
 import retrofit2.http.Body;
 import retrofit2.http.POST;
+import retrofit2.http.Query;
 import rx.Observable;
 
 
@@ -16,20 +19,21 @@ public interface APIService {
 
 
     String APP_PATH = "http://" + APIUtils.getInstance().getApiPath() + "/";
-//  String APP_PATH="https://api.douban.com/v2/movie/";
 
-//  http://{{dbuy_api_server}}/auth/sendCode
-
-//  String APP_PATH="http://stardang.com:8000/";
-//  @GET("/api-token-auth/")
-//  Observable setUserLogin();
-
-//    @GET("top250")
-//    Observable<BaseResponse> setUserLogin(@Query("start") int start, @Query("count") int count);
-
+    String APP_ID = "wx7f3402bea1f282ce";
 
     @POST("auth/sendCode")
     Observable<BaseResponse> setUserSendCode(@Body LoginRequestModel loginRequestModel);
 
+
+    @POST("auth/signup")
+    Observable<BaseResponse> setUserSigin(@Body SignupModel signupModel);
+
+
+    @POST("auth/appWechatLogin")
+    Observable<BaseResponse> setWechatCode(@Query("code") String code);
+
+    @POST("auth/appWechatBindMobile")
+    Observable<BaseResponse> bindMobile(@Body BindMobileModel bindMobileModel);
 
 }
