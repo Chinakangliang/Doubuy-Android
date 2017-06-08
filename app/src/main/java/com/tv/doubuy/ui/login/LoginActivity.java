@@ -10,11 +10,14 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.tv.doubuy.R;
 import com.tv.doubuy.base.BaseActivity;
+import com.tv.doubuy.model.requestModel.SiginModel;
 import com.tv.doubuy.network.ProgressSubscriber;
 import com.tv.doubuy.network.RetrofitUtils;
 import com.tv.doubuy.network.SubscriberOnNextListener;
@@ -35,6 +38,12 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
     LinearLayout linWxlogin;
     @BindView(R.id.lin_regis)
     LinearLayout linRegis;
+    @BindView(R.id.ib_login)
+    ImageButton ibLogin;
+    @BindView(R.id.et_mobile)
+    EditText etMobile;
+    @BindView(R.id.et_password)
+    EditText etPassword;
 
 //    @BindView(R.id.iv_apply)
 //    SimpleDraweeView ivApply;
@@ -63,7 +72,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
 
         linRegis.setOnClickListener(this);
         linWxlogin.setOnClickListener(this);
-
+        ibLogin.setOnClickListener(this);
 
 //        Intent intent = new Intent(this, MainActivity.class);
 //        startActivity(intent);
@@ -137,8 +146,6 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                 startActivity(intent);
                 break;
             case R.id.lin_wxlogin:
-
-
                 if (WechatHelper.getInstance(this).isWXAppInstalled()) {
 
                     WechatHelper.getInstance(this).onWechatLogin();
@@ -148,21 +155,30 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
 
 
                 break;
+            case R.id.ib_login:
+                setUserLogin();
+
+                break;
 
         }
 
     }
 
-    public void getWXLoginToken(String code) {
 
-        RetrofitUtils.getInstance(this).setUserWXCode(code, new ProgressSubscriber(new SubscriberOnNextListener() {
+    public void setUserLogin() {
+
+        SiginModel siginModel = new SiginModel();
+
+        siginModel.setMobile(etMobile.getText().toString());
+        siginModel.setPassword(etPassword.getText().toString());
+
+
+        RetrofitUtils.getInstance(this).setUserSignin(siginModel, new ProgressSubscriber(new SubscriberOnNextListener() {
             @Override
             public void onNext(Object o) {
-                Log.i("111", "-------o----" + o.toString());
 
+                Log.i("111", "-----Object----" + o.toString());
             }
         }, this));
     }
-
-
 }

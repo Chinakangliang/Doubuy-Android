@@ -3,7 +3,9 @@ package com.tv.doubuy.network;
 import android.content.Context;
 
 import com.tv.doubuy.model.requestModel.BindMobileModel;
+import com.tv.doubuy.model.requestModel.BindRequestModel;
 import com.tv.doubuy.model.requestModel.LoginRequestModel;
+import com.tv.doubuy.model.requestModel.SiginModel;
 import com.tv.doubuy.model.requestModel.SignupModel;
 
 import java.net.CookieHandler;
@@ -80,6 +82,12 @@ public class RetrofitUtils {
 
     }
 
+    public void setUseBindrCode(BindRequestModel bindRequestModel, ProgressSubscriber subscriber) {
+
+        toSubscribe(mApiService.setUserBindSendCode(bindRequestModel), subscriber);
+
+    }
+
     /**
      * 手机号注册
      */
@@ -105,6 +113,15 @@ public class RetrofitUtils {
     public void setBindMobile(BindMobileModel bindMobile, ProgressSubscriber subscriber) {
 
         toSubscribe(mApiService.bindMobile(bindMobile), subscriber);
+    }
+
+
+    /**
+     * 账号密码登录
+     */
+    public void setUserSignin(SiginModel signin, ProgressSubscriber subscriber) {
+
+        toSubscribe(mApiService.userSignin(signin), subscriber);
     }
 
 

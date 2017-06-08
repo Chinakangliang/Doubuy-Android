@@ -5,15 +5,15 @@
 
 
     <com.tv.doubuy.view.CustomVideoView
-    android:id="@+id/video_view"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_alignParentLeft="true"
-    android:layout_alignParentStart="true"
-    android:layout_alignParentTop="true"
-   />
+        android:id="@+id/video_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@android:color/white"
 
-
+        />
 
 
     <ImageView
@@ -46,6 +46,7 @@
                 android:src="@mipmap/login_icon_username" />
 
             <EditText
+                android:id="@+id/et_mobile"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -91,6 +92,7 @@
                 android:src="@mipmap/login_icon_password" />
 
             <EditText
+                android:id="@+id/et_password"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -136,6 +138,7 @@
         android:textColor="@android:color/white" />
 
     <ImageButton
+        android:id="@+id/ib_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/lin_content"

@@ -75,7 +75,7 @@ public class BindMobileActivity extends BaseActivity implements OnClickListener 
         switch (v.getId()) {
             case R.id.tv_sendCode:
                 requestModel.setMobile(etMobile.getText().toString());
-                requestModel.setType("resetPassword");
+//                requestModel.setType("resetPassword");
                 countDownView.onStart();
                 if (requestModel != null) {
                     regisPresenter.setUserCode(requestModel);
@@ -122,7 +122,6 @@ public class BindMobileActivity extends BaseActivity implements OnClickListener 
         bindMobileModel.setMobile(etMobile.getText().toString());
         bindMobileModel.setOpenid(openid);
 
-        Log.i("111", "------------OPEN------" + openid + "----code-" + etCode.getText() + "-----mobile--" + etMobile.getText());
         RetrofitUtils.getInstance(this).setBindMobile(bindMobileModel, new ProgressSubscriber(new SubscriberOnNextListener() {
             @Override
             public void onNext(Object o) {

@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.widget.Toast;
 
 import com.tv.doubuy.MainActivity;
+import com.tv.doubuy.model.requestModel.BindRequestModel;
 import com.tv.doubuy.model.requestModel.LoginRequestModel;
 import com.tv.doubuy.model.requestModel.SignupModel;
 import com.tv.doubuy.model.responseModel.UserInfoModel;
@@ -33,11 +34,22 @@ public class RegisPresenter {
     }
 
     /**
-     * 发送验证码
+     * 发送验证码 有TYPE
      */
     public void setUserCode(LoginRequestModel loginRequestModel) {
 
         RetrofitUtils.getInstance(mcontext).setUserCode(loginRequestModel, new ProgressSubscriber(new SubscriberOnNextListener() {
+            @Override
+            public void onNext(Object o) {
+
+                Toast.makeText(mcontext, "" + o.toString(), Toast.LENGTH_SHORT).show();
+            }
+        }, mcontext));
+    }
+
+    public void setUserBindogCode(BindRequestModel bindogCode) {
+
+        RetrofitUtils.getInstance(mcontext).setUseBindrCode(bindogCode, new ProgressSubscriber(new SubscriberOnNextListener() {
             @Override
             public void onNext(Object o) {
 
