@@ -124,6 +124,15 @@ public class RetrofitUtils {
         toSubscribe(mApiService.userSignin(signin), subscriber);
     }
 
+    /**
+     * 重置密码
+     */
+    public void setUserReste(SiginModel siginModel, ProgressSubscriber subscriber) {
+
+        toSubscribe(mApiService.userReset(siginModel), subscriber);
+
+    }
+
 
     private <T> void toSubscribe(Observable<T> o, Subscriber s) {
         o.subscribeOn(Schedulers.io())

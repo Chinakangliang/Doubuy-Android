@@ -193,29 +193,6 @@
 
     </RelativeLayout>
 
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="53dp"
-        android:orientation="horizontal">
-
-        <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="77dp"
-            android:layout_marginRight="5dp"
-            android:background="@mipmap/register_btn_selected"
-            android:button="@null" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="点击下一步，表示同意《豆佰直播服务使用协议》"
-            android:textSize="11sp" />
-
-    </LinearLayout>
-
     <TextView
         android:id="@+id/tv_sigup"
         android:layout_width="match_parent"
@@ -223,11 +200,11 @@
         android:layout_gravity="center"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
-        android:layout_marginTop="35dp"
-        android:background="@color/colord8d8d8"
+        android:layout_marginTop="40dp"
+        android:background="@color/color2851"
         android:gravity="center"
         android:padding="10dp"
-        android:text="下一步"
+        android:text="确认提交"
         android:textColor="@android:color/white" />
 
 

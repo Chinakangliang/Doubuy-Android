@@ -8,10 +8,15 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.text.InputType;
 import android.view.View;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.tv.doubuy.MainActivity;
@@ -46,9 +51,14 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
     EditText etMobile;
     @BindView(R.id.et_password)
     EditText etPassword;
-
-//    @BindView(R.id.iv_apply)
-//    SimpleDraweeView ivApply;
+    @BindView(R.id.iv_mobileDetele)
+    ImageView ivMobileDetele;
+    @BindView(R.id.iv_passDetele)
+    ImageView ivPassDetele;
+    @BindView(R.id.ck_preview)
+    CheckBox ckPreview;
+    @BindView(R.id.tv_forgot)
+    TextView tvForgot;
 
 
     @Override
@@ -59,14 +69,9 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         ButterKnife.bind(this);
         videoView.setVideoURI(Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.video));
         initVideoViews();
-//
 
         setListener();
-//        DraweeController mDraweeController = Fresco.newDraweeControllerBuilder()
-//                .setAutoPlayAnimations(true)
-//                .setUri(Uri.parse("res://" + getPackageName() + "/" + R.drawable.aaaa))//设置uri
-//                .build();
-//        ivApply.setController(mDraweeController);
+
     }
 
 
@@ -75,12 +80,25 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         linRegis.setOnClickListener(this);
         linWxlogin.setOnClickListener(this);
         ibLogin.setOnClickListener(this);
+        ivMobileDetele.setOnClickListener(this);
+        ivPassDetele.setOnClickListener(this);
+        tvForgot.setOnClickListener(this);
 
-//        Intent intent = new Intent(this, MainActivity.class);
-//        startActivity(intent);
+        ckPreview.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    etPassword.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
+
+                } else {
+                    etPassword.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+
+                }
+            }
+        });
+
 
     }
-
 
     @TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH_MR1)
     public void initVideoViews() {
@@ -91,9 +109,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                 videoView.start();
             }
         });
-
-
-        videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+          videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
                 mp.setOnInfoListener(new MediaPlayer.OnInfoListener() {
@@ -155,14 +171,30 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                     Toast.makeText(LoginActivity.this, "请安装微信", Toast.LENGTH_SHORT).show();
                 }
 
-
                 break;
             case R.id.ib_login:
                 setUserLogin();
 
                 break;
+            case R.id.iv_mobileDetele:
+                etMobile.setText("");
+                break;
+            case R.id.iv_passDetele:
+                etPassword.setText("");
+                break;
+            case R.id.tv_forgot:
+
+                intent.setClass(LoginActivity.this, ForgotActivity.class);
+                startActivity(intent);
+                break;
+
 
         }
+
+    }
+
+
+    public void setUserPassWordPreVieww() {
 
     }
 

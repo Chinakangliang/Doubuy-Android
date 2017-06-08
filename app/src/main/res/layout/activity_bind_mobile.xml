@@ -5,6 +5,20 @@
     android:background="@color/colorf3"
     android:orientation="vertical">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@android:color/white">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="绑定手机"
+            android:textSize="17sp" />
+
+    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -126,6 +140,27 @@
         android:layout_height="1px"
         android:background="@android:color/white" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="53dp"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="77dp"
+            android:layout_marginRight="5dp"
+            android:background="@mipmap/register_btn_selected"
+            android:button="@null" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="点击下一步，表示同意《豆佰直播服务使用协议》"
+            android:textSize="11sp" />
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/tv_next"
@@ -134,7 +169,7 @@
         android:layout_gravity="center"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="35dp"
         android:background="@color/colord8d8d8"
         android:gravity="center"
         android:text="下一步"

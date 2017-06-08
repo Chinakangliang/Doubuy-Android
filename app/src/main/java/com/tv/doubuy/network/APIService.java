@@ -44,4 +44,7 @@ public interface APIService {
     @POST("auth/signin")
     Observable<BaseResponse> userSignin(@Body SiginModel siginModel);
 
+    @POST("auth/resetPassword")
+    Observable<BaseResponse> userReset(@Body SiginModel siginModel);
+
 }

@@ -53,10 +53,16 @@
                 android:layout_weight="1"
                 android:background="@null"
                 android:hint="您的用户名或手机号"
-                android:textColor="@android:color/white" />
+                android:inputType="number"
+                android:maxLength="12"
+                android:textColor="@android:color/white"
+                android:textColorHint="@android:color/white"
+
+                />
 
 
             <ImageView
+                android:id="@+id/iv_mobileDetele"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingRight="10dp"
@@ -99,21 +105,30 @@
                 android:layout_weight="1"
                 android:background="@null"
                 android:hint="您的密码"
-                android:textColor="@android:color/white" />
+                android:inputType="textPassword"
+                android:maxLength="8"
+                android:textColor="@android:color/white"
+                android:textColorHint="@android:color/white" />
 
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingRight="10dp"
-                android:src="@mipmap/login_btn_delete" />
-
-            <ImageView
+                android:id="@+id/iv_passDetele"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:paddingRight="10dp"
-                android:src="@mipmap/login_btn_visible" />
+
+                android:src="@mipmap/login_btn_delete" />
+
+            <CheckBox
+                android:id="@+id/ck_preview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@mipmap/login_btn_visible"
+                android:button="@null"
+                android:checked="false"
+                android:paddingRight="10dp" />
 
         </LinearLayout>
 
@@ -128,6 +143,8 @@
 
 
     <TextView
+
+        android:id="@+id/tv_forgot"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
@@ -143,11 +160,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/lin_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="70dp"
         android:background="@null"
-        android:src="@mipmap/login_btn_login"
-
-        />
+        android:src="@mipmap/login_btn_login" />
 
 
     <LinearLayout

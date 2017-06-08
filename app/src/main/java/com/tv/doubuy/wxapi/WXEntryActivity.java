@@ -21,6 +21,7 @@ import com.tv.doubuy.network.ProgressSubscriber;
 import com.tv.doubuy.network.RetrofitUtils;
 import com.tv.doubuy.network.SubscriberOnNextListener;
 import com.tv.doubuy.ui.login.BindMobileActivity;
+import com.tv.doubuy.utils.DouBuyCache;
 
 /**
  * Created by kang on 2017/5/29.
@@ -29,6 +30,7 @@ import com.tv.doubuy.ui.login.BindMobileActivity;
 public class WXEntryActivity extends Activity implements IWXAPIEventHandler {
 
     private IWXAPI api;
+    private DouBuyCache douBuyCache;
 
 
     @Override
@@ -36,6 +38,7 @@ public class WXEntryActivity extends Activity implements IWXAPIEventHandler {
         super.onCreate(savedInstanceState);
         api = WXAPIFactory.createWXAPI(this, APIService.APP_ID, false);
         api.handleIntent(getIntent(), this);
+        douBuyCache = new DouBuyCache(this);
     }
 
 
@@ -87,18 +90,19 @@ public class WXEntryActivity extends Activity implements IWXAPIEventHandler {
             @Override
             public void onNext(Object o) {
 
-
                 UserInfoModel infoModel = APIUtils.gson.fromJson(o.toString(), UserInfoModel.class);
                 Intent intent = new Intent();
 
                 if (infoModel.getToken() != null || !infoModel.getToken().equals("")) {
+                    douBuyCache.saveUserToken(infoModel.getToken());
                     intent.setClass(WXEntryActivity.this, MainActivity.class);
                     startActivity(intent);
+                    finish();
                 } else {
                     intent.setClass(WXEntryActivity.this, BindMobileActivity.class);
                     intent.putExtra("openid", infoModel.getOpenid());
                     startActivity(intent);
-
+                    finish();
                 }
 
 

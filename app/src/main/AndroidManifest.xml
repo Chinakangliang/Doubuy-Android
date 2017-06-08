@@ -49,6 +49,12 @@
         <activity
             android:name=".ui.login.SetPassActivity"
             android:screenOrientation="portrait"></activity>
+        <!--重置密码-->
+        <activity
+            android:name=".ui.login.ForgotActivity"
+            android:screenOrientation="portrait"></activity>
+
+
         <activity
             android:name=".wxapi.WXEntryActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
