@@ -13,7 +13,8 @@ import com.tencent.mm.opensdk.modelmsg.SendAuth;
 import com.tencent.mm.opensdk.openapi.IWXAPI;
 import com.tencent.mm.opensdk.openapi.IWXAPIEventHandler;
 import com.tencent.mm.opensdk.openapi.WXAPIFactory;
-import com.tv.doubuy.model.responseModel.WXloginModel;
+import com.tv.doubuy.MainActivity;
+import com.tv.doubuy.model.responseModel.UserInfoModel;
 import com.tv.doubuy.network.APIService;
 import com.tv.doubuy.network.APIUtils;
 import com.tv.doubuy.network.ProgressSubscriber;
@@ -87,13 +88,16 @@ public class WXEntryActivity extends Activity implements IWXAPIEventHandler {
             public void onNext(Object o) {
 
 
-                WXloginModel loginmodel = APIUtils.gson.fromJson(o.toString(), WXloginModel.class);
-                if (loginmodel != null) {
+                UserInfoModel infoModel = APIUtils.gson.fromJson(o.toString(), UserInfoModel.class);
+                Intent intent = new Intent();
 
-                    Intent intent = new Intent(WXEntryActivity.this, BindMobileActivity.class);
-                    intent.putExtra("openid", loginmodel.getOpenid());
+                if (infoModel.getToken() != null || !infoModel.getToken().equals("")) {
+                    intent.setClass(WXEntryActivity.this, MainActivity.class);
                     startActivity(intent);
-
+                } else {
+                    intent.setClass(WXEntryActivity.this, BindMobileActivity.class);
+                    intent.putExtra("openid", infoModel.getOpenid());
+                    startActivity(intent);
 
                 }
 
@@ -101,18 +105,5 @@ public class WXEntryActivity extends Activity implements IWXAPIEventHandler {
             }
         }, this));
     }
-
-
-//    public interface WxLoginCallback {
-//
-//        void successful(String openid);
-//    }
-//
-//    public void WXChatLoginLinstener(WxLoginCallback callback) {
-//
-//
-//        this.callback = callback;
-//    }
-
 
 }

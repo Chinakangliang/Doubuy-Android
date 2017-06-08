@@ -6,10 +6,19 @@ package com.tv.doubuy.model.responseModel;
 public class UserInfoModel {
 
 
-
-
     private UserBean user;
     private String token;
+
+    private String openid;
+
+    public String getOpenid() {
+        return openid;
+    }
+
+    public void setOpenid(String openid) {
+        this.openid = openid;
+    }
+
 
     public UserBean getUser() {
         return user;

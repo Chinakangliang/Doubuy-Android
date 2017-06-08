@@ -100,12 +100,6 @@ public class BindMobileActivity extends BaseActivity implements OnClickListener 
                 break;
 
             case R.id.tv_next:
-
-//
-//                Intent intent = new Intent(BindMobileActivity.this, SetPassActivity.class);
-//                intent.putExtra("mobile", etMobile.getText().toString());
-//                intent.putExtra("code", etCode.getText().toString());
-//                startActivity(intent);
                 setBindPhone();
 
                 break;
@@ -113,7 +107,7 @@ public class BindMobileActivity extends BaseActivity implements OnClickListener 
 
     }
 
-    //
+    // TODO 绑定手机  这里服务器存在问题,SO 接口暂时未调整
     public void setBindPhone() {
 
         BindMobileModel bindMobileModel = new BindMobileModel();
@@ -126,7 +120,7 @@ public class BindMobileActivity extends BaseActivity implements OnClickListener 
             @Override
             public void onNext(Object o) {
 
-                Log.i("111", "----Object---" + o.toString());
+                Log.i("111", "----BindPhone---" + o.toString());
             }
         }, this));
 

@@ -37,6 +37,13 @@ dependencies {
     testCompile 'junit:junit:4.12'
     testCompile 'junit:junit:4.12'
     apt 'com.jakewharton:butterknife-compiler:8.4.0'
+    compile files('libs/SocialSDK_WeChat_Simplify.jar')
+    compile files('libs/umeng_social_api.jar')
+    compile files('libs/umeng_social_net.jar')
+    compile files('libs/umeng_social_tool.jar')
+
+
+
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.squareup.retrofit2:retrofit:2.1.0'
     compile 'io.reactivex:rxandroid:1.2.1'
@@ -55,15 +62,8 @@ dependencies {
     compile 'com.youth.banner:banner:1.4.9'
     compile 'com.android.support:design:25.3.1'
     compile 'com.android.support:support-v4:25.3.1'
-    compile files('libs/SocialSDK_WeChat_Simplify.jar')
-    compile files('libs/umeng_social_api.jar')
-    compile files('libs/umeng_social_net.jar')
-    compile files('libs/umeng_social_tool.jar')
-
     compile 'com.tencent.mm.opensdk:wechat-sdk-android-with-mta:+'
     compile 'com.facebook.fresco:animated-gif:0.12.0'
-
     compile 'com.facebook.fresco:fresco:1.1.0'
     compile 'com.facebook.fresco:imagepipeline-okhttp:1.1.0'
-
 }
