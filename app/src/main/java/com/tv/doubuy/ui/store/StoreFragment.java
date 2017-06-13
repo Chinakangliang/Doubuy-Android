@@ -29,8 +29,8 @@ public class StoreFragment extends BaseExtendFragment implements View.OnClickLis
     TextView tvOpenStore;
     @BindView(R.id.line_open_store)
     LinearLayout lineOpenStore;
-    @BindView(R.id.line_store_type)
-    LinearLayout lineStoreType;
+//    @BindView(R.id.line_store_type)
+//    LinearLayout lineStoreType;
 
     @Override
     public void onCreateViewExtend(Bundle savedInstanceState) {
@@ -55,7 +55,7 @@ public class StoreFragment extends BaseExtendFragment implements View.OnClickLis
 
                     if (storeModel.getProfile().getRealNameStatus().equals("notApply")) {
                         lineOpenStore.setVisibility(View.VISIBLE);
-                        lineStoreType.setVisibility(View.GONE);
+//                        lineStoreType.setVisibility(View.GONE);
                     } else if (storeModel.getProfile().getRealNameStatus().equals("pending")) {
 
                     } else if (storeModel.getProfile().getRealNameStatus().equals("verified")) {
