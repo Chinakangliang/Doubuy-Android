@@ -95,6 +95,7 @@ public class WXEntryActivity extends Activity implements IWXAPIEventHandler {
 
                 if (infoModel.getToken() != null || !infoModel.getToken().equals("")) {
                     douBuyCache.saveUserToken(infoModel.getToken());
+                    douBuyCache.saveUserId(infoModel.getUser().getId() + "");
                     intent.setClass(WXEntryActivity.this, MainActivity.class);
                     startActivity(intent);
                     finish();

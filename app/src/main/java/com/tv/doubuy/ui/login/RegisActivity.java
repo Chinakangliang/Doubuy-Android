@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.tv.doubuy.R;
@@ -28,12 +29,12 @@ public class RegisActivity extends BaseActivity implements View.OnClickListener 
     EditText etPassword;
     @BindView(R.id.tv_sigup)
     TextView tvSigup;
+    @BindView(R.id.iv_back)
+    ImageView ivBack;
+    @BindView(R.id.tv_title)
+    TextView tvTitle;
     private CountDownView countDownView;
-
-
     private RegisPresenter regisPresenter;
-
-
     private LoginRequestModel requestModel;
 
     @BindView(R.id.tv_sendCode)
@@ -49,12 +50,10 @@ public class RegisActivity extends BaseActivity implements View.OnClickListener 
     }
 
     public void initViews() {
-
         countDownView = new CountDownView(60);
         regisPresenter = new RegisPresenter(this);
-
         requestModel = new LoginRequestModel();
-
+        tvTitle.setText("注册");
     }
 
 
@@ -62,6 +61,7 @@ public class RegisActivity extends BaseActivity implements View.OnClickListener 
         tvSendCode.setOnClickListener(this);
 
         tvSigup.setOnClickListener(this);
+        ivBack.setOnClickListener(this);
     }
 
 
@@ -93,9 +93,11 @@ public class RegisActivity extends BaseActivity implements View.OnClickListener 
                 });
 
                 break;
-
             case R.id.tv_sigup:
                 regisPresenter.isStringUp(etMobile.getText().toString(), etCode.getText().toString(), etPassword.getText().toString());
+                break;
+            case R.id.iv_back:
+                finish();
                 break;
         }
 

@@ -1,14 +1,17 @@
 package com.tv.doubuy;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.widget.CompoundButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import com.tv.doubuy.adapter.MyFragmentPagerAdapter;
 import com.tv.doubuy.base.BaseActivity;
 import com.tv.doubuy.ui.home.BlankFragment;
+import com.tv.doubuy.ui.store.StoreFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +19,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MainActivity extends BaseActivity {
+public class MainActivity extends BaseActivity implements CompoundButton.OnCheckedChangeListener {
 
 
     @BindView(R.id.rb_chat)
@@ -39,18 +42,25 @@ public class MainActivity extends BaseActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         initView();
+        setListener();
+    }
+
+    public void setListener() {
+        rbChat.setOnCheckedChangeListener(this);
+        rbContacts.setOnCheckedChangeListener(this);
+        rbDiscovery.setOnCheckedChangeListener(this);
+        rbMe.setOnCheckedChangeListener(this);
+
     }
 
     private void initView() {
+
+//        final int position = getIntent().getIntExtra("position", 20);
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 switch (checkedId) {
                     case R.id.rb_chat:
-                        /**
-                         * setCurrentItem第二个参数控制页面切换动画
-                         * true:打开/false:关闭
-                         */
                         viewPager.setCurrentItem(0, true);
                         break;
                     case R.id.rb_contacts:
@@ -66,25 +76,12 @@ public class MainActivity extends BaseActivity {
             }
         });
 
-
-        /**
-         * ViewPager部分
-         */
-        viewPager = (ViewPager) findViewById(R.id.viewPager);
-//        ChatFragment weChatFragment = new ChatFragment();
-//        ContactsFragment contactsFragment = new ContactsFragment();
-//        DiscoveryFragment discoveryFragment = new DiscoveryFragment();
-//        MeFragment meFragment = new MeFragment();
         List<Fragment> alFragment = new ArrayList<Fragment>();
-//        alFragment.add(weChatFragment);
-//        alFragment.add(contactsFragment);
-//        alFragment.add(discoveryFragment);
-//        alFragment.add(meFragment);
-        for (int i = 0; i < 4; i++) {
-            blankFragment = BlankFragment.newInstance("item" + i);
-            alFragment.add(blankFragment);
-
-        }
+        StoreFragment storeFragment = new StoreFragment();
+        alFragment.add(storeFragment);
+        alFragment.add(BlankFragment.newInstance("ITEM1"));
+        alFragment.add(BlankFragment.newInstance("ITEM2"));
+        alFragment.add(BlankFragment.newInstance("ITEM3"));
 
         //ViewPager设置适配器
         viewPager.setAdapter(new MyFragmentPagerAdapter(getSupportFragmentManager(), alFragment));
@@ -121,6 +118,39 @@ public class MainActivity extends BaseActivity {
 
             }
         });
+    }
+
+
+    @Override
+    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+        switch (buttonView.getId()) {
+            case R.id.rb_chat:
+                if (isChecked) {
+                    viewPager.setCurrentItem(0, true);
+
+                }
+                break;
+            case R.id.rb_contacts:
+                if (isChecked) {
+                    viewPager.setCurrentItem(1, true);
+
+                }
+                break;
+            case R.id.rb_discovery:
+                if (isChecked) {
+                    viewPager.setCurrentItem(2, true);
+
+                }
+                break;
+            case R.id.rb_me:
+                if (isChecked) {
+                    viewPager.setCurrentItem(3, true);
+                }
+
+                break;
+        }
+
     }
 
 

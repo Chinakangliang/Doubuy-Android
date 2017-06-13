@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_title_layout" />
+
+
+    <RelativeLayout
+        android:id="@+id/rela_aliAuth"
+        android:layout_width="match_parent"
+        android:layout_height="77dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="87dp"
+        android:background="@drawable/bg_real_auth">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="42dp"
+            android:src="@mipmap/shop_opening_icon_zhima" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/tv_auth"
+            android:text="一键授权"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_auth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="43dp"
+            android:text="(自动审核)"
+            android:textColor="@color/color7ed321"
+            android:textSize="12sp" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="19dp"
+        android:layout_marginTop="12dp"
+        android:text="or" />
+
+    <RelativeLayout
+        android:id="@+id/rela_idcard"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/bg_real_auth">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="42dp"
+            android:src="@mipmap/shop_opening_icon_id_card" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/tv_cardauth"
+            android:text="上传身份证"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_cardauth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="43dp"
+            android:text="((预计1个工作日))"
+            android:textSize="12sp" />
+
+    </RelativeLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="5px"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/dash_view"
+        android:layerType="software" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:text="为什么需要实名认证？" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="18dp"
+        android:text="根据文化部《网络表演经营活动管理办法》，对互联网直播发布者（即主播），进行基于身份证件、营业执照、组织机构代码证等的认证登记。" />
+</LinearLayout>

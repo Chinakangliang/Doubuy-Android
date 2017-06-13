@@ -4,7 +4,9 @@ import android.content.Context;
 
 import com.tv.doubuy.model.requestModel.BindMobileModel;
 import com.tv.doubuy.model.requestModel.BindRequestModel;
+import com.tv.doubuy.model.requestModel.CreateShposModel;
 import com.tv.doubuy.model.requestModel.LoginRequestModel;
+import com.tv.doubuy.model.requestModel.ProfileModel;
 import com.tv.doubuy.model.requestModel.SiginModel;
 import com.tv.doubuy.model.requestModel.SignupModel;
 
@@ -130,6 +132,42 @@ public class RetrofitUtils {
     public void setUserReste(SiginModel siginModel, ProgressSubscriber subscriber) {
 
         toSubscribe(mApiService.userReset(siginModel), subscriber);
+
+    }
+
+    /**
+     * 一键开店将数据传给服务器
+     */
+    public void setCreateShop(CreateShposModel shop, ProgressSubscriber subscriber) {
+
+        toSubscribe(mApiService.userCreateShpos(shop), subscriber);
+    }
+
+    /**
+     * 请求服务器返回芝麻信用的URL
+     */
+    public void getCreateZM(String id, ProgressSubscriber subscriber) {
+
+        toSubscribe(mApiService.zmCertify(id), subscriber);
+    }
+
+    /**
+     * 获取店铺信息
+     */
+
+    public void getStoreInfo(String id, ProgressSubscriber subscriber) {
+
+
+        toSubscribe(mApiService.getShopInfo(id), subscriber);
+    }
+
+
+    /**
+     * 实体店认证
+     */
+
+    public void putUserCreateStore(String storeId, ProfileModel profileModel, ProgressSubscriber subscriber) {
+        toSubscribe(mApiService.userCreateStore(storeId, profileModel), subscriber);
 
     }
 

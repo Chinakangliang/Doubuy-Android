@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.tv.doubuy.MainActivity;
@@ -39,6 +40,10 @@ public class ForgotActivity extends BaseActivity implements View.OnClickListener
     EditText etPassword;
     @BindView(R.id.tv_sigup)
     TextView tvSigup;
+    @BindView(R.id.iv_back)
+    ImageView ivBack;
+    @BindView(R.id.tv_title)
+    TextView tvTitle;
 
     private LoginRequestModel requestModel;
     private CountDownView countDownView;
@@ -62,12 +67,13 @@ public class ForgotActivity extends BaseActivity implements View.OnClickListener
         countDownView = new CountDownView(60);
         regisPresenter = new RegisPresenter(this);
         douBuyCache = new DouBuyCache(this);
-
+        tvTitle.setText("设置新密码");
     }
 
     public void setListener() {
         tvSendCode.setOnClickListener(this);
         tvSigup.setOnClickListener(this);
+        ivBack.setOnClickListener(this);
     }
 
 
@@ -102,6 +108,9 @@ public class ForgotActivity extends BaseActivity implements View.OnClickListener
             case R.id.tv_sigup:
 
                 setResterPassWord();
+                break;
+            case R.id.iv_back:
+                finish();
                 break;
         }
 

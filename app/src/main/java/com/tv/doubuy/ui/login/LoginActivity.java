@@ -28,6 +28,7 @@ import com.tv.doubuy.network.APIUtils;
 import com.tv.doubuy.network.ProgressSubscriber;
 import com.tv.doubuy.network.RetrofitUtils;
 import com.tv.doubuy.network.SubscriberOnNextListener;
+import com.tv.doubuy.utils.DouBuyCache;
 import com.tv.doubuy.view.CustomVideoView;
 
 import butterknife.BindView;
@@ -61,6 +62,9 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
     TextView tvForgot;
 
 
+    private DouBuyCache douBuyCache;
+
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,6 +75,8 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         initVideoViews();
 
         setListener();
+
+        douBuyCache = new DouBuyCache(LoginActivity.this);
 
     }
 
@@ -109,7 +115,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                 videoView.start();
             }
         });
-          videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
                 mp.setOnInfoListener(new MediaPlayer.OnInfoListener() {
@@ -129,8 +135,10 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                 mp.setOnInfoListener(new MediaPlayer.OnInfoListener() {
                     @Override
                     public boolean onInfo(MediaPlayer mp, int what, int extra) {
-                        if (what == MediaPlayer.MEDIA_INFO_VIDEO_RENDERING_START)
+                        if (what == MediaPlayer.MEDIA_INFO_VIDEO_RENDERING_START) {
                             videoView.setBackgroundColor(Color.TRANSPARENT);
+                        }
+
                         return true;
                     }
                 });
@@ -188,16 +196,9 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                 startActivity(intent);
                 break;
 
-
         }
 
     }
-
-
-    public void setUserPassWordPreVieww() {
-
-    }
-
 
     /**
      * 登录
@@ -213,7 +214,11 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
             public void onNext(Object o) {
                 UserInfoModel infoModel = APIUtils.gson.fromJson(o.toString(), UserInfoModel.class);
                 if (infoModel.getToken() != null || !infoModel.getToken().equals("")) {
+
+                    douBuyCache.saveUserToken(infoModel.getToken());
+                    douBuyCache.saveUserId(infoModel.getUser().getId() + "");
                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+//                    intent.putExtra("position", 0);
                     startActivity(intent);
                     finish();
                 }

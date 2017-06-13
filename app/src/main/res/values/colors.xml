@@ -9,4 +9,9 @@
     <color name="colorf3">#eceef3</color>
     <color name="color8080">#808080</color>
     <color name="colord8d8d8">#d8d8d8</color>
+    <color name="white">#ffffff</color>
+    <color name="color0067">#0067ff</color>
+    <color name="color7ed321">#7ed321</color>
+    <color name="colora8a8a8">#a8a8a8</color>
+    <color name="colorc7c7cd">#c7c7cd</color>
 </resources>

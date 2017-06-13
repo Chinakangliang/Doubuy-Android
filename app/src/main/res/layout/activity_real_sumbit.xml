@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="67dp"
+                android:src="@mipmap/shop_opening_icon_realname" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="58dp"
+                android:text="您的实名认证已提交" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="30dp"
+                android:text="您可以继续提交实体店认证,如您拥有实体店，可继续提交实体店认证信息，通过实体店认证的用户将拥有特殊标识，建立更好的信誉和形象" />
+
+
+            <Button
+                android:id="@+id/bt_now"
+                android:layout_width="match_parent"
+                android:layout_height="43dp"
+                android:layout_marginLeft="18dp"
+                android:layout_marginRight="18dp"
+                android:layout_marginTop="163dp"
+                android:background="@drawable/bg_real_store_now"
+                android:text="立即开店"
+                android:textColor="@android:color/white" />
+
+            <Button
+                android:id="@+id/bt_Continue"
+                android:layout_width="match_parent"
+                android:layout_height="43dp"
+                android:layout_marginLeft="18dp"
+                android:layout_marginRight="18dp"
+                android:layout_marginTop="13dp"
+                android:background="@drawable/bg_real_store"
+                android:text="继续实体店认证"
+                android:textColor="@color/color2851" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

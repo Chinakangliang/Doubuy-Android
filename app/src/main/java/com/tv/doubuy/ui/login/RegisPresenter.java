@@ -95,6 +95,7 @@ public class RegisPresenter {
 
                 if (infoModel.getUser() != null) {
                     dbCache.saveUserToken(infoModel.getToken());
+                    dbCache.saveUserId(infoModel.getUser().getId() + "");
                     Intent intent = new Intent(mcontext, MainActivity.class);
                     mcontext.startActivity(intent);
                 }

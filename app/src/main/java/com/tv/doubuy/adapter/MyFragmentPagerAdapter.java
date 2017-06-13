@@ -3,6 +3,7 @@ package com.tv.doubuy.adapter;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.view.MenuItem;
 
 import java.util.List;
 
@@ -26,4 +27,5 @@ public class MyFragmentPagerAdapter extends FragmentPagerAdapter {
     public int getCount() {
         return list.size();
     }
+
 }

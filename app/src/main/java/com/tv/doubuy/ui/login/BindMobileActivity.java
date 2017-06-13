@@ -1,20 +1,25 @@
 package com.tv.doubuy.ui.login;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.tv.doubuy.MainActivity;
 import com.tv.doubuy.R;
 import com.tv.doubuy.base.BaseActivity;
 import com.tv.doubuy.model.requestModel.BindMobileModel;
 import com.tv.doubuy.model.requestModel.LoginRequestModel;
+import com.tv.doubuy.model.responseModel.UserInfoModel;
+import com.tv.doubuy.network.APIUtils;
 import com.tv.doubuy.network.ProgressSubscriber;
 import com.tv.doubuy.network.RetrofitUtils;
 import com.tv.doubuy.network.SubscriberOnNextListener;
+import com.tv.doubuy.utils.DouBuyCache;
 import com.tv.doubuy.view.CountDownView;
 
 import butterknife.BindView;
@@ -34,12 +39,17 @@ public class BindMobileActivity extends BaseActivity implements OnClickListener 
     TextView tvSendCode;
     @BindView(R.id.tv_next)
     TextView tvNext;
+    @BindView(R.id.iv_back)
+    ImageView ivBack;
+    @BindView(R.id.tv_title)
+    TextView tvTitle;
 
     private String openid;
     private RegisPresenter regisPresenter;
     private LoginRequestModel requestModel;
     private CountDownView countDownView;
 
+    private DouBuyCache douBuyCache;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -60,12 +70,17 @@ public class BindMobileActivity extends BaseActivity implements OnClickListener 
 
         requestModel = new LoginRequestModel();
 
+        tvTitle.setText("绑定手机");
+
+        douBuyCache = new DouBuyCache(this);
+
     }
 
     public void setListener() {
 
         tvSendCode.setOnClickListener(this);
         tvNext.setOnClickListener(this);
+        ivBack.setOnClickListener(this);
 
     }
 
@@ -103,6 +118,9 @@ public class BindMobileActivity extends BaseActivity implements OnClickListener 
                 setBindPhone();
 
                 break;
+            case R.id.iv_back:
+                finish();
+                break;
         }
 
     }
@@ -120,7 +138,15 @@ public class BindMobileActivity extends BaseActivity implements OnClickListener 
             @Override
             public void onNext(Object o) {
 
-                Log.i("111", "----BindPhone---" + o.toString());
+                UserInfoModel infoModel = APIUtils.gson.fromJson(o.toString(), UserInfoModel.class);
+                if (infoModel.getToken() != null && !infoModel.getToken().equals("")) {
+
+                    douBuyCache.saveUserId(infoModel.getUser().getId() + "");
+                    douBuyCache.saveUserToken(infoModel.getToken());
+                    Intent intent = new Intent(BindMobileActivity.this, MainActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
             }
         }, this));
 

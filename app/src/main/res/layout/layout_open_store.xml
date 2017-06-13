@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/line_open_store"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/shop_opening_bg" />
+
+        <TextView
+            android:id="@+id/tv_openStore"
+            android:layout_width="192dp"
+            android:layout_height="47dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="73dp"
+            android:background="@drawable/bg_open_store"
+            android:gravity="center"
+            android:text="一键开店"
+            android:textColor="@android:color/white"
+            android:textSize="17sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
+            android:gravity="center"
+            android:text="您尚未开通店铺，点此免费开通" />
+    </LinearLayout>
+</LinearLayout>

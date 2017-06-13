@@ -14,6 +14,8 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
 
 
     <application
@@ -23,19 +25,24 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".ui.login.LoginActivity">
+        <activity android:name=".WelcomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
 
+            </intent-filter>
+
+
+        </activity>
 
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait" />
 
+        <!--登录注册-->
+        <activity
+            android:name=".ui.login.LoginActivity"
+            android:screenOrientation="portrait"></activity>
         <!--注册-->
         <activity
             android:name=".ui.login.RegisActivity"
@@ -53,8 +60,45 @@
         <activity
             android:name=".ui.login.ForgotActivity"
             android:screenOrientation="portrait"></activity>
+        <!--一键开店 填写验证资料-->
+        <activity
+            android:name=".ui.store.OpenStoreActivity"
+            android:screenOrientation="portrait"></activity>
 
+        <!--选择实名认证方式页面-->
+        <activity
+            android:name=".ui.store.RealActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait">
 
+            <intent-filter>
+                <!--协议部分，随便设置-->
+                <data android:scheme="doubaialipay" />
+                <!--下面这几行也必须得设置-->
+                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+
+        </activity>
+        <!--上传身份证-->
+        <activity
+            android:name=".ui.store.UploadCardActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <!--实名制认证提交成功-->
+        <activity
+            android:name=".ui.store.RealSumbitActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <!--实体店认证-->
+        <activity
+            android:name=".ui.store.ContinueStoreActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
+            android:name=".html.HtmlActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".wxapi.WXEntryActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
@@ -66,6 +110,12 @@
         <meta-data
             android:name="UMENG_APPKEY"
             android:value="5934d69db27b0a600f000727" />
+
+        <activity
+            android:name="com.android.moblie.zmxy.antgroup.creditsdk.app.SDKActivity"
+            android:label="芝麻信用"
+            android:screenOrientation="portrait" />
+
 
     </application>
 
