@@ -15,6 +15,7 @@ import android.widget.TextView;
 
 import com.tv.doubuy.R;
 import com.tv.doubuy.base.BaseActivity;
+import com.tv.doubuy.model.requestModel.CreateShposModel;
 import com.tv.doubuy.model.responseModel.CertifyModel;
 import com.tv.doubuy.network.APIUtils;
 import com.tv.doubuy.network.ProgressSubscriber;
@@ -42,6 +43,8 @@ public class RealActivity extends BaseActivity implements View.OnClickListener {
     @BindView(R.id.rela_aliAuth)
     RelativeLayout relaAliAuth;
 
+    private CreateShposModel shposModel;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,6 +56,8 @@ public class RealActivity extends BaseActivity implements View.OnClickListener {
 
     public void initView() {
         tvTitle.setText("上传身份证");
+
+        shposModel = (CreateShposModel) getIntent().getSerializableExtra("shpsModel");
     }
 
     /**
@@ -93,6 +98,9 @@ public class RealActivity extends BaseActivity implements View.OnClickListener {
             case R.id.rela_idcard:
 
                 Intent intent = new Intent(this, UploadCardActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("shposModel", shposModel);
+                intent.putExtras(bundle);
                 startActivity(intent);
                 break;
 

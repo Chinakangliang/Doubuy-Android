@@ -4,6 +4,7 @@ import android.Manifest;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -23,6 +24,13 @@ import com.jph.takephoto.permission.TakePhotoInvocationHandler;
 import com.tv.doubuy.R;
 import com.tv.doubuy.base.BaseActivity;
 import com.tv.doubuy.dialog.ActionSheetDialog;
+import com.tv.doubuy.model.requestModel.CreateShposModel;
+import com.tv.doubuy.model.requestModel.UpStoreInfoModel;
+import com.tv.doubuy.network.APIService;
+import com.tv.doubuy.network.APIUtils;
+import com.tv.doubuy.network.ProgressSubscriber;
+import com.tv.doubuy.network.RetrofitUtils;
+import com.tv.doubuy.network.SubscriberOnNextListener;
 import com.tv.doubuy.utils.CustomHelper;
 import com.tv.doubuy.utils.PicassoHelper;
 
@@ -48,6 +56,8 @@ public class UploadCardActivity extends BaseActivity implements View.OnClickList
 
     private TakePhoto takePhoto;
     private InvokeParam invokeParam;
+    private CreateShposModel shposModel;
+    private String photoPath;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -64,6 +74,8 @@ public class UploadCardActivity extends BaseActivity implements View.OnClickList
 
     private void initViews() {
         tvTitle.setText("上传身份证");
+        shposModel = (CreateShposModel) getIntent().getSerializableExtra("shposModel");
+
     }
 
     private void setListener() {
@@ -88,8 +100,12 @@ public class UploadCardActivity extends BaseActivity implements View.OnClickList
                 rootApply();
                 break;
             case R.id.bt_submit:
-                Intent intent = new Intent(UploadCardActivity.this, RealSumbitActivity.class);
-                startActivity(intent);
+//                Intent intent = new Intent(UploadCardActivity.this, RealSumbitActivity.class);
+//                startActivity(intent);
+                if (!TextUtils.isEmpty(photoPath)) {
+                    putIdCardInfo();
+                }
+                putIdCardInfo();
 
                 break;
         }
@@ -171,7 +187,7 @@ public class UploadCardActivity extends BaseActivity implements View.OnClickList
 
 
         PicassoHelper.getInstance().setLocalImage(this, result.getImage().getPath(), ivPhotoFirst);
-
+        photoPath = APIService.ALIYUN_OSS_IMAGE_PATH + result.getImage().getPath();
     }
 
     @Override
@@ -181,6 +197,25 @@ public class UploadCardActivity extends BaseActivity implements View.OnClickList
 
     @Override
     public void takeCancel() {
+
+    }
+
+    public void putIdCardInfo() {
+        UpStoreInfoModel storeInfoModel = new UpStoreInfoModel();
+
+        storeInfoModel.setName(shposModel.getName());
+        storeInfoModel.setLogo(shposModel.getLogo());
+        storeInfoModel.setDescription("the first shop of doubuy");
+        storeInfoModel.setRealName(shposModel.getRealName());
+        storeInfoModel.setPersonNO(shposModel.getPersonNO());
+        storeInfoModel.setIDImage1(photoPath);
+        storeInfoModel.setIDImage2(photoPath);
+        RetrofitUtils.getInstance(this).putStoreInfo(APIUtils.getInstance(this).getStoreId(), storeInfoModel, new ProgressSubscriber(new SubscriberOnNextListener() {
+            @Override
+            public void onNext(Object o) {
+
+            }
+        }, this));
 
     }
 }

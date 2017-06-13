@@ -9,6 +9,7 @@ import com.tv.doubuy.model.requestModel.LoginRequestModel;
 import com.tv.doubuy.model.requestModel.ProfileModel;
 import com.tv.doubuy.model.requestModel.SiginModel;
 import com.tv.doubuy.model.requestModel.SignupModel;
+import com.tv.doubuy.model.requestModel.UpStoreInfoModel;
 import com.tv.doubuy.utils.DouBuyApplication;
 
 import retrofit2.http.Body;
@@ -71,5 +72,8 @@ public interface APIService {
 
     @GET("admin/shops/{store_id}")
     Observable<BaseResponse> getShopInfo(@Path("store_id") String id);
+
+    @PUT("shops/{store_id}")
+    Observable<BaseResponse> putStoreInfo(@Path("store_id") String id, @Body UpStoreInfoModel upStoreInfoModel);
 
 }

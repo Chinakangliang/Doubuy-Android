@@ -1,10 +1,12 @@
 package com.tv.doubuy.model.requestModel;
 
+import java.io.Serializable;
+
 /**
  * Created by apple on 2017/6/12.
  */
 
-public class CreateShposModel {
+public class CreateShposModel implements Serializable {
 
     private String name;
     private String logo;

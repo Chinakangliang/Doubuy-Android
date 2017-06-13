@@ -9,6 +9,7 @@ import com.tv.doubuy.model.requestModel.LoginRequestModel;
 import com.tv.doubuy.model.requestModel.ProfileModel;
 import com.tv.doubuy.model.requestModel.SiginModel;
 import com.tv.doubuy.model.requestModel.SignupModel;
+import com.tv.doubuy.model.requestModel.UpStoreInfoModel;
 
 import java.net.CookieHandler;
 import java.net.CookieManager;
@@ -168,6 +169,15 @@ public class RetrofitUtils {
 
     public void putUserCreateStore(String storeId, ProfileModel profileModel, ProgressSubscriber subscriber) {
         toSubscribe(mApiService.userCreateStore(storeId, profileModel), subscriber);
+
+    }
+
+    /**
+     * 上传店铺信息
+     */
+    public void putStoreInfo(String storeId, UpStoreInfoModel storeInfoModel, ProgressSubscriber subscriber) {
+
+        toSubscribe(mApiService.putStoreInfo(storeId, storeInfoModel), subscriber);
 
     }
 

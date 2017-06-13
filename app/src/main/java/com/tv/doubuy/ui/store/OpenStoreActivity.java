@@ -118,8 +118,9 @@ public class OpenStoreActivity extends BaseActivity implements View.OnClickListe
         boolean name = TextUtils.isEmpty(etUserName.getText().toString());
 
         boolean iDcart = TextUtils.isEmpty(etIdcart.getText().toString());
+
         if (!store && !name && !iDcart) {
-            CreateShposModel shpsModel = new CreateShposModel();
+            final CreateShposModel shpsModel = new CreateShposModel();
             shpsModel.setName(etStoreName.getText().toString());
             shpsModel.setRealName(etUserName.getText().toString());
             shpsModel.setPersonNO(etIdcart.getText().toString());
@@ -132,7 +133,10 @@ public class OpenStoreActivity extends BaseActivity implements View.OnClickListe
 
                     if (userShopModel != null) {
                         douBuyCache.saveStoreId(userShopModel.getId() + "");
+                        Bundle bundle = new Bundle();
                         Intent intent = new Intent(OpenStoreActivity.this, RealActivity.class);
+                        bundle.putSerializable("shpsModel", shpsModel);
+                        intent.putExtras(bundle);
                         startActivity(intent);
                         finish();
                     }
@@ -179,9 +183,7 @@ public class OpenStoreActivity extends BaseActivity implements View.OnClickListe
         aliyunUtils.AliyunUploadCal(new AliyunUtils.AliyunUploadCallback() {
             @Override
             public void onSuccess(String fileUrl) {
-
                 photoPath = fileUrl;
-
             }
 
             @Override

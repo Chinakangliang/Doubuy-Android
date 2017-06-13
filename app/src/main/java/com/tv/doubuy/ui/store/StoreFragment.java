@@ -2,9 +2,7 @@ package com.tv.doubuy.ui.store;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -18,7 +16,6 @@ import com.tv.doubuy.network.SubscriberOnNextListener;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.Unbinder;
 
 /**
  * Created by apple on 2017/6/9.
@@ -80,13 +77,11 @@ public class StoreFragment extends BaseExtendFragment implements View.OnClickLis
         Intent intent = new Intent();
         switch (v.getId()) {
             case R.id.tv_openStore:
-
                 intent.setClass(getActivity(), OpenStoreActivity.class);
                 startActivity(intent);
                 break;
         }
     }
-
 
 
 }
