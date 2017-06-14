@@ -21,11 +21,13 @@ import com.jph.takephoto.model.TResult;
 import com.jph.takephoto.permission.InvokeListener;
 import com.jph.takephoto.permission.PermissionManager;
 import com.jph.takephoto.permission.TakePhotoInvocationHandler;
+import com.tv.doubuy.MainActivity;
 import com.tv.doubuy.R;
 import com.tv.doubuy.base.BaseActivity;
 import com.tv.doubuy.dialog.ActionSheetDialog;
 import com.tv.doubuy.model.requestModel.CreateShposModel;
-import com.tv.doubuy.model.requestModel.UpStoreInfoModel;
+import com.tv.doubuy.model.requestModel.ShopIdCardModel;
+import com.tv.doubuy.model.responseModel.ShopInfoSubmitModel;
 import com.tv.doubuy.network.APIService;
 import com.tv.doubuy.network.APIUtils;
 import com.tv.doubuy.network.ProgressSubscriber;
@@ -201,18 +203,21 @@ public class UploadCardActivity extends BaseActivity implements View.OnClickList
     }
 
     public void putIdCardInfo() {
-        UpStoreInfoModel storeInfoModel = new UpStoreInfoModel();
 
-        storeInfoModel.setName(shposModel.getName());
-        storeInfoModel.setLogo(shposModel.getLogo());
-        storeInfoModel.setDescription("the first shop of doubuy");
-        storeInfoModel.setRealName(shposModel.getRealName());
-        storeInfoModel.setPersonNO(shposModel.getPersonNO());
-        storeInfoModel.setIDImage1(photoPath);
-        storeInfoModel.setIDImage2(photoPath);
-        RetrofitUtils.getInstance(this).putStoreInfo(APIUtils.getInstance(this).getStoreId(), storeInfoModel, new ProgressSubscriber(new SubscriberOnNextListener() {
+        ShopIdCardModel idCardModel = new ShopIdCardModel();
+        idCardModel.setIdCardImage1(photoPath);
+        idCardModel.setIdCardImage2(photoPath);
+
+        RetrofitUtils.getInstance(this).putStoreInfo(APIUtils.getInstance(this).getStoreId(), idCardModel, new ProgressSubscriber(new SubscriberOnNextListener() {
             @Override
             public void onNext(Object o) {
+                ShopInfoSubmitModel infoSubmitModel = APIUtils.gson.fromJson(o.toString(), ShopInfoSubmitModel.class);
+                if (infoSubmitModel != null) {
+
+                    Intent intent = new Intent(UploadCardActivity.this, MainActivity.class);
+                    startActivity(intent);
+
+                }
 
             }
         }, this));

@@ -211,7 +211,6 @@ public class OpenStoreActivity extends BaseActivity implements View.OnClickListe
         PermissionsManager.getInstance().requestPermissionsIfNecessaryForResult(this,
                 new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE}
                 , new PermissionsResultAction() {
-
                     @Override
                     public void onGranted() {
                         showHeadportraitDialog();
@@ -233,7 +232,6 @@ public class OpenStoreActivity extends BaseActivity implements View.OnClickListe
         }
         return type;
     }
-
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {

@@ -49,17 +49,17 @@ public class StoreFragment extends BaseExtendFragment implements View.OnClickLis
                 StoreModel storeModel = APIUtils.gson.fromJson(o.toString(), StoreModel.class);
 
                 if (storeModel != null) {
-
-                    if (storeModel.getProfile().getRealNameStatus().equals("notApply")) {
-                        lineOpenStore.setVisibility(View.VISIBLE);
-//                        lineStoreType.setVisibility(View.GONE);
-                    } else if (storeModel.getProfile().getRealNameStatus().equals("pending")) {
-
-                    } else if (storeModel.getProfile().getRealNameStatus().equals("verified")) {
-
-                    } else {
-
-                    }
+                    //// TODO: 2017/6/14  这里需要判断审核状态 ，感觉不是很合理暂时未处理
+                    
+//                    if (storeModel.getProfile().getRealNameStatus().equals("notApply")) {
+//                        lineOpenStore.setVisibility(View.VISIBLE);
+//                    } else if (storeModel.getProfile().getRealNameStatus().equals("pending")) {
+//
+//                    } else if (storeModel.getProfile().getRealNameStatus().equals("verified")) {
+//
+//                    } else {
+//
+//                    }
 
                 }
 
