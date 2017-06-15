@@ -25,50 +25,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="63dd7d02-7d3f-44d9-be7f-110f6037516c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/back_right.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/review_img.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/shop_btn_activity.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/shop_btn_customer.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/shop_btn_delete.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/shop_btn_delivery.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/shop_btn_employee.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/shop_btn_liveroom.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/shop_btn_products.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/shop_btn_setup.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/shop_group.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/adapter/StoreGridAdapter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/model/requestModel/PutStoreInfoModel.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/model/responseModel/StoreMessageModel.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/ui/store/StoreMessageActivity.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/utils/StringUtils.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/view/CircleImageTransformation.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bg_real_store_message.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_store_message.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_welcome.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_store_grid.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/layout_store_manage.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/home_shop.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/WelcomeActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/WelcomeActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/model/responseModel/StoreModel.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/model/responseModel/StoreModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/model/responseModel/UserInfoModel.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/model/responseModel/UserInfoModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/network/APIService.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/network/APIService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/network/APIUtils.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/network/APIUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/network/RetrofitUtils.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/network/RetrofitUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/ui/login/LoginActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/ui/login/LoginActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/ui/store/ContinueStoreActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/ui/store/ContinueStoreActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/ui/store/OpenStoreActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/ui/store/OpenStoreActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/ui/store/StoreFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/ui/store/StoreFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/ui/store/UploadCardActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/ui/store/UploadCardActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/utils/AliyunUtils.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/utils/AliyunUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/utils/DouBuyCache.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/utils/DouBuyCache.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/utils/PicassoHelper.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/utils/PicassoHelper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/wxapi/WXEntryActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/wxapi/WXEntryActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_continue.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_continue.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_store.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_store.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/include_title_layout.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/include_title_layout.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/layout_store_type.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/layout_store_type.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/layout_store_manage.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/layout_store_manage.xml" />
     </list>
     <ignored path="Doubuy-Android.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -126,8 +85,8 @@
       <file leaf-file-name="layout_store_manage.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/layout_store_manage.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="34" column="42" selection-start-line="34" selection-start-column="42" selection-end-line="34" selection-end-column="42" />
+            <state relative-caret-position="75">
+              <caret line="5" column="41" selection-start-line="5" selection-start-column="41" selection-end-line="5" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -2292,6 +2251,36 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mipmap-xhdpi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Doubuy-Android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Doubuy-Android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -2365,78 +2354,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="utils" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Doubuy-Android" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Doubuy-Android" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="doubuy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="store" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Doubuy-Android" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Doubuy-Android" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="doubuy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ui" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -3397,26 +3314,26 @@
         <state relative-caret-position="90">
           <caret line="6" column="30" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="30" />
           <folding>
-            <element signature="e#292#293#0" expanded="true" />
-            <element signature="e#319#320#0" expanded="true" />
-            <element signature="e#359#360#0" expanded="true" />
-            <element signature="e#391#392#0" expanded="true" />
-            <element signature="e#429#430#0" expanded="true" />
-            <element signature="e#463#464#0" expanded="true" />
-            <element signature="e#517#518#0" expanded="true" />
-            <element signature="e#563#564#0" expanded="true" />
-            <element signature="e#603#604#0" expanded="true" />
-            <element signature="e#639#640#0" expanded="true" />
-            <element signature="e#698#699#0" expanded="true" />
-            <element signature="e#748#749#0" expanded="true" />
-            <element signature="e#780#781#0" expanded="true" />
-            <element signature="e#808#809#0" expanded="true" />
-            <element signature="e#850#851#0" expanded="true" />
-            <element signature="e#884#885#0" expanded="true" />
-            <element signature="e#915#916#0" expanded="true" />
-            <element signature="e#942#943#0" expanded="true" />
-            <element signature="e#982#983#0" expanded="true" />
-            <element signature="e#1014#1015#0" expanded="true" />
+            <element signature="e#292#293#0" expanded="false" />
+            <element signature="e#319#320#0" expanded="false" />
+            <element signature="e#359#360#0" expanded="false" />
+            <element signature="e#391#392#0" expanded="false" />
+            <element signature="e#429#430#0" expanded="false" />
+            <element signature="e#463#464#0" expanded="false" />
+            <element signature="e#517#518#0" expanded="false" />
+            <element signature="e#563#564#0" expanded="false" />
+            <element signature="e#603#604#0" expanded="false" />
+            <element signature="e#639#640#0" expanded="false" />
+            <element signature="e#698#699#0" expanded="false" />
+            <element signature="e#748#749#0" expanded="false" />
+            <element signature="e#780#781#0" expanded="false" />
+            <element signature="e#808#809#0" expanded="false" />
+            <element signature="e#850#851#0" expanded="false" />
+            <element signature="e#884#885#0" expanded="false" />
+            <element signature="e#915#916#0" expanded="false" />
+            <element signature="e#942#943#0" expanded="false" />
+            <element signature="e#982#983#0" expanded="false" />
+            <element signature="e#1014#1015#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -3434,88 +3351,88 @@
         <state relative-caret-position="-2642">
           <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
           <folding>
-            <element signature="e#1290#1291#0" expanded="true" />
-            <element signature="e#1315#1316#0" expanded="true" />
-            <element signature="e#1348#1349#0" expanded="true" />
-            <element signature="e#1376#1377#0" expanded="true" />
-            <element signature="e#1409#1410#0" expanded="true" />
-            <element signature="e#1438#1439#0" expanded="true" />
-            <element signature="e#1482#1483#0" expanded="true" />
-            <element signature="e#1518#1519#0" expanded="true" />
-            <element signature="e#1549#1550#0" expanded="true" />
-            <element signature="e#1576#1577#0" expanded="true" />
-            <element signature="e#1616#1617#0" expanded="true" />
-            <element signature="e#1648#1649#0" expanded="true" />
-            <element signature="e#1686#1687#0" expanded="true" />
-            <element signature="e#1720#1721#0" expanded="true" />
-            <element signature="e#1774#1775#0" expanded="true" />
-            <element signature="e#1820#1821#0" expanded="true" />
-            <element signature="e#1852#1853#0" expanded="true" />
-            <element signature="e#1880#1881#0" expanded="true" />
-            <element signature="e#1922#1923#0" expanded="true" />
-            <element signature="e#1956#1957#0" expanded="true" />
-            <element signature="e#1987#1988#0" expanded="true" />
-            <element signature="e#2014#2015#0" expanded="true" />
-            <element signature="e#2054#2055#0" expanded="true" />
-            <element signature="e#2086#2087#0" expanded="true" />
-            <element signature="e#2119#2120#0" expanded="true" />
-            <element signature="e#2148#2149#0" expanded="true" />
-            <element signature="e#2192#2193#0" expanded="true" />
-            <element signature="e#2228#2229#0" expanded="true" />
-            <element signature="e#2263#2264#0" expanded="true" />
-            <element signature="e#2297#2298#0" expanded="true" />
-            <element signature="e#2348#2349#0" expanded="true" />
-            <element signature="e#2394#2395#0" expanded="true" />
-            <element signature="e#2435#2436#0" expanded="true" />
-            <element signature="e#2472#2473#0" expanded="true" />
-            <element signature="e#2533#2534#0" expanded="true" />
-            <element signature="e#2585#2586#0" expanded="true" />
-            <element signature="e#2626#2627#0" expanded="true" />
-            <element signature="e#2663#2664#0" expanded="true" />
-            <element signature="e#2723#2724#0" expanded="true" />
-            <element signature="e#2775#2776#0" expanded="true" />
-            <element signature="e#2815#2816#0" expanded="true" />
-            <element signature="e#2854#2855#0" expanded="true" />
-            <element signature="e#3000#3001#0" expanded="true" />
-            <element signature="e#3028#3029#0" expanded="true" />
-            <element signature="e#3067#3068#0" expanded="true" />
-            <element signature="e#3101#3102#0" expanded="true" />
-            <element signature="e#3138#3139#0" expanded="true" />
-            <element signature="e#3171#3172#0" expanded="true" />
-            <element signature="e#3224#3225#0" expanded="true" />
-            <element signature="e#3268#3269#0" expanded="true" />
-            <element signature="e#3299#3300#0" expanded="true" />
-            <element signature="e#3329#3330#0" expanded="true" />
-            <element signature="e#3372#3373#0" expanded="true" />
-            <element signature="e#3410#3411#0" expanded="true" />
-            <element signature="e#3444#3445#0" expanded="true" />
-            <element signature="e#3477#3478#0" expanded="true" />
-            <element signature="e#3526#3527#0" expanded="true" />
-            <element signature="e#3570#3571#0" expanded="true" />
-            <element signature="e#3599#3600#0" expanded="true" />
-            <element signature="e#3627#3628#0" expanded="true" />
-            <element signature="e#3666#3667#0" expanded="true" />
-            <element signature="e#3700#3701#0" expanded="true" />
-            <element signature="e#3738#3739#0" expanded="true" />
-            <element signature="e#3772#3773#0" expanded="true" />
-            <element signature="e#3827#3828#0" expanded="true" />
-            <element signature="e#3873#3874#0" expanded="true" />
-            <element signature="e#3910#3911#0" expanded="true" />
-            <element signature="e#3943#3944#0" expanded="true" />
-            <element signature="e#3995#3996#0" expanded="true" />
-            <element signature="e#4039#4040#0" expanded="true" />
-            <element signature="e#4076#4077#0" expanded="true" />
-            <element signature="e#4109#4110#0" expanded="true" />
-            <element signature="e#4161#4162#0" expanded="true" />
-            <element signature="e#4205#4206#0" expanded="true" />
-            <element signature="e#4238#4239#0" expanded="true" />
-            <element signature="e#4267#4268#0" expanded="true" />
-            <element signature="e#4311#4312#0" expanded="true" />
-            <element signature="e#4347#4348#0" expanded="true" />
-            <element signature="e#4378#4379#0" expanded="true" />
-            <element signature="e#4408#4409#0" expanded="true" />
-            <element signature="e#4451#4452#0" expanded="true" />
-            <element signature="e#4489#4490#0" expanded="true" />
+            <element signature="e#1290#1291#0" expanded="false" />
+            <element signature="e#1315#1316#0" expanded="false" />
+            <element signature="e#1348#1349#0" expanded="false" />
+            <element signature="e#1376#1377#0" expanded="false" />
+            <element signature="e#1409#1410#0" expanded="false" />
+            <element signature="e#1438#1439#0" expanded="false" />
+            <element signature="e#1482#1483#0" expanded="false" />
+            <element signature="e#1518#1519#0" expanded="false" />
+            <element signature="e#1549#1550#0" expanded="false" />
+            <element signature="e#1576#1577#0" expanded="false" />
+            <element signature="e#1616#1617#0" expanded="false" />
+            <element signature="e#1648#1649#0" expanded="false" />
+            <element signature="e#1686#1687#0" expanded="false" />
+            <element signature="e#1720#1721#0" expanded="false" />
+            <element signature="e#1774#1775#0" expanded="false" />
+            <element signature="e#1820#1821#0" expanded="false" />
+            <element signature="e#1852#1853#0" expanded="false" />
+            <element signature="e#1880#1881#0" expanded="false" />
+            <element signature="e#1922#1923#0" expanded="false" />
+            <element signature="e#1956#1957#0" expanded="false" />
+            <element signature="e#1987#1988#0" expanded="false" />
+            <element signature="e#2014#2015#0" expanded="false" />
+            <element signature="e#2054#2055#0" expanded="false" />
+            <element signature="e#2086#2087#0" expanded="false" />
+            <element signature="e#2119#2120#0" expanded="false" />
+            <element signature="e#2148#2149#0" expanded="false" />
+            <element signature="e#2192#2193#0" expanded="false" />
+            <element signature="e#2228#2229#0" expanded="false" />
+            <element signature="e#2263#2264#0" expanded="false" />
+            <element signature="e#2297#2298#0" expanded="false" />
+            <element signature="e#2348#2349#0" expanded="false" />
+            <element signature="e#2394#2395#0" expanded="false" />
+            <element signature="e#2435#2436#0" expanded="false" />
+            <element signature="e#2472#2473#0" expanded="false" />
+            <element signature="e#2533#2534#0" expanded="false" />
+            <element signature="e#2585#2586#0" expanded="false" />
+            <element signature="e#2626#2627#0" expanded="false" />
+            <element signature="e#2663#2664#0" expanded="false" />
+            <element signature="e#2723#2724#0" expanded="false" />
+            <element signature="e#2775#2776#0" expanded="false" />
+            <element signature="e#2815#2816#0" expanded="false" />
+            <element signature="e#2854#2855#0" expanded="false" />
+            <element signature="e#3000#3001#0" expanded="false" />
+            <element signature="e#3028#3029#0" expanded="false" />
+            <element signature="e#3067#3068#0" expanded="false" />
+            <element signature="e#3101#3102#0" expanded="false" />
+            <element signature="e#3138#3139#0" expanded="false" />
+            <element signature="e#3171#3172#0" expanded="false" />
+            <element signature="e#3224#3225#0" expanded="false" />
+            <element signature="e#3268#3269#0" expanded="false" />
+            <element signature="e#3299#3300#0" expanded="false" />
+            <element signature="e#3329#3330#0" expanded="false" />
+            <element signature="e#3372#3373#0" expanded="false" />
+            <element signature="e#3410#3411#0" expanded="false" />
+            <element signature="e#3444#3445#0" expanded="false" />
+            <element signature="e#3477#3478#0" expanded="false" />
+            <element signature="e#3526#3527#0" expanded="false" />
+            <element signature="e#3570#3571#0" expanded="false" />
+            <element signature="e#3599#3600#0" expanded="false" />
+            <element signature="e#3627#3628#0" expanded="false" />
+            <element signature="e#3666#3667#0" expanded="false" />
+            <element signature="e#3700#3701#0" expanded="false" />
+            <element signature="e#3738#3739#0" expanded="false" />
+            <element signature="e#3772#3773#0" expanded="false" />
+            <element signature="e#3827#3828#0" expanded="false" />
+            <element signature="e#3873#3874#0" expanded="false" />
+            <element signature="e#3910#3911#0" expanded="false" />
+            <element signature="e#3943#3944#0" expanded="false" />
+            <element signature="e#3995#3996#0" expanded="false" />
+            <element signature="e#4039#4040#0" expanded="false" />
+            <element signature="e#4076#4077#0" expanded="false" />
+            <element signature="e#4109#4110#0" expanded="false" />
+            <element signature="e#4161#4162#0" expanded="false" />
+            <element signature="e#4205#4206#0" expanded="false" />
+            <element signature="e#4238#4239#0" expanded="false" />
+            <element signature="e#4267#4268#0" expanded="false" />
+            <element signature="e#4311#4312#0" expanded="false" />
+            <element signature="e#4347#4348#0" expanded="false" />
+            <element signature="e#4378#4379#0" expanded="false" />
+            <element signature="e#4408#4409#0" expanded="false" />
+            <element signature="e#4451#4452#0" expanded="false" />
+            <element signature="e#4489#4490#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -3533,11 +3450,11 @@
         <state relative-caret-position="180">
           <caret line="62" column="21" selection-start-line="62" selection-start-column="12" selection-end-line="62" selection-end-column="21" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#7877#7878#0" expanded="true" />
-            <element signature="e#7907#7908#0" expanded="true" />
-            <element signature="e#8207#8208#0" expanded="true" />
-            <element signature="e#8236#8237#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#7877#7878#0" expanded="false" />
+            <element signature="e#7907#7908#0" expanded="false" />
+            <element signature="e#8207#8208#0" expanded="false" />
+            <element signature="e#8236#8237#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -3571,8 +3488,8 @@
         <state relative-caret-position="105">
           <caret line="189" column="7" selection-start-line="189" selection-start-column="7" selection-end-line="203" selection-end-column="11" />
           <folding>
-            <element signature="e#7271#7719#0" expanded="true" />
-            <element signature="e#7718#7719#0" expanded="true" />
+            <element signature="e#7271#7719#0" expanded="false" />
+            <element signature="e#7718#7719#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -3637,8 +3554,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/layout_store_manage.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="34" column="42" selection-start-line="34" selection-start-column="42" selection-end-line="34" selection-end-column="42" />
+        <state relative-caret-position="75">
+          <caret line="5" column="41" selection-start-line="5" selection-start-column="41" selection-end-line="5" selection-end-column="41" />
           <folding />
         </state>
       </provider>

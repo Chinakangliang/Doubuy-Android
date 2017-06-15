@@ -3,7 +3,7 @@
     android:id="@+id/liner_manage"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colora8a8a8"
+    android:background="@mipmap/home_shop"
     android:orientation="vertical">
 
     <ImageView
