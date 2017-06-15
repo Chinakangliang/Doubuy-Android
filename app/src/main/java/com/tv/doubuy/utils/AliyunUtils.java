@@ -58,7 +58,7 @@ public class AliyunUtils {
         put.setProgressCallback(new OSSProgressCallback<PutObjectRequest>() {
             @Override
             public void onProgress(PutObjectRequest request, long currentSize, long totalSize) {
-                Log.d("PutObject", "currentSize: " + currentSize + " totalSize: " + totalSize);
+//                Log.d("PutObject", "currentSize: " + currentSize + " totalSize: " + totalSize);
             }
         });
 

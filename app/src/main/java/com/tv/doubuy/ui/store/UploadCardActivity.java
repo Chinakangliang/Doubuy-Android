@@ -21,7 +21,6 @@ import com.jph.takephoto.model.TResult;
 import com.jph.takephoto.permission.InvokeListener;
 import com.jph.takephoto.permission.PermissionManager;
 import com.jph.takephoto.permission.TakePhotoInvocationHandler;
-import com.tv.doubuy.MainActivity;
 import com.tv.doubuy.R;
 import com.tv.doubuy.base.BaseActivity;
 import com.tv.doubuy.dialog.ActionSheetDialog;
@@ -33,6 +32,7 @@ import com.tv.doubuy.network.APIUtils;
 import com.tv.doubuy.network.ProgressSubscriber;
 import com.tv.doubuy.network.RetrofitUtils;
 import com.tv.doubuy.network.SubscriberOnNextListener;
+import com.tv.doubuy.utils.AliyunUtils;
 import com.tv.doubuy.utils.CustomHelper;
 import com.tv.doubuy.utils.PicassoHelper;
 
@@ -185,11 +185,24 @@ public class UploadCardActivity extends BaseActivity implements View.OnClickList
     }
 
     @Override
-    public void takeSuccess(TResult result) {
+    public void takeSuccess(final TResult result) {
 
+        AliyunUtils aliyunUtils = new AliyunUtils();
+        aliyunUtils.upFile(result.getImage().getPath(), this);
+        aliyunUtils.AliyunUploadCal(new AliyunUtils.AliyunUploadCallback() {
+            @Override
+            public void onSuccess(String fileUrl) {
+                PicassoHelper.getInstance().setLocalImage(UploadCardActivity.this, result.getImage().getPath(), ivPhotoFirst);
+                photoPath = APIService.ALIYUN_OSS_IMAGE_PATH + result.getImage().getPath();
+            }
 
-        PicassoHelper.getInstance().setLocalImage(this, result.getImage().getPath(), ivPhotoFirst);
-        photoPath = APIService.ALIYUN_OSS_IMAGE_PATH + result.getImage().getPath();
+            @Override
+            public void onFailure(Exception e) {
+                Toast.makeText(UploadCardActivity.this, "上传失败请尝试重新上传！", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
     }
 
     @Override
@@ -213,10 +226,8 @@ public class UploadCardActivity extends BaseActivity implements View.OnClickList
             public void onNext(Object o) {
                 ShopInfoSubmitModel infoSubmitModel = APIUtils.gson.fromJson(o.toString(), ShopInfoSubmitModel.class);
                 if (infoSubmitModel != null) {
-
-                    Intent intent = new Intent(UploadCardActivity.this, MainActivity.class);
+                    Intent intent = new Intent(UploadCardActivity.this, RealSumbitActivity.class);
                     startActivity(intent);
-
                 }
 
             }

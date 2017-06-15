@@ -20,19 +20,55 @@
     </layouts>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_LOG_LEVEL" value="verbose" />
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="error" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="63dd7d02-7d3f-44d9-be7f-110f6037516c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/model/requestModel/ShopIdCardModel.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/model/responseModel/ShopInfoSubmitModel.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/back_right.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/review_img.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/shop_btn_activity.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/shop_btn_customer.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/shop_btn_delete.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/shop_btn_delivery.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/shop_btn_employee.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/shop_btn_liveroom.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/shop_btn_products.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/shop_btn_setup.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/shop_group.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/adapter/StoreGridAdapter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/model/requestModel/PutStoreInfoModel.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/model/responseModel/StoreMessageModel.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/ui/store/StoreMessageActivity.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/utils/StringUtils.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/view/CircleImageTransformation.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bg_real_store_message.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_store_message.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_welcome.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_store_grid.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/layout_store_manage.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/MainActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/WelcomeActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/WelcomeActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/model/responseModel/StoreModel.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/model/responseModel/StoreModel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/model/responseModel/UserInfoModel.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/model/responseModel/UserInfoModel.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/network/APIService.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/network/APIService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/network/APIUtils.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/network/APIUtils.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/network/RetrofitUtils.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/network/RetrofitUtils.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/ui/login/LoginActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/ui/login/LoginActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/ui/store/ContinueStoreActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/ui/store/ContinueStoreActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/ui/store/OpenStoreActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/ui/store/OpenStoreActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/ui/store/StoreFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/ui/store/StoreFragment.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/ui/store/UploadCardActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/ui/store/UploadCardActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/utils/AliyunUtils.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/utils/AliyunUtils.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/utils/DouBuyCache.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/utils/DouBuyCache.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/utils/PicassoHelper.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/utils/PicassoHelper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/wxapi/WXEntryActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/wxapi/WXEntryActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_continue.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_continue.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_store.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_store.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/include_title_layout.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/include_title_layout.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/layout_store_type.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/layout_store_type.xml" />
     </list>
     <ignored path="Doubuy-Android.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -64,216 +100,39 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="RealActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/ui/store/RealActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1095">
-              <caret line="99" column="60" selection-start-line="99" selection-start-column="60" selection-end-line="99" selection-end-column="60" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="APIService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/network/APIService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="69">
-              <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ShopIdCardModel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/model/requestModel/ShopIdCardModel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="28" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="28" />
-              <folding>
-                <element signature="e#222#223#0" expanded="true" />
-                <element signature="e#257#258#0" expanded="true" />
-                <element signature="e#313#314#0" expanded="true" />
-                <element signature="e#361#362#0" expanded="true" />
-                <element signature="e#400#401#0" expanded="true" />
-                <element signature="e#435#436#0" expanded="true" />
-                <element signature="e#491#492#0" expanded="true" />
-                <element signature="e#539#540#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UpStoreInfoModel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/model/requestModel/UpStoreInfoModel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="23" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
-              <folding>
-                <element signature="e#592#593#0" expanded="true" />
-                <element signature="e#619#620#0" expanded="true" />
-                <element signature="e#659#660#0" expanded="true" />
-                <element signature="e#691#692#0" expanded="true" />
-                <element signature="e#729#730#0" expanded="true" />
-                <element signature="e#763#764#0" expanded="true" />
-                <element signature="e#817#818#0" expanded="true" />
-                <element signature="e#863#864#0" expanded="true" />
-                <element signature="e#894#895#0" expanded="true" />
-                <element signature="e#921#922#0" expanded="true" />
-                <element signature="e#961#962#0" expanded="true" />
-                <element signature="e#993#994#0" expanded="true" />
-                <element signature="e#1028#1029#0" expanded="true" />
-                <element signature="e#1059#1060#0" expanded="true" />
-                <element signature="e#1107#1108#0" expanded="true" />
-                <element signature="e#1147#1148#0" expanded="true" />
-                <element signature="e#1182#1183#0" expanded="true" />
-                <element signature="e#1213#1214#0" expanded="true" />
-                <element signature="e#1261#1262#0" expanded="true" />
-                <element signature="e#1301#1302#0" expanded="true" />
-                <element signature="e#1336#1337#0" expanded="true" />
-                <element signature="e#1367#1368#0" expanded="true" />
-                <element signature="e#1415#1416#0" expanded="true" />
-                <element signature="e#1455#1456#0" expanded="true" />
-                <element signature="e#1490#1491#0" expanded="true" />
-                <element signature="e#1521#1522#0" expanded="true" />
-                <element signature="e#1569#1570#0" expanded="true" />
-                <element signature="e#1609#1610#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UploadCardActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/ui/store/UploadCardActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="191" column="47" selection-start-line="191" selection-start-column="47" selection-end-line="191" selection-end-column="47" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#6745#7189#0" expanded="true" />
-                <element signature="e#7188#7189#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ShopInfoSubmitModel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/model/responseModel/ShopInfoSubmitModel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="6" column="32" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="32" />
-              <folding>
-                <element signature="e#632#633#0" expanded="true" />
-                <element signature="e#657#658#0" expanded="true" />
-                <element signature="e#690#691#0" expanded="true" />
-                <element signature="e#718#719#0" expanded="true" />
-                <element signature="e#756#757#0" expanded="true" />
-                <element signature="e#790#791#0" expanded="true" />
-                <element signature="e#844#845#0" expanded="true" />
-                <element signature="e#890#891#0" expanded="true" />
-                <element signature="e#926#927#0" expanded="true" />
-                <element signature="e#958#959#0" expanded="true" />
-                <element signature="e#1008#1009#0" expanded="true" />
-                <element signature="e#1050#1051#0" expanded="true" />
-                <element signature="e#1090#1091#0" expanded="true" />
-                <element signature="e#1126#1127#0" expanded="true" />
-                <element signature="e#1184#1185#0" expanded="true" />
-                <element signature="e#1234#1235#0" expanded="true" />
-                <element signature="e#1267#1268#0" expanded="true" />
-                <element signature="e#1296#1297#0" expanded="true" />
-                <element signature="e#1340#1341#0" expanded="true" />
-                <element signature="e#1376#1377#0" expanded="true" />
-                <element signature="e#1413#1414#0" expanded="true" />
-                <element signature="e#1446#1447#0" expanded="true" />
-                <element signature="e#1498#1499#0" expanded="true" />
-                <element signature="e#1542#1543#0" expanded="true" />
-                <element signature="e#1582#1583#0" expanded="true" />
-                <element signature="e#1618#1619#0" expanded="true" />
-                <element signature="e#1676#1677#0" expanded="true" />
-                <element signature="e#1726#1727#0" expanded="true" />
-                <element signature="e#1761#1762#0" expanded="true" />
-                <element signature="e#1792#1793#0" expanded="true" />
-                <element signature="e#1840#1841#0" expanded="true" />
-                <element signature="e#1880#1881#0" expanded="true" />
-                <element signature="e#1915#1916#0" expanded="true" />
-                <element signature="e#1946#1947#0" expanded="true" />
-                <element signature="e#1994#1995#0" expanded="true" />
-                <element signature="e#2034#2035#0" expanded="true" />
-                <element signature="e#2073#2074#0" expanded="true" />
-                <element signature="e#2108#2109#0" expanded="true" />
-                <element signature="e#2164#2165#0" expanded="true" />
-                <element signature="e#2212#2213#0" expanded="true" />
-                <element signature="e#2251#2252#0" expanded="true" />
-                <element signature="e#2286#2287#0" expanded="true" />
-                <element signature="e#2342#2343#0" expanded="true" />
-                <element signature="e#2390#2391#0" expanded="true" />
-                <element signature="e#2431#2432#0" expanded="true" />
-                <element signature="e#2468#2469#0" expanded="true" />
-                <element signature="e#2528#2529#0" expanded="true" />
-                <element signature="e#2580#2581#0" expanded="true" />
-                <element signature="e#2617#2618#0" expanded="true" />
-                <element signature="e#2650#2651#0" expanded="true" />
-                <element signature="e#2702#2703#0" expanded="true" />
-                <element signature="e#2746#2747#0" expanded="true" />
-                <element signature="e#2783#2784#0" expanded="true" />
-                <element signature="e#2816#2817#0" expanded="true" />
-                <element signature="e#2868#2869#0" expanded="true" />
-                <element signature="e#2912#2913#0" expanded="true" />
-                <element signature="e#2949#2950#0" expanded="true" />
-                <element signature="e#2982#2983#0" expanded="true" />
-                <element signature="e#3034#3035#0" expanded="true" />
-                <element signature="e#3078#3079#0" expanded="true" />
-                <element signature="e#3108#3109#0" expanded="true" />
-                <element signature="e#3137#3138#0" expanded="true" />
-                <element signature="e#3178#3179#0" expanded="true" />
-                <element signature="e#3214#3215#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StoreFragment.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="StoreFragment.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/ui/store/StoreFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="52" column="20" selection-start-line="52" selection-start-column="20" selection-end-line="52" selection-end-column="20" />
+            <state relative-caret-position="390">
+              <caret line="59" column="54" selection-start-line="59" selection-start-column="54" selection-end-line="59" selection-end-column="54" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OpenStoreActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/ui/store/OpenStoreActivity.java">
+      <file leaf-file-name="fragment_store.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_store.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="124" column="56" selection-start-line="124" selection-start-column="56" selection-end-line="124" selection-end-column="56" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CreateShposModel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/model/requestModel/CreateShposModel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="40" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
+            <state relative-caret-position="105">
+              <caret line="7" column="39" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
               <folding />
             </state>
           </provider>
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
         </entry>
       </file>
-      <file leaf-file-name="RetrofitUtils.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/network/RetrofitUtils.java">
+      <file leaf-file-name="layout_store_manage.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/layout_store_manage.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="177" column="28" selection-start-line="177" selection-start-column="16" selection-end-line="177" selection-end-column="28" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="450">
+              <caret line="34" column="42" selection-start-line="34" selection-start-column="42" selection-end-line="34" selection-end-column="42" />
+              <folding />
             </state>
+          </provider>
+          <provider editor-type-id="android-designer2">
+            <state />
           </provider>
         </entry>
       </file>
@@ -283,6 +142,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="resourceFile" />
+        <option value="valueResourceFile" />
         <option value="layoutResourceFile_vertical" />
         <option value="Class" />
       </list>
@@ -2218,57 +2078,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/utils/PartyUtils.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/html/HtmlActivity.java" />
-        <option value="$PROJECT_DIR$/mytest/src/main/res/layout/activity_main.xml" />
-        <option value="$PROJECT_DIR$/mytest/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/mytest/src/main/java/com/example/mytest/MainActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/WelcomeActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/network/HttpCommonUtils.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_store_open.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/utils/PhotoUtlis.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/utils/CustomHelper.java" />
-        <option value="$PROJECT_DIR$/app/build.gradle" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/sample/PutObjectSamples.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/utils/sample/SignURLSamples.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/utils/DouBuyApplication.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/model/responseModel/UserInfoModel.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/utils/AliyunUtils.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/ui/store/UploadPresenter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/model/requestModel/ProfileModel.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/model/responseModel/UserStoreModel.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_continue.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/bg_real_store.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/bg_real_store_now.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_real_sumbit.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/ui/store/RealSumbitActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_upload.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/MainActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/utils/DouBuyCache.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/network/APIUtils.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/ui/store/ContinueStoreActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/ui/login/BindMobileActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/ui/login/RegisPresenter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/ui/login/LoginActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/wxapi/WXEntryActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/model/responseModel/StoreModel.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/model/responseModel/RealStoreModel.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/layout_open_store.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/layout_store_type.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_store.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/model/requestModel/UpStoreInfoModel.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/model/requestModel/CreateShposModel.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/ui/store/RealActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/ui/store/OpenStoreActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/model/requestModel/ShopIdCardModel.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/network/APIService.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/network/RetrofitUtils.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/model/responseModel/ShopInfoSubmitModel.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_continue.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/model/responseModel/UserInfoModel.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/wxapi/WXEntryActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/utils/DouBuyCache.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/network/APIUtils.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/ui/login/LoginActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/layout_store_type.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/WelcomeActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_welcome.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_store.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/view/CircularImageView.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/attrs.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/view/CircleImageView.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/view/CircleImageTransformation.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_store_grid.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/adapter/StoreGridAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/bg_real_store_message.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/include_title_layout.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/utils/StringUtlis.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/utils/StringUtils.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/model/requestModel/PutStoreInfoModel.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/utils/PicassoHelper.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/network/RetrofitUtils.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/model/responseModel/StoreMessageModel.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/ui/store/UploadCardActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/utils/AliyunUtils.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/network/APIService.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/ui/store/OpenStoreActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/ui/store/ContinueStoreActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/ui/store/StoreFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/model/responseModel/StoreModel.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_store_message.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/ui/store/StoreMessageActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/layout_store_manage.xml" />
       </list>
     </option>
   </component>
@@ -2312,22 +2172,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Doubuy-Android" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -2397,6 +2241,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Doubuy-Android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Doubuy-Android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -2494,7 +2364,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
+              <option name="myItemId" value="utils" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -2603,47 +2473,25 @@
               <option name="myItemId" value="model" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="responseModel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
+        </subPane>
+      </pane>
+      <pane id="PackagesPane">
+        <subPane>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="Doubuy-Android" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Doubuy-Android" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="doubuy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="model" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2651,7 +2499,7 @@
     <property name="settings.editor.selected.configurable" value="editor.preferences.completion" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="device.picker.selection" value="ZX1G22G84H" />
-    <property name="last_opened_file_path" value="$USER_HOME$/MarsAndroid" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../saohuo_android_v2" />
     <property name="android.project.structure.last.selected" value="mytest" />
     <property name="android.project.structure.proportion" value="0.15" />
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/apple/kang/Doubuy-Android/app/src/main/java/com/tv/doubuy/ui/login/LoginActivity.java" />
@@ -3151,7 +2999,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="736" extended-state="6" />
+    <frame x="0" y="23" width="1280" height="736" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -3161,8 +3009,9 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5177706" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.4822294" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.48303714" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.48303714" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -3172,8 +3021,8 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.4878837" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -3182,20 +3031,19 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24959612" sideWeight="0.5064516" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24959612" sideWeight="0.5129032" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5129241" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.48707592" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5177706" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.4822294" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -3206,12 +3054,12 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.48303714" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24959612" sideWeight="0.4935484" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24959612" sideWeight="0.4870968" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -3238,32 +3086,97 @@
           <properties class="com.tv.doubuy.utils.TimeFormat" method="timeStampConversion" />
           <option name="timeStamp" value="32" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/ui/store/StoreMessageActivity.java</url>
+          <line>169</line>
+          <properties method="onNext" />
+          <option name="timeStamp" value="48" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/ui/store/StoreMessageActivity.java</url>
+          <line>237</line>
+          <properties method="onSuccess" />
+          <option name="timeStamp" value="56" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/ui/login/LoginActivity.java</url>
+          <line>217</line>
+          <properties />
+          <option name="timeStamp" value="40" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="40" />
+      <option name="time" value="57" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/base/BaseActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/ui/store/RealActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="13" column="19" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
+        <state relative-caret-position="129">
+          <caret line="67" column="48" selection-start-line="67" selection-start-column="48" selection-end-line="67" selection-end-column="48" />
+          <folding>
+            <element signature="e#1915#2262#0" expanded="false" />
+            <element signature="e#2261#2262#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/tab_store_selected.png">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/utils/DouBuyCache.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/network/APIUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="91">
+          <caret line="37" column="17" selection-start-line="37" selection-start-column="17" selection-end-line="37" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/layout_store_type.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="39" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/register_logo.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="95" column="48" selection-start-line="95" selection-start-column="48" selection-end-line="95" selection-end-column="48" />
+        <state relative-caret-position="230">
+          <caret line="22" column="42" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="42" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/ui/login/LoginActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="71" column="41" selection-start-line="71" selection-start-column="41" selection-end-line="71" selection-end-column="41" />
           <folding />
         </state>
       </provider>
-      <provider editor-type-id="android-manifest">
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/layout_open_store.xml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="-30">
+          <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2">
         <state />
       </provider>
     </entry>
@@ -3275,68 +3188,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_welcome.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="750">
-          <caret line="50" column="28" selection-start-line="50" selection-start-column="26" selection-end-line="50" selection-end-column="28" />
-          <folding />
+        <state relative-caret-position="210">
+          <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_frogot.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../android_sdk/extras/android/m2repository/com/android/support/recyclerview-v7/25.3.1/recyclerview-v7-25.3.1-sources.jar!/android/support/v7/widget/GridLayoutManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2491">
-          <caret line="4" column="36" selection-start-line="4" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        <state relative-caret-position="197">
+          <caret line="81" column="11" selection-start-line="81" selection-start-column="11" selection-end-line="81" selection-end-column="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/model/requestModel/ProfileModel.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/attrs.xml" />
+    <entry file="jar://$PROJECT_DIR$/../android_sdk/platforms/android-25/android.jar!/android/R.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="25" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="25" />
-          <folding>
-            <element signature="e#385#386#0" expanded="false" />
-            <element signature="e#419#420#0" expanded="false" />
-            <element signature="e#473#474#0" expanded="false" />
-            <element signature="e#519#520#0" expanded="false" />
-            <element signature="e#559#560#0" expanded="false" />
-            <element signature="e#595#596#0" expanded="false" />
-            <element signature="e#653#654#0" expanded="false" />
-            <element signature="e#703#704#0" expanded="false" />
-            <element signature="e#745#746#0" expanded="false" />
-            <element signature="e#783#784#0" expanded="false" />
-            <element signature="e#937#938#0" expanded="false" />
-            <element signature="e#971#972#0" expanded="false" />
-            <element signature="e#1025#1026#0" expanded="false" />
-            <element signature="e#1071#1072#0" expanded="false" />
-            <element signature="e#1109#1110#0" expanded="false" />
-            <element signature="e#1143#1144#0" expanded="false" />
-            <element signature="e#1197#1198#0" expanded="false" />
-            <element signature="e#1243#1244#0" expanded="false" />
-            <element signature="e#1283#1284#0" expanded="false" />
-            <element signature="e#1319#1320#0" expanded="false" />
-            <element signature="e#1377#1378#0" expanded="false" />
-            <element signature="e#1427#1428#0" expanded="false" />
-            <element signature="e#1466#1467#0" expanded="false" />
-            <element signature="e#1501#1502#0" expanded="false" />
-            <element signature="e#1557#1558#0" expanded="false" />
-            <element signature="e#1605#1606#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="129">
+          <caret line="2082" column="32" selection-start-line="2082" selection-start-column="32" selection-end-line="2082" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/sumbit.png" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/network/SubscriberOnNextListener.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/view/CircularImageView.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/base/BaseFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="9" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
+        <state relative-caret-position="129">
+          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/model/responseModel/CertifyModel.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/view/CircleImageView.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/view/CountDownView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
@@ -3344,990 +3230,420 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/model/responseModel/UserInfoModel.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/view/CircleImageTransformation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="74" column="37" selection-start-line="74" selection-start-column="37" selection-end-line="74" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/utils/AliyunUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="69" column="28" selection-start-line="69" selection-start-column="28" selection-end-line="69" selection-end-column="28" />
+        <state relative-caret-position="165">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#1530#1531#0" expanded="false" />
+            <element signature="e#1556#1557#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_continue.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="51" selection-start-line="7" selection-start-column="51" selection-end-line="7" selection-end-column="51" />
+        <state relative-caret-position="385">
+          <caret line="62" column="33" selection-start-line="62" selection-start-column="26" selection-end-line="62" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/bg_open_store.xml">
+    <entry file="file://$PROJECT_DIR$/app/app.iml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="42" selection-start-line="3" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/bg_real_store_now.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/bg_real_auth.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="3" selection-start-line="3" selection-start-column="3" selection-end-line="4" selection-end-column="46" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/WelcomeActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="18" column="48" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_real_sumbit.xml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="53" column="44" selection-start-line="53" selection-start-column="33" selection-end-line="53" selection-end-column="44" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/ui/store/RealSumbitActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="48" column="59" selection-start-line="48" selection-start-column="38" selection-end-line="48" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_store_grid.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="30" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="30" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/adapter/StoreGridAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="75" column="51" selection-start-line="75" selection-start-column="51" selection-end-line="75" selection-end-column="51" />
+          <folding>
+            <element signature="e#1896#2127#0" expanded="false" />
+            <element signature="e#2126#2127#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/bg_real_store_message.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="31" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/bg_real_store.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_real_sumbit.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/bg_real_store_now.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/include_title_layout.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" column="37" selection-start-line="31" selection-start-column="29" selection-end-line="31" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="42" column="39" selection-start-line="42" selection-start-column="33" selection-end-line="42" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_upload.xml">
-      <provider editor-type-id="android-designer2">
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest">
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="404">
-          <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+        <state relative-caret-position="1485">
+          <caret line="99" column="48" selection-start-line="99" selection-start-column="48" selection-end-line="99" selection-end-column="48" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="72" column="50" selection-start-line="72" selection-start-column="50" selection-end-line="72" selection-end-column="50" />
-          <folding>
-            <element signature="e#1683#2425#0" expanded="false" />
-            <element signature="e#2424#2425#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/network/APIUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="36" column="32" selection-start-line="36" selection-start-column="32" selection-end-line="36" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/model/responseModel/WXloginModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/ui/store/ContinueStoreActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="90" column="98" selection-start-line="90" selection-start-column="98" selection-end-line="90" selection-end-column="98" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/ui/login/BindMobileActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="143" column="36" selection-start-line="143" selection-start-column="36" selection-end-line="143" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/ui/login/RegisPresenter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="97" column="32" selection-start-line="97" selection-start-column="32" selection-end-line="97" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/ui/login/LoginActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="218" column="36" selection-start-line="218" selection-start-column="36" selection-end-line="218" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/wxapi/WXEntryActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="112" column="0" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/network/ResponseConvertFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/ui/store/RealSumbitActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="508">
-          <caret line="53" column="43" selection-start-line="53" selection-start-column="43" selection-end-line="53" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/model/responseModel/UserShopModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="221" column="23" selection-start-line="221" selection-start-column="18" selection-end-line="221" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/model/responseModel/RealStoreModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="27" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/model/responseModel/StoreModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-8265">
-          <caret line="41" column="25" selection-start-line="41" selection-start-column="19" selection-end-line="41" selection-end-column="25" />
-          <folding>
-            <element signature="e#4443#4444#0" expanded="false" />
-            <element signature="e#4468#4469#0" expanded="false" />
-            <element signature="e#4501#4502#0" expanded="false" />
-            <element signature="e#4529#4530#0" expanded="false" />
-            <element signature="e#4562#4563#0" expanded="false" />
-            <element signature="e#4591#4592#0" expanded="false" />
-            <element signature="e#4635#4636#0" expanded="false" />
-            <element signature="e#4671#4672#0" expanded="false" />
-            <element signature="e#4702#4703#0" expanded="false" />
-            <element signature="e#4729#4730#0" expanded="false" />
-            <element signature="e#4769#4770#0" expanded="false" />
-            <element signature="e#4801#4802#0" expanded="false" />
-            <element signature="e#4839#4840#0" expanded="false" />
-            <element signature="e#4873#4874#0" expanded="false" />
-            <element signature="e#4927#4928#0" expanded="false" />
-            <element signature="e#4973#4974#0" expanded="false" />
-            <element signature="e#5005#5006#0" expanded="false" />
-            <element signature="e#5033#5034#0" expanded="false" />
-            <element signature="e#5075#5076#0" expanded="false" />
-            <element signature="e#5109#5110#0" expanded="false" />
-            <element signature="e#5140#5141#0" expanded="false" />
-            <element signature="e#5167#5168#0" expanded="false" />
-            <element signature="e#5207#5208#0" expanded="false" />
-            <element signature="e#5239#5240#0" expanded="false" />
-            <element signature="e#5272#5273#0" expanded="false" />
-            <element signature="e#5301#5302#0" expanded="false" />
-            <element signature="e#5345#5346#0" expanded="false" />
-            <element signature="e#5381#5382#0" expanded="false" />
-            <element signature="e#5416#5417#0" expanded="false" />
-            <element signature="e#5450#5451#0" expanded="false" />
-            <element signature="e#5501#5502#0" expanded="false" />
-            <element signature="e#5547#5548#0" expanded="false" />
-            <element signature="e#5588#5589#0" expanded="false" />
-            <element signature="e#5625#5626#0" expanded="false" />
-            <element signature="e#5686#5687#0" expanded="false" />
-            <element signature="e#5738#5739#0" expanded="false" />
-            <element signature="e#5779#5780#0" expanded="false" />
-            <element signature="e#5816#5817#0" expanded="false" />
-            <element signature="e#5876#5877#0" expanded="false" />
-            <element signature="e#5928#5929#0" expanded="false" />
-            <element signature="e#5968#5969#0" expanded="false" />
-            <element signature="e#6007#6008#0" expanded="false" />
-            <element signature="e#6153#6154#0" expanded="false" />
-            <element signature="e#6181#6182#0" expanded="false" />
-            <element signature="e#6220#6221#0" expanded="false" />
-            <element signature="e#6254#6255#0" expanded="false" />
-            <element signature="e#6291#6292#0" expanded="false" />
-            <element signature="e#6324#6325#0" expanded="false" />
-            <element signature="e#6377#6378#0" expanded="false" />
-            <element signature="e#6421#6422#0" expanded="false" />
-            <element signature="e#6452#6453#0" expanded="false" />
-            <element signature="e#6482#6483#0" expanded="false" />
-            <element signature="e#6525#6526#0" expanded="false" />
-            <element signature="e#6563#6564#0" expanded="false" />
-            <element signature="e#6597#6598#0" expanded="false" />
-            <element signature="e#6630#6631#0" expanded="false" />
-            <element signature="e#6679#6680#0" expanded="false" />
-            <element signature="e#6723#6724#0" expanded="false" />
-            <element signature="e#6752#6753#0" expanded="false" />
-            <element signature="e#6780#6781#0" expanded="false" />
-            <element signature="e#6819#6820#0" expanded="false" />
-            <element signature="e#6853#6854#0" expanded="false" />
-            <element signature="e#6891#6892#0" expanded="false" />
-            <element signature="e#6925#6926#0" expanded="false" />
-            <element signature="e#6980#6981#0" expanded="false" />
-            <element signature="e#7026#7027#0" expanded="false" />
-            <element signature="e#7063#7064#0" expanded="false" />
-            <element signature="e#7096#7097#0" expanded="false" />
-            <element signature="e#7148#7149#0" expanded="false" />
-            <element signature="e#7192#7193#0" expanded="false" />
-            <element signature="e#7229#7230#0" expanded="false" />
-            <element signature="e#7262#7263#0" expanded="false" />
-            <element signature="e#7314#7315#0" expanded="false" />
-            <element signature="e#7358#7359#0" expanded="false" />
-            <element signature="e#7391#7392#0" expanded="false" />
-            <element signature="e#7420#7421#0" expanded="false" />
-            <element signature="e#7464#7465#0" expanded="false" />
-            <element signature="e#7500#7501#0" expanded="false" />
-            <element signature="e#7531#7532#0" expanded="false" />
-            <element signature="e#7561#7562#0" expanded="false" />
-            <element signature="e#7604#7605#0" expanded="false" />
-            <element signature="e#7642#7643#0" expanded="false" />
-            <element signature="e#7677#7678#0" expanded="false" />
-            <element signature="e#7705#7706#0" expanded="false" />
-            <element signature="e#7750#7751#0" expanded="false" />
-            <element signature="e#7784#7785#0" expanded="false" />
-            <element signature="e#7824#7825#0" expanded="false" />
-            <element signature="e#7854#7855#0" expanded="false" />
-            <element signature="e#7906#7907#0" expanded="false" />
-            <element signature="e#7944#7945#0" expanded="false" />
-            <element signature="e#7981#7982#0" expanded="false" />
-            <element signature="e#8014#8015#0" expanded="false" />
-            <element signature="e#8067#8068#0" expanded="false" />
-            <element signature="e#8111#8112#0" expanded="false" />
-            <element signature="e#8154#8155#0" expanded="false" />
-            <element signature="e#8183#8184#0" expanded="false" />
-            <element signature="e#8237#8238#0" expanded="false" />
-            <element signature="e#8273#8274#0" expanded="false" />
-            <element signature="e#8310#8311#0" expanded="false" />
-            <element signature="e#8342#8343#0" expanded="false" />
-            <element signature="e#8393#8394#0" expanded="false" />
-            <element signature="e#8435#8436#0" expanded="false" />
-            <element signature="e#11462#11463#0" expanded="false" />
-            <element signature="e#11495#11496#0" expanded="false" />
-            <element signature="e#11532#11533#0" expanded="false" />
-            <element signature="e#11568#11569#0" expanded="false" />
-            <element signature="e#11605#11606#0" expanded="false" />
-            <element signature="e#11642#11643#0" expanded="false" />
-            <element signature="e#11690#11691#0" expanded="false" />
-            <element signature="e#11734#11735#0" expanded="false" />
-            <element signature="e#11769#11770#0" expanded="false" />
-            <element signature="e#11804#11805#0" expanded="false" />
-            <element signature="e#11848#11849#0" expanded="false" />
-            <element signature="e#11888#11889#0" expanded="false" />
-            <element signature="e#11925#11926#0" expanded="false" />
-            <element signature="e#11962#11963#0" expanded="false" />
-            <element signature="e#12010#12011#0" expanded="false" />
-            <element signature="e#12054#12055#0" expanded="false" />
-            <element signature="e#12091#12092#0" expanded="false" />
-            <element signature="e#12128#12129#0" expanded="false" />
-            <element signature="e#12176#12177#0" expanded="false" />
-            <element signature="e#12220#12221#0" expanded="false" />
-            <element signature="e#12257#12258#0" expanded="false" />
-            <element signature="e#12294#12295#0" expanded="false" />
-            <element signature="e#12342#12343#0" expanded="false" />
-            <element signature="e#12386#12387#0" expanded="false" />
-            <element signature="e#12425#12426#0" expanded="false" />
-            <element signature="e#12464#12465#0" expanded="false" />
-            <element signature="e#12516#12517#0" expanded="false" />
-            <element signature="e#12564#12565#0" expanded="false" />
-            <element signature="e#12600#12601#0" expanded="false" />
-            <element signature="e#12636#12637#0" expanded="false" />
-            <element signature="e#12682#12683#0" expanded="false" />
-            <element signature="e#12724#12725#0" expanded="false" />
-            <element signature="e#12761#12762#0" expanded="false" />
-            <element signature="e#12798#12799#0" expanded="false" />
-            <element signature="e#12846#12847#0" expanded="false" />
-            <element signature="e#12890#12891#0" expanded="false" />
-            <element signature="e#12926#12927#0" expanded="false" />
-            <element signature="e#12962#12963#0" expanded="false" />
-            <element signature="e#13008#13009#0" expanded="false" />
-            <element signature="e#13050#13051#0" expanded="false" />
-            <element signature="e#13088#13089#0" expanded="false" />
-            <element signature="e#13129#13130#0" expanded="false" />
-            <element signature="e#13182#13183#0" expanded="false" />
-            <element signature="e#13234#13235#0" expanded="false" />
-            <element signature="e#13267#13268#0" expanded="false" />
-            <element signature="e#13303#13304#0" expanded="false" />
-            <element signature="e#13346#13347#0" expanded="false" />
-            <element signature="e#13388#13389#0" expanded="false" />
-            <element signature="e#13421#13422#0" expanded="false" />
-            <element signature="e#13457#13458#0" expanded="false" />
-            <element signature="e#13500#13501#0" expanded="false" />
-            <element signature="e#13542#13543#0" expanded="false" />
-            <element signature="e#13586#13587#0" expanded="false" />
-            <element signature="e#13633#13634#0" expanded="false" />
-            <element signature="e#13803#13804#0" expanded="false" />
-            <element signature="e#13847#13848#0" expanded="false" />
-            <element signature="e#13906#13907#0" expanded="false" />
-            <element signature="e#13964#13965#0" expanded="false" />
-            <element signature="e#14007#14008#0" expanded="false" />
-            <element signature="e#14053#14054#0" expanded="false" />
-            <element signature="e#14210#14211#0" expanded="false" />
-            <element signature="e#14245#14246#0" expanded="false" />
-            <element signature="e#14286#14287#0" expanded="false" />
-            <element signature="e#14326#14327#0" expanded="false" />
-            <element signature="e#14365#14366#0" expanded="false" />
-            <element signature="e#14407#14408#0" expanded="false" />
-            <element signature="e#14462#14463#0" expanded="false" />
-            <element signature="e#14516#14517#0" expanded="false" />
-            <element signature="e#14551#14552#0" expanded="false" />
-            <element signature="e#14589#14590#0" expanded="false" />
-            <element signature="e#14636#14637#0" expanded="false" />
-            <element signature="e#14682#14683#0" expanded="false" />
-            <element signature="e#14721#14722#0" expanded="false" />
-            <element signature="e#14760#14761#0" expanded="false" />
-            <element signature="e#14812#14813#0" expanded="false" />
-            <element signature="e#14860#14861#0" expanded="false" />
-            <element signature="e#14905#14906#0" expanded="false" />
-            <element signature="e#14953#14954#0" expanded="false" />
-            <element signature="e#15131#15132#0" expanded="false" />
-            <element signature="e#15176#15177#0" expanded="false" />
-            <element signature="e#15339#15340#0" expanded="false" />
-            <element signature="e#15378#15379#0" expanded="false" />
-            <element signature="e#15430#15431#0" expanded="false" />
-            <element signature="e#15478#15479#0" expanded="false" />
-            <element signature="e#15524#15525#0" expanded="false" />
-            <element signature="e#15570#15571#0" expanded="false" />
-            <element signature="e#15737#15738#0" expanded="false" />
-            <element signature="e#15775#15776#0" expanded="false" />
-            <element signature="e#15825#15826#0" expanded="false" />
-            <element signature="e#15871#15872#0" expanded="false" />
-            <element signature="e#15909#15910#0" expanded="false" />
-            <element signature="e#15947#15948#0" expanded="false" />
-            <element signature="e#15997#15998#0" expanded="false" />
-            <element signature="e#16043#16044#0" expanded="false" />
-            <element signature="e#16080#16081#0" expanded="false" />
-            <element signature="e#16117#16118#0" expanded="false" />
-            <element signature="e#16166#16167#0" expanded="false" />
-            <element signature="e#16210#16211#0" expanded="false" />
-            <element signature="e#16245#16246#0" expanded="false" />
-            <element signature="e#16280#16281#0" expanded="false" />
-            <element signature="e#16324#16325#0" expanded="false" />
-            <element signature="e#16364#16365#0" expanded="false" />
-            <element signature="e#16403#16404#0" expanded="false" />
-            <element signature="e#16442#16443#0" expanded="false" />
-            <element signature="e#16494#16495#0" expanded="false" />
-            <element signature="e#16542#16543#0" expanded="false" />
-            <element signature="e#16580#16581#0" expanded="false" />
-            <element signature="e#16618#16619#0" expanded="false" />
-            <element signature="e#16668#16669#0" expanded="false" />
-            <element signature="e#16714#16715#0" expanded="false" />
-            <element signature="e#16754#16755#0" expanded="false" />
-            <element signature="e#16794#16795#0" expanded="false" />
-            <element signature="e#16849#16850#0" expanded="false" />
-            <element signature="e#16899#16900#0" expanded="false" />
-            <element signature="e#16943#16944#0" expanded="false" />
-            <element signature="e#16987#16988#0" expanded="false" />
-            <element signature="e#17049#17050#0" expanded="false" />
-            <element signature="e#17107#17108#0" expanded="false" />
-            <element signature="e#17145#17146#0" expanded="false" />
-            <element signature="e#17183#17184#0" expanded="false" />
-            <element signature="e#17233#17234#0" expanded="false" />
-            <element signature="e#17279#17280#0" expanded="false" />
-            <element signature="e#17325#17326#0" expanded="false" />
-            <element signature="e#17371#17372#0" expanded="false" />
-            <element signature="e#17539#17540#0" expanded="false" />
-            <element signature="e#17579#17580#0" expanded="false" />
-            <element signature="e#17633#17634#0" expanded="false" />
-            <element signature="e#17683#17684#0" expanded="false" />
-            <element signature="e#17724#17725#0" expanded="false" />
-            <element signature="e#17765#17766#0" expanded="false" />
-            <element signature="e#17821#17822#0" expanded="false" />
-            <element signature="e#17873#17874#0" expanded="false" />
-            <element signature="e#17914#17915#0" expanded="false" />
-            <element signature="e#17955#17956#0" expanded="false" />
-            <element signature="e#18011#18012#0" expanded="false" />
-            <element signature="e#18063#18064#0" expanded="false" />
-            <element signature="e#18108#18109#0" expanded="false" />
-            <element signature="e#18153#18154#0" expanded="false" />
-            <element signature="e#18320#18321#0" expanded="false" />
-            <element signature="e#18358#18359#0" expanded="false" />
-            <element signature="e#18413#18414#0" expanded="false" />
-            <element signature="e#18459#18460#0" expanded="false" />
-            <element signature="e#19742#19743#0" expanded="false" />
-            <element signature="e#19783#19784#0" expanded="false" />
-            <element signature="e#19824#19825#0" expanded="false" />
-            <element signature="e#19868#19869#0" expanded="false" />
-            <element signature="e#19914#19915#0" expanded="false" />
-            <element signature="e#19964#19965#0" expanded="false" />
-            <element signature="e#20026#20027#0" expanded="false" />
-            <element signature="e#20088#20089#0" expanded="false" />
-            <element signature="e#20132#20133#0" expanded="false" />
-            <element signature="e#20180#20181#0" expanded="false" />
-            <element signature="e#20238#20239#0" expanded="false" />
-            <element signature="e#20296#20297#0" expanded="false" />
-            <element signature="e#20344#20345#0" expanded="false" />
-            <element signature="e#20396#20397#0" expanded="false" />
-            <element signature="e#20569#20570#0" expanded="false" />
-            <element signature="e#20614#20615#0" expanded="false" />
-            <element signature="e#20666#20667#0" expanded="false" />
-            <element signature="e#20718#20719#0" expanded="false" />
-            <element signature="e#20763#20764#0" expanded="false" />
-            <element signature="e#20812#20813#0" expanded="false" />
-            <element signature="e#20872#20873#0" expanded="false" />
-            <element signature="e#20932#20933#0" expanded="false" />
-            <element signature="e#20980#20981#0" expanded="false" />
-            <element signature="e#21032#21033#0" expanded="false" />
-            <element signature="e#21207#21208#0" expanded="false" />
-            <element signature="e#21254#21255#0" expanded="false" />
-            <element signature="e#21310#21311#0" expanded="false" />
-            <element signature="e#21366#21367#0" expanded="false" />
-            <element signature="e#21409#21410#0" expanded="false" />
-            <element signature="e#21456#21457#0" expanded="false" />
-            <element signature="e#21512#21513#0" expanded="false" />
-            <element signature="e#21568#21569#0" expanded="false" />
-            <element signature="e#21615#21616#0" expanded="false" />
-            <element signature="e#21666#21667#0" expanded="false" />
-            <element signature="e#21730#21731#0" expanded="false" />
-            <element signature="e#21794#21795#0" expanded="false" />
-            <element signature="e#21841#21842#0" expanded="false" />
-            <element signature="e#21892#21893#0" expanded="false" />
-            <element signature="e#21956#21957#0" expanded="false" />
-            <element signature="e#22020#22021#0" expanded="false" />
-            <element signature="e#22069#22070#0" expanded="false" />
-            <element signature="e#22122#22123#0" expanded="false" />
-            <element signature="e#22303#22304#0" expanded="false" />
-            <element signature="e#22352#22353#0" expanded="false" />
-            <element signature="e#22412#22413#0" expanded="false" />
-            <element signature="e#22472#22473#0" expanded="false" />
-            <element signature="e#22517#22518#0" expanded="false" />
-            <element signature="e#22566#22567#0" expanded="false" />
-            <element signature="e#22626#22627#0" expanded="false" />
-            <element signature="e#22686#22687#0" expanded="false" />
-            <element signature="e#22731#22732#0" expanded="false" />
-            <element signature="e#22780#22781#0" expanded="false" />
-            <element signature="e#22840#22841#0" expanded="false" />
-            <element signature="e#22900#22901#0" expanded="false" />
-            <element signature="e#22938#22939#0" expanded="false" />
-            <element signature="e#22983#22984#0" expanded="false" />
-            <element signature="e#23032#23033#0" expanded="false" />
-            <element signature="e#23084#23085#0" expanded="false" />
-            <element signature="e#24727#24728#0" expanded="false" />
-            <element signature="e#24760#24761#0" expanded="false" />
-            <element signature="e#24797#24798#0" expanded="false" />
-            <element signature="e#24833#24834#0" expanded="false" />
-            <element signature="e#24875#24876#0" expanded="false" />
-            <element signature="e#24917#24918#0" expanded="false" />
-            <element signature="e#24975#24976#0" expanded="false" />
-            <element signature="e#25029#25030#0" expanded="false" />
-            <element signature="e#25075#25076#0" expanded="false" />
-            <element signature="e#25121#25122#0" expanded="false" />
-            <element signature="e#25293#25294#0" expanded="false" />
-            <element signature="e#25337#25338#0" expanded="false" />
-            <element signature="e#25399#25400#0" expanded="false" />
-            <element signature="e#25457#25458#0" expanded="false" />
-            <element signature="e#25503#25504#0" expanded="false" />
-            <element signature="e#25549#25550#0" expanded="false" />
-            <element signature="e#25719#25720#0" expanded="false" />
-            <element signature="e#25761#25762#0" expanded="false" />
-            <element signature="e#25819#25820#0" expanded="false" />
-            <element signature="e#25873#25874#0" expanded="false" />
-            <element signature="e#25917#25918#0" expanded="false" />
-            <element signature="e#25961#25962#0" expanded="false" />
-            <element signature="e#26023#26024#0" expanded="false" />
-            <element signature="e#26081#26082#0" expanded="false" />
-            <element signature="e#26132#26133#0" expanded="false" />
-            <element signature="e#26183#26184#0" expanded="false" />
-            <element signature="e#26384#26385#0" expanded="false" />
-            <element signature="e#26437#26438#0" expanded="false" />
-            <element signature="e#26635#26636#0" expanded="false" />
-            <element signature="e#26677#26678#0" expanded="false" />
-            <element signature="e#26735#26736#0" expanded="false" />
-            <element signature="e#26789#26790#0" expanded="false" />
-            <element signature="e#26833#26834#0" expanded="false" />
-            <element signature="e#26877#26878#0" expanded="false" />
-            <element signature="e#26939#26940#0" expanded="false" />
-            <element signature="e#26997#26998#0" expanded="false" />
-            <element signature="e#27052#27053#0" expanded="false" />
-            <element signature="e#27107#27108#0" expanded="false" />
-            <element signature="e#27326#27327#0" expanded="false" />
-            <element signature="e#27381#27382#0" expanded="false" />
-            <element signature="e#27585#27586#0" expanded="false" />
-            <element signature="e#27625#27626#0" expanded="false" />
-            <element signature="e#27679#27680#0" expanded="false" />
-            <element signature="e#27729#27730#0" expanded="false" />
-            <element signature="e#27772#27773#0" expanded="false" />
-            <element signature="e#27815#27816#0" expanded="false" />
-            <element signature="e#27875#27876#0" expanded="false" />
-            <element signature="e#27931#27932#0" expanded="false" />
-            <element signature="e#27977#27978#0" expanded="false" />
-            <element signature="e#28023#28024#0" expanded="false" />
-            <element signature="e#28196#28197#0" expanded="false" />
-            <element signature="e#28241#28242#0" expanded="false" />
-            <element signature="e#28410#28411#0" expanded="false" />
-            <element signature="e#28455#28456#0" expanded="false" />
-            <element signature="e#28620#28621#0" expanded="false" />
-            <element signature="e#28661#28662#0" expanded="false" />
-            <element signature="e#28717#28718#0" expanded="false" />
-            <element signature="e#28769#28770#0" expanded="false" />
-            <element signature="e#28810#28811#0" expanded="false" />
-            <element signature="e#28851#28852#0" expanded="false" />
-            <element signature="e#28907#28908#0" expanded="false" />
-            <element signature="e#28959#28960#0" expanded="false" />
-            <element signature="e#28993#28994#0" expanded="false" />
-            <element signature="e#29030#29031#0" expanded="false" />
-            <element signature="e#29075#29076#0" expanded="false" />
-            <element signature="e#29119#29120#0" expanded="false" />
-            <element signature="e#31848#31849#0" expanded="false" />
-            <element signature="e#31881#31882#0" expanded="false" />
-            <element signature="e#31918#31919#0" expanded="false" />
-            <element signature="e#31954#31955#0" expanded="false" />
-            <element signature="e#31991#31992#0" expanded="false" />
-            <element signature="e#32028#32029#0" expanded="false" />
-            <element signature="e#32076#32077#0" expanded="false" />
-            <element signature="e#32120#32121#0" expanded="false" />
-            <element signature="e#32155#32156#0" expanded="false" />
-            <element signature="e#32190#32191#0" expanded="false" />
-            <element signature="e#32234#32235#0" expanded="false" />
-            <element signature="e#32274#32275#0" expanded="false" />
-            <element signature="e#32311#32312#0" expanded="false" />
-            <element signature="e#32348#32349#0" expanded="false" />
-            <element signature="e#32396#32397#0" expanded="false" />
-            <element signature="e#32440#32441#0" expanded="false" />
-            <element signature="e#32477#32478#0" expanded="false" />
-            <element signature="e#32514#32515#0" expanded="false" />
-            <element signature="e#32562#32563#0" expanded="false" />
-            <element signature="e#32606#32607#0" expanded="false" />
-            <element signature="e#32643#32644#0" expanded="false" />
-            <element signature="e#32680#32681#0" expanded="false" />
-            <element signature="e#32728#32729#0" expanded="false" />
-            <element signature="e#32772#32773#0" expanded="false" />
-            <element signature="e#32811#32812#0" expanded="false" />
-            <element signature="e#32850#32851#0" expanded="false" />
-            <element signature="e#32902#32903#0" expanded="false" />
-            <element signature="e#32950#32951#0" expanded="false" />
-            <element signature="e#32986#32987#0" expanded="false" />
-            <element signature="e#33022#33023#0" expanded="false" />
-            <element signature="e#33068#33069#0" expanded="false" />
-            <element signature="e#33110#33111#0" expanded="false" />
-            <element signature="e#33147#33148#0" expanded="false" />
-            <element signature="e#33184#33185#0" expanded="false" />
-            <element signature="e#33232#33233#0" expanded="false" />
-            <element signature="e#33276#33277#0" expanded="false" />
-            <element signature="e#33312#33313#0" expanded="false" />
-            <element signature="e#33348#33349#0" expanded="false" />
-            <element signature="e#33394#33395#0" expanded="false" />
-            <element signature="e#33436#33437#0" expanded="false" />
-            <element signature="e#33474#33475#0" expanded="false" />
-            <element signature="e#33515#33516#0" expanded="false" />
-            <element signature="e#33568#33569#0" expanded="false" />
-            <element signature="e#33620#33621#0" expanded="false" />
-            <element signature="e#33653#33654#0" expanded="false" />
-            <element signature="e#33689#33690#0" expanded="false" />
-            <element signature="e#33732#33733#0" expanded="false" />
-            <element signature="e#33774#33775#0" expanded="false" />
-            <element signature="e#33807#33808#0" expanded="false" />
-            <element signature="e#33843#33844#0" expanded="false" />
-            <element signature="e#33886#33887#0" expanded="false" />
-            <element signature="e#33928#33929#0" expanded="false" />
-            <element signature="e#33972#33973#0" expanded="false" />
-            <element signature="e#34019#34020#0" expanded="false" />
-            <element signature="e#34189#34190#0" expanded="false" />
-            <element signature="e#34233#34234#0" expanded="false" />
-            <element signature="e#34292#34293#0" expanded="false" />
-            <element signature="e#34350#34351#0" expanded="false" />
-            <element signature="e#34393#34394#0" expanded="false" />
-            <element signature="e#34439#34440#0" expanded="false" />
-            <element signature="e#34596#34597#0" expanded="false" />
-            <element signature="e#34631#34632#0" expanded="false" />
-            <element signature="e#34672#34673#0" expanded="false" />
-            <element signature="e#34712#34713#0" expanded="false" />
-            <element signature="e#34751#34752#0" expanded="false" />
-            <element signature="e#34793#34794#0" expanded="false" />
-            <element signature="e#34848#34849#0" expanded="false" />
-            <element signature="e#34902#34903#0" expanded="false" />
-            <element signature="e#34937#34938#0" expanded="false" />
-            <element signature="e#34975#34976#0" expanded="false" />
-            <element signature="e#35022#35023#0" expanded="false" />
-            <element signature="e#35068#35069#0" expanded="false" />
-            <element signature="e#35107#35108#0" expanded="false" />
-            <element signature="e#35146#35147#0" expanded="false" />
-            <element signature="e#35198#35199#0" expanded="false" />
-            <element signature="e#35246#35247#0" expanded="false" />
-            <element signature="e#35291#35292#0" expanded="false" />
-            <element signature="e#35339#35340#0" expanded="false" />
-            <element signature="e#35517#35518#0" expanded="false" />
-            <element signature="e#35562#35563#0" expanded="false" />
-            <element signature="e#35725#35726#0" expanded="false" />
-            <element signature="e#35764#35765#0" expanded="false" />
-            <element signature="e#35816#35817#0" expanded="false" />
-            <element signature="e#35864#35865#0" expanded="false" />
-            <element signature="e#35910#35911#0" expanded="false" />
-            <element signature="e#35956#35957#0" expanded="false" />
-            <element signature="e#36123#36124#0" expanded="false" />
-            <element signature="e#36161#36162#0" expanded="false" />
-            <element signature="e#36211#36212#0" expanded="false" />
-            <element signature="e#36257#36258#0" expanded="false" />
-            <element signature="e#36295#36296#0" expanded="false" />
-            <element signature="e#36333#36334#0" expanded="false" />
-            <element signature="e#36383#36384#0" expanded="false" />
-            <element signature="e#36429#36430#0" expanded="false" />
-            <element signature="e#36466#36467#0" expanded="false" />
-            <element signature="e#36503#36504#0" expanded="false" />
-            <element signature="e#36552#36553#0" expanded="false" />
-            <element signature="e#36596#36597#0" expanded="false" />
-            <element signature="e#36631#36632#0" expanded="false" />
-            <element signature="e#36666#36667#0" expanded="false" />
-            <element signature="e#36710#36711#0" expanded="false" />
-            <element signature="e#36750#36751#0" expanded="false" />
-            <element signature="e#36789#36790#0" expanded="false" />
-            <element signature="e#36828#36829#0" expanded="false" />
-            <element signature="e#36880#36881#0" expanded="false" />
-            <element signature="e#36928#36929#0" expanded="false" />
-            <element signature="e#36966#36967#0" expanded="false" />
-            <element signature="e#37004#37005#0" expanded="false" />
-            <element signature="e#37054#37055#0" expanded="false" />
-            <element signature="e#37100#37101#0" expanded="false" />
-            <element signature="e#37140#37141#0" expanded="false" />
-            <element signature="e#37180#37181#0" expanded="false" />
-            <element signature="e#37235#37236#0" expanded="false" />
-            <element signature="e#37285#37286#0" expanded="false" />
-            <element signature="e#37329#37330#0" expanded="false" />
-            <element signature="e#37373#37374#0" expanded="false" />
-            <element signature="e#37435#37436#0" expanded="false" />
-            <element signature="e#37493#37494#0" expanded="false" />
-            <element signature="e#37531#37532#0" expanded="false" />
-            <element signature="e#37569#37570#0" expanded="false" />
-            <element signature="e#37619#37620#0" expanded="false" />
-            <element signature="e#37665#37666#0" expanded="false" />
-            <element signature="e#37711#37712#0" expanded="false" />
-            <element signature="e#37757#37758#0" expanded="false" />
-            <element signature="e#37925#37926#0" expanded="false" />
-            <element signature="e#37965#37966#0" expanded="false" />
-            <element signature="e#38019#38020#0" expanded="false" />
-            <element signature="e#38069#38070#0" expanded="false" />
-            <element signature="e#38110#38111#0" expanded="false" />
-            <element signature="e#38151#38152#0" expanded="false" />
-            <element signature="e#38207#38208#0" expanded="false" />
-            <element signature="e#38259#38260#0" expanded="false" />
-            <element signature="e#38300#38301#0" expanded="false" />
-            <element signature="e#38341#38342#0" expanded="false" />
-            <element signature="e#38397#38398#0" expanded="false" />
-            <element signature="e#38449#38450#0" expanded="false" />
-            <element signature="e#38494#38495#0" expanded="false" />
-            <element signature="e#38539#38540#0" expanded="false" />
-            <element signature="e#38712#38713#0" expanded="false" />
-            <element signature="e#38753#38754#0" expanded="false" />
-            <element signature="e#38817#38818#0" expanded="false" />
-            <element signature="e#38869#38870#0" expanded="false" />
-            <element signature="e#39068#39069#0" expanded="false" />
-            <element signature="e#39118#39119#0" expanded="false" />
-            <element signature="e#39180#39181#0" expanded="false" />
-            <element signature="e#39242#39243#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/layout_open_store.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-91">
-          <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/layout_store_type.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="36" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_store.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="58" selection-start-line="9" selection-start-column="58" selection-end-line="9" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/utils/DouBuyApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="17" column="36" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="36" />
-          <folding>
-            <element signature="e#347#348#0" expanded="false" />
-            <element signature="e#378#379#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/utils/DouBuyCache.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="58" column="25" selection-start-line="58" selection-start-column="25" selection-end-line="58" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/utils/VerificationUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_store_open.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2055">
-          <caret line="137" column="40" selection-start-line="137" selection-start-column="33" selection-end-line="137" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/model/requestModel/CreateShposModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="40" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/model/requestModel/UpStoreInfoModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="23" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
-          <folding>
-            <element signature="e#592#593#0" expanded="true" />
-            <element signature="e#619#620#0" expanded="true" />
-            <element signature="e#659#660#0" expanded="true" />
-            <element signature="e#691#692#0" expanded="true" />
-            <element signature="e#729#730#0" expanded="true" />
-            <element signature="e#763#764#0" expanded="true" />
-            <element signature="e#817#818#0" expanded="true" />
-            <element signature="e#863#864#0" expanded="true" />
-            <element signature="e#894#895#0" expanded="true" />
-            <element signature="e#921#922#0" expanded="true" />
-            <element signature="e#961#962#0" expanded="true" />
-            <element signature="e#993#994#0" expanded="true" />
-            <element signature="e#1028#1029#0" expanded="true" />
-            <element signature="e#1059#1060#0" expanded="true" />
-            <element signature="e#1107#1108#0" expanded="true" />
-            <element signature="e#1147#1148#0" expanded="true" />
-            <element signature="e#1182#1183#0" expanded="true" />
-            <element signature="e#1213#1214#0" expanded="true" />
-            <element signature="e#1261#1262#0" expanded="true" />
-            <element signature="e#1301#1302#0" expanded="true" />
-            <element signature="e#1336#1337#0" expanded="true" />
-            <element signature="e#1367#1368#0" expanded="true" />
-            <element signature="e#1415#1416#0" expanded="true" />
-            <element signature="e#1455#1456#0" expanded="true" />
-            <element signature="e#1490#1491#0" expanded="true" />
-            <element signature="e#1521#1522#0" expanded="true" />
-            <element signature="e#1569#1570#0" expanded="true" />
-            <element signature="e#1609#1610#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/utils/TimeFormat.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+        <state relative-caret-position="-2717">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/utils/PicassoHelper.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/utils/StringUtlis.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1222">
-          <caret line="91" column="16" selection-start-line="91" selection-start-column="16" selection-end-line="91" selection-end-column="16" />
+        <state relative-caret-position="403">
+          <caret line="27" column="23" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/ui/store/RealActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/utils/StringUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1095">
-          <caret line="99" column="60" selection-start-line="99" selection-start-column="60" selection-end-line="99" selection-end-column="60" />
+        <state relative-caret-position="418">
+          <caret line="68" column="42" selection-start-line="68" selection-start-column="35" selection-end-line="68" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/model/requestModel/ShopIdCardModel.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/model/requestModel/PutStoreInfoModel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
-          <caret line="6" column="28" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="28" />
+          <caret line="6" column="30" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="30" />
           <folding>
-            <element signature="e#222#223#0" expanded="true" />
-            <element signature="e#257#258#0" expanded="true" />
-            <element signature="e#313#314#0" expanded="true" />
-            <element signature="e#361#362#0" expanded="true" />
-            <element signature="e#400#401#0" expanded="true" />
-            <element signature="e#435#436#0" expanded="true" />
-            <element signature="e#491#492#0" expanded="true" />
-            <element signature="e#539#540#0" expanded="true" />
+            <element signature="e#292#293#0" expanded="true" />
+            <element signature="e#319#320#0" expanded="true" />
+            <element signature="e#359#360#0" expanded="true" />
+            <element signature="e#391#392#0" expanded="true" />
+            <element signature="e#429#430#0" expanded="true" />
+            <element signature="e#463#464#0" expanded="true" />
+            <element signature="e#517#518#0" expanded="true" />
+            <element signature="e#563#564#0" expanded="true" />
+            <element signature="e#603#604#0" expanded="true" />
+            <element signature="e#639#640#0" expanded="true" />
+            <element signature="e#698#699#0" expanded="true" />
+            <element signature="e#748#749#0" expanded="true" />
+            <element signature="e#780#781#0" expanded="true" />
+            <element signature="e#808#809#0" expanded="true" />
+            <element signature="e#850#851#0" expanded="true" />
+            <element signature="e#884#885#0" expanded="true" />
+            <element signature="e#915#916#0" expanded="true" />
+            <element signature="e#942#943#0" expanded="true" />
+            <element signature="e#982#983#0" expanded="true" />
+            <element signature="e#1014#1015#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/network/RetrofitUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="177" column="28" selection-start-line="177" selection-start-column="16" selection-end-line="177" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="1318">
+          <caret line="191" column="40" selection-start-line="191" selection-start-column="40" selection-end-line="191" selection-end-column="40" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/model/responseModel/ShopInfoSubmitModel.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/model/responseModel/StoreMessageModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="6" column="32" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="32" />
+        <state relative-caret-position="-2642">
+          <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
           <folding>
-            <element signature="e#632#633#0" expanded="true" />
-            <element signature="e#657#658#0" expanded="true" />
-            <element signature="e#690#691#0" expanded="true" />
-            <element signature="e#718#719#0" expanded="true" />
-            <element signature="e#756#757#0" expanded="true" />
-            <element signature="e#790#791#0" expanded="true" />
-            <element signature="e#844#845#0" expanded="true" />
-            <element signature="e#890#891#0" expanded="true" />
-            <element signature="e#926#927#0" expanded="true" />
-            <element signature="e#958#959#0" expanded="true" />
-            <element signature="e#1008#1009#0" expanded="true" />
-            <element signature="e#1050#1051#0" expanded="true" />
-            <element signature="e#1090#1091#0" expanded="true" />
-            <element signature="e#1126#1127#0" expanded="true" />
-            <element signature="e#1184#1185#0" expanded="true" />
-            <element signature="e#1234#1235#0" expanded="true" />
-            <element signature="e#1267#1268#0" expanded="true" />
-            <element signature="e#1296#1297#0" expanded="true" />
-            <element signature="e#1340#1341#0" expanded="true" />
+            <element signature="e#1290#1291#0" expanded="true" />
+            <element signature="e#1315#1316#0" expanded="true" />
+            <element signature="e#1348#1349#0" expanded="true" />
             <element signature="e#1376#1377#0" expanded="true" />
-            <element signature="e#1413#1414#0" expanded="true" />
-            <element signature="e#1446#1447#0" expanded="true" />
-            <element signature="e#1498#1499#0" expanded="true" />
-            <element signature="e#1542#1543#0" expanded="true" />
-            <element signature="e#1582#1583#0" expanded="true" />
-            <element signature="e#1618#1619#0" expanded="true" />
-            <element signature="e#1676#1677#0" expanded="true" />
-            <element signature="e#1726#1727#0" expanded="true" />
-            <element signature="e#1761#1762#0" expanded="true" />
-            <element signature="e#1792#1793#0" expanded="true" />
-            <element signature="e#1840#1841#0" expanded="true" />
+            <element signature="e#1409#1410#0" expanded="true" />
+            <element signature="e#1438#1439#0" expanded="true" />
+            <element signature="e#1482#1483#0" expanded="true" />
+            <element signature="e#1518#1519#0" expanded="true" />
+            <element signature="e#1549#1550#0" expanded="true" />
+            <element signature="e#1576#1577#0" expanded="true" />
+            <element signature="e#1616#1617#0" expanded="true" />
+            <element signature="e#1648#1649#0" expanded="true" />
+            <element signature="e#1686#1687#0" expanded="true" />
+            <element signature="e#1720#1721#0" expanded="true" />
+            <element signature="e#1774#1775#0" expanded="true" />
+            <element signature="e#1820#1821#0" expanded="true" />
+            <element signature="e#1852#1853#0" expanded="true" />
             <element signature="e#1880#1881#0" expanded="true" />
-            <element signature="e#1915#1916#0" expanded="true" />
-            <element signature="e#1946#1947#0" expanded="true" />
-            <element signature="e#1994#1995#0" expanded="true" />
-            <element signature="e#2034#2035#0" expanded="true" />
-            <element signature="e#2073#2074#0" expanded="true" />
-            <element signature="e#2108#2109#0" expanded="true" />
-            <element signature="e#2164#2165#0" expanded="true" />
-            <element signature="e#2212#2213#0" expanded="true" />
-            <element signature="e#2251#2252#0" expanded="true" />
-            <element signature="e#2286#2287#0" expanded="true" />
-            <element signature="e#2342#2343#0" expanded="true" />
-            <element signature="e#2390#2391#0" expanded="true" />
-            <element signature="e#2431#2432#0" expanded="true" />
-            <element signature="e#2468#2469#0" expanded="true" />
-            <element signature="e#2528#2529#0" expanded="true" />
-            <element signature="e#2580#2581#0" expanded="true" />
-            <element signature="e#2617#2618#0" expanded="true" />
-            <element signature="e#2650#2651#0" expanded="true" />
-            <element signature="e#2702#2703#0" expanded="true" />
-            <element signature="e#2746#2747#0" expanded="true" />
-            <element signature="e#2783#2784#0" expanded="true" />
-            <element signature="e#2816#2817#0" expanded="true" />
-            <element signature="e#2868#2869#0" expanded="true" />
-            <element signature="e#2912#2913#0" expanded="true" />
-            <element signature="e#2949#2950#0" expanded="true" />
-            <element signature="e#2982#2983#0" expanded="true" />
-            <element signature="e#3034#3035#0" expanded="true" />
-            <element signature="e#3078#3079#0" expanded="true" />
-            <element signature="e#3108#3109#0" expanded="true" />
-            <element signature="e#3137#3138#0" expanded="true" />
-            <element signature="e#3178#3179#0" expanded="true" />
-            <element signature="e#3214#3215#0" expanded="true" />
+            <element signature="e#1922#1923#0" expanded="true" />
+            <element signature="e#1956#1957#0" expanded="true" />
+            <element signature="e#1987#1988#0" expanded="true" />
+            <element signature="e#2014#2015#0" expanded="true" />
+            <element signature="e#2054#2055#0" expanded="true" />
+            <element signature="e#2086#2087#0" expanded="true" />
+            <element signature="e#2119#2120#0" expanded="true" />
+            <element signature="e#2148#2149#0" expanded="true" />
+            <element signature="e#2192#2193#0" expanded="true" />
+            <element signature="e#2228#2229#0" expanded="true" />
+            <element signature="e#2263#2264#0" expanded="true" />
+            <element signature="e#2297#2298#0" expanded="true" />
+            <element signature="e#2348#2349#0" expanded="true" />
+            <element signature="e#2394#2395#0" expanded="true" />
+            <element signature="e#2435#2436#0" expanded="true" />
+            <element signature="e#2472#2473#0" expanded="true" />
+            <element signature="e#2533#2534#0" expanded="true" />
+            <element signature="e#2585#2586#0" expanded="true" />
+            <element signature="e#2626#2627#0" expanded="true" />
+            <element signature="e#2663#2664#0" expanded="true" />
+            <element signature="e#2723#2724#0" expanded="true" />
+            <element signature="e#2775#2776#0" expanded="true" />
+            <element signature="e#2815#2816#0" expanded="true" />
+            <element signature="e#2854#2855#0" expanded="true" />
+            <element signature="e#3000#3001#0" expanded="true" />
+            <element signature="e#3028#3029#0" expanded="true" />
+            <element signature="e#3067#3068#0" expanded="true" />
+            <element signature="e#3101#3102#0" expanded="true" />
+            <element signature="e#3138#3139#0" expanded="true" />
+            <element signature="e#3171#3172#0" expanded="true" />
+            <element signature="e#3224#3225#0" expanded="true" />
+            <element signature="e#3268#3269#0" expanded="true" />
+            <element signature="e#3299#3300#0" expanded="true" />
+            <element signature="e#3329#3330#0" expanded="true" />
+            <element signature="e#3372#3373#0" expanded="true" />
+            <element signature="e#3410#3411#0" expanded="true" />
+            <element signature="e#3444#3445#0" expanded="true" />
+            <element signature="e#3477#3478#0" expanded="true" />
+            <element signature="e#3526#3527#0" expanded="true" />
+            <element signature="e#3570#3571#0" expanded="true" />
+            <element signature="e#3599#3600#0" expanded="true" />
+            <element signature="e#3627#3628#0" expanded="true" />
+            <element signature="e#3666#3667#0" expanded="true" />
+            <element signature="e#3700#3701#0" expanded="true" />
+            <element signature="e#3738#3739#0" expanded="true" />
+            <element signature="e#3772#3773#0" expanded="true" />
+            <element signature="e#3827#3828#0" expanded="true" />
+            <element signature="e#3873#3874#0" expanded="true" />
+            <element signature="e#3910#3911#0" expanded="true" />
+            <element signature="e#3943#3944#0" expanded="true" />
+            <element signature="e#3995#3996#0" expanded="true" />
+            <element signature="e#4039#4040#0" expanded="true" />
+            <element signature="e#4076#4077#0" expanded="true" />
+            <element signature="e#4109#4110#0" expanded="true" />
+            <element signature="e#4161#4162#0" expanded="true" />
+            <element signature="e#4205#4206#0" expanded="true" />
+            <element signature="e#4238#4239#0" expanded="true" />
+            <element signature="e#4267#4268#0" expanded="true" />
+            <element signature="e#4311#4312#0" expanded="true" />
+            <element signature="e#4347#4348#0" expanded="true" />
+            <element signature="e#4378#4379#0" expanded="true" />
+            <element signature="e#4408#4409#0" expanded="true" />
+            <element signature="e#4451#4452#0" expanded="true" />
+            <element signature="e#4489#4490#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/ui/store/UploadCardActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/utils/PicassoHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="75" column="16" selection-start-line="75" selection-start-column="16" selection-end-line="75" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/model/responseModel/StoreModel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
-          <caret line="191" column="47" selection-start-line="191" selection-start-column="47" selection-end-line="191" selection-end-column="47" />
+          <caret line="62" column="21" selection-start-line="62" selection-start-column="12" selection-end-line="62" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#6745#7189#0" expanded="true" />
-            <element signature="e#7188#7189#0" expanded="true" />
+            <element signature="e#7877#7878#0" expanded="true" />
+            <element signature="e#7907#7908#0" expanded="true" />
+            <element signature="e#8207#8208#0" expanded="true" />
+            <element signature="e#8236#8237#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/network/APIService.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/utils/AliyunUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="870">
+          <caret line="78" column="23" selection-start-line="78" selection-start-column="23" selection-end-line="78" selection-end-column="23" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/ui/store/OpenStoreActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="124" column="56" selection-start-line="124" selection-start-column="56" selection-end-line="124" selection-end-column="56" />
+        <state relative-caret-position="285">
+          <caret line="184" column="51" selection-start-line="184" selection-start-column="51" selection-end-line="184" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/ui/store/ContinueStoreActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1033">
+          <caret line="209" column="52" selection-start-line="209" selection-start-column="52" selection-end-line="209" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/ui/store/UploadCardActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="189" column="7" selection-start-line="189" selection-start-column="7" selection-end-line="203" selection-end-column="11" />
+          <folding>
+            <element signature="e#7271#7719#0" expanded="true" />
+            <element signature="e#7718#7719#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/utils/CustomHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="617">
+          <caret line="99" column="16" selection-start-line="99" selection-start-column="16" selection-end-line="99" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/network/APIService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="38" column="86" selection-start-line="38" selection-start-column="86" selection-end-line="38" selection-end-column="86" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_store_message.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="419">
+          <caret line="44" column="48" selection-start-line="44" selection-start-column="29" selection-end-line="44" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/ui/store/StoreMessageActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2056">
+          <caret line="165" column="41" selection-start-line="165" selection-start-column="41" selection-end-line="165" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#5785#6177#0" expanded="true" />
+            <element signature="e#6176#6177#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tv/doubuy/ui/store/StoreFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="52" column="20" selection-start-line="52" selection-start-column="20" selection-end-line="52" selection-end-column="20" />
+        <state relative-caret-position="390">
+          <caret line="59" column="54" selection-start-line="59" selection-start-column="54" selection-end-line="59" selection-end-column="54" />
           <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_store.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="39" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/layout_store_manage.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="34" column="42" selection-start-line="34" selection-start-column="42" selection-end-line="34" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
       </provider>
     </entry>
   </component>

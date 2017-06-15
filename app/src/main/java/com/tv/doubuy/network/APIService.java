@@ -7,6 +7,7 @@ import com.tv.doubuy.model.requestModel.BindRequestModel;
 import com.tv.doubuy.model.requestModel.CreateShposModel;
 import com.tv.doubuy.model.requestModel.LoginRequestModel;
 import com.tv.doubuy.model.requestModel.ProfileModel;
+import com.tv.doubuy.model.requestModel.PutStoreInfoModel;
 import com.tv.doubuy.model.requestModel.ShopIdCardModel;
 import com.tv.doubuy.model.requestModel.SiginModel;
 import com.tv.doubuy.model.requestModel.SignupModel;
@@ -78,4 +79,9 @@ public interface APIService {
 
     @POST("users/{store_id}/createOrUpdateProfile")
     Observable<BaseResponse> setStoreInfoCard(@Path("store_id") String id, @Body ShopIdCardModel shopIdCardModel);
+
+    @PUT("shops/{store_id}/info")
+    Observable<BaseResponse> putStoreInfo(@Path("store_id") String id, @Body PutStoreInfoModel putStoreInfoModel);
+
+
 }

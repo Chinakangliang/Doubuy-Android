@@ -95,7 +95,11 @@
         <activity
             android:name=".ui.store.ContinueStoreActivity"
             android:screenOrientation="portrait"></activity>
-
+        <!--店铺信息-->
+        <activity
+            android:name=".ui.store.StoreMessageActivity"
+            android:screenOrientation="portrait"></activity>
+        <!--WebView-->
         <activity
             android:name=".html.HtmlActivity"
             android:screenOrientation="portrait" />

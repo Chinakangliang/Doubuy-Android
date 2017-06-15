@@ -6,6 +6,7 @@ import android.graphics.Bitmap;
 import android.widget.ImageView;
 
 import com.squareup.picasso.Picasso;
+import com.tv.doubuy.R;
 
 
 public class PicassoHelper {
@@ -77,8 +78,8 @@ public class PicassoHelper {
             String newImgUrl = imgUrl.replace("https", "http");
             Picasso.with(mContext)
                     .load(newImgUrl)
-//                    .placeholder(R.mipmap.icon_avatar_default)
-//                    .error(R.mipmap.icon_avatar_default)
+                    .placeholder(R.mipmap.ic_launcher)
+                    .error(R.mipmap.ic_launcher)
                     .config(Bitmap.Config.RGB_565)
                     .priority(Picasso.Priority.HIGH)
                     .fit()

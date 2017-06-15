@@ -54,7 +54,6 @@ public class MainActivity extends BaseActivity implements CompoundButton.OnCheck
     }
 
     private void initView() {
-
 //        final int position = getIntent().getIntExtra("position", 20);
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override

@@ -1,12 +1,13 @@
 package com.tv.doubuy.model.responseModel;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * Created by apple on 2017/6/13.
  */
 
-public class StoreModel {
+public class StoreModel implements Serializable {
 
 
     /**
@@ -273,7 +274,7 @@ public class StoreModel {
         this.customers = customers;
     }
 
-    public static class OwnerBean {
+    public static class OwnerBean implements Serializable {
         /**
          * id : 91
          * userNO : 149674292099491
@@ -668,7 +669,7 @@ public class StoreModel {
             this.profile = profile;
         }
 
-        public static class ProfileBean {
+        public static class ProfileBean implements Serializable {
             /**
              * id : 22
              * bankAccount : null
@@ -835,7 +836,7 @@ public class StoreModel {
         }
     }
 
-    public static class ProfileBeanX {
+    public static class ProfileBeanX implements Serializable {
         /**
          * id : 66
          * companyName : 投资者
@@ -1051,7 +1052,7 @@ public class StoreModel {
         }
     }
 
-    public static class StaffsBean {
+    public static class StaffsBean implements Serializable {
         /**
          * id : 91
          * userNO : 149674292099491
@@ -1446,7 +1447,7 @@ public class StoreModel {
             this.shopStaffs = shopStaffs;
         }
 
-        public static class ShopStaffsBean {
+        public static class ShopStaffsBean implements Serializable {
             /**
              * description : null
              */

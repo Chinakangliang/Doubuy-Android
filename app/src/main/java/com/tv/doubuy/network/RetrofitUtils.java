@@ -7,6 +7,7 @@ import com.tv.doubuy.model.requestModel.BindRequestModel;
 import com.tv.doubuy.model.requestModel.CreateShposModel;
 import com.tv.doubuy.model.requestModel.LoginRequestModel;
 import com.tv.doubuy.model.requestModel.ProfileModel;
+import com.tv.doubuy.model.requestModel.PutStoreInfoModel;
 import com.tv.doubuy.model.requestModel.ShopIdCardModel;
 import com.tv.doubuy.model.requestModel.SiginModel;
 import com.tv.doubuy.model.requestModel.SignupModel;
@@ -180,6 +181,15 @@ public class RetrofitUtils {
 //        toSubscribe(mApiService.putStoreInfo(storeId, storeInfoModel), subscriber);
 
         toSubscribe(mApiService.setStoreInfoCard(storeId, storeInfoModel), subscriber);
+
+    }
+
+    /**
+     * 修改店铺信息
+     */
+    public void putModifyStoreInfo(String storeid, PutStoreInfoModel storeInfoModel, ProgressSubscriber subscriber) {
+
+        toSubscribe(mApiService.putStoreInfo(storeid, storeInfoModel), subscriber);
 
     }
 

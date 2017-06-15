@@ -101,7 +101,7 @@ public class WXEntryActivity extends Activity implements IWXAPIEventHandler {
                     finish();
                 } else {
                     intent.setClass(WXEntryActivity.this, BindMobileActivity.class);
-                    intent.putExtra("openid", infoModel.getOpenid());
+                    intent.putExtra("openid", infoModel.getUser().getOpenid() + "");
                     startActivity(intent);
                     finish();
                 }

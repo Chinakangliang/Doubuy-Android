@@ -184,6 +184,8 @@ public class OpenStoreActivity extends BaseActivity implements View.OnClickListe
             @Override
             public void onSuccess(String fileUrl) {
                 photoPath = fileUrl;
+                PicassoHelper.getInstance().setAvatar(OpenStoreActivity.this, fileUrl, ivPhoto);
+
             }
 
             @Override
@@ -192,7 +194,6 @@ public class OpenStoreActivity extends BaseActivity implements View.OnClickListe
 
             }
         });
-        PicassoHelper.getInstance().setLocalImage(this, result.getImage().getPath(), ivPhoto);
 
     }
 

@@ -8,9 +8,6 @@ import com.tv.doubuy.base.BaseActivity;
 import com.tv.doubuy.ui.login.LoginActivity;
 import com.tv.doubuy.utils.DouBuyCache;
 
-/**
- * Created by apple on 2017/6/12.
- */
 
 public class WelcomeActivity extends BaseActivity {
 
@@ -19,6 +16,7 @@ public class WelcomeActivity extends BaseActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_welcome);
 
         initViews();
     }

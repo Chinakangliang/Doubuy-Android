@@ -31,13 +31,14 @@ public class APIUtils {
 
     public String getUserToken() {
         douBuyCache = new DouBuyCache(mcontext);
+
         return douBuyCache.getUserToken();
     }
 
     public String getStoreId() {
-
         douBuyCache = new DouBuyCache(mcontext);
-        return douBuyCache.getStoreId();
+        String storeId = douBuyCache.getStoreId();
+        return storeId;
     }
 
     public String getApiPath() {
