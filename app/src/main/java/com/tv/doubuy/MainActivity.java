@@ -1,5 +1,6 @@
 package com.tv.doubuy;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
@@ -12,6 +13,7 @@ import android.widget.Toast;
 import com.tv.doubuy.adapter.MyFragmentPagerAdapter;
 import com.tv.doubuy.base.BaseActivity;
 import com.tv.doubuy.ui.home.BlankFragment;
+import com.tv.doubuy.ui.mine.MindeFragment;
 import com.tv.doubuy.ui.store.StoreFragment;
 
 import java.util.ArrayList;
@@ -35,8 +37,8 @@ public class MainActivity extends BaseActivity implements CompoundButton.OnCheck
     RadioGroup radioGroup;
     @BindView(R.id.viewPager)
     ViewPager viewPager;
-    private BlankFragment blankFragment;
     private long exitTime;
+    public static final String TAG_EXIT = "exit";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,10 +81,11 @@ public class MainActivity extends BaseActivity implements CompoundButton.OnCheck
 
         List<Fragment> alFragment = new ArrayList<Fragment>();
         StoreFragment storeFragment = new StoreFragment();
+        MindeFragment mindeFragment = new MindeFragment();
         alFragment.add(storeFragment);
         alFragment.add(BlankFragment.newInstance("ITEM1"));
         alFragment.add(BlankFragment.newInstance("ITEM2"));
-        alFragment.add(BlankFragment.newInstance("ITEM3"));
+        alFragment.add(mindeFragment);
 
         //ViewPager设置适配器
         viewPager.setAdapter(new MyFragmentPagerAdapter(getSupportFragmentManager(), alFragment));
@@ -171,6 +174,18 @@ public class MainActivity extends BaseActivity implements CompoundButton.OnCheck
             return true;
         }
         return super.onKeyDown(keyCode, event);
+    }
+
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        if (intent != null) {
+            boolean isExit = intent.getBooleanExtra(TAG_EXIT, false);
+            if (isExit) {
+                this.finish();
+            }
+        }
     }
 
 }

@@ -231,17 +231,13 @@ public class StoreMessageActivity extends BaseActivity implements View.OnClickLi
 
     @Override
     public void takeSuccess(final TResult result) {
-
+        PicassoHelper.getInstance().setLocalImage(StoreMessageActivity.this, result.getImage().getPath(), ivStoreHead);
         AliyunUtils aliyunUtils = new AliyunUtils();
         aliyunUtils.upFile(result.getImage().getPath(), this);
         aliyunUtils.AliyunUploadCal(new AliyunUtils.AliyunUploadCallback() {
             @Override
             public void onSuccess(String fileUrl) {
-
                 photoPath = APIService.ALIYUN_OSS_IMAGE_PATH + fileUrl;
-                PicassoHelper.getInstance().setAvatar(StoreMessageActivity.this, photoPath, ivStoreHead);
-
-
             }
 
             @Override

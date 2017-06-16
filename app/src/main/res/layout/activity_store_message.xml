@@ -41,6 +41,7 @@
             android:text="猫の天空之城"
             android:textSize="14sp" />
 
+
         <ImageView
             android:id="@+id/iv_store_NameDelete"
             android:layout_width="wrap_content"

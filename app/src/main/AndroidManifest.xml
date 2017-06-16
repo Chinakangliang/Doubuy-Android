@@ -104,6 +104,10 @@
         <activity
             android:name=".html.HtmlActivity"
             android:screenOrientation="portrait" />
+        <!--设置-->
+        <activity
+            android:name=".ui.mine.SettingActivity"
+            android:screenOrientation="portrait"></activity>
         <activity
             android:name=".wxapi.WXEntryActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"

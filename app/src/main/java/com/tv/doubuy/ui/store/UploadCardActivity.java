@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -210,10 +209,8 @@ public class UploadCardActivity extends BaseActivity implements View.OnClickList
             public void onSuccess(String fileUrl) {
                 if (i == 1) {
                     photoPath1 = APIService.ALIYUN_OSS_IMAGE_PATH + fileUrl;
-                    Log.i("111","-----photoPath1---"+photoPath1);
                 } else {
                     photoPath2 = APIService.ALIYUN_OSS_IMAGE_PATH + fileUrl;
-                    Log.i("111","-----photoPath2---"+photoPath2);
 
                 }
             }

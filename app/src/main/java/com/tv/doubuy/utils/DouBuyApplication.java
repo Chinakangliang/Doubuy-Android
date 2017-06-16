@@ -53,4 +53,8 @@ public class DouBuyApplication extends Application {
     }
 
 
+    public void removeToken() {
+        setUserToken("");
+    }
+
 }

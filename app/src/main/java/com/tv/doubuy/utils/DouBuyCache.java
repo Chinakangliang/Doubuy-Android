@@ -62,4 +62,10 @@ public class DouBuyCache {
     }
 
 
+    public void removeCache() {
+        saveStoreId("");
+        saveUserId("");
+        saveUserToken("");
+    }
+
 }
