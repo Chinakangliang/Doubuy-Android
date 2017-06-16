@@ -19,6 +19,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.VideoView;
 
 import com.tv.doubuy.MainActivity;
 import com.tv.doubuy.R;
@@ -31,7 +32,6 @@ import com.tv.doubuy.network.RetrofitUtils;
 import com.tv.doubuy.network.SubscriberOnNextListener;
 import com.tv.doubuy.utils.DouBuyApplication;
 import com.tv.doubuy.utils.DouBuyCache;
-import com.tv.doubuy.view.CustomVideoView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -43,7 +43,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
 
 
     @BindView(R.id.video_view)
-    CustomVideoView videoView;
+    VideoView videoView;
     @BindView(R.id.lin_wxlogin)
     LinearLayout linWxlogin;
     @BindView(R.id.lin_regis)
@@ -193,7 +193,6 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                 etPassword.setText("");
                 break;
             case R.id.tv_forgot:
-
                 intent.setClass(LoginActivity.this, ForgotActivity.class);
                 startActivity(intent);
                 break;

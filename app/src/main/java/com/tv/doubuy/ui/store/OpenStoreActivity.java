@@ -178,14 +178,16 @@ public class OpenStoreActivity extends BaseActivity implements View.OnClickListe
 
     @Override
     public void takeSuccess(TResult result) {
+        PicassoHelper.getInstance().setLocalImage(OpenStoreActivity.this, result.getImage().getPath(), ivPhoto);
 
         AliyunUtils aliyunUtils = new AliyunUtils();
         aliyunUtils.upFile(result.getImage().getPath(), this);
         aliyunUtils.AliyunUploadCal(new AliyunUtils.AliyunUploadCallback() {
             @Override
             public void onSuccess(String fileUrl) {
-                photoPath = fileUrl;
-                PicassoHelper.getInstance().setAvatar(OpenStoreActivity.this, fileUrl, ivPhoto);
+
+                photoPath = APIService.ALIYUN_STORAGE_BUCKET_NAME + fileUrl;
+
 
             }
 

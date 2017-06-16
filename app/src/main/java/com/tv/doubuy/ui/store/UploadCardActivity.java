@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -59,7 +60,9 @@ public class UploadCardActivity extends BaseActivity implements View.OnClickList
     private TakePhoto takePhoto;
     private InvokeParam invokeParam;
     private CreateShposModel shposModel;
-    private String photoPath;
+    private String photoPath1;
+    private String photoPath2;
+    int i = 1;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -104,7 +107,7 @@ public class UploadCardActivity extends BaseActivity implements View.OnClickList
             case R.id.bt_submit:
 //                Intent intent = new Intent(UploadCardActivity.this, RealSumbitActivity.class);
 //                startActivity(intent);
-                if (!TextUtils.isEmpty(photoPath)) {
+                if (!TextUtils.isEmpty(photoPath1) || !TextUtils.isEmpty(photoPath2)) {
                     putIdCardInfo();
                 }
                 putIdCardInfo();
@@ -187,13 +190,32 @@ public class UploadCardActivity extends BaseActivity implements View.OnClickList
     @Override
     public void takeSuccess(final TResult result) {
 
+
+        if (i < 2) {
+            String path = result.getImage().getPath();
+            PicassoHelper.getInstance().setLocalImage(UploadCardActivity.this, path, ivPhotoFirst);
+            i++;
+        } else {
+            PicassoHelper.getInstance().setLocalImage(UploadCardActivity.this, result.getImage().getPath(), ivPhotoTwo);
+        }
+
         AliyunUtils aliyunUtils = new AliyunUtils();
-        aliyunUtils.upFile(result.getImage().getPath(), this);
-        aliyunUtils.AliyunUploadCal(new AliyunUtils.AliyunUploadCallback() {
+        aliyunUtils.upFile(result.getImage().
+
+                getPath(), this);
+        aliyunUtils.AliyunUploadCal(new AliyunUtils.AliyunUploadCallback()
+
+        {
             @Override
             public void onSuccess(String fileUrl) {
-                PicassoHelper.getInstance().setLocalImage(UploadCardActivity.this, result.getImage().getPath(), ivPhotoFirst);
-                photoPath = APIService.ALIYUN_OSS_IMAGE_PATH + result.getImage().getPath();
+                if (i == 1) {
+                    photoPath1 = APIService.ALIYUN_OSS_IMAGE_PATH + fileUrl;
+                    Log.i("111","-----photoPath1---"+photoPath1);
+                } else {
+                    photoPath2 = APIService.ALIYUN_OSS_IMAGE_PATH + fileUrl;
+                    Log.i("111","-----photoPath2---"+photoPath2);
+
+                }
             }
 
             @Override
@@ -218,8 +240,8 @@ public class UploadCardActivity extends BaseActivity implements View.OnClickList
     public void putIdCardInfo() {
 
         ShopIdCardModel idCardModel = new ShopIdCardModel();
-        idCardModel.setIdCardImage1(photoPath);
-        idCardModel.setIdCardImage2(photoPath);
+        idCardModel.setIdCardImage1(photoPath1);
+        idCardModel.setIdCardImage2(photoPath2);
 
         RetrofitUtils utils = new RetrofitUtils(this);
 
