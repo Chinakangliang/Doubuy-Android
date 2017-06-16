@@ -19,6 +19,7 @@ import com.tv.doubuy.network.APIUtils;
 import com.tv.doubuy.network.ProgressSubscriber;
 import com.tv.doubuy.network.RetrofitUtils;
 import com.tv.doubuy.network.SubscriberOnNextListener;
+import com.tv.doubuy.ui.mine.MindeFragment;
 import com.tv.doubuy.utils.PicassoHelper;
 
 import butterknife.BindView;
@@ -51,6 +52,27 @@ public class StoreFragment extends BaseExtendFragment implements View.OnClickLis
 
     private StoreGridAdapter storeAdapter;
     private StoreModel storeModel;
+
+    private static final String ARG_PARAM = "param";
+    private String mParam;
+
+    public static StoreFragment newInstance(String param) {
+        StoreFragment fragment = new StoreFragment();
+        Bundle args = new Bundle();
+        args.putString(ARG_PARAM, param);
+        fragment.setArguments(args);
+        return fragment;
+    }
+
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (getArguments() != null) {
+            mParam = getArguments().getString(ARG_PARAM);
+        }
+    }
+
 
 
     @Override
@@ -108,7 +130,14 @@ public class StoreFragment extends BaseExtendFragment implements View.OnClickLis
 
 
     public void initData() {
-        recyler.setLayoutManager(new GridLayoutManager(getActivity(), 3));
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(getActivity(), 3) {
+            @Override
+            public boolean canScrollVertically() {
+                return false;
+            }
+        };
+
+        recyler.setLayoutManager(gridLayoutManager);
         storeAdapter = new StoreGridAdapter(getActivity());
         recyler.setAdapter(storeAdapter);
 

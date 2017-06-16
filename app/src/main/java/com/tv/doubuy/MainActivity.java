@@ -12,9 +12,11 @@ import android.widget.Toast;
 
 import com.tv.doubuy.adapter.MyFragmentPagerAdapter;
 import com.tv.doubuy.base.BaseActivity;
-import com.tv.doubuy.ui.home.BlankFragment;
 import com.tv.doubuy.ui.mine.MindeFragment;
+import com.tv.doubuy.ui.notice.NoticeFragment;
+import com.tv.doubuy.ui.order.OrderFragment;
 import com.tv.doubuy.ui.store.StoreFragment;
+import com.tv.doubuy.ui.video.VideoFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -58,7 +60,6 @@ public class MainActivity extends BaseActivity implements CompoundButton.OnCheck
     }
 
     private void initView() {
-//        final int position = getIntent().getIntExtra("position", 20);
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
@@ -72,8 +73,11 @@ public class MainActivity extends BaseActivity implements CompoundButton.OnCheck
                     case R.id.rb_discovery:
                         viewPager.setCurrentItem(2, true);
                         break;
-                    case R.id.rb_me:
+                    case R.id.rb_notice:
                         viewPager.setCurrentItem(3, true);
+                        break;
+                    case R.id.rb_me:
+                        viewPager.setCurrentItem(4, true);
                         break;
                 }
             }
@@ -81,11 +85,12 @@ public class MainActivity extends BaseActivity implements CompoundButton.OnCheck
 
         List<Fragment> alFragment = new ArrayList<Fragment>();
         StoreFragment storeFragment = new StoreFragment();
-        MindeFragment mindeFragment = new MindeFragment();
-        alFragment.add(storeFragment);
-        alFragment.add(BlankFragment.newInstance("ITEM1"));
-        alFragment.add(BlankFragment.newInstance("ITEM2"));
-        alFragment.add(mindeFragment);
+        VideoFragment videoFragment = new VideoFragment();
+        alFragment.add(new StoreFragment().newInstance(""));
+        alFragment.add(new OrderFragment().newInstance("我是第二个页面"));
+        alFragment.add(new VideoFragment().newInstance("我是第三个"));
+        alFragment.add(new NoticeFragment().newInstance("我是第四个页面"));
+        alFragment.add(new MindeFragment().newInstance("我是第五个页面"));
 
         //ViewPager设置适配器
         viewPager.setAdapter(new MyFragmentPagerAdapter(getSupportFragmentManager(), alFragment));
@@ -112,6 +117,9 @@ public class MainActivity extends BaseActivity implements CompoundButton.OnCheck
                         radioGroup.check(R.id.rb_discovery);
                         break;
                     case 3:
+                        radioGroup.check(R.id.rb_notice);
+                        break;
+                    case 4:
                         radioGroup.check(R.id.rb_me);
                         break;
                 }
@@ -132,7 +140,6 @@ public class MainActivity extends BaseActivity implements CompoundButton.OnCheck
             case R.id.rb_chat:
                 if (isChecked) {
                     viewPager.setCurrentItem(0, true);
-
                 }
                 break;
             case R.id.rb_contacts:
@@ -147,9 +154,16 @@ public class MainActivity extends BaseActivity implements CompoundButton.OnCheck
 
                 }
                 break;
-            case R.id.rb_me:
+            case R.id.rb_notice:
                 if (isChecked) {
                     viewPager.setCurrentItem(3, true);
+                }
+
+                break;
+
+            case R.id.rb_me:
+                if (isChecked) {
+                    viewPager.setCurrentItem(4, true);
                 }
 
                 break;
@@ -176,7 +190,6 @@ public class MainActivity extends BaseActivity implements CompoundButton.OnCheck
         return super.onKeyDown(keyCode, event);
     }
 
-
     @Override
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
@@ -187,5 +200,6 @@ public class MainActivity extends BaseActivity implements CompoundButton.OnCheck
             }
         }
     }
+
 
 }

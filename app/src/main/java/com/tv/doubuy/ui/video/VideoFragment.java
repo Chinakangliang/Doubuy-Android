@@ -1,33 +1,31 @@
-package com.tv.doubuy.ui.mine;
+package com.tv.doubuy.ui.video;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
 import com.tv.doubuy.R;
 import com.tv.doubuy.base.BaseExtendFragment;
+import com.tv.doubuy.ui.notice.NoticeFragment;
 
 import butterknife.ButterKnife;
 
 /**
- * Created by apple on 2017/6/8.
+ * Created by apple on 2017/6/16.
  */
-public class MindeFragment extends BaseExtendFragment {
 
+public class VideoFragment extends BaseExtendFragment {
 
     private static final String ARG_PARAM = "param";
     private String mParam;
 
-    public static MindeFragment newInstance(String param) {
-        MindeFragment fragment = new MindeFragment();
+    public static VideoFragment newInstance(String param) {
+        VideoFragment fragment = new VideoFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM, param);
         fragment.setArguments(args);
         return fragment;
     }
-
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,7 +33,6 @@ public class MindeFragment extends BaseExtendFragment {
             mParam = getArguments().getString(ARG_PARAM);
         }
     }
-
 
     @Override
     public void onCreateViewExtend(Bundle savedInstanceState) {
@@ -46,18 +43,6 @@ public class MindeFragment extends BaseExtendFragment {
         ButterKnife.bind(this, view);
         setContentView(view);
         textView.setText("" + mParam);
-        textView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                initViews();
-            }
-        });
 
     }
-
-    public void initViews() {
-        Intent intent = new Intent(getActivity(), SettingActivity.class);
-        startActivity(intent);
-    }
-
 }

@@ -40,6 +40,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:background="@drawable/selector_store_order"
+                android:button="@null"
                 android:checked="false"
                 android:gravity="center" />
         </LinearLayout>
@@ -56,6 +58,26 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:background="@drawable/selector_store_video"
+                android:button="@null"
+                android:checked="false"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <RadioButton
+                android:id="@+id/rb_notice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/selector_store_notice"
+                android:button="@null"
                 android:checked="false"
                 android:gravity="center" />
         </LinearLayout>
@@ -72,9 +94,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:background="@drawable/selector_store_mine"
+                android:button="@null"
                 android:checked="false"
                 android:gravity="center" />
         </LinearLayout>
+
     </RadioGroup>
 
     <android.support.v4.view.ViewPager
