@@ -33,5 +33,6 @@ public class WelcomeActivity extends BaseActivity {
             intent.setClass(this, LoginActivity.class);
             startActivity(intent);
         }
+        finish();
     }
 }

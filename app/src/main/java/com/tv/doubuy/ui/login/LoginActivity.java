@@ -218,10 +218,10 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                     douBuyCache.saveUserToken(infoModel.getToken());
                     douBuyCache.saveUserId(infoModel.getUser().getId() + "");
                     douBuyCache.saveStoreId(infoModel.getUser().getShop().getId() + "");
-
                     DouBuyApplication.getInstance().setUserToken(infoModel.getToken());
                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                     startActivity(intent);
+
                     finish();
                 }
 

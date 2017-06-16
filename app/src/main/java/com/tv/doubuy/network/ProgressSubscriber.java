@@ -77,11 +77,12 @@ public class ProgressSubscriber extends Subscriber implements ProgressCancelList
             try {
                 ErrorModel model = APIUtils.gson.fromJson(((HttpException) e).response().errorBody().string(), ErrorModel.class);
                 Toast.makeText(context, "" + model.getError(), Toast.LENGTH_SHORT).show();
-                dismissProgressDialog();
+
             } catch (IOException e1) {
                 e1.printStackTrace();
             }
         }
+        dismissProgressDialog();
     }
 
     /**

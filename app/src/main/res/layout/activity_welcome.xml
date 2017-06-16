@@ -5,7 +5,6 @@
     android:background="@color/colorc7c7cd"
     android:orientation="vertical">
 
-
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
