@@ -10,7 +10,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.text.InputType;
-import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -30,6 +29,7 @@ import com.tv.doubuy.network.APIUtils;
 import com.tv.doubuy.network.ProgressSubscriber;
 import com.tv.doubuy.network.RetrofitUtils;
 import com.tv.doubuy.network.SubscriberOnNextListener;
+import com.tv.doubuy.utils.DouBuyApplication;
 import com.tv.doubuy.utils.DouBuyCache;
 import com.tv.doubuy.view.CustomVideoView;
 
@@ -211,47 +211,25 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         siginModel.setMobile(etMobile.getText().toString());
         siginModel.setPassword(etPassword.getText().toString());
 
-        RetrofitUtils utils = new RetrofitUtils(this);
-
-        utils.setUserSignin(siginModel, new ProgressSubscriber(new SubscriberOnNextListener() {
+        RetrofitUtils.getInstance(this).setUserSignin(siginModel, new ProgressSubscriber(new SubscriberOnNextListener() {
             @Override
             public void onNext(Object o) {
                 UserInfoModel infoModel = APIUtils.gson.fromJson(o.toString(), UserInfoModel.class);
                 if (infoModel.getToken() != null || !infoModel.getToken().equals("")) {
                     douBuyCache.saveUserToken(infoModel.getToken());
-                    Log.i("111", "-----douBuyCache--" + douBuyCache.getUserToken());
                     douBuyCache.saveUserId(infoModel.getUser().getId() + "");
                     douBuyCache.saveStoreId(infoModel.getUser().getShop().getId() + "");
 
-                    RetrofitUtils.strToken = infoModel.getToken();
+                    DouBuyApplication.getInstance().setUserToken(infoModel.getToken());
                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                     startActivity(intent);
-//                    finish();
+                    finish();
                 }
 
 
             }
 
         }, this));
-//        RetrofitUtils.getInstance(this).setUserSignin(siginModel, new ProgressSubscriber(new SubscriberOnNextListener() {
-//            @Override
-//            public void onNext(Object o) {
-//                UserInfoModel infoModel = APIUtils.gson.fromJson(o.toString(), UserInfoModel.class);
-//                if (infoModel.getToken() != null || !infoModel.getToken().equals("")) {
-//
-//                    douBuyCache.saveUserToken(infoModel.getToken());
-//                    Log.i("111", "-----douBuyCache--" + douBuyCache.getUserToken());
-//                    douBuyCache.saveUserId(infoModel.getUser().getId() + "");
-//                    douBuyCache.saveStoreId(infoModel.getUser().getShop().getId() + "");
-//
-//                    RetrofitUtils.strToken = infoModel.getToken();
-//                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-//                    startActivity(intent);
-////                    finish();
-//                }
-//
-//
-//            }
-//        }, this));
+
     }
 }

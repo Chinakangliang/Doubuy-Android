@@ -12,6 +12,7 @@ import com.tv.doubuy.model.requestModel.PutStoreInfoModel;
 import com.tv.doubuy.model.requestModel.ShopIdCardModel;
 import com.tv.doubuy.model.requestModel.SiginModel;
 import com.tv.doubuy.model.requestModel.SignupModel;
+import com.tv.doubuy.utils.DouBuyCache;
 
 import java.net.CookieHandler;
 import java.net.CookieManager;
@@ -38,21 +39,18 @@ public class RetrofitUtils {
     private static Retrofit mRetrofit;
     private static APIService mApiService;
 
-
     public static String strToken = null;
 
 
-//    private static DouBuyCache douBuyCache;
+    public static RetrofitUtils getInstance(Context context) {
+        if (mInstance == null) {
+            synchronized (RetrofitUtils.class) {
+                mInstance = new RetrofitUtils(context);
+            }
+        }
+        return mInstance;
+    }
 
-//    public static RetrofitUtils getInstance(Context context) {
-//        if (mInstance == null) {
-//            synchronized (RetrofitUtils.class) {
-//                mInstance = new RetrofitUtils(context);
-////                douBuyCache = new DouBuyCache(context);
-//            }
-//        }
-//        return mInstance;
-//    }
 
     public RetrofitUtils(Context context) {
 
@@ -65,7 +63,7 @@ public class RetrofitUtils {
 
         HttpCommonInterceptor commonInterceptor = new HttpCommonInterceptor.Builder()
                 .addHeaderParams("Content-Type", "application/x-www-form-urlencoded")
-                .addHeaderParams("Authorization", "JWT " + strToken)
+                .addHeaderParams("Authorization", "JWT " + APIUtils.getInstance(context).getUserToken())
 //                .addHeaderParams("Content-Type", "application/x-www-form-urlencoded")
                 .build();
 

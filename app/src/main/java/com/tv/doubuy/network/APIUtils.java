@@ -1,8 +1,10 @@
 package com.tv.doubuy.network;
 
 import android.content.Context;
+import android.util.Log;
 
 import com.google.gson.Gson;
+import com.tv.doubuy.utils.DouBuyApplication;
 import com.tv.doubuy.utils.DouBuyCache;
 
 /**
@@ -29,11 +31,19 @@ public class APIUtils {
         return mInstance;
     }
 
-//    public String getUserToken() {
-//        douBuyCache = new DouBuyCache(mcontext);
-//
-//        return douBuyCache.getUserToken();
-//    }
+
+    public String getUserToken() {
+        douBuyCache = new DouBuyCache(mcontext);
+        String token = DouBuyApplication.getInstance().getUserToken();
+        if (token != null && !token.equals("")) {
+
+            Log.i("111", "---token-----");
+            return token;
+        } else {
+            Log.i("111", "---douBuyCache-----");
+            return douBuyCache.getUserToken();
+        }
+    }
 
     public String getStoreId() {
         douBuyCache = new DouBuyCache(mcontext);

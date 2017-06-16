@@ -1,12 +1,13 @@
 package com.tv.doubuy.network;
 
 import android.content.Context;
-import android.util.Log;
 import android.widget.Toast;
 
-import java.net.ConnectException;
-import java.net.SocketTimeoutException;
+import com.tv.doubuy.model.responseModel.ErrorModel;
 
+import java.io.IOException;
+
+import retrofit2.adapter.rxjava.HttpException;
 import rx.Subscriber;
 
 /**
@@ -66,17 +67,31 @@ public class ProgressSubscriber extends Subscriber implements ProgressCancelList
      */
     @Override
     public void onError(Throwable e) {
-        if (e instanceof SocketTimeoutException) {
-            Toast.makeText(context, "网络中断，请检查您的网络状态", Toast.LENGTH_SHORT).show();
-        } else if (e instanceof ConnectException) {
-            Toast.makeText(context, "网络中断，请检查您的网络状态", Toast.LENGTH_SHORT).show();
-        } else {
-            Toast.makeText(context, "error:" + e.getMessage(), Toast.LENGTH_SHORT).show();
-            Log.i("111", "-----error------" + e.getMessage());
+//        if (e instanceof SocketTimeoutException) {
+//            Toast.makeText(context, "网络中断，请检查您的网络状态", Toast.LENGTH_SHORT).show();
+//        } else if (e instanceof ConnectException) {
+//            Toast.makeText(context, "网络中断，请检查您的网络状态", Toast.LENGTH_SHORT).show();
+//        } else {
+//            Toast.makeText(context, "error:" + e.getMessage(), Toast.LENGTH_SHORT).show();
+//        }
+
+
+        if (e instanceof HttpException) {
+
+            try {
+                ErrorModel model = APIUtils.gson.fromJson(((HttpException) e).response().errorBody().string(), ErrorModel.class);
+                Toast.makeText(context, "" + model.getError(), Toast.LENGTH_SHORT).show();
+                dismissProgressDialog();
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
         }
-        dismissProgressDialog();
 
     }
+
+//    Toast.makeText(context, ""+e.get, Toast.LENGTH_SHORT).show();
+
+//
 
     /**
      * 将onNext方法中的返回结果交给Activity或Fragment自己处理

@@ -1,8 +1,7 @@
 package com.tv.doubuy.utils;
 
 import android.app.Application;
-import android.os.Handler;
-import android.os.Looper;
+import android.content.Context;
 
 
 /**
@@ -12,12 +11,9 @@ public class DouBuyApplication extends Application {
 
     private static DouBuyApplication instance;
 
+    private Context mcontext;
 
-    public static Handler handler;
-
-    public static DouBuyApplication getInstance() {
-        return instance;
-    }
+    private String userToken;
 
     @Override
     public void onCreate() {
@@ -26,9 +22,35 @@ public class DouBuyApplication extends Application {
         this.instance = this;
     }
 
-    private void initLeanCloud() {
-        handler = new Handler(Looper.getMainLooper());
+
+    public static DouBuyApplication getInstance() {
+        if (instance == null) {
+            synchronized (DouBuyApplication.class) {
+                instance = new DouBuyApplication();
+            }
+        }
+        return instance;
+    }
+
+    public Context getContext() {
+
+        if (mcontext == null) {
+            mcontext = instance.getApplicationContext();
+        }
+        return mcontext;
+    }
+
+    //TODO  用户Token  全局变量储存一次  本地文件储存一次  ，
+
+    public void setUserToken(String userToken) {
+
+        this.userToken = userToken;
 
     }
+
+    public String getUserToken() {
+        return userToken;
+    }
+
 
 }

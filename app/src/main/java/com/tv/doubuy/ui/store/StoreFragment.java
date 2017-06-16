@@ -68,7 +68,6 @@ public class StoreFragment extends BaseExtendFragment implements View.OnClickLis
         super.onResumeExtend();
         initViews();
         setListener();
-
     }
 
     public void initViews() {
