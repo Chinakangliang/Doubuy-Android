@@ -108,6 +108,16 @@
         <activity
             android:name=".ui.mine.SettingActivity"
             android:screenOrientation="portrait"></activity>
+
+        <!--运费管理-->
+        <activity
+            android:name=".ui.store.freight.FreightActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <!--员工管理-->
+        <activity
+            android:name=".ui.store.employees.EmployActivity"
+            android:screenOrientation="portrait"></activity>
         <activity
             android:name=".wxapi.WXEntryActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"

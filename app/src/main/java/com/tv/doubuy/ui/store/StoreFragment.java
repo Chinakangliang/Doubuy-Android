@@ -19,7 +19,8 @@ import com.tv.doubuy.network.APIUtils;
 import com.tv.doubuy.network.ProgressSubscriber;
 import com.tv.doubuy.network.RetrofitUtils;
 import com.tv.doubuy.network.SubscriberOnNextListener;
-import com.tv.doubuy.ui.mine.MindeFragment;
+import com.tv.doubuy.ui.store.employees.EmployActivity;
+import com.tv.doubuy.ui.store.freight.FreightActivity;
 import com.tv.doubuy.utils.PicassoHelper;
 
 import butterknife.BindView;
@@ -72,7 +73,6 @@ public class StoreFragment extends BaseExtendFragment implements View.OnClickLis
             mParam = getArguments().getString(ARG_PARAM);
         }
     }
-
 
 
     @Override
@@ -164,7 +164,6 @@ public class StoreFragment extends BaseExtendFragment implements View.OnClickLis
                 startActivity(intent);
                 break;
             case R.id.iv_StoreHead:
-
                 Bundle bundle = new Bundle();
                 intent.setClass(getActivity(), StoreMessageActivity.class);
                 bundle.putSerializable("storeModel", storeModel);
@@ -178,7 +177,20 @@ public class StoreFragment extends BaseExtendFragment implements View.OnClickLis
     @Override
     public void onStoreRecycler(int position) {
 
-        Toast.makeText(getActivity(), "" + position, Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent();
+        switch (position) {
+
+            case 4:
+                intent.setClass(getActivity(), FreightActivity.class);
+                startActivity(intent);
+                break;
+            case 5:
+                intent.setClass(getActivity(), EmployActivity.class);
+                startActivity(intent);
+                break;
+        }
+
+
     }
 
 

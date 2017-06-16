@@ -1,9 +1,9 @@
 package com.tv.doubuy.network;
 
 import android.content.Context;
-import android.widget.Toast;
 
 import com.tv.doubuy.model.responseModel.ErrorModel;
+import com.tv.doubuy.utils.ToastUtils;
 
 import java.io.IOException;
 import java.net.ConnectException;
@@ -68,15 +68,15 @@ public class ProgressSubscriber extends Subscriber implements ProgressCancelList
      * @param e
      */
     @Override
-    public void onError(Throwable e)  {
+    public void onError(Throwable e) {
         if (e instanceof SocketTimeoutException) {
-            Toast.makeText(context, "网络中断，请检查您的网络状态", Toast.LENGTH_SHORT).show();
+            ToastUtils.getInstance().showToast(context, "网络中断，请检查您的网络状态");
         } else if (e instanceof ConnectException) {
-            Toast.makeText(context, "网络中断，请检查您的网络状态", Toast.LENGTH_SHORT).show();
+            ToastUtils.getInstance().showToast(context, "网络中断，请检查您的网络状态");
         } else if (e instanceof HttpException) {
             try {
                 ErrorModel model = APIUtils.gson.fromJson(((HttpException) e).response().errorBody().string(), ErrorModel.class);
-                Toast.makeText(context, "" + model.getError(), Toast.LENGTH_SHORT).show();
+                ToastUtils.getInstance().showToast(context, model.getError() + "");
 
             } catch (IOException e1) {
                 e1.printStackTrace();

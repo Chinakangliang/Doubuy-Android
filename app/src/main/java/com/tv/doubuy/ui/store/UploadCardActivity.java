@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.anthonycr.grant.PermissionsManager;
 import com.anthonycr.grant.PermissionsResultAction;
@@ -35,6 +34,7 @@ import com.tv.doubuy.network.SubscriberOnNextListener;
 import com.tv.doubuy.utils.AliyunUtils;
 import com.tv.doubuy.utils.CustomHelper;
 import com.tv.doubuy.utils.PicassoHelper;
+import com.tv.doubuy.utils.ToastUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -155,7 +155,9 @@ public class UploadCardActivity extends BaseActivity implements View.OnClickList
 
                     @Override
                     public void onDenied(String permission) {
-                        Toast.makeText(UploadCardActivity.this, "没有使用相机和相册的权限，请在权限管理中开启", Toast.LENGTH_SHORT).show();
+                        ToastUtils.getInstance().showToast(UploadCardActivity.this, "没有使用相机和相册的权限，请在权限管理中开启!");
+
+
                     }
                 });
     }
@@ -217,8 +219,7 @@ public class UploadCardActivity extends BaseActivity implements View.OnClickList
 
             @Override
             public void onFailure(Exception e) {
-                Toast.makeText(UploadCardActivity.this, "上传失败请尝试重新上传！", Toast.LENGTH_SHORT).show();
-
+                ToastUtils.getInstance().showToast(UploadCardActivity.this, "上传失败请尝试重新上传!");
             }
         });
 

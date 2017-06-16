@@ -4,7 +4,7 @@ import android.Manifest;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -92,7 +92,7 @@ public class ContinueStoreActivity extends BaseActivity implements TakePhoto.Tak
             @Override
             public void onClick(View v) {
 
-                if (!TextUtils.isEmpty(photoPath)) {
+                if (photoPath != null && !photoPath.equals("")) {
                     putAccessData();
                 } else {
 
@@ -194,18 +194,17 @@ public class ContinueStoreActivity extends BaseActivity implements TakePhoto.Tak
     @Override
     public void takeSuccess(TResult result) {
 
-
+        PicassoHelper.getInstance().setLocalImage(ContinueStoreActivity.this, result.getImage().getPath(), ivShoplicense);
         AliyunUtils aliyunUtils = new AliyunUtils();
         aliyunUtils.upFile(result.getImage().getPath(), this);
         aliyunUtils.AliyunUploadCal(new AliyunUtils.AliyunUploadCallback() {
             @Override
             public void onSuccess(String fileUrl) {
-                PicassoHelper.getInstance().setImage(ContinueStoreActivity.this, APIService.ALIYUN_OSS_IMAGE_PATH + fileUrl, ivShoplicense);
                 photoPath = APIService.ALIYUN_OSS_IMAGE_PATH + fileUrl;
 
+                Log.i("111", "-------" + photoPath);
 
             }
-
             @Override
             public void onFailure(Exception e) {
                 Toast.makeText(ContinueStoreActivity.this, "上传失败请尝试重新上传！", Toast.LENGTH_SHORT).show();
