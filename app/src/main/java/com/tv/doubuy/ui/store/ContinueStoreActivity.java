@@ -128,7 +128,8 @@ public class ContinueStoreActivity extends BaseActivity implements TakePhoto.Tak
         profileModel.setBankOfDeposit(etBankOfDeposit.getText().toString());
         profileModel.setLicenseImage(photoPath);
 
-        RetrofitUtils.getInstance(this).putUserCreateStore(APIUtils.getInstance(this).getStoreId(), profileModel, new ProgressSubscriber(new SubscriberOnNextListener() {
+        RetrofitUtils utils = new RetrofitUtils(this);
+        utils.putUserCreateStore(APIUtils.getInstance(this).getStoreId(), profileModel, new ProgressSubscriber(new SubscriberOnNextListener() {
             @Override
             public void onNext(Object o) {
 

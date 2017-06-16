@@ -221,7 +221,9 @@ public class UploadCardActivity extends BaseActivity implements View.OnClickList
         idCardModel.setIdCardImage1(photoPath);
         idCardModel.setIdCardImage2(photoPath);
 
-        RetrofitUtils.getInstance(this).putStoreInfo(APIUtils.getInstance(this).getStoreId(), idCardModel, new ProgressSubscriber(new SubscriberOnNextListener() {
+        RetrofitUtils utils = new RetrofitUtils(this);
+
+        utils.putStoreInfo(APIUtils.getInstance(this).getStoreId(), idCardModel, new ProgressSubscriber(new SubscriberOnNextListener() {
             @Override
             public void onNext(Object o) {
                 ShopInfoSubmitModel infoSubmitModel = APIUtils.gson.fromJson(o.toString(), ShopInfoSubmitModel.class);

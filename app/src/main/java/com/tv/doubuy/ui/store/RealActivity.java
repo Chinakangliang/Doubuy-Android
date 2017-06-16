@@ -65,7 +65,8 @@ public class RealActivity extends BaseActivity implements View.OnClickListener {
      */
     public void setUserMYReal() {
 
-        RetrofitUtils.getInstance(this).getCreateZM(APIUtils.getInstance(this).getStoreId(), new ProgressSubscriber(new SubscriberOnNextListener() {
+        RetrofitUtils utils = new RetrofitUtils(this);
+        utils.getCreateZM(APIUtils.getInstance(this).getStoreId(), new ProgressSubscriber(new SubscriberOnNextListener() {
             @Override
             public void onNext(Object o) {
                 CertifyModel certifyModel = APIUtils.gson.fromJson(o.toString(), CertifyModel.class);

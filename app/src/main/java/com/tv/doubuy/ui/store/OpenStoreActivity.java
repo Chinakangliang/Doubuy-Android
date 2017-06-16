@@ -125,7 +125,8 @@ public class OpenStoreActivity extends BaseActivity implements View.OnClickListe
             shpsModel.setRealName(etUserName.getText().toString());
             shpsModel.setPersonNO(etIdcart.getText().toString());
             shpsModel.setLogo(APIService.ALIYUN_OSS_IMAGE_PATH + photoPath);
-            RetrofitUtils.getInstance(this).setCreateShop(shpsModel, new ProgressSubscriber(new SubscriberOnNextListener() {
+            RetrofitUtils utils = new RetrofitUtils(this);
+            utils.setCreateShop(shpsModel, new ProgressSubscriber(new SubscriberOnNextListener() {
                 @Override
                 public void onNext(Object o) {
 

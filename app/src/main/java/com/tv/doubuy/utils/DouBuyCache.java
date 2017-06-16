@@ -9,11 +9,11 @@ import android.content.SharedPreferences;
 public class DouBuyCache {
     private final String SHARE_NAME = "DOUBUY_USERS";
     private final int SHARE_MODE = 0;
-    private SharedPreferences shared;
+    private static SharedPreferences shared;
 
-    private String KEY_USER_TOKEN = "KEY_USER_TOKEN";
-    private String KEY_USER_USERID = "KEY_USER_USERID";
-    private String KEY_USER_STORE_ID = "KEY_USER_STORE_ID";
+    private static String KEY_USER_TOKEN = "KEY_USER_TOKEN";
+    private static String KEY_USER_USERID = "KEY_USER_USERID";
+    private static String KEY_USER_STORE_ID = "KEY_USER_STORE_ID";
 
 
     public DouBuyCache(Context context) {
@@ -24,12 +24,12 @@ public class DouBuyCache {
     /**
      * Token
      */
-    public void saveUserToken(String token) {
+    public static void saveUserToken(String token) {
         shared.edit().putString(KEY_USER_TOKEN, token)
                 .commit();
     }
 
-    public String getUserToken() {
+    public static String getUserToken() {
         return shared.getString(KEY_USER_TOKEN, "");
     }
 
@@ -38,12 +38,12 @@ public class DouBuyCache {
      * 用户ID
      */
 
-    public String getUserId() {
+    public static String getUserId() {
         return shared.getString(KEY_USER_USERID, "");
     }
 
 
-    public void saveUserId(String id) {
+    public static void saveUserId(String id) {
         shared.edit().putString(KEY_USER_USERID, id)
                 .commit();
     }
@@ -51,17 +51,15 @@ public class DouBuyCache {
     /**
      * d店铺ID
      */
-    public String getStoreId() {
+    public static String getStoreId() {
         return shared.getString(KEY_USER_STORE_ID, "");
     }
 
 
-    public void saveStoreId(String id) {
+    public static void saveStoreId(String id) {
         shared.edit().putString(KEY_USER_STORE_ID, id)
                 .commit();
     }
-
-
 
 
 }

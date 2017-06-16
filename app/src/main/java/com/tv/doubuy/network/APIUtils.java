@@ -29,11 +29,11 @@ public class APIUtils {
         return mInstance;
     }
 
-    public String getUserToken() {
-        douBuyCache = new DouBuyCache(mcontext);
-
-        return douBuyCache.getUserToken();
-    }
+//    public String getUserToken() {
+//        douBuyCache = new DouBuyCache(mcontext);
+//
+//        return douBuyCache.getUserToken();
+//    }
 
     public String getStoreId() {
         douBuyCache = new DouBuyCache(mcontext);

@@ -73,8 +73,8 @@ public class StoreFragment extends BaseExtendFragment implements View.OnClickLis
 
     public void initViews() {
         String id = APIUtils.getInstance(getActivity()).getStoreId();
-
-        RetrofitUtils.getInstance(getActivity()).getStoreInfo(id, new ProgressSubscriber(new SubscriberOnNextListener() {
+        RetrofitUtils retrofitUtils = new RetrofitUtils(getActivity());
+        retrofitUtils.getStoreInfo(id, new ProgressSubscriber(new SubscriberOnNextListener() {
             @Override
             public void onNext(Object o) {
 

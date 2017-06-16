@@ -2,10 +2,10 @@ package com.tv.doubuy.ui.login;
 
 import android.content.Context;
 import android.content.Intent;
+import android.widget.Space;
 import android.widget.Toast;
 
 import com.tv.doubuy.MainActivity;
-import com.tv.doubuy.model.requestModel.BindRequestModel;
 import com.tv.doubuy.model.requestModel.LoginRequestModel;
 import com.tv.doubuy.model.requestModel.SignupModel;
 import com.tv.doubuy.model.responseModel.UserInfoModel;
@@ -38,7 +38,8 @@ public class RegisPresenter {
      */
     public void setUserCode(LoginRequestModel loginRequestModel) {
 
-        RetrofitUtils.getInstance(mcontext).setUserCode(loginRequestModel, new ProgressSubscriber(new SubscriberOnNextListener() {
+        RetrofitUtils retrofitUtils = new RetrofitUtils(mcontext);
+        retrofitUtils.setUserCode(loginRequestModel, new ProgressSubscriber(new SubscriberOnNextListener() {
             @Override
             public void onNext(Object o) {
 
@@ -47,16 +48,16 @@ public class RegisPresenter {
         }, mcontext));
     }
 
-    public void setUserBindogCode(BindRequestModel bindogCode) {
-
-        RetrofitUtils.getInstance(mcontext).setUseBindrCode(bindogCode, new ProgressSubscriber(new SubscriberOnNextListener() {
-            @Override
-            public void onNext(Object o) {
-
-                Toast.makeText(mcontext, "" + o.toString(), Toast.LENGTH_SHORT).show();
-            }
-        }, mcontext));
-    }
+//    public void setUserBindogCode(BindRequestModel bindogCode) {
+//
+//        RetrofitUtils.getInstance(mcontext).setUseBindrCode(bindogCode, new ProgressSubscriber(new SubscriberOnNextListener() {
+//            @Override
+//            public void onNext(Object o) {
+//
+//                Toast.makeText(mcontext, "" + o.toString(), Toast.LENGTH_SHORT).show();
+//            }
+//        }, mcontext));
+//    }
 
 
     /**
@@ -87,13 +88,16 @@ public class RegisPresenter {
      */
     public void setUserRegis(SignupModel signmodel) {
 
-        RetrofitUtils.getInstance(mcontext).setUserSigin(signmodel, new ProgressSubscriber(new SubscriberOnNextListener() {
+        RetrofitUtils utils = new RetrofitUtils(mcontext);
+
+        utils.setUserSigin(signmodel, new ProgressSubscriber(new SubscriberOnNextListener() {
             @Override
             public void onNext(Object o) {
 
                 UserInfoModel infoModel = APIUtils.gson.fromJson(o.toString(), UserInfoModel.class);
 
                 if (infoModel.getUser() != null) {
+
                     dbCache.saveUserToken(infoModel.getToken());
                     dbCache.saveUserId(infoModel.getUser().getId() + "");
                     Intent intent = new Intent(mcontext, MainActivity.class);

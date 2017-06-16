@@ -134,7 +134,8 @@ public class BindMobileActivity extends BaseActivity implements OnClickListener 
         bindMobileModel.setMobile(etMobile.getText().toString());
         bindMobileModel.setOpenid(openid);
 
-        RetrofitUtils.getInstance(this).setBindMobile(bindMobileModel, new ProgressSubscriber(new SubscriberOnNextListener() {
+        RetrofitUtils retrofitUtils = new RetrofitUtils(this);
+        retrofitUtils.setBindMobile(bindMobileModel, new ProgressSubscriber(new SubscriberOnNextListener() {
             @Override
             public void onNext(Object o) {
 

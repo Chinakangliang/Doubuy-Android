@@ -3,6 +3,8 @@ package com.tv.doubuy.network;
 import android.content.Context;
 import android.util.Log;
 
+import com.tv.doubuy.utils.DouBuyCache;
+
 /**
  * Created by apple on 2017/6/2.
  */
@@ -13,11 +15,21 @@ public class HttpCommonUtils {
 
     private static Context mcontext;
 
+    private static DouBuyCache douBuyCache;
+
     public static HttpCommonUtils getInstance(Context context) {
+        douBuyCache = new DouBuyCache(context);
+
+        if (context == null) {
+            Log.i("111", "----null--");
+        } else {
+            Log.i("111", "----NOnull--");
+
+        }
         if (mInstance == null) {
             synchronized (HttpCommonUtils.class) {
                 mInstance = new HttpCommonUtils();
-                mcontext = context;
+
             }
         }
         return mInstance;
@@ -27,10 +39,10 @@ public class HttpCommonUtils {
     public HttpCommonInterceptor addOkHttpHeadptor() {
         HttpCommonInterceptor httpCommonInterceptor = new HttpCommonInterceptor.Builder()
                 .addHeaderParams("Content-Type", "application/x-www-form-urlencoded")
-                .addHeaderParams("Authorization", "JWT " + APIUtils.getInstance(mcontext).getUserToken())
+                .addHeaderParams("Authorization", "JWT " + douBuyCache.getUserToken())
                 .build();
 
-        Log.i("111", "----APIUtils------" + APIUtils.getInstance(mcontext).getUserToken());
+        Log.i("111", "----APIUtils------" + douBuyCache.getUserToken());
         return httpCommonInterceptor;
     }
 

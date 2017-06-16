@@ -86,7 +86,8 @@ public class WXEntryActivity extends Activity implements IWXAPIEventHandler {
 
     public void getWXLoginToken(String code) {
 
-        RetrofitUtils.getInstance(this).setUserWXCode(code, new ProgressSubscriber(new SubscriberOnNextListener() {
+        RetrofitUtils retrofitUtils = new RetrofitUtils(this);
+        retrofitUtils.setUserWXCode(code, new ProgressSubscriber(new SubscriberOnNextListener() {
             @Override
             public void onNext(Object o) {
 

@@ -165,7 +165,8 @@ public class StoreMessageActivity extends BaseActivity implements View.OnClickLi
         infomodel.setName(etStoreName.getText().toString());
         infomodel.setServieAviable(true);
 
-        RetrofitUtils.getInstance(this).putModifyStoreInfo(APIUtils.getInstance(this).getStoreId(), infomodel, new ProgressSubscriber(new SubscriberOnNextListener() {
+        RetrofitUtils utils = new RetrofitUtils(this);
+        utils.putModifyStoreInfo(APIUtils.getInstance(this).getStoreId(), infomodel, new ProgressSubscriber(new SubscriberOnNextListener() {
             @Override
             public void onNext(Object o) {
 

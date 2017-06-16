@@ -1,6 +1,7 @@
 package com.tv.doubuy.network;
 
 import android.content.Context;
+import android.util.Log;
 
 import com.tv.doubuy.model.requestModel.BindMobileModel;
 import com.tv.doubuy.model.requestModel.BindRequestModel;
@@ -37,14 +38,21 @@ public class RetrofitUtils {
     private static Retrofit mRetrofit;
     private static APIService mApiService;
 
-    public static RetrofitUtils getInstance(Context context) {
-        if (mInstance == null) {
-            synchronized (RetrofitUtils.class) {
-                mInstance = new RetrofitUtils(context);
-            }
-        }
-        return mInstance;
-    }
+
+    public static String strToken = null;
+
+
+//    private static DouBuyCache douBuyCache;
+
+//    public static RetrofitUtils getInstance(Context context) {
+//        if (mInstance == null) {
+//            synchronized (RetrofitUtils.class) {
+//                mInstance = new RetrofitUtils(context);
+////                douBuyCache = new DouBuyCache(context);
+//            }
+//        }
+//        return mInstance;
+//    }
 
     public RetrofitUtils(Context context) {
 
@@ -53,11 +61,18 @@ public class RetrofitUtils {
         loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BASIC);
 
 
-        OkHttpClient.Builder builder = new OkHttpClient.Builder();
+        Log.i("111", "---getUserToken--" + strToken);
 
+        HttpCommonInterceptor commonInterceptor = new HttpCommonInterceptor.Builder()
+                .addHeaderParams("Content-Type", "application/x-www-form-urlencoded")
+                .addHeaderParams("Authorization", "JWT " + strToken)
+//                .addHeaderParams("Content-Type", "application/x-www-form-urlencoded")
+                .build();
+
+        OkHttpClient.Builder builder = new OkHttpClient.Builder();
         OkHttpClient client = builder.connectTimeout(5, TimeUnit.SECONDS)
                 .cookieJar(new JavaNetCookieJar(cookieHandler))
-                .addInterceptor(HttpCommonUtils.getInstance(context).addOkHttpHeadptor())
+                .addInterceptor(commonInterceptor)
                 .addInterceptor(loggingInterceptor)
                 .retryOnConnectionFailure(false)
                 .build();

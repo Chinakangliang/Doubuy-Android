@@ -123,8 +123,8 @@ public class ForgotActivity extends BaseActivity implements View.OnClickListener
         siginModel.setMobile(etMobile.getText().toString());
         siginModel.setPassword(etPassword.getText().toString());
 
-
-        RetrofitUtils.getInstance(this).setUserReste(siginModel, new ProgressSubscriber(new SubscriberOnNextListener() {
+        RetrofitUtils  retrofitUtils=new RetrofitUtils(this);
+        retrofitUtils.setUserReste(siginModel, new ProgressSubscriber(new SubscriberOnNextListener() {
             @Override
             public void onNext(Object o) {
 
