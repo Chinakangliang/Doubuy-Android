@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorf3"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_title_layout" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="43dp"
+        android:layout_marginTop="12dp"
+        android:background="@android:color/white"
+        android:hint="输入分类名称"
+        android:paddingLeft="22dp" />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="43dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="84dp"
+        android:background="@color/color2851"
+        android:gravity="center"
+        android:text="确定"
+        android:textColor="@android:color/white" />
+</LinearLayout>

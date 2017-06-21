@@ -35,9 +35,19 @@
         <!-- Dialog进入及退出动画 -->
         <!--<item name="android:windowAnimationStyle">@style/ActionSheetDialogAnimation</item>-->
         <!--<style name="ActionSheetDialogAnimation" parent="@android:style/Animation.Dialog">-->
-            <!--<item name="android:windowEnterAnimation">@anim/dialog_in_anim</item>-->
-            <!--<item name="android:windowExitAnimation">@anim/dialog_out_anim</item>-->
+        <!--<item name="android:windowEnterAnimation">@anim/dialog_in_anim</item>-->
+        <!--<item name="android:windowExitAnimation">@anim/dialog_out_anim</item>-->
         <!--</style>-->
+
+
+    </style>
+
+    <style name="dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowIsTranslucent">true</item><!--半透明-->
+        <item name="android:windowNoTitle">true</item><!--无标题-->
+        <item name="android:windowBackground">@android:color/transparent</item><!--背景透明-->
+        <item name="android:backgroundDimEnabled">true</item><!--模糊-->
     </style>
 
 </resources>

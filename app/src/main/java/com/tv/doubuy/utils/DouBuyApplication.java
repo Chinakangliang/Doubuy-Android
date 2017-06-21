@@ -2,6 +2,7 @@ package com.tv.doubuy.utils;
 
 import android.app.Application;
 import android.content.Context;
+import android.util.Log;
 
 
 /**
@@ -49,6 +50,7 @@ public class DouBuyApplication extends Application {
     }
 
     public String getUserToken() {
+
         return userToken;
     }
 

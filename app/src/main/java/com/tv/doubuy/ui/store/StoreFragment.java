@@ -9,7 +9,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.tv.doubuy.R;
 import com.tv.doubuy.adapter.StoreGridAdapter;
@@ -21,6 +20,7 @@ import com.tv.doubuy.network.RetrofitUtils;
 import com.tv.doubuy.network.SubscriberOnNextListener;
 import com.tv.doubuy.ui.store.employees.EmployActivity;
 import com.tv.doubuy.ui.store.freight.FreightActivity;
+import com.tv.doubuy.ui.store.shop.ShopListActivity;
 import com.tv.doubuy.utils.PicassoHelper;
 
 import butterknife.BindView;
@@ -179,7 +179,16 @@ public class StoreFragment extends BaseExtendFragment implements View.OnClickLis
 
         Intent intent = new Intent();
         switch (position) {
-
+            case 0:
+                intent.setClass(getActivity(), ShopListActivity.class);
+                startActivity(intent);
+                break;
+            case 1:
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
             case 4:
                 intent.setClass(getActivity(), FreightActivity.class);
                 startActivity(intent);

@@ -55,7 +55,8 @@ public class EmployActivity extends BaseActivity implements EmployAdapter.Employ
             list.add("员工管理ITEM" + i);
         }
         recyler.setLayoutManager(new LinearLayoutManager(this));
-        employAdapter = new EmployAdapter(this, list);
+        employAdapter = new EmployAdapter(this);
+        employAdapter.setData(list);
         recyler.setAdapter(employAdapter);
     }
 
@@ -69,6 +70,12 @@ public class EmployActivity extends BaseActivity implements EmployAdapter.Employ
 
         Toast.makeText(this, "" + position, Toast.LENGTH_SHORT).show();
     }
+
+    @Override
+    public void setItemShowPopWindowShow(int position, View view) {
+
+    }
+
 
     @Override
     public void onClick(View v) {

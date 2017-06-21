@@ -66,6 +66,18 @@
             android:name=".ui.store.OpenStoreActivity"
             android:screenOrientation="portrait"></activity>
 
+        <!--商品列表-->
+        <activity
+            android:name=".ui.store.shop.ShopListActivity"
+            android:screenOrientation="portrait"></activity>
+        <!-- 添加分类-->
+        <activity
+            android:name=".ui.store.shop.AddClassActivity"
+            android:screenOrientation="portrait"></activity>
+        <!--添加商品-->
+        <activity
+            android:name=".ui.store.shop.AddShopActivity"
+            android:screenOrientation="portrait"></activity>
         <!--选择实名认证方式页面-->
         <activity
             android:name=".ui.store.RealActivity"

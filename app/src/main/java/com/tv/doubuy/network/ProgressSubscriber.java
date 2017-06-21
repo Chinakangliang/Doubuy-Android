@@ -76,7 +76,10 @@ public class ProgressSubscriber extends Subscriber implements ProgressCancelList
         } else if (e instanceof HttpException) {
             try {
                 ErrorModel model = APIUtils.gson.fromJson(((HttpException) e).response().errorBody().string(), ErrorModel.class);
+
+
                 ToastUtils.getInstance().showToast(context, model.getError() + "");
+
 
             } catch (IOException e1) {
                 e1.printStackTrace();

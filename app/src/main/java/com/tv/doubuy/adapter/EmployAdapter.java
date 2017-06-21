@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 import com.tv.doubuy.R;
@@ -23,9 +24,13 @@ public class EmployAdapter extends RecyclerView.Adapter<EmployAdapter.ViewHolder
     private EmployAdapteCallBack callBack;
     private LayoutInflater mInflater;
 
-    public EmployAdapter(Context context, List<String> mlist) {
-        this.list = mlist;
+    public EmployAdapter(Context context) {
         mInflater = LayoutInflater.from(context);
+    }
+
+    public void setData(List<String> mlist) {
+        list.clear();
+        list.addAll(mlist);
     }
 
     @Override
@@ -37,7 +42,7 @@ public class EmployAdapter extends RecyclerView.Adapter<EmployAdapter.ViewHolder
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, final int position) {
+    public void onBindViewHolder(final ViewHolder holder, final int position) {
 
         holder.itemView.setTag(position);
         holder.textView.setText(list.get(position));
@@ -49,6 +54,17 @@ public class EmployAdapter extends RecyclerView.Adapter<EmployAdapter.ViewHolder
                 }
             }
         });
+        holder.itemIvwindow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (callBack != null) {
+                    callBack.setItemShowPopWindowShow(position, holder.itemIvwindow);
+//                    holder.itemIvwindow.setImageResource(R.mipmap.btn_fast_edit_selected);
+                }
+            }
+        });
+
 
     }
 
@@ -60,19 +76,29 @@ public class EmployAdapter extends RecyclerView.Adapter<EmployAdapter.ViewHolder
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         private TextView textView;
+        private CheckBox itemIvwindow;
 
         public ViewHolder(View itemView) {
             super(itemView);
             textView = (TextView) itemView.findViewById(R.id.item_tv);
+            itemIvwindow = (CheckBox) itemView.findViewById(R.id.item_iv_window);
         }
     }
 
+
     public interface EmployAdapteCallBack {
         void setItemClick(int position);
+
+        void setItemShowPopWindowShow(int position, View view);
     }
 
     public void setAdapterClick(EmployAdapteCallBack callBack) {
 
         this.callBack = callBack;
     }
+//
+public void removeItem(int position) {
+    list.remove(position);
+    notifyDataSetChanged();
+}
 }

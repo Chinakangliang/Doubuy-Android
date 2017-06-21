@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:src="@mipmap/back_left" />
+
+        <RadioGroup
+            android:id="@+id/rg_shoptitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:orientation="horizontal">
+
+
+            <RadioButton
+                android:id="@+id/rb_allshop"
+                android:layout_width="98dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_radiol_shop_all"
+                android:button="@null"
+                android:gravity="center"
+                android:text="所有商品"
+                android:textColor="@android:color/white" />
+
+            <RadioButton
+                android:id="@+id/rb_shopcalss"
+                android:layout_width="98dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_radiol_shop_class"
+                android:button="@null"
+                android:gravity="center"
+                android:text="商品分类"
+                android:textColor="@color/color2851" />
+
+        </RadioGroup>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:src="@mipmap/product_btn_search" />
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/fragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@color/white" />
+</LinearLayout>

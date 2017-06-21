@@ -33,6 +33,8 @@ public class MainActivity extends BaseActivity implements CompoundButton.OnCheck
     RadioButton rbContacts;
     @BindView(R.id.rb_discovery)
     RadioButton rbDiscovery;
+    @BindView(R.id.rb_notice)
+    RadioButton rbNotice;
     @BindView(R.id.rb_me)
     RadioButton rbMe;
     @BindView(R.id.radioGroup)
@@ -56,7 +58,7 @@ public class MainActivity extends BaseActivity implements CompoundButton.OnCheck
         rbContacts.setOnCheckedChangeListener(this);
         rbDiscovery.setOnCheckedChangeListener(this);
         rbMe.setOnCheckedChangeListener(this);
-
+        rbNotice.setOnCheckedChangeListener(this);
     }
 
     private void initView() {
@@ -141,6 +143,7 @@ public class MainActivity extends BaseActivity implements CompoundButton.OnCheck
                 if (isChecked) {
                     viewPager.setCurrentItem(0, true);
                 }
+
                 break;
             case R.id.rb_contacts:
                 if (isChecked) {
@@ -157,15 +160,11 @@ public class MainActivity extends BaseActivity implements CompoundButton.OnCheck
             case R.id.rb_notice:
                 if (isChecked) {
                     viewPager.setCurrentItem(3, true);
-                }
 
+                }
                 break;
-
             case R.id.rb_me:
-                if (isChecked) {
-                    viewPager.setCurrentItem(4, true);
-                }
-
+                viewPager.setCurrentItem(4, true);
                 break;
         }
 

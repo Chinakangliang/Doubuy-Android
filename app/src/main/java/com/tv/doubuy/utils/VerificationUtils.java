@@ -1,5 +1,8 @@
 package com.tv.doubuy.utils;
 
+import android.app.Activity;
+import android.view.WindowManager;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;
@@ -130,6 +133,19 @@ public class VerificationUtils {
             isLegal = false;
         }
         return isLegal;
+    }
+
+
+    /**
+     * 设置Window透明度
+     */
+    public static void backgroundAlpha(float bgAlpha, Activity mContext) {
+        WindowManager.LayoutParams lp = mContext.getWindow().getAttributes();
+        lp.alpha = bgAlpha; //0.0-1.0
+        lp.dimAmount = 0.5f;
+        mContext.getWindow().addFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
+        mContext.getWindow().setAttributes(lp);
+
     }
 }
 
