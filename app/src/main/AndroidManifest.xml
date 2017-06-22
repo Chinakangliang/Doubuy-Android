@@ -77,7 +77,15 @@
         <!--添加商品-->
         <activity
             android:name=".ui.store.shop.AddShopActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"></activity>
+
+        <!--编辑图文详情-->
+        <activity
+            android:name=".ui.store.shop.DescribeActivity"
             android:screenOrientation="portrait"></activity>
+
+
         <!--选择实名认证方式页面-->
         <activity
             android:name=".ui.store.RealActivity"

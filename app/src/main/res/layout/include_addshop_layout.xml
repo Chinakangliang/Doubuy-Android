@@ -2,6 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    android:layout_marginTop="10dp"
+    android:background="@color/white"
     android:orientation="horizontal">
 
     <LinearLayout
@@ -21,7 +24,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="单位" />
+                android:layout_marginLeft="15dp"
+                android:text="规格" />
 
 
             <EditText
@@ -40,10 +44,12 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="单位" />
+                android:layout_marginLeft="15dp"
+                android:text="价格" />
 
 
             <EditText
+                android:id="@+id/et_two"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
@@ -59,10 +65,12 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="单位" />
+                android:layout_marginLeft="15dp"
+                android:text="库存" />
 
 
             <EditText
+                android:id="@+id/et_frist"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
@@ -70,6 +78,7 @@
     </LinearLayout>
 
     <ImageView
+        android:id="@+id/iv_detele"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"

@@ -3,7 +3,9 @@ apply plugin: 'android-apt'
 
 
 android {
-
+    dataBinding {
+        enabled true
+    }
     signingConfigs {
         release {
             keyAlias 'com.tv.doubuy'
@@ -64,5 +66,5 @@ dependencies {
     compile files('libs/zmxySDKALCmini_V1.01450366738902_release.jar')
     compile 'com.aliyun.dpa:oss-android-sdk:2.3.0'
     compile 'jp.wasabeef:recyclerview-animators:1.3.0'
-
 }
+
