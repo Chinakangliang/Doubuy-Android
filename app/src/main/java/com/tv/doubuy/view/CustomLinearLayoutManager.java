@@ -1,4 +1,4 @@
-package com.tv.doubuy.ui.store.shop;
+package com.tv.doubuy.view;
 
 import android.content.Context;
 import android.support.v7.widget.LinearLayoutManager;

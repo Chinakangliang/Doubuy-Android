@@ -1,18 +1,35 @@
 package com.tv.doubuy.ui.store.shop;
 
+import android.Manifest;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.anthonycr.grant.PermissionsManager;
+import com.anthonycr.grant.PermissionsResultAction;
+import com.jph.takephoto.app.TakePhoto;
+import com.jph.takephoto.app.TakePhotoImpl;
+import com.jph.takephoto.model.InvokeParam;
+import com.jph.takephoto.model.TContextWrap;
+import com.jph.takephoto.model.TImage;
+import com.jph.takephoto.model.TResult;
+import com.jph.takephoto.permission.InvokeListener;
+import com.jph.takephoto.permission.PermissionManager;
+import com.jph.takephoto.permission.TakePhotoInvocationHandler;
 import com.tv.doubuy.R;
+import com.tv.doubuy.adapter.AddImageAdapter;
 import com.tv.doubuy.adapter.SpecAdapter;
 import com.tv.doubuy.base.BaseActivity;
+import com.tv.doubuy.dialog.ActionSheetDialog;
+import com.tv.doubuy.utils.CustomHelper;
+import com.tv.doubuy.utils.ToastUtils;
+import com.tv.doubuy.view.CustomLinearLayoutManager;
+import com.tv.doubuy.view.GridManager;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -25,7 +42,7 @@ import butterknife.ButterKnife;
  * Created by apple on 2017/6/21.
  */
 
-public class AddShopActivity extends BaseActivity implements SpecAdapter.SpecAdapterCallback, View.OnClickListener {
+public class AddShopActivity extends BaseActivity implements SpecAdapter.SpecAdapterCallback, View.OnClickListener, TakePhoto.TakeResultListener, InvokeListener, AddImageAdapter.addImageViewListenr {
 
 
     @BindView(R.id.iv_back)
@@ -40,19 +57,24 @@ public class AddShopActivity extends BaseActivity implements SpecAdapter.SpecAda
     @BindView(R.id.recyler_spec)
     RecyclerView recyclerView;
 
-    @BindView(R.id.iv_addProduct)
-    ImageView ivAddProduct;
-
     @BindView(R.id.tv_instructions)
     TextView tvInstructions;
+
+    @BindView(R.id.recyler_shopimage)
+    RecyclerView recyclerShopImage;
 
     private SpecAdapter specAdapter;
     private List<String> mlist;
 
+    private AddImageAdapter addImageAdapter;
+    private TakePhoto takePhoto;
+    private InvokeParam invokeParam;
+    private List<String> imgUrls = new ArrayList<>();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getTakePhoto().onCreate(savedInstanceState);
         setContentView(R.layout.activity_addshop);
         ButterKnife.bind(this);
         initviews();
@@ -67,28 +89,43 @@ public class AddShopActivity extends BaseActivity implements SpecAdapter.SpecAda
         recyclerView.setLayoutManager(linearLayoutManager);
         specAdapter = new SpecAdapter(this);
         specAdapter.setData(mlist);
-        recyclerView.setAdapter(specAdapter);
         specAdapter.setSpecClick(this);
+        recyclerView.setAdapter(specAdapter);
+
+
+        if (imgUrls.size() == 0) {
+            imgUrls.add("选择");
+        }
+
+        /**
+         * 选择照片
+         */
+
+        GridManager gridManager = new GridManager(this, 3);
+        recyclerShopImage.setLayoutManager(gridManager);
+        gridManager.setSmoothScrollbarEnabled(false);
+        addImageAdapter = new AddImageAdapter(this, imgUrls);
+        addImageAdapter.AddImageCallback(this);
+        recyclerShopImage.setAdapter(addImageAdapter);
 
 
         tvAddSpec.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 mlist.add("item");
                 specAdapter.setData(mlist);
-                specAdapter.notifyDataSetChanged();
+
+
             }
         });
 
         tvInstructions.setOnClickListener(this);
-        ivAddProduct.setOnClickListener(this);
     }
 
 
     @Override
     public void itemonClick(int position, List<HashMap> listmap) {
-        Log.i("111", "----------listmap---" + listmap.size());
+
     }
 
     @Override
@@ -103,13 +140,131 @@ public class AddShopActivity extends BaseActivity implements SpecAdapter.SpecAda
 
         Intent intent = new Intent();
         switch (v.getId()) {
-            case R.id.iv_addProduct:
-                break;
             case R.id.tv_instructions:
                 intent.setClass(AddShopActivity.this, DescribeActivity.class);
                 startActivity(intent);
                 break;
 
         }
+    }
+
+    private void rootApply() {
+        PermissionsManager.getInstance().requestPermissionsIfNecessaryForResult(this,
+                new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE}
+                , new PermissionsResultAction() {
+
+                    @Override
+                    public void onGranted() {
+                        showHeadportraitDialog();
+                    }
+
+                    @Override
+                    public void onDenied(String permission) {
+                        ToastUtils.getInstance().showToast(AddShopActivity.this, "没有使用相机和相册的权限，请在权限管理中开启!");
+
+
+                    }
+                });
+    }
+
+
+    private void showHeadportraitDialog() {
+
+        new ActionSheetDialog(this).builder().onClickSheetItem(new ActionSheetDialog.OnSheetItemClickListener() {
+            @Override
+            public void onPicturesClick() {
+
+
+                CustomHelper customHelper = CustomHelper.getInstace();
+                customHelper.setMaxSelectCount(9);
+                customHelper.onPhotoGraph(getTakePhoto(), false);
+
+            }
+
+            @Override
+            public void onAlbumClick() {
+                CustomHelper customHelper = CustomHelper.getInstace();
+                customHelper.setMaxSelectCount(8);
+                customHelper.onAlbumChoice(getTakePhoto(), false);
+
+            }
+        }).dialogshow();
+    }
+
+
+    public TakePhoto getTakePhoto() {
+        if (takePhoto == null) {
+            takePhoto = (TakePhoto) TakePhotoInvocationHandler.of(this).bind(
+                    new TakePhotoImpl(this, this));
+        }
+        return takePhoto;
+    }
+
+    @Override
+    public void takeSuccess(TResult result) {
+
+
+        List<String> photoUrls = getPhotoUrls(result.getImages());
+        photoUrls.add("选择");
+        imgUrls.addAll(photoUrls);
+        addImageAdapter.setData(imgUrls);
+
+    }
+
+    public List<String> getPhotoUrls(ArrayList<TImage> tImages) {
+
+        for (int i = 0; i < imgUrls.size(); i++) {
+            if (imgUrls.get(i).equals("选择")) {
+                imgUrls.remove(i);
+            }
+        }
+
+        List<String> urls = new ArrayList<>();
+        for (TImage image : tImages) {
+            urls.add(image.getPath());
+        }
+        return urls;
+    }
+
+
+    @Override
+    public void takeFail(TResult result, String msg) {
+
+    }
+
+    @Override
+    public void takeCancel() {
+
+    }
+
+    @Override
+    public PermissionManager.TPermissionType invoke(InvokeParam invokeParam) {
+        PermissionManager.TPermissionType type = PermissionManager.checkPermission(TContextWrap.of(this),
+                invokeParam.getMethod());
+        if (PermissionManager.TPermissionType.WAIT.equals(type)) {
+            this.invokeParam = invokeParam;
+        }
+        return type;
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                                           int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        PermissionManager.TPermissionType type = PermissionManager.onRequestPermissionsResult(requestCode,
+                permissions, grantResults);
+        PermissionManager.handlePermissionsResult(this, type, invokeParam, this);
+    }
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        getTakePhoto().onActivityResult(requestCode, resultCode, data);
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    @Override
+    public void setAddImage() {
+        rootApply();
     }
 }

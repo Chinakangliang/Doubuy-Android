@@ -84,6 +84,10 @@
         <activity
             android:name=".ui.store.shop.DescribeActivity"
             android:screenOrientation="portrait"></activity>
+        <!--搜索-->
+        <activity
+            android:name=".ui.store.shop.SearchActivity"
+            android:screenOrientation="portrait"></activity>
 
 
         <!--选择实名认证方式页面-->

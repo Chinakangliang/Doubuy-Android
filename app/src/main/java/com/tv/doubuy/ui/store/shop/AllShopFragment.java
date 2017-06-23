@@ -11,6 +11,7 @@ import android.widget.Toast;
 import com.tv.doubuy.R;
 import com.tv.doubuy.adapter.TabLayoutPagerAdapter;
 import com.tv.doubuy.base.BaseExtendFragment;
+import com.tv.doubuy.dialog.ProductCheckDialog;
 import com.tv.doubuy.dialog.SpinnerPopWindow;
 
 import java.util.ArrayList;
@@ -100,13 +101,14 @@ public class AllShopFragment extends BaseExtendFragment implements View.OnClickL
         switch (v.getId()) {
 
             case R.id.iv_spinner:
-                spinnerWindow = new SpinnerPopWindow(getActivity(), ivSpinner);
 
-                spinnerWindow.builder().onClickSheetItem(new SpinnerPopWindow.OnItemClickListener() {
+                ProductCheckDialog productCheckDialog = new ProductCheckDialog(getActivity());
+                productCheckDialog.setListData(str);
+                productCheckDialog.show();
+                productCheckDialog.setSelectListener(new ProductCheckDialog.ProductChecCallback() {
                     @Override
-                    public void onItemClick(int position) {
-                        Toast.makeText(getActivity(), "" + position, Toast.LENGTH_SHORT).show();
-
+                    public void ProductCheckCallBack(int posotion, String newValue) {
+                        Toast.makeText(getActivity(), "" + newValue, Toast.LENGTH_SHORT).show();
                     }
                 });
 

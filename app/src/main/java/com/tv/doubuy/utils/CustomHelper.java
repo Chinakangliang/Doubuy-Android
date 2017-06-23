@@ -29,6 +29,7 @@ public class CustomHelper {
     private int maxSelectCount = 1;
     //是否从相册选取  (相册、文件)
     private boolean isAlbum = true;
+
     private static CustomHelper customHelper;
 
     public static CustomHelper getInstace() {

@@ -83,5 +83,8 @@ public interface APIService {
     @PUT("shops/{store_id}/info")
     Observable<BaseResponse> putStoreInfo(@Path("store_id") String id, @Body PutStoreInfoModel putStoreInfoModel);
 
+    //    http://{{dbuy_api_server}}/shops/1/searchUser?searchStr=豆
+    @GET("shops/{store_id}/searchUser")
+    Observable<BaseResponse> searchshop(@Path("store_id") String id, @Query("searchStr") String str);
 
 }

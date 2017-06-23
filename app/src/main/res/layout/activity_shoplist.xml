@@ -9,6 +9,7 @@
         android:layout_height="45dp">
 
         <ImageView
+            android:id="@+id/iv_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
@@ -29,19 +30,21 @@
                 android:layout_width="98dp"
                 android:layout_height="25dp"
                 android:layout_gravity="center"
-                android:background="@drawable/bg_radiol_shop_all"
+                android:background="@drawable/select_shop_list_title"
                 android:button="@null"
+                android:checked="true"
                 android:gravity="center"
                 android:text="所有商品"
-                android:textColor="@android:color/white" />
+                android:textColor="@color/white" />
 
             <RadioButton
                 android:id="@+id/rb_shopcalss"
                 android:layout_width="98dp"
                 android:layout_height="25dp"
                 android:layout_gravity="center"
-                android:background="@drawable/bg_radiol_shop_class"
+                android:background="@drawable/select_shop_list_title"
                 android:button="@null"
+                android:checked="false"
                 android:gravity="center"
                 android:text="商品分类"
                 android:textColor="@color/color2851" />
@@ -49,6 +52,7 @@
         </RadioGroup>
 
         <ImageView
+            android:id="@+id/iv_search"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"

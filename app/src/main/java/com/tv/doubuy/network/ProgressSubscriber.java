@@ -75,10 +75,10 @@ public class ProgressSubscriber extends Subscriber implements ProgressCancelList
             ToastUtils.getInstance().showToast(context, "网络中断，请检查您的网络状态");
         } else if (e instanceof HttpException) {
             try {
-                ErrorModel model = APIUtils.gson.fromJson(((HttpException) e).response().errorBody().string(), ErrorModel.class);
 
+                    ErrorModel model = APIUtils.gson.fromJson(((HttpException) e).response().errorBody().string(), ErrorModel.class);
+                    ToastUtils.getInstance().showToast(context, model.getError() + "");
 
-                ToastUtils.getInstance().showToast(context, model.getError() + "");
 
 
             } catch (IOException e1) {

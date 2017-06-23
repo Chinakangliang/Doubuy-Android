@@ -171,29 +171,14 @@
                     android:text="暂时未设置" />
             </RelativeLayout>
 
-
-            <LinearLayout
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyler_shopimage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_marginBottom="40dp"
 
+                />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="15dp"
-                    android:text="图片" />
-
-                <ImageView
-                    android:id="@+id/iv_addProduct"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginTop="24dp"
-                    android:src="@mipmap/product_btn_add_pic" />
-
-            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

@@ -12,7 +12,6 @@ import com.tv.doubuy.model.requestModel.PutStoreInfoModel;
 import com.tv.doubuy.model.requestModel.ShopIdCardModel;
 import com.tv.doubuy.model.requestModel.SiginModel;
 import com.tv.doubuy.model.requestModel.SignupModel;
-import com.tv.doubuy.utils.DouBuyCache;
 
 import java.net.CookieHandler;
 import java.net.CookieManager;
@@ -204,6 +203,14 @@ public class RetrofitUtils {
 
         toSubscribe(mApiService.putStoreInfo(storeid, storeInfoModel), subscriber);
 
+    }
+
+    /**
+     * 搜索
+     */
+    public void getSearchShop(String storeid, String str, ProgressSubscriber subscriber) {
+
+        toSubscribe(mApiService.searchshop(storeid, str), subscriber);
     }
 
 
