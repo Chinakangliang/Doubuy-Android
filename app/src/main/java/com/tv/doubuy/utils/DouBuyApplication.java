@@ -2,7 +2,8 @@ package com.tv.doubuy.utils;
 
 import android.app.Application;
 import android.content.Context;
-import android.util.Log;
+
+import java.util.List;
 
 
 /**
@@ -15,6 +16,8 @@ public class DouBuyApplication extends Application {
     private Context mcontext;
 
     private String userToken;
+
+    private List<String> mlist;
 
     @Override
     public void onCreate() {
@@ -57,6 +60,17 @@ public class DouBuyApplication extends Application {
 
     public void removeToken() {
         setUserToken("");
+    }
+
+
+    public void imagelist(List<String> list) {
+
+        this.mlist = list;
+
+    }
+
+    public List<String> getList() {
+        return mlist;
     }
 
 }

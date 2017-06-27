@@ -52,7 +52,6 @@ public class RefreshRecyclerView extends RecyclerView {
                      * distanceY < 0 为上拉的时候才刷新
                      */
                     if (distanceY < 0 && itemCount != 0 && lastVisiblePosition + 4 >= itemCount - 1 && !isLoadingMore && loadMoreEnable) {
-                        Log.i("test", "加载更多");
                         //正在加载更多
                         loading();
                         if (footerResource != -1) {//有脚布局

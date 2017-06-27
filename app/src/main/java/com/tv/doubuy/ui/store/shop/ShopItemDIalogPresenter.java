@@ -2,10 +2,9 @@ package com.tv.doubuy.ui.store.shop;
 
 import android.app.Activity;
 import android.content.Context;
-import android.os.Handler;
 import android.support.v7.widget.RecyclerView;
 
-import com.tv.doubuy.adapter.EmployAdapter;
+import com.tv.doubuy.adapter.ProductAdapter;
 import com.tv.doubuy.dialog.ModifyPopWindow;
 import com.tv.doubuy.dialog.PromptDialog;
 import com.tv.doubuy.utils.VerificationUtils;
@@ -24,7 +23,7 @@ public class ShopItemDIalogPresenter {
     private PromptDialog promptDialog;
 
     private int position;
-    private EmployAdapter adapter;
+    private ProductAdapter adapter;
 
     private RecyclerView recyler;
     private ModifyPopWindow window;
@@ -69,7 +68,7 @@ public class ShopItemDIalogPresenter {
      * 设置需要的数据
      */
 
-    public void setNeedData(int position, EmployAdapter adapter, RecyclerView recyler) {
+    public void setNeedData(int position, ProductAdapter adapter, RecyclerView recyler) {
 
         this.position = position;
         this.adapter = adapter;

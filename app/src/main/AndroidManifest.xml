@@ -72,13 +72,17 @@
             android:screenOrientation="portrait"></activity>
         <!-- 添加分类-->
         <activity
-            android:name=".ui.store.shop.AddClassActivity"
+            android:name=".ui.store.shop.adds.AddClassActivity"
             android:screenOrientation="portrait"></activity>
         <!--添加商品-->
         <activity
-            android:name=".ui.store.shop.AddShopActivity"
+            android:name=".ui.store.shop.adds.AddShopActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan"></activity>
+        <!-- 添加分类-->
+        <activity
+            android:name=".ui.store.shop.shopclass.AddClassActivity"
+            android:screenOrientation="portrait"></activity>
 
         <!--编辑图文详情-->
         <activity
@@ -86,7 +90,7 @@
             android:screenOrientation="portrait"></activity>
         <!--搜索-->
         <activity
-            android:name=".ui.store.shop.SearchActivity"
+            android:name=".ui.store.shop.search.SearchActivity"
             android:screenOrientation="portrait"></activity>
 
 
@@ -159,6 +163,13 @@
             android:label="芝麻信用"
             android:screenOrientation="portrait" />
 
+        <service
+            android:name=".ui.store.shop.adds.ServerUpFile"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="com.tv.doubuy.ui.store.shop.adds.myfiled" />
+            </intent-filter>
+        </service>
 
     </application>
 

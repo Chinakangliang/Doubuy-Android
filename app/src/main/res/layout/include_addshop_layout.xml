@@ -29,10 +29,19 @@
 
 
             <EditText
+                android:id="@+id/et_item_spec"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:background="@null" />
         </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:background="@color/colorf3" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -49,11 +58,20 @@
 
 
             <EditText
-                android:id="@+id/et_two"
+                android:id="@+id/et_item_pice"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:background="@null"
+                android:inputType="number" />
         </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:background="@color/colorf3" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -70,11 +88,20 @@
 
 
             <EditText
-                android:id="@+id/et_frist"
+                android:id="@+id/et_item_inven"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:background="@null"
+                android:inputType="number" />
         </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:background="@color/colorf3" />
     </LinearLayout>
 
     <ImageView

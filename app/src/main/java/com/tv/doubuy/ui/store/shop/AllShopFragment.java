@@ -13,6 +13,7 @@ import com.tv.doubuy.adapter.TabLayoutPagerAdapter;
 import com.tv.doubuy.base.BaseExtendFragment;
 import com.tv.doubuy.dialog.ProductCheckDialog;
 import com.tv.doubuy.dialog.SpinnerPopWindow;
+import com.tv.doubuy.ui.store.shop.product.SellFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -69,6 +70,7 @@ public class AllShopFragment extends BaseExtendFragment implements View.OnClickL
         setContentView(view);
         initviews();
         setListener();
+
     }
 
 

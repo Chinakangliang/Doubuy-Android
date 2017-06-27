@@ -9,6 +9,9 @@ import android.widget.EditText;
 import android.widget.ImageView;
 
 import com.tv.doubuy.R;
+import com.tv.doubuy.model.requestModel.ProductSKUsBean;
+import com.tv.doubuy.ui.store.shop.adds.ReleaseHelep;
+import com.tv.doubuy.utils.ToastUtils;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -30,11 +33,18 @@ public class SpecAdapter extends RecyclerView.Adapter<SpecAdapter.ViewHolder> {
     private LayoutInflater mInflater;
     private SpecAdapterCallback callback;
 
+    private ProductSKUsBean productSKUsBean;
+
+    private List<ProductSKUsBean> skUsBeanList;
+
     public SpecAdapter(Context context) {
         this.context = context;
         mInflater = LayoutInflater.from(context);
         hashMap = new HashMap<>();
         hashMapList = new ArrayList<>();
+        productSKUsBean = new ProductSKUsBean();
+
+        skUsBeanList = new ArrayList<>();
     }
 
     public void setData(List<String> list) {
@@ -56,17 +66,18 @@ public class SpecAdapter extends RecyclerView.Adapter<SpecAdapter.ViewHolder> {
 
         holder.itemView.setTag(position);
 
-
         holder.iv_detele.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 if (callback != null) {
 
-//                    hashMap.put("frist", holder.et_frist.getText().toString());
-//                    hashMap.put("two", holder.et_two.getText().toString());
-//                    hashMapList.add(hashMap);
-//                    callback.itemonClick(position, hashMapList);
-                    callback.itemDetele(position);
+                        productSKUsBean.setCount(holder.et_item_inven.getText().toString());
+                        productSKUsBean.setPrice(holder.et_item_pice.getText().toString());
+                        productSKUsBean.setSpec(holder.et_item_spec.getText().toString());
+                        skUsBeanList.add(productSKUsBean);
+                        callback.itemonClick(position, skUsBeanList);
+
                 }
             }
         });
@@ -86,21 +97,23 @@ public class SpecAdapter extends RecyclerView.Adapter<SpecAdapter.ViewHolder> {
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        private EditText et_frist;
-        private EditText et_two;
+        private EditText et_item_spec;
+        private EditText et_item_pice;
+        private EditText et_item_inven;
         private ImageView iv_detele;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            et_frist = (EditText) itemView.findViewById(R.id.et_frist);
-            et_two = (EditText) itemView.findViewById(R.id.et_two);
+            et_item_spec = (EditText) itemView.findViewById(R.id.et_item_spec);
+            et_item_pice = (EditText) itemView.findViewById(R.id.et_item_pice);
+            et_item_inven = (EditText) itemView.findViewById(R.id.et_item_inven);
             iv_detele = (ImageView) itemView.findViewById(R.id.iv_detele);
         }
     }
 
 
     public interface SpecAdapterCallback {
-        void itemonClick(int position, List<HashMap> listmap);
+        void itemonClick(int position, List<ProductSKUsBean> listbean);
 
         void itemDetele(int position);
 

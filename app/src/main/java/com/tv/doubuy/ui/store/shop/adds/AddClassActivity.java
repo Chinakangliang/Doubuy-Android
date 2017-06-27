@@ -1,4 +1,4 @@
-package com.tv.doubuy.ui.store.shop;
+package com.tv.doubuy.ui.store.shop.adds;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

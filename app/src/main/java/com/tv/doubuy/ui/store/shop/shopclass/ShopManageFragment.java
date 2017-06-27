@@ -1,19 +1,18 @@
-package com.tv.doubuy.ui.store.shop;
+package com.tv.doubuy.ui.store.shop.shopclass;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.tv.doubuy.R;
 import com.tv.doubuy.adapter.ManageShopAdapter;
 import com.tv.doubuy.base.BaseExtendFragment;
 import com.tv.doubuy.dialog.PromptDialog;
+import com.tv.doubuy.model.responseModel.ShopClassListModel;
 import com.tv.doubuy.view.drawer.DrawerRecyclerView;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -22,7 +21,7 @@ import butterknife.ButterKnife;
  * Created by apple on 2017/6/19.
  */
 
-public class ShopManageFragment extends BaseExtendFragment implements View.OnClickListener {
+public class ShopManageFragment extends BaseExtendFragment implements View.OnClickListener, ShopClassView {
 
     private static final String ARG_PARAM = "param";
     private String mParam;
@@ -33,8 +32,11 @@ public class ShopManageFragment extends BaseExtendFragment implements View.OnCli
     TextView tvAddClass;
 
 
+    private ShopClassPresenter shopClassPresenter;
+
     private ManageShopAdapter manageShopAdapter;
 
+    private ShopClassListModel classListModel;
 
     public static ShopManageFragment newInstance(String param) {
         ShopManageFragment fragment = new ShopManageFragment();
@@ -60,21 +62,21 @@ public class ShopManageFragment extends BaseExtendFragment implements View.OnCli
         View view = inflater.inflate(R.layout.fragment_shop_manage, null);
         ButterKnife.bind(this, view);
         setContentView(view);
+
+    }
+
+    @Override
+    public void onResumeExtend() {
+        super.onResumeExtend();
         initViews();
         setListener();
     }
 
     public void initViews() {
+        shopClassPresenter = new ShopClassPresenter(getActivity(), this);
+        shopClassPresenter.getCalssList();
 
-        final List<String> list = new ArrayList<>();
-        for (int i = 0; i < 40; i++) {
-            list.add("item" + i);
-        }
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setNestedScrollingEnabled(false);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        manageShopAdapter = new ManageShopAdapter(getActivity(), list);
-        recyclerView.setAdapter(manageShopAdapter);
+
         recyclerView.setOnItemClickListener(new DrawerRecyclerView.OnItemClickListener() {
             @Override
             public void onItemClick(View view, final int position) {
@@ -89,8 +91,15 @@ public class ShopManageFragment extends BaseExtendFragment implements View.OnCli
                 dialog.setDiaLogClick(new PromptDialog.DialogCallBack() {
                     @Override
                     public void yesCallBack() {
-                        manageShopAdapter.removeItem(position);
-                        dialog.dismiss();
+
+                        if (classListModel != null) {
+                            shopClassPresenter.detleClassProducts(classListModel.getResults().get(position).getId() + "");
+                            manageShopAdapter.removeItem(position);
+                            dialog.dismiss();
+
+
+                        }
+
                     }
 
                     @Override
@@ -103,14 +112,22 @@ public class ShopManageFragment extends BaseExtendFragment implements View.OnCli
             }
 
             @Override
-            public void onModify(int position) {
-                Intent intent = new Intent();
-                intent.setClass(getActivity(), AddClassActivity.class);
-                intent.putExtra("title", "修改分类");
-                startActivity(intent);
+            public void onModifyClick(int position) {
+                if (classListModel != null) {
+                    Intent intent = new Intent();
+                    intent.setClass(getActivity(), AddClassActivity.class);
+                    intent.putExtra("title", "修改分类");
+                    intent.putExtra("classid", classListModel.getResults().get(position).getId() + "");
+                    intent.putExtra("name", classListModel.getResults().get(position).getName());
+                    intent.putExtra("desc", classListModel.getResults().get(position).getDescription());
+                    startActivity(intent);
+
+                }
 
             }
+
         });
+
 
     }
 
@@ -126,12 +143,30 @@ public class ShopManageFragment extends BaseExtendFragment implements View.OnCli
         Intent intent = new Intent();
         switch (v.getId()) {
             case R.id.tv_addclass:
-                intent.setClass(getActivity(), AddShopActivity.class);
+                intent.setClass(getActivity(), AddClassActivity.class);
                 intent.putExtra("title", "添加分类");
                 startActivity(intent);
                 break;
 
         }
 
+    }
+
+    @Override
+    public void getListClassData(ShopClassListModel shopClassListModel) {
+        this.classListModel = shopClassListModel;
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setNestedScrollingEnabled(false);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        manageShopAdapter = new ManageShopAdapter(getActivity(), shopClassListModel.getResults());
+        recyclerView.setAdapter(manageShopAdapter);
+
+    }
+
+    @Override
+    public void deteleCategories(boolean ifsuccess) {
+
+        manageShopAdapter.notifyDataSetChanged();
+        Toast.makeText(getActivity(), "删除成功", Toast.LENGTH_SHORT).show();
     }
 }

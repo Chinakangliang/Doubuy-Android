@@ -26,6 +26,7 @@ public class DrawerRecyclerView extends RecyclerView {
     private LinearLayout mItemLayout;
     //删除按钮
     private TextView mDelete;
+
     private TextView mModify;
 
     //最大滑动距离(即删除按钮的宽度)
@@ -81,22 +82,24 @@ public class DrawerRecyclerView extends RecyclerView {
                     mPosition = viewHolder.getAdapterPosition();
 
                     mDelete = (TextView) mItemLayout.findViewById(R.id.item_delete);
+
                     mModify = (TextView) mItemLayout.findViewById(R.id.item_modify);
+
                     mMaxLength = mDelete.getWidth() * 2;
-                    mDelete.setOnClickListener(new OnClickListener() {
+
+                    mModify.setOnClickListener(new OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            mListener.onDeleteClick(mPosition);
+                            mListener.onModifyClick(mPosition);
                             mItemLayout.scrollTo(0, 0);
                             mDeleteBtnState = 0;
                         }
                     });
 
-                    mModify.setOnClickListener(new OnClickListener() {
+                    mDelete.setOnClickListener(new OnClickListener() {
                         @Override
                         public void onClick(View v) {
-
-                            mListener.onModify(mPosition);
+                            mListener.onDeleteClick(mPosition);
                             mItemLayout.scrollTo(0, 0);
                             mDeleteBtnState = 0;
                         }
@@ -175,11 +178,14 @@ public class DrawerRecyclerView extends RecyclerView {
 
     @Override
     public void computeScroll() {
+        super.computeScroll();
+
+
         if (mScroller.computeScrollOffset()) {
             mItemLayout.scrollTo(mScroller.getCurrX(), mScroller.getCurrY());
+
             invalidate();
         } else if (isStartScroll) {
-            isStartScroll = false;
             if (mDeleteBtnState == 1) {
                 mDeleteBtnState = 0;
             }
@@ -189,6 +195,7 @@ public class DrawerRecyclerView extends RecyclerView {
             }
         }
     }
+
 
     @Override
     protected void onDetachedFromWindow() {
@@ -224,11 +231,8 @@ public class DrawerRecyclerView extends RecyclerView {
         void onDeleteClick(int position);
 
         /**
-         * 修改回调
-         *
-         * @param position
+         * 修改
          */
-        void onModify(int position);
+        void onModifyClick(int position);
     }
-
 }

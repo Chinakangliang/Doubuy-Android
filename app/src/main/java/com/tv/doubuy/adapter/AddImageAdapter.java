@@ -46,11 +46,12 @@ public class AddImageAdapter extends RecyclerView.Adapter<AddImageAdapter.ViewHo
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(final ViewHolder holder, int position) {
 
 
         if (mlist.size() == 1 && mlist.get(position).equals("选择")) {
             holder.iv_item_image.setVisibility(View.VISIBLE);
+            holder.tv_save.setVisibility(View.VISIBLE);
             holder.iv_item_image.setImageResource(R.mipmap.product_btn_add_pic);
             holder.iv_item_image.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -86,6 +87,16 @@ public class AddImageAdapter extends RecyclerView.Adapter<AddImageAdapter.ViewHo
             }
         }
 
+        holder.tv_save.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (callback != null) {
+                    callback.saveImage();
+                    holder.tv_save.setText("保存");
+                }
+            }
+        });
+
 
     }
 
@@ -98,12 +109,13 @@ public class AddImageAdapter extends RecyclerView.Adapter<AddImageAdapter.ViewHo
 
         private ImageView iv_item_image;
 
+        private TextView tv_save;
 
         public ViewHolder(View itemView) {
             super(itemView);
 
             iv_item_image = (ImageView) itemView.findViewById(R.id.iv_item_image);
-
+            tv_save = (TextView) itemView.findViewById(R.id.tv_save);
         }
     }
 
@@ -118,5 +130,7 @@ public class AddImageAdapter extends RecyclerView.Adapter<AddImageAdapter.ViewHo
 
 
         void setAddImage();
+
+        void saveImage();
     }
 }

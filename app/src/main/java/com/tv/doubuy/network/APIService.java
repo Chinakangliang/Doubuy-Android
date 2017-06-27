@@ -2,8 +2,10 @@ package com.tv.doubuy.network;
 
 
 import com.tv.doubuy.base.BaseResponse;
+import com.tv.doubuy.model.requestModel.AddCalssModel;
 import com.tv.doubuy.model.requestModel.BindMobileModel;
 import com.tv.doubuy.model.requestModel.BindRequestModel;
+import com.tv.doubuy.model.requestModel.CreateProductModel;
 import com.tv.doubuy.model.requestModel.CreateShposModel;
 import com.tv.doubuy.model.requestModel.LoginRequestModel;
 import com.tv.doubuy.model.requestModel.ProfileModel;
@@ -14,6 +16,7 @@ import com.tv.doubuy.model.requestModel.SignupModel;
 import com.tv.doubuy.utils.DouBuyApplication;
 
 import retrofit2.http.Body;
+import retrofit2.http.DELETE;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
@@ -38,6 +41,7 @@ public interface APIService {
     String ALIYUN_OSS_HOST = "http://oss-cn-hangzhou.aliyuncs.com/";
     String ALIYUN_OSS_IMAGE_PATH = "http://soundlife-app.oss-cn-hangzhou.aliyuncs.com/";
 
+    public static String FUHAO = "¥";
 
     @POST("auth/sendCode")
     Observable<BaseResponse> setUserSendCode(@Body LoginRequestModel loginRequestModel);
@@ -86,5 +90,34 @@ public interface APIService {
     //    http://{{dbuy_api_server}}/shops/1/searchUser?searchStr=豆
     @GET("shops/{store_id}/searchUser")
     Observable<BaseResponse> searchshop(@Path("store_id") String id, @Query("searchStr") String str);
+
+
+    @GET("shop/{store_id}/products")
+    Observable<BaseResponse> getListProducts(@Path("store_id") String id, @Query("onSale") String onSale, @Query("order") String order);
+
+
+    @POST("shop/{store_id}/products")
+    Observable<BaseResponse> createProduct(@Path("store_id") String id, @Body CreateProductModel createProductModel);
+
+
+    @DELETE("/shop/{store_id}/products/{productid}")
+    Observable<BaseResponse> deteleProduct(@Path("store_id") String id, @Path("productid") String productid);
+
+
+    @GET("shop/{store_id}/categories")
+    Observable<BaseResponse> getClassList(@Path("store_id") String id);
+
+
+    @POST("shop/{store_id}/categories")
+    Observable<BaseResponse> addClassProduct(@Path("store_id") String id, @Body AddCalssModel addCalssModel);
+
+
+    @DELETE("shop/{store_id}/categories/{class_id}")
+    Observable<BaseResponse> deteleClass(@Path("store_id") String id, @Path("class_id") String classid);
+
+
+    @PUT("shop/{store_id}/categories/{class_id}")
+    Observable<BaseResponse> setmodfiyProduct(@Path("store_id") String id, @Path("class_id") String classid, @Body AddCalssModel addCalssModel);
+
 
 }

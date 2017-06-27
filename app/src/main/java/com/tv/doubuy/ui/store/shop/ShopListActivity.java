@@ -12,6 +12,8 @@ import android.widget.RadioGroup;
 
 import com.tv.doubuy.R;
 import com.tv.doubuy.base.BaseActivity;
+import com.tv.doubuy.ui.store.shop.search.SearchActivity;
+import com.tv.doubuy.ui.store.shop.shopclass.ShopManageFragment;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

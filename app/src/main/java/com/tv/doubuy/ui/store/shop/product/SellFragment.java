@@ -1,4 +1,4 @@
-package com.tv.doubuy.ui.store.shop;
+package com.tv.doubuy.ui.store.shop.product;
 
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -6,9 +6,11 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.view.View;
 
 import com.tv.doubuy.R;
-import com.tv.doubuy.adapter.EmployAdapter;
+import com.tv.doubuy.adapter.ProductAdapter;
 import com.tv.doubuy.base.BaseExtendFragment;
 import com.tv.doubuy.dialog.ModifyPopWindow;
+import com.tv.doubuy.model.responseModel.ProductsListModel;
+import com.tv.doubuy.ui.store.shop.ShopItemDIalogPresenter;
 import com.tv.doubuy.utils.ToastUtils;
 import com.tv.doubuy.view.refresh.RefresHelper;
 import com.tv.doubuy.view.refresh.RefreshRecyclerView;
@@ -23,7 +25,7 @@ import butterknife.ButterKnife;
  * Created by apple on 2017/6/19.
  */
 
-public class SellFragment extends BaseExtendFragment implements EmployAdapter.EmployAdapteCallBack {
+public class SellFragment extends BaseExtendFragment implements ShopListPresenter, ProductAdapter.EmployAdapteCallBack {
 
     private static final String ARG_PARAM = "param";
     private String mParam;
@@ -34,10 +36,12 @@ public class SellFragment extends BaseExtendFragment implements EmployAdapter.Em
     @BindView(R.id.swipelauout)
     SwipeRefreshLayout swipelauout;
 
-    private EmployAdapter employAdapter;
+    private ProductAdapter productAdapter;
     private ModifyPopWindow window;
 
     private ShopItemDIalogPresenter presenter;
+
+    private ShopListView shopListView;
 
     public static SellFragment newInstance(String param) {
         SellFragment fragment = new SellFragment();
@@ -72,20 +76,16 @@ public class SellFragment extends BaseExtendFragment implements EmployAdapter.Em
         recyler.setLoadMoreEnable(true);//允许加载更多
         recyler.setFooterResource(R.layout.item_footer);//设置脚布局
 
-        for (int i = 0; i < 30; i++) {
-
-            str.add(mParam + i);
-        }
         recyler.setLayoutManager(new LinearLayoutManager(getActivity()));
-        employAdapter = new EmployAdapter(getActivity());
-        employAdapter.setData(str);
-        recyler.setAdapter(employAdapter);
+        productAdapter = new ProductAdapter(getActivity());
 
+        shopListView = new ShopListView(getActivity(), this);
+        shopListView.getShopList();
     }
 
     public void setListener() {
 
-        employAdapter.setAdapterClick(this);
+        productAdapter.setAdapterClick(this);
 
 
         recyler.setOnLoadMoreListener(new RefreshRecyclerView.OnLoadMoreListener() {
@@ -109,8 +109,9 @@ public class SellFragment extends BaseExtendFragment implements EmployAdapter.Em
 
     }
 
+
     @Override
-    public void setItemShowPopWindowShow(final int position, final View view) {
+    public void setItemShowPopWindowShow(final int position, final View view, final String productid) {
         window = new ModifyPopWindow(getActivity(), view);
         presenter = new ShopItemDIalogPresenter(getActivity(), window, str);
 
@@ -136,9 +137,10 @@ public class SellFragment extends BaseExtendFragment implements EmployAdapter.Em
 
             @Override
             public void onItemPopWinowDetele() {
-                presenter.setNeedData(position, employAdapter, recyler);
+                presenter.setNeedData(position, productAdapter, recyler);
                 presenter.shouDialog("确定删除该商品?", "detele");
-                recyler.notifyData();
+//                recyler.notifyData();
+                shopListView.deteleProduct(productid);
 
             }
         });
@@ -152,6 +154,20 @@ public class SellFragment extends BaseExtendFragment implements EmployAdapter.Em
         }
 
         super.onDestroyViewExtend();
+    }
+
+
+    @Override
+    public void productlistdata(ProductsListModel productsListModel) {
+
+        productAdapter.setData(productsListModel.getResults());
+        recyler.setAdapter(productAdapter);
+
+    }
+
+    @Override
+    public void deteleProduct(boolean isdetele) {
+
     }
 
 

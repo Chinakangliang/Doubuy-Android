@@ -7,9 +7,10 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.tv.doubuy.R;
+import com.tv.doubuy.model.responseModel.ShopClassListChildrenBean;
+import com.tv.doubuy.model.responseModel.ShopClassListModel;
 import com.tv.doubuy.view.drawer.DrawerViewHolder;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -21,12 +22,14 @@ public class ManageShopAdapter extends RecyclerView.Adapter {
 
     private LayoutInflater mInflater;
 
-    private List<String> mlist = new ArrayList<>();
+    private List<ShopClassListChildrenBean> mlist;
 
-    public ManageShopAdapter(Context context, List<String> list) {
+    public ManageShopAdapter(Context context, List<ShopClassListChildrenBean> list) {
+
         this.mlist = list;
         mInflater = LayoutInflater.from(context);
     }
+
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -41,7 +44,8 @@ public class ManageShopAdapter extends RecyclerView.Adapter {
         final DrawerViewHolder viewHolder = (DrawerViewHolder) holder;
 
         viewHolder.itemView.setTag(position);
-        viewHolder.content.setText(mlist.get(position));
+        viewHolder.content.setText(mlist.get(position).getName());
+        viewHolder.tvSize.setText("(" + mlist.get(position).getId() + ")");
     }
 
     @Override

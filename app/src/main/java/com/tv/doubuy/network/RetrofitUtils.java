@@ -3,8 +3,10 @@ package com.tv.doubuy.network;
 import android.content.Context;
 import android.util.Log;
 
+import com.tv.doubuy.model.requestModel.AddCalssModel;
 import com.tv.doubuy.model.requestModel.BindMobileModel;
 import com.tv.doubuy.model.requestModel.BindRequestModel;
+import com.tv.doubuy.model.requestModel.CreateProductModel;
 import com.tv.doubuy.model.requestModel.CreateShposModel;
 import com.tv.doubuy.model.requestModel.LoginRequestModel;
 import com.tv.doubuy.model.requestModel.ProfileModel;
@@ -213,6 +215,65 @@ public class RetrofitUtils {
         toSubscribe(mApiService.searchshop(storeid, str), subscriber);
     }
 
+
+    /**
+     * 商品列表
+     */
+    public void getProductList(String storeid, String onSale, String order, ProgressSubscriber subscriber) {
+
+        toSubscribe(mApiService.getListProducts(storeid, onSale, order), subscriber);
+
+    }
+
+    /**
+     * 发布商品
+     */
+    public void setCreateProduct(String id, CreateProductModel createProduct, ProgressSubscriber subscriber) {
+
+        toSubscribe(mApiService.createProduct(id, createProduct), subscriber);
+    }
+
+    /**
+     * 删除商品
+     */
+    public void deteleProducts(String storeid, String productid, ProgressSubscriber subscriber) {
+
+        toSubscribe(mApiService.deteleProduct(storeid, productid), subscriber);
+    }
+
+    /**
+     * 分类
+     */
+    public void getCalssList(String storeid, ProgressSubscriber subscriber) {
+        toSubscribe(mApiService.getClassList(storeid), subscriber);
+    }
+
+    /**
+     * 添加分类
+     */
+    public void addclassProduct(String stroeid, AddCalssModel addCalssModel, ProgressSubscriber subscriber) {
+
+        toSubscribe(mApiService.addClassProduct(stroeid, addCalssModel), subscriber);
+
+    }
+
+    /**
+     * 删除分类
+     */
+
+    public void deteleClassProduct(String stroeid, String classid, ProgressSubscriber subscriber) {
+
+        toSubscribe(mApiService.deteleClass(stroeid, classid), subscriber);
+    }
+
+
+    /**
+     * 修改分类
+     */
+    public void setModfiyProducts(String stroeid, String classid, AddCalssModel addCalssModel, ProgressSubscriber subscriber) {
+        toSubscribe(mApiService.setmodfiyProduct(stroeid, classid, addCalssModel), subscriber);
+
+    }
 
     private <T> void toSubscribe(Observable<T> o, Subscriber s) {
         o.subscribeOn(Schedulers.io())

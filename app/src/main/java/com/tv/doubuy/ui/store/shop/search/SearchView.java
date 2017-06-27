@@ -1,4 +1,4 @@
-package com.tv.doubuy.ui.store.shop;
+package com.tv.doubuy.ui.store.shop.search;
 
 /**
  * Created by apple on 2017/6/23.

@@ -1,4 +1,4 @@
-package com.tv.doubuy.ui.store.shop;
+package com.tv.doubuy.ui.store.shop.adds;
 
 import android.Manifest;
 import android.content.Intent;
@@ -6,6 +6,9 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -26,13 +29,15 @@ import com.tv.doubuy.adapter.AddImageAdapter;
 import com.tv.doubuy.adapter.SpecAdapter;
 import com.tv.doubuy.base.BaseActivity;
 import com.tv.doubuy.dialog.ActionSheetDialog;
+import com.tv.doubuy.model.requestModel.CreateProductModel;
+import com.tv.doubuy.model.requestModel.ProductSKUsBean;
+import com.tv.doubuy.ui.store.shop.DescribeActivity;
 import com.tv.doubuy.utils.CustomHelper;
 import com.tv.doubuy.utils.ToastUtils;
 import com.tv.doubuy.view.CustomLinearLayoutManager;
 import com.tv.doubuy.view.GridManager;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 import butterknife.BindView;
@@ -42,7 +47,7 @@ import butterknife.ButterKnife;
  * Created by apple on 2017/6/21.
  */
 
-public class AddShopActivity extends BaseActivity implements SpecAdapter.SpecAdapterCallback, View.OnClickListener, TakePhoto.TakeResultListener, InvokeListener, AddImageAdapter.addImageViewListenr {
+public class AddShopActivity extends BaseActivity implements SpecAdapter.SpecAdapterCallback, OnClickListener, TakePhoto.TakeResultListener, InvokeListener, AddImageAdapter.addImageViewListenr, AddShopView {
 
 
     @BindView(R.id.iv_back)
@@ -62,6 +67,15 @@ public class AddShopActivity extends BaseActivity implements SpecAdapter.SpecAda
 
     @BindView(R.id.recyler_shopimage)
     RecyclerView recyclerShopImage;
+    @BindView(R.id.bt_right)
+    Button btRight;
+
+    @BindView(R.id.et_name)
+    EditText etName;
+    @BindView(R.id.et_category)
+    EditText etCategory;
+    @BindView(R.id.et_unit)
+    EditText etUnit;
 
     private SpecAdapter specAdapter;
     private List<String> mlist;
@@ -70,6 +84,10 @@ public class AddShopActivity extends BaseActivity implements SpecAdapter.SpecAda
     private TakePhoto takePhoto;
     private InvokeParam invokeParam;
     private List<String> imgUrls = new ArrayList<>();
+
+    private List<String> photourl = new ArrayList<>();
+
+    private List<ProductSKUsBean> listbean;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -84,6 +102,8 @@ public class AddShopActivity extends BaseActivity implements SpecAdapter.SpecAda
     public void initviews() {
         tvTitle.setText("添加商品");
         mlist = new ArrayList<>();
+        btRight.setText("发布");
+
         CustomLinearLayoutManager linearLayoutManager = new CustomLinearLayoutManager(this);
         linearLayoutManager.setScrollEnabled(false);
         recyclerView.setLayoutManager(linearLayoutManager);
@@ -92,10 +112,10 @@ public class AddShopActivity extends BaseActivity implements SpecAdapter.SpecAda
         specAdapter.setSpecClick(this);
         recyclerView.setAdapter(specAdapter);
 
-
         if (imgUrls.size() == 0) {
             imgUrls.add("选择");
         }
+
 
         /**
          * 选择照片
@@ -109,7 +129,7 @@ public class AddShopActivity extends BaseActivity implements SpecAdapter.SpecAda
         recyclerShopImage.setAdapter(addImageAdapter);
 
 
-        tvAddSpec.setOnClickListener(new View.OnClickListener() {
+        tvAddSpec.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 mlist.add("item");
@@ -120,11 +140,15 @@ public class AddShopActivity extends BaseActivity implements SpecAdapter.SpecAda
         });
 
         tvInstructions.setOnClickListener(this);
+
+        btRight.setOnClickListener(this);
     }
 
 
     @Override
-    public void itemonClick(int position, List<HashMap> listmap) {
+    public void itemonClick(int position, List<ProductSKUsBean> listbean) {
+
+        this.listbean = listbean;
 
     }
 
@@ -143,6 +167,12 @@ public class AddShopActivity extends BaseActivity implements SpecAdapter.SpecAda
             case R.id.tv_instructions:
                 intent.setClass(AddShopActivity.this, DescribeActivity.class);
                 startActivity(intent);
+                break;
+            case R.id.bt_right:
+                avatarUpload(imgUrls);
+                AddShopPresenter addShopPresenter = new AddShopPresenter(this, this);
+                addShopPresenter.createProducts(ReleaseHelep.getInstance().createRelease(listbean, etName.getText().toString(), etUnit.getText().toString()));
+
                 break;
 
         }
@@ -216,6 +246,7 @@ public class AddShopActivity extends BaseActivity implements SpecAdapter.SpecAda
         for (int i = 0; i < imgUrls.size(); i++) {
             if (imgUrls.get(i).equals("选择")) {
                 imgUrls.remove(i);
+                photourl.addAll(imgUrls);
             }
         }
 
@@ -223,6 +254,8 @@ public class AddShopActivity extends BaseActivity implements SpecAdapter.SpecAda
         for (TImage image : tImages) {
             urls.add(image.getPath());
         }
+
+
         return urls;
     }
 
@@ -266,5 +299,26 @@ public class AddShopActivity extends BaseActivity implements SpecAdapter.SpecAda
     @Override
     public void setAddImage() {
         rootApply();
+    }
+
+    @Override
+    public void saveImage() {
+
+    }
+
+
+    public void avatarUpload(List<String> photoUrls) {
+        ServerUpFile serverUpFile = new ServerUpFile();
+        Intent intent = new Intent(AddShopActivity.this, ServerUpFile.class);
+        intent.putStringArrayListExtra("imgUrls", (ArrayList<String>) photoUrls);
+        serverUpFile.onBind(intent);
+        startService(intent);
+    }
+
+
+    @Override
+    public void onReleaseProducts(CreateProductModel productModel) {
+
+
     }
 }

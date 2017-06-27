@@ -16,6 +16,7 @@ public class DrawerViewHolder extends RecyclerView.ViewHolder {
     public TextView content;
     public TextView delete;
     public LinearLayout layout;
+    public TextView tvSize;
 
 
     public DrawerViewHolder(View itemView) {
@@ -23,5 +24,7 @@ public class DrawerViewHolder extends RecyclerView.ViewHolder {
         content = (TextView) itemView.findViewById(R.id.item_content);
         delete = (TextView) itemView.findViewById(R.id.item_delete);
         layout = (LinearLayout) itemView.findViewById(R.id.item_layout);
+
+        tvSize = (TextView) itemView.findViewById(R.id.tv_item_size);
     }
 }

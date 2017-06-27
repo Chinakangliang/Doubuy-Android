@@ -9,32 +9,6 @@ import java.util.List;
 public class UserShopModel {
 
 
-    /**
-     * id : 76
-     * shopNO : 149723485889876
-     * name : 豆佰直播
-     * description : null
-     * cover : null
-     * logo : http://logo.image
-     * QRCode : null
-     * followCount : 0
-     * serviceAviable : false
-     * serviceEndDate : null
-     * totalSaledAmount : 0
-     * score : 0
-     * isFreeShip : true
-     * shipFee : 0
-     * levelScore : 0
-     * level : 1
-     * isRecommend : false
-     * created_at : 2017-06-12T02:34:18.868Z
-     * updated_at : 2017-06-12T02:34:18.899Z
-     * areaId : null
-     * ownerId : 91
-     * liveRooms : [{"createdAt":"2017-06-12T02:34:18.951Z","id":66,"liveRoomNO":"149723485896366","title":"豆佰直播 的直播间","cover":"http://soundlife-app.oss-cn-hangzhou.aliyuncs.com/doubuy_common/room_bg_default.png","description":"你可以在这里修改直播间的描述信息","isLiving":null,"avaliable":true,"pushStreamUrl":null,"rtmpPlayUrl":null,"hlsPlayUrl":null,"chatRoom":null,"created_at":"2017-06-12T02:34:18.951Z","updated_at":"2017-06-12T02:34:18.964Z","shopId":76,"mainProductId":null,"activeLiveRecordId":null}]
-     * profile : {"id":66,"companyName":null,"businessAddress":null,"businessPhone":null,"shippingAddress":null,"bankAccount":null,"bankOfDeposit":null,"wechatSubscriptionId":null,"wechatSubscriptionKeyt":null,"legalPerson":null,"legalPersonNO":null,"legalPersonLicenceImage1":null,"legalPersonLicenceImage2":null,"licenseNO":null,"licenseImage":null,"taxLicenseImage":null,"realNameStatus":"notApply","realShopStatus":"notApply","created_at":"2017-06-12T02:34:18.933Z","updated_at":"2017-06-12T02:34:18.933Z","shopId":76}
-     */
-
     private int id;
     private String shopNO;
     private String name;
