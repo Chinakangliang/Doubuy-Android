@@ -49,6 +49,9 @@ public class ShopListView {
 
     }
 
+    /**
+     * 删除
+     */
     public void deteleProduct(String productid) {
 
         RetrofitUtils.getInstance(mcontext).deteleProducts(douBuyCache.getStoreId(), productid, new ProgressSubscriber(new SubscriberOnNextListener() {

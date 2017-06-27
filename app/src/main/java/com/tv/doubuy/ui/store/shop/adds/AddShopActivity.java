@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.anthonycr.grant.PermissionsManager;
 import com.anthonycr.grant.PermissionsResultAction;
@@ -31,8 +32,10 @@ import com.tv.doubuy.base.BaseActivity;
 import com.tv.doubuy.dialog.ActionSheetDialog;
 import com.tv.doubuy.model.requestModel.CreateProductModel;
 import com.tv.doubuy.model.requestModel.ProductSKUsBean;
+import com.tv.doubuy.model.responseModel.ProductsListModel;
 import com.tv.doubuy.ui.store.shop.DescribeActivity;
 import com.tv.doubuy.utils.CustomHelper;
+import com.tv.doubuy.utils.DouBuyApplication;
 import com.tv.doubuy.utils.ToastUtils;
 import com.tv.doubuy.view.CustomLinearLayoutManager;
 import com.tv.doubuy.view.GridManager;
@@ -100,9 +103,16 @@ public class AddShopActivity extends BaseActivity implements SpecAdapter.SpecAda
 
 
     public void initviews() {
-        tvTitle.setText("添加商品");
-        mlist = new ArrayList<>();
+
+        String title = getIntent().getStringExtra("title");
+
+        ProductsListModel.ResultsBean resultsBean = (ProductsListModel.ResultsBean) getIntent().getSerializableExtra("ResultsBean");
+        tvTitle.setText(title);
+
         btRight.setText("发布");
+
+
+        mlist = new ArrayList<>();
 
         CustomLinearLayoutManager linearLayoutManager = new CustomLinearLayoutManager(this);
         linearLayoutManager.setScrollEnabled(false);
@@ -114,6 +124,7 @@ public class AddShopActivity extends BaseActivity implements SpecAdapter.SpecAda
 
         if (imgUrls.size() == 0) {
             imgUrls.add("选择");
+
         }
 
 
@@ -124,10 +135,16 @@ public class AddShopActivity extends BaseActivity implements SpecAdapter.SpecAda
         GridManager gridManager = new GridManager(this, 3);
         recyclerShopImage.setLayoutManager(gridManager);
         gridManager.setSmoothScrollbarEnabled(false);
+
+
+        if (resultsBean != null) {
+            etName.setText(resultsBean.getName());
+            etCategory.setText(resultsBean.getDescription());
+        }
         addImageAdapter = new AddImageAdapter(this, imgUrls);
+
         addImageAdapter.AddImageCallback(this);
         recyclerShopImage.setAdapter(addImageAdapter);
-
 
         tvAddSpec.setOnClickListener(new OnClickListener() {
             @Override
@@ -170,8 +187,12 @@ public class AddShopActivity extends BaseActivity implements SpecAdapter.SpecAda
                 break;
             case R.id.bt_right:
                 avatarUpload(imgUrls);
-                AddShopPresenter addShopPresenter = new AddShopPresenter(this, this);
-                addShopPresenter.createProducts(ReleaseHelep.getInstance().createRelease(listbean, etName.getText().toString(), etUnit.getText().toString()));
+                List<String> list = DouBuyApplication.getInstance().getList();
+                if (list != null && list.size() > 0) {
+                    AddShopPresenter addShopPresenter = new AddShopPresenter(this, this);
+                    addShopPresenter.createProducts(ReleaseHelep.getInstance().createRelease(listbean, etName.getText().toString(), etUnit.getText().toString()));
+
+                }
 
                 break;
 
@@ -319,6 +340,7 @@ public class AddShopActivity extends BaseActivity implements SpecAdapter.SpecAda
     @Override
     public void onReleaseProducts(CreateProductModel productModel) {
 
-
+        Toast.makeText(this, "发布成功！", Toast.LENGTH_SHORT).show();
+        finish();
     }
 }

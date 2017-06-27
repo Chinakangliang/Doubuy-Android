@@ -1,9 +1,11 @@
 package com.tv.doubuy.ui.store.shop.product;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.view.View;
+import android.widget.TextView;
 
 import com.tv.doubuy.R;
 import com.tv.doubuy.adapter.ProductAdapter;
@@ -11,6 +13,7 @@ import com.tv.doubuy.base.BaseExtendFragment;
 import com.tv.doubuy.dialog.ModifyPopWindow;
 import com.tv.doubuy.model.responseModel.ProductsListModel;
 import com.tv.doubuy.ui.store.shop.ShopItemDIalogPresenter;
+import com.tv.doubuy.ui.store.shop.adds.AddShopActivity;
 import com.tv.doubuy.utils.ToastUtils;
 import com.tv.doubuy.view.refresh.RefresHelper;
 import com.tv.doubuy.view.refresh.RefreshRecyclerView;
@@ -25,7 +28,7 @@ import butterknife.ButterKnife;
  * Created by apple on 2017/6/19.
  */
 
-public class SellFragment extends BaseExtendFragment implements ShopListPresenter, ProductAdapter.EmployAdapteCallBack {
+public class SellFragment extends BaseExtendFragment implements ShopListPresenter, ProductAdapter.EmployAdapteCallBack, View.OnClickListener {
 
     private static final String ARG_PARAM = "param";
     private String mParam;
@@ -35,6 +38,10 @@ public class SellFragment extends BaseExtendFragment implements ShopListPresente
     RefreshRecyclerView recyler;
     @BindView(R.id.swipelauout)
     SwipeRefreshLayout swipelauout;
+    @BindView(R.id.tv_addProduct)
+    TextView tvAddProduct;
+
+    private ProductsListModel lismodelProduct;
 
     private ProductAdapter productAdapter;
     private ModifyPopWindow window;
@@ -86,7 +93,7 @@ public class SellFragment extends BaseExtendFragment implements ShopListPresente
     public void setListener() {
 
         productAdapter.setAdapterClick(this);
-
+        tvAddProduct.setOnClickListener(this);
 
         recyler.setOnLoadMoreListener(new RefreshRecyclerView.OnLoadMoreListener() {
             @Override
@@ -131,7 +138,17 @@ public class SellFragment extends BaseExtendFragment implements ShopListPresente
 
             @Override
             public void onItemPopWindowEdit() {
-                ToastUtils.getInstance().showToast(getActivity(), "edit");
+
+                if (lismodelProduct != null) {
+
+                    Bundle bundle = new Bundle();
+                    Intent intent = new Intent(getActivity(), AddShopActivity.class);
+                    bundle.putSerializable("ResultsBean", lismodelProduct.getResults().get(position));
+                    intent.putExtra("title", "编辑商品");
+                    intent.putExtras(bundle);
+                    startActivity(intent);
+                }
+
 
             }
 
@@ -139,7 +156,6 @@ public class SellFragment extends BaseExtendFragment implements ShopListPresente
             public void onItemPopWinowDetele() {
                 presenter.setNeedData(position, productAdapter, recyler);
                 presenter.shouDialog("确定删除该商品?", "detele");
-//                recyler.notifyData();
                 shopListView.deteleProduct(productid);
 
             }
@@ -160,6 +176,8 @@ public class SellFragment extends BaseExtendFragment implements ShopListPresente
     @Override
     public void productlistdata(ProductsListModel productsListModel) {
 
+        this.lismodelProduct = productsListModel;
+
         productAdapter.setData(productsListModel.getResults());
         recyler.setAdapter(productAdapter);
 
@@ -168,7 +186,25 @@ public class SellFragment extends BaseExtendFragment implements ShopListPresente
     @Override
     public void deteleProduct(boolean isdetele) {
 
+        productAdapter.notifyDataSetChanged();
+
     }
 
 
+    @Override
+    public void onClick(View v) {
+
+        Intent intent = new Intent();
+        Bundle bundle = new Bundle();
+        switch (v.getId()) {
+
+            case R.id.tv_addProduct:
+                intent.setClass(getActivity(), AddShopActivity.class);
+                intent.putExtra("title", "添加商品");
+                startActivity(intent);
+
+                break;
+        }
+
+    }
 }

@@ -48,7 +48,7 @@ public class ProductsListModel implements Serializable {
     }
 
 
-    public static class ResultsBean {
+    public static class ResultsBean implements Serializable {
 
         private int promotionPrice;
         private boolean isFollowed;
