@@ -94,6 +94,8 @@ public class EditorProductActivity extends BaseActivity implements ImageAdapter.
     }
 
 
+
+
     public void initviews() {
 
         title = getIntent().getStringExtra("title");
@@ -213,13 +215,11 @@ public class EditorProductActivity extends BaseActivity implements ImageAdapter.
 
     private void showHeadportraitDialog() {
 
-
         new ActionSheetDialog(this).builder().onClickSheetItem(new ActionSheetDialog.OnSheetItemClickListener() {
             @Override
             public void onPicturesClick() {
 
                 CustomHelper customHelper = CustomHelper.getInstace();
-//                customHelper.setMaxSelectCount(9);
                 customHelper.onPhotoGraph(getTakePhoto(), false);
 
             }
@@ -227,7 +227,6 @@ public class EditorProductActivity extends BaseActivity implements ImageAdapter.
             @Override
             public void onAlbumClick() {
                 CustomHelper customHelper = CustomHelper.getInstace();
-//                customHelper.setMaxSelectCount(9);
                 customHelper.onAlbumChoice(getTakePhoto(), false);
 
             }

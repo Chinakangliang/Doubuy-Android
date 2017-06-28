@@ -32,11 +32,6 @@ public abstract class BaseExtendFragment extends BaseFragment {
         if (bundle != null) {
             isLazyLoad = bundle.getBoolean(INTENT_BOOLEAN_LAZYLOAD, isLazyLoad);
         }
-        //为什么不直接getUserVisibleHint();而是通过自己存isVisibleToUserState变量判断
-        //因为v4的25的版本 已经调用 setUserVisibleHint(true)，结果到这里getUserVisibleHint是false
-        // （ps:看了FragmentManager源码Fragment被重新创建有直接赋值isVisibleToUser不知道是不是那里和之前v4有改动的地方）
-        //所以我默认VISIBLE_STATE_NOTSET，之前没有调用setUserVisibleHint方法，就用系统的getUserVisibleHint，否则就用setUserVisibleHint后保存的值
-        //总之就是调用了setUserVisibleHint 就使用setUserVisibleHint的值
         boolean isVisibleToUser;
         if (isVisibleToUserState == VISIBLE_STATE_NOTSET) {
             isVisibleToUser = getUserVisibleHint();
