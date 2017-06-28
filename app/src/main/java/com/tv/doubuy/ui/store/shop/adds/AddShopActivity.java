@@ -30,6 +30,7 @@ import com.tv.doubuy.adapter.AddImageAdapter;
 import com.tv.doubuy.adapter.SpecAdapter;
 import com.tv.doubuy.base.BaseActivity;
 import com.tv.doubuy.dialog.ActionSheetDialog;
+import com.tv.doubuy.dialog.Progresloading;
 import com.tv.doubuy.model.requestModel.CreateProductModel;
 import com.tv.doubuy.model.requestModel.ProductSKUsBean;
 import com.tv.doubuy.model.responseModel.ProductsListModel;
@@ -92,6 +93,8 @@ public class AddShopActivity extends BaseActivity implements SpecAdapter.SpecAda
 
     private List<ProductSKUsBean> listbean;
 
+    private Progresloading progresloading;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -110,7 +113,7 @@ public class AddShopActivity extends BaseActivity implements SpecAdapter.SpecAda
         tvTitle.setText(title);
 
         btRight.setText("发布");
-
+        progresloading = new Progresloading(this);
 
         mlist = new ArrayList<>();
 
@@ -186,6 +189,8 @@ public class AddShopActivity extends BaseActivity implements SpecAdapter.SpecAda
                 startActivity(intent);
                 break;
             case R.id.bt_right:
+                progresloading.loadShow();
+
                 avatarUpload(imgUrls);
                 List<String> list = DouBuyApplication.getInstance().getList();
                 if (list != null && list.size() > 0) {
@@ -276,7 +281,6 @@ public class AddShopActivity extends BaseActivity implements SpecAdapter.SpecAda
             urls.add(image.getPath());
         }
 
-
         return urls;
     }
 
@@ -339,7 +343,7 @@ public class AddShopActivity extends BaseActivity implements SpecAdapter.SpecAda
 
     @Override
     public void onReleaseProducts(CreateProductModel productModel) {
-
+        progresloading.cleanload();
         Toast.makeText(this, "发布成功！", Toast.LENGTH_SHORT).show();
         finish();
     }

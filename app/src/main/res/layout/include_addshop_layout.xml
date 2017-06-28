@@ -32,6 +32,7 @@
                 android:id="@+id/et_item_spec"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
                 android:layout_weight="1"
                 android:background="@null" />
         </LinearLayout>
@@ -61,8 +62,10 @@
                 android:id="@+id/et_item_pice"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
                 android:layout_weight="1"
                 android:background="@null"
+
                 android:inputType="number" />
         </LinearLayout>
 
@@ -91,8 +94,10 @@
                 android:id="@+id/et_item_inven"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
                 android:layout_weight="1"
                 android:background="@null"
+
                 android:inputType="number" />
         </LinearLayout>
 

@@ -14,6 +14,7 @@ import com.tv.doubuy.dialog.ModifyPopWindow;
 import com.tv.doubuy.model.responseModel.ProductsListModel;
 import com.tv.doubuy.ui.store.shop.ShopItemDIalogPresenter;
 import com.tv.doubuy.ui.store.shop.adds.AddShopActivity;
+import com.tv.doubuy.ui.store.shop.editor.EditorProductActivity;
 import com.tv.doubuy.utils.ToastUtils;
 import com.tv.doubuy.view.refresh.RefresHelper;
 import com.tv.doubuy.view.refresh.RefreshRecyclerView;
@@ -142,7 +143,7 @@ public class SellFragment extends BaseExtendFragment implements ShopListPresente
                 if (lismodelProduct != null) {
 
                     Bundle bundle = new Bundle();
-                    Intent intent = new Intent(getActivity(), AddShopActivity.class);
+                    Intent intent = new Intent(getActivity(), EditorProductActivity.class);
                     bundle.putSerializable("ResultsBean", lismodelProduct.getResults().get(position));
                     intent.putExtra("title", "编辑商品");
                     intent.putExtras(bundle);
