@@ -10,6 +10,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.text.InputType;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -25,7 +26,7 @@ import com.tv.doubuy.MainActivity;
 import com.tv.doubuy.R;
 import com.tv.doubuy.base.BaseActivity;
 import com.tv.doubuy.model.requestModel.SiginModel;
-import com.tv.doubuy.model.responseModel.UserInfoModel;
+import com.tv.doubuy.model.responseModel.LoginModel;
 import com.tv.doubuy.network.APIUtils;
 import com.tv.doubuy.network.ProgressSubscriber;
 import com.tv.doubuy.network.RetrofitUtils;
@@ -213,15 +214,18 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         RetrofitUtils.getInstance(this).setUserSignin(siginModel, new ProgressSubscriber(new SubscriberOnNextListener() {
             @Override
             public void onNext(Object o) {
-                UserInfoModel infoModel = APIUtils.gson.fromJson(o.toString(), UserInfoModel.class);
-                if (infoModel.getToken() != null || !infoModel.getToken().equals("")) {
+                LoginModel infoModel = APIUtils.gson.fromJson(o.toString(), LoginModel.class);
+                if (!TextUtils.isEmpty(infoModel.getToken())) {
+
+
                     douBuyCache.saveUserToken(infoModel.getToken());
                     douBuyCache.saveUserId(infoModel.getUser().getId() + "");
                     douBuyCache.saveStoreId(infoModel.getUser().getShop().getId() + "");
                     DouBuyApplication.getInstance().setUserToken(infoModel.getToken());
+
+
                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                     startActivity(intent);
-
                     finish();
                 }
 

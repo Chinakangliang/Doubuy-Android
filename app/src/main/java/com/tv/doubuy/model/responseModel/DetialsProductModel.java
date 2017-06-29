@@ -52,7 +52,7 @@ public class DetialsProductModel implements Serializable {
     private int middleCommentCount;
     private int badCommentCount;
     private List<CreateProductSKUs> productSKUs;
-    private List<GalleriesBean> galleries;
+    private List<ProductGalleriesBean> galleries;
     private List<?> favoriteUser;
     private List<?> comments;
 
@@ -369,11 +369,11 @@ public class DetialsProductModel implements Serializable {
         this.productSKUs = productSKUs;
     }
 
-    public List<GalleriesBean> getGalleries() {
+    public List<ProductGalleriesBean> getGalleries() {
         return galleries;
     }
 
-    public void setGalleries(List<GalleriesBean> galleries) {
+    public void setGalleries(List<ProductGalleriesBean> galleries) {
         this.galleries = galleries;
     }
 

@@ -2,13 +2,12 @@ package com.tv.doubuy.ui.login;
 
 import android.content.Context;
 import android.content.Intent;
-import android.widget.Space;
 import android.widget.Toast;
 
 import com.tv.doubuy.MainActivity;
 import com.tv.doubuy.model.requestModel.LoginRequestModel;
 import com.tv.doubuy.model.requestModel.SignupModel;
-import com.tv.doubuy.model.responseModel.UserInfoModel;
+import com.tv.doubuy.model.responseModel.LoginModel;
 import com.tv.doubuy.network.APIUtils;
 import com.tv.doubuy.network.ProgressSubscriber;
 import com.tv.doubuy.network.RetrofitUtils;
@@ -94,12 +93,13 @@ public class RegisPresenter {
             @Override
             public void onNext(Object o) {
 
-                UserInfoModel infoModel = APIUtils.gson.fromJson(o.toString(), UserInfoModel.class);
+                LoginModel infoModel = APIUtils.gson.fromJson(o.toString(), LoginModel.class);
 
-                if (infoModel.getUser() != null) {
+                if (infoModel != null) {
 
                     dbCache.saveUserToken(infoModel.getToken());
                     dbCache.saveUserId(infoModel.getUser().getId() + "");
+                    dbCache.saveStoreId(infoModel.getUser().getShop().getId() + "");
                     Intent intent = new Intent(mcontext, MainActivity.class);
                     mcontext.startActivity(intent);
                 }

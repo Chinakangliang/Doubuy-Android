@@ -1,19 +1,21 @@
-package com.tv.doubuy.ui.store.shop.product;
+package com.tv.doubuy.ui.store.shop.product.details;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.tv.doubuy.R;
 import com.tv.doubuy.base.BaseActivity;
 import com.tv.doubuy.model.responseModel.DetialsProductModel;
+import com.tv.doubuy.ui.store.shop.editor.EditorProductActivity;
 import com.tv.doubuy.view.products.DragLayout;
-
-import java.io.Serializable;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -22,7 +24,7 @@ import butterknife.ButterKnife;
  * Created by apple on 2017/6/28.
  */
 
-public class ProductDetailsActivity extends BaseActivity implements ProductDetialsPresenter {
+public class ProductDetailsActivity extends BaseActivity implements ProductDetialsPresenter, View.OnClickListener {
 
 
     @BindView(R.id.iv_back)
@@ -39,6 +41,10 @@ public class ProductDetailsActivity extends BaseActivity implements ProductDetia
     DragLayout draglayout;
     @BindView(R.id.ll_content)
     LinearLayout llContent;
+    @BindView(R.id.rela_editor)
+    RelativeLayout relaEditor;
+    @BindView(R.id.rela_shaelves)
+    RelativeLayout relaShaelves;
 
     private ProductDetialsView detialsView;
 
@@ -54,8 +60,14 @@ public class ProductDetailsActivity extends BaseActivity implements ProductDetia
     }
 
 
-    public void initviews() {
+    public void setListener() {
+        relaEditor.setOnClickListener(this);
+        relaShaelves.setOnClickListener(this);
+        ivBack.setOnClickListener(this);
+    }
 
+    public void initviews() {
+        tvTitle.setText("商品详情");
         detialsView = new ProductDetialsView(this, this);
         String productid = getIntent().getStringExtra("productid");
         detialsView.getProductsDetails(productid);
@@ -81,5 +93,24 @@ public class ProductDetailsActivity extends BaseActivity implements ProductDetia
                 .add(R.id.topFrame, topFragment)
                 .add(R.id.bottomFrame, bottomFragmen)
                 .commitAllowingStateLoss();
+    }
+
+    @Override
+    public void onClick(View v) {
+
+        Bundle bundel = new Bundle();
+
+        Intent intent = new Intent();
+        switch (v.getId()) {
+            case R.id.rela_editor:
+                intent.setClass(ProductDetailsActivity.this, EditorProductActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.rela_shaelves:
+                break;
+            case R.id.iv_back:
+                finish();
+                break;
+        }
     }
 }

@@ -7,19 +7,19 @@ import java.util.List;
  * Created by apple on 2017/6/13.
  */
 
-public class StoreModel implements Serializable {
+public class StoreInfoModel implements Serializable {
 
 
     /**
-     * id : 76
-     * shopNO : 149723485889876
-     * name : 贴图
-     * description : the first shop of doubuy.
-     * cover : http://soundlife-app.oss-cn-hangzhou.aliyuncs.com/doubuy5/img14812537204763.jpg
-     * logo : http://soundlife-app.oss-cn-hangzhou.aliyuncs.com/doubuy/91/img/14973462055394271.jpg
+     * id : 78
+     * shopNO : 149759660333278
+     * name : 我的小店
+     * description : 尽可能莫时间默默
+     * cover : aaaaa
+     * logo : http://soundlife-app.oss-cn-hangzhou.aliyuncs.com/doubuy/93/img/14975974987757059.jpg
      * QRCode : null
      * followCount : 0
-     * serviceAviable : false
+     * serviceAviable : true
      * serviceEndDate : null
      * totalSaledAmount : 0
      * score : 0
@@ -28,14 +28,14 @@ public class StoreModel implements Serializable {
      * levelScore : 0
      * level : 1
      * isRecommend : false
-     * created_at : 2017-06-12T02:34:18.868Z
-     * updated_at : 2017-06-13T09:30:16.394Z
+     * created_at : 2017-06-16T07:03:23.318Z
+     * updated_at : 2017-06-16T07:20:29.093Z
      * areaId : null
-     * ownerId : 91
-     * owner : {"id":91,"userNO":"149674292099491","name":"孜孜不倦、","openid":null,"avatar":"http://wx.qlogo.cn/mmopen/XrRCZV9A1A9z7DuZmJAeT2eM4xcwl2M6moeHr8VHtcRlMBy5VjWgKzuIIepQ0FPKwNZ5cgWWFlSUBibayaj58z7x7kIe13fT9/0","gender":"male","birthday":null,"email":null,"mobile":"13166217355","phone":null,"totalScore":0,"level":1,"score":0,"totalReceiveGold":0,"totalSendGold":0,"totalChargeGold":0,"gold":0,"totalIncome":0,"balance":0,"realName":null,"totalBoughtAmount":0,"passwordDigest":"$2a$10$Oxuk9fmRbBgy2RwFt2vp6.7JmtETkQ2b9VxLBEYNmQx9E.E3kAfl2","isAnchor":null,"anchorAvaliable":true,"isStaff":null,"isAdmin":null,"status":true,"city":"","province":"","country":"China","subscribe":false,"subscribeTime":null,"unionid":"o5uzVw5KD63jlkdwTQg9ZUHr0zOk","wechatAppOpenid":null,"appOpenid":"oOetIwQ-w41oZeO4OI-bbwE1kwHI","created_at":"2017-06-06T09:55:20.872Z","updated_at":"2017-06-08T08:52:09.996Z","watchingLiveId":null,"profile":{"id":22,"bankAccount":null,"payeeName":null,"bankOfDeposit":null,"openid":null,"wechatName":null,"alipayAccount":null,"realName":"我们","idCardNO":"9999","idCardImage1":null,"idCardImage2":null,"realNameStatus":"notApply","verifyType":"zhima","created_at":"2017-06-12T02:34:18.983Z","updated_at":"2017-06-13T09:30:16.415Z","userId":91}}
-     * staffs : [{"id":91,"userNO":"149674292099491","name":"孜孜不倦、","openid":null,"avatar":"http://wx.qlogo.cn/mmopen/XrRCZV9A1A9z7DuZmJAeT2eM4xcwl2M6moeHr8VHtcRlMBy5VjWgKzuIIepQ0FPKwNZ5cgWWFlSUBibayaj58z7x7kIe13fT9/0","gender":"male","birthday":null,"email":null,"mobile":"13166217355","phone":null,"totalScore":0,"level":1,"score":0,"totalReceiveGold":0,"totalSendGold":0,"totalChargeGold":0,"gold":0,"totalIncome":0,"balance":0,"realName":null,"totalBoughtAmount":0,"passwordDigest":"$2a$10$Oxuk9fmRbBgy2RwFt2vp6.7JmtETkQ2b9VxLBEYNmQx9E.E3kAfl2","isAnchor":null,"anchorAvaliable":true,"isStaff":null,"isAdmin":null,"status":true,"city":"","province":"","country":"China","subscribe":false,"subscribeTime":null,"unionid":"o5uzVw5KD63jlkdwTQg9ZUHr0zOk","wechatAppOpenid":null,"appOpenid":"oOetIwQ-w41oZeO4OI-bbwE1kwHI","created_at":"2017-06-06T09:55:20.872Z","updated_at":"2017-06-08T08:52:09.996Z","watchingLiveId":null,"shopStaffs":{"description":null}}]
+     * ownerId : 93
+     * owner : {"id":93,"userNO":"149759645281293","name":null,"openid":null,"avatar":null,"gender":null,"birthday":null,"email":null,"mobile":"13166217355","phone":null,"totalScore":0,"level":1,"score":0,"totalReceiveGold":0,"totalSendGold":0,"totalChargeGold":0,"gold":0,"totalIncome":0,"balance":0,"realName":null,"totalBoughtAmount":0,"passwordDigest":"$2a$10$apjBAaKPU0M56nFjFtLVBeWSWTvO.6i4KV3fo9PN5IjBfRLO9AbI2","isAnchor":null,"anchorAvaliable":true,"isStaff":null,"isAdmin":null,"status":true,"city":null,"province":null,"country":null,"subscribe":null,"subscribeTime":null,"unionid":null,"wechatAppOpenid":null,"appOpenid":null,"created_at":"2017-06-16T07:00:52.676Z","updated_at":"2017-06-16T08:24:42.666Z","watchingLiveId":null,"profile":{"id":24,"bankAccount":null,"payeeName":null,"bankOfDeposit":null,"openid":null,"wechatName":null,"alipayAccount":null,"realName":"看了看","idCardNO":"6699","idCardImage1":null,"idCardImage2":"http://soundlife-app.oss-cn-hangzhou.aliyuncs.com/doubuy/93/img/14975972776672818.jpg","realNameStatus":"pending","verifyType":"zhima","created_at":"2017-06-16T07:03:23.410Z","updated_at":"2017-06-16T07:14:38.569Z","userId":93}}
+     * staffs : [{"id":93,"userNO":"149759645281293","name":null,"openid":null,"avatar":null,"gender":null,"birthday":null,"email":null,"mobile":"13166217355","phone":null,"totalScore":0,"level":1,"score":0,"totalReceiveGold":0,"totalSendGold":0,"totalChargeGold":0,"gold":0,"totalIncome":0,"balance":0,"realName":null,"totalBoughtAmount":0,"passwordDigest":"$2a$10$apjBAaKPU0M56nFjFtLVBeWSWTvO.6i4KV3fo9PN5IjBfRLO9AbI2","isAnchor":null,"anchorAvaliable":true,"isStaff":null,"isAdmin":null,"status":true,"city":null,"province":null,"country":null,"subscribe":null,"subscribeTime":null,"unionid":null,"wechatAppOpenid":null,"appOpenid":null,"created_at":"2017-06-16T07:00:52.676Z","updated_at":"2017-06-16T08:24:42.666Z","watchingLiveId":null,"shopStaffs":{"description":null}}]
      * customers : []
-     * profile : {"id":66,"companyName":"投资者","businessAddress":"WWW","businessPhone":"主要原因","shippingAddress":null,"bankAccount":" 现在","bankOfDeposit":"9999","wechatSubscriptionId":null,"wechatSubscriptionKeyt":null,"legalPerson":"现在","legalPersonNO":null,"legalPersonLicenceImage1":null,"legalPersonLicenceImage2":null,"licenseNO":null,"licenseImage":"www.baid.com","taxLicenseImage":null,"realNameStatus":"notApply","realShopStatus":"pending","created_at":"2017-06-12T02:34:18.933Z","updated_at":"2017-06-13T09:30:32.150Z","shopId":76}
+     * profile : {"id":68,"companyName":null,"businessAddress":null,"businessPhone":null,"shippingAddress":null,"bankAccount":null,"bankOfDeposit":null,"wechatSubscriptionId":null,"wechatSubscriptionKeyt":null,"legalPerson":null,"legalPersonNO":null,"legalPersonLicenceImage1":null,"legalPersonLicenceImage2":null,"licenseNO":null,"licenseImage":null,"taxLicenseImage":null,"realNameStatus":"pending","realShopStatus":"notApply","created_at":"2017-06-16T07:03:23.372Z","updated_at":"2017-06-16T07:14:38.605Z","shopId":78}
      * isFollowed : false
      */
 
@@ -274,14 +274,14 @@ public class StoreModel implements Serializable {
         this.customers = customers;
     }
 
-    public static class OwnerBean implements Serializable {
+    public static class OwnerBean {
         /**
-         * id : 91
-         * userNO : 149674292099491
-         * name : 孜孜不倦、
+         * id : 93
+         * userNO : 149759645281293
+         * name : null
          * openid : null
-         * avatar : http://wx.qlogo.cn/mmopen/XrRCZV9A1A9z7DuZmJAeT2eM4xcwl2M6moeHr8VHtcRlMBy5VjWgKzuIIepQ0FPKwNZ5cgWWFlSUBibayaj58z7x7kIe13fT9/0
-         * gender : male
+         * avatar : null
+         * gender : null
          * birthday : null
          * email : null
          * mobile : 13166217355
@@ -297,32 +297,32 @@ public class StoreModel implements Serializable {
          * balance : 0
          * realName : null
          * totalBoughtAmount : 0
-         * passwordDigest : $2a$10$Oxuk9fmRbBgy2RwFt2vp6.7JmtETkQ2b9VxLBEYNmQx9E.E3kAfl2
+         * passwordDigest : $2a$10$apjBAaKPU0M56nFjFtLVBeWSWTvO.6i4KV3fo9PN5IjBfRLO9AbI2
          * isAnchor : null
          * anchorAvaliable : true
          * isStaff : null
          * isAdmin : null
          * status : true
-         * city :
-         * province :
-         * country : China
-         * subscribe : false
+         * city : null
+         * province : null
+         * country : null
+         * subscribe : null
          * subscribeTime : null
-         * unionid : o5uzVw5KD63jlkdwTQg9ZUHr0zOk
+         * unionid : null
          * wechatAppOpenid : null
-         * appOpenid : oOetIwQ-w41oZeO4OI-bbwE1kwHI
-         * created_at : 2017-06-06T09:55:20.872Z
-         * updated_at : 2017-06-08T08:52:09.996Z
+         * appOpenid : null
+         * created_at : 2017-06-16T07:00:52.676Z
+         * updated_at : 2017-06-16T08:24:42.666Z
          * watchingLiveId : null
-         * profile : {"id":22,"bankAccount":null,"payeeName":null,"bankOfDeposit":null,"openid":null,"wechatName":null,"alipayAccount":null,"realName":"我们","idCardNO":"9999","idCardImage1":null,"idCardImage2":null,"realNameStatus":"notApply","verifyType":"zhima","created_at":"2017-06-12T02:34:18.983Z","updated_at":"2017-06-13T09:30:16.415Z","userId":91}
+         * profile : {"id":24,"bankAccount":null,"payeeName":null,"bankOfDeposit":null,"openid":null,"wechatName":null,"alipayAccount":null,"realName":"看了看","idCardNO":"6699","idCardImage1":null,"idCardImage2":"http://soundlife-app.oss-cn-hangzhou.aliyuncs.com/doubuy/93/img/14975972776672818.jpg","realNameStatus":"pending","verifyType":"zhima","created_at":"2017-06-16T07:03:23.410Z","updated_at":"2017-06-16T07:14:38.569Z","userId":93}
          */
 
         private int id;
         private String userNO;
         private String name;
         private Object openid;
-        private String avatar;
-        private String gender;
+        private Object avatar;
+        private Object gender;
         private Object birthday;
         private Object email;
         private String mobile;
@@ -344,14 +344,14 @@ public class StoreModel implements Serializable {
         private Object isStaff;
         private Object isAdmin;
         private boolean status;
-        private String city;
-        private String province;
-        private String country;
-        private boolean subscribe;
+        private Object city;
+        private Object province;
+        private Object country;
+        private Object subscribe;
         private Object subscribeTime;
-        private String unionid;
+        private Object unionid;
         private Object wechatAppOpenid;
-        private String appOpenid;
+        private Object appOpenid;
         private String created_at;
         private String updated_at;
         private Object watchingLiveId;
@@ -389,19 +389,19 @@ public class StoreModel implements Serializable {
             this.openid = openid;
         }
 
-        public String getAvatar() {
+        public Object getAvatar() {
             return avatar;
         }
 
-        public void setAvatar(String avatar) {
+        public void setAvatar(Object avatar) {
             this.avatar = avatar;
         }
 
-        public String getGender() {
+        public Object getGender() {
             return gender;
         }
 
-        public void setGender(String gender) {
+        public void setGender(Object gender) {
             this.gender = gender;
         }
 
@@ -573,35 +573,35 @@ public class StoreModel implements Serializable {
             this.status = status;
         }
 
-        public String getCity() {
+        public Object getCity() {
             return city;
         }
 
-        public void setCity(String city) {
+        public void setCity(Object city) {
             this.city = city;
         }
 
-        public String getProvince() {
+        public Object getProvince() {
             return province;
         }
 
-        public void setProvince(String province) {
+        public void setProvince(Object province) {
             this.province = province;
         }
 
-        public String getCountry() {
+        public Object getCountry() {
             return country;
         }
 
-        public void setCountry(String country) {
+        public void setCountry(Object country) {
             this.country = country;
         }
 
-        public boolean isSubscribe() {
+        public Object getSubscribe() {
             return subscribe;
         }
 
-        public void setSubscribe(boolean subscribe) {
+        public void setSubscribe(Object subscribe) {
             this.subscribe = subscribe;
         }
 
@@ -613,11 +613,11 @@ public class StoreModel implements Serializable {
             this.subscribeTime = subscribeTime;
         }
 
-        public String getUnionid() {
+        public Object getUnionid() {
             return unionid;
         }
 
-        public void setUnionid(String unionid) {
+        public void setUnionid(Object unionid) {
             this.unionid = unionid;
         }
 
@@ -629,11 +629,11 @@ public class StoreModel implements Serializable {
             this.wechatAppOpenid = wechatAppOpenid;
         }
 
-        public String getAppOpenid() {
+        public Object getAppOpenid() {
             return appOpenid;
         }
 
-        public void setAppOpenid(String appOpenid) {
+        public void setAppOpenid(Object appOpenid) {
             this.appOpenid = appOpenid;
         }
 
@@ -669,24 +669,24 @@ public class StoreModel implements Serializable {
             this.profile = profile;
         }
 
-        public static class ProfileBean implements Serializable {
+        public static class ProfileBean {
             /**
-             * id : 22
+             * id : 24
              * bankAccount : null
              * payeeName : null
              * bankOfDeposit : null
              * openid : null
              * wechatName : null
              * alipayAccount : null
-             * realName : 我们
-             * idCardNO : 9999
+             * realName : 看了看
+             * idCardNO : 6699
              * idCardImage1 : null
-             * idCardImage2 : null
-             * realNameStatus : notApply
+             * idCardImage2 : http://soundlife-app.oss-cn-hangzhou.aliyuncs.com/doubuy/93/img/14975972776672818.jpg
+             * realNameStatus : pending
              * verifyType : zhima
-             * created_at : 2017-06-12T02:34:18.983Z
-             * updated_at : 2017-06-13T09:30:16.415Z
-             * userId : 91
+             * created_at : 2017-06-16T07:03:23.410Z
+             * updated_at : 2017-06-16T07:14:38.569Z
+             * userId : 93
              */
 
             private int id;
@@ -699,7 +699,7 @@ public class StoreModel implements Serializable {
             private String realName;
             private String idCardNO;
             private Object idCardImage1;
-            private Object idCardImage2;
+            private String idCardImage2;
             private String realNameStatus;
             private String verifyType;
             private String created_at;
@@ -786,11 +786,11 @@ public class StoreModel implements Serializable {
                 this.idCardImage1 = idCardImage1;
             }
 
-            public Object getIdCardImage2() {
+            public String getIdCardImage2() {
                 return idCardImage2;
             }
 
-            public void setIdCardImage2(Object idCardImage2) {
+            public void setIdCardImage2(String idCardImage2) {
                 this.idCardImage2 = idCardImage2;
             }
 
@@ -836,46 +836,46 @@ public class StoreModel implements Serializable {
         }
     }
 
-    public static class ProfileBeanX implements Serializable {
+    public static class ProfileBeanX {
         /**
-         * id : 66
-         * companyName : 投资者
-         * businessAddress : WWW
-         * businessPhone : 主要原因
+         * id : 68
+         * companyName : null
+         * businessAddress : null
+         * businessPhone : null
          * shippingAddress : null
-         * bankAccount :  现在
-         * bankOfDeposit : 9999
+         * bankAccount : null
+         * bankOfDeposit : null
          * wechatSubscriptionId : null
          * wechatSubscriptionKeyt : null
-         * legalPerson : 现在
+         * legalPerson : null
          * legalPersonNO : null
          * legalPersonLicenceImage1 : null
          * legalPersonLicenceImage2 : null
          * licenseNO : null
-         * licenseImage : www.baid.com
+         * licenseImage : null
          * taxLicenseImage : null
-         * realNameStatus : notApply
-         * realShopStatus : pending
-         * created_at : 2017-06-12T02:34:18.933Z
-         * updated_at : 2017-06-13T09:30:32.150Z
-         * shopId : 76
+         * realNameStatus : pending
+         * realShopStatus : notApply
+         * created_at : 2017-06-16T07:03:23.372Z
+         * updated_at : 2017-06-16T07:14:38.605Z
+         * shopId : 78
          */
 
         private int id;
-        private String companyName;
-        private String businessAddress;
-        private String businessPhone;
+        private Object companyName;
+        private Object businessAddress;
+        private Object businessPhone;
         private Object shippingAddress;
-        private String bankAccount;
-        private String bankOfDeposit;
+        private Object bankAccount;
+        private Object bankOfDeposit;
         private Object wechatSubscriptionId;
         private Object wechatSubscriptionKeyt;
-        private String legalPerson;
+        private Object legalPerson;
         private Object legalPersonNO;
         private Object legalPersonLicenceImage1;
         private Object legalPersonLicenceImage2;
         private Object licenseNO;
-        private String licenseImage;
+        private Object licenseImage;
         private Object taxLicenseImage;
         private String realNameStatus;
         private String realShopStatus;
@@ -891,27 +891,27 @@ public class StoreModel implements Serializable {
             this.id = id;
         }
 
-        public String getCompanyName() {
+        public Object getCompanyName() {
             return companyName;
         }
 
-        public void setCompanyName(String companyName) {
+        public void setCompanyName(Object companyName) {
             this.companyName = companyName;
         }
 
-        public String getBusinessAddress() {
+        public Object getBusinessAddress() {
             return businessAddress;
         }
 
-        public void setBusinessAddress(String businessAddress) {
+        public void setBusinessAddress(Object businessAddress) {
             this.businessAddress = businessAddress;
         }
 
-        public String getBusinessPhone() {
+        public Object getBusinessPhone() {
             return businessPhone;
         }
 
-        public void setBusinessPhone(String businessPhone) {
+        public void setBusinessPhone(Object businessPhone) {
             this.businessPhone = businessPhone;
         }
 
@@ -923,19 +923,19 @@ public class StoreModel implements Serializable {
             this.shippingAddress = shippingAddress;
         }
 
-        public String getBankAccount() {
+        public Object getBankAccount() {
             return bankAccount;
         }
 
-        public void setBankAccount(String bankAccount) {
+        public void setBankAccount(Object bankAccount) {
             this.bankAccount = bankAccount;
         }
 
-        public String getBankOfDeposit() {
+        public Object getBankOfDeposit() {
             return bankOfDeposit;
         }
 
-        public void setBankOfDeposit(String bankOfDeposit) {
+        public void setBankOfDeposit(Object bankOfDeposit) {
             this.bankOfDeposit = bankOfDeposit;
         }
 
@@ -955,11 +955,11 @@ public class StoreModel implements Serializable {
             this.wechatSubscriptionKeyt = wechatSubscriptionKeyt;
         }
 
-        public String getLegalPerson() {
+        public Object getLegalPerson() {
             return legalPerson;
         }
 
-        public void setLegalPerson(String legalPerson) {
+        public void setLegalPerson(Object legalPerson) {
             this.legalPerson = legalPerson;
         }
 
@@ -995,11 +995,11 @@ public class StoreModel implements Serializable {
             this.licenseNO = licenseNO;
         }
 
-        public String getLicenseImage() {
+        public Object getLicenseImage() {
             return licenseImage;
         }
 
-        public void setLicenseImage(String licenseImage) {
+        public void setLicenseImage(Object licenseImage) {
             this.licenseImage = licenseImage;
         }
 
@@ -1052,14 +1052,14 @@ public class StoreModel implements Serializable {
         }
     }
 
-    public static class StaffsBean implements Serializable {
+    public static class StaffsBean {
         /**
-         * id : 91
-         * userNO : 149674292099491
-         * name : 孜孜不倦、
+         * id : 93
+         * userNO : 149759645281293
+         * name : null
          * openid : null
-         * avatar : http://wx.qlogo.cn/mmopen/XrRCZV9A1A9z7DuZmJAeT2eM4xcwl2M6moeHr8VHtcRlMBy5VjWgKzuIIepQ0FPKwNZ5cgWWFlSUBibayaj58z7x7kIe13fT9/0
-         * gender : male
+         * avatar : null
+         * gender : null
          * birthday : null
          * email : null
          * mobile : 13166217355
@@ -1075,32 +1075,32 @@ public class StoreModel implements Serializable {
          * balance : 0
          * realName : null
          * totalBoughtAmount : 0
-         * passwordDigest : $2a$10$Oxuk9fmRbBgy2RwFt2vp6.7JmtETkQ2b9VxLBEYNmQx9E.E3kAfl2
+         * passwordDigest : $2a$10$apjBAaKPU0M56nFjFtLVBeWSWTvO.6i4KV3fo9PN5IjBfRLO9AbI2
          * isAnchor : null
          * anchorAvaliable : true
          * isStaff : null
          * isAdmin : null
          * status : true
-         * city :
-         * province :
-         * country : China
-         * subscribe : false
+         * city : null
+         * province : null
+         * country : null
+         * subscribe : null
          * subscribeTime : null
-         * unionid : o5uzVw5KD63jlkdwTQg9ZUHr0zOk
+         * unionid : null
          * wechatAppOpenid : null
-         * appOpenid : oOetIwQ-w41oZeO4OI-bbwE1kwHI
-         * created_at : 2017-06-06T09:55:20.872Z
-         * updated_at : 2017-06-08T08:52:09.996Z
+         * appOpenid : null
+         * created_at : 2017-06-16T07:00:52.676Z
+         * updated_at : 2017-06-16T08:24:42.666Z
          * watchingLiveId : null
          * shopStaffs : {"description":null}
          */
 
         private int id;
         private String userNO;
-        private String name;
+        private Object name;
         private Object openid;
-        private String avatar;
-        private String gender;
+        private Object avatar;
+        private Object gender;
         private Object birthday;
         private Object email;
         private String mobile;
@@ -1122,14 +1122,14 @@ public class StoreModel implements Serializable {
         private Object isStaff;
         private Object isAdmin;
         private boolean status;
-        private String city;
-        private String province;
-        private String country;
-        private boolean subscribe;
+        private Object city;
+        private Object province;
+        private Object country;
+        private Object subscribe;
         private Object subscribeTime;
-        private String unionid;
+        private Object unionid;
         private Object wechatAppOpenid;
-        private String appOpenid;
+        private Object appOpenid;
         private String created_at;
         private String updated_at;
         private Object watchingLiveId;
@@ -1151,11 +1151,11 @@ public class StoreModel implements Serializable {
             this.userNO = userNO;
         }
 
-        public String getName() {
+        public Object getName() {
             return name;
         }
 
-        public void setName(String name) {
+        public void setName(Object name) {
             this.name = name;
         }
 
@@ -1167,19 +1167,19 @@ public class StoreModel implements Serializable {
             this.openid = openid;
         }
 
-        public String getAvatar() {
+        public Object getAvatar() {
             return avatar;
         }
 
-        public void setAvatar(String avatar) {
+        public void setAvatar(Object avatar) {
             this.avatar = avatar;
         }
 
-        public String getGender() {
+        public Object getGender() {
             return gender;
         }
 
-        public void setGender(String gender) {
+        public void setGender(Object gender) {
             this.gender = gender;
         }
 
@@ -1351,35 +1351,35 @@ public class StoreModel implements Serializable {
             this.status = status;
         }
 
-        public String getCity() {
+        public Object getCity() {
             return city;
         }
 
-        public void setCity(String city) {
+        public void setCity(Object city) {
             this.city = city;
         }
 
-        public String getProvince() {
+        public Object getProvince() {
             return province;
         }
 
-        public void setProvince(String province) {
+        public void setProvince(Object province) {
             this.province = province;
         }
 
-        public String getCountry() {
+        public Object getCountry() {
             return country;
         }
 
-        public void setCountry(String country) {
+        public void setCountry(Object country) {
             this.country = country;
         }
 
-        public boolean isSubscribe() {
+        public Object getSubscribe() {
             return subscribe;
         }
 
-        public void setSubscribe(boolean subscribe) {
+        public void setSubscribe(Object subscribe) {
             this.subscribe = subscribe;
         }
 
@@ -1391,11 +1391,11 @@ public class StoreModel implements Serializable {
             this.subscribeTime = subscribeTime;
         }
 
-        public String getUnionid() {
+        public Object getUnionid() {
             return unionid;
         }
 
-        public void setUnionid(String unionid) {
+        public void setUnionid(Object unionid) {
             this.unionid = unionid;
         }
 
@@ -1407,11 +1407,11 @@ public class StoreModel implements Serializable {
             this.wechatAppOpenid = wechatAppOpenid;
         }
 
-        public String getAppOpenid() {
+        public Object getAppOpenid() {
             return appOpenid;
         }
 
-        public void setAppOpenid(String appOpenid) {
+        public void setAppOpenid(Object appOpenid) {
             this.appOpenid = appOpenid;
         }
 
@@ -1447,7 +1447,7 @@ public class StoreModel implements Serializable {
             this.shopStaffs = shopStaffs;
         }
 
-        public static class ShopStaffsBean implements Serializable {
+        public static class ShopStaffsBean {
             /**
              * description : null
              */

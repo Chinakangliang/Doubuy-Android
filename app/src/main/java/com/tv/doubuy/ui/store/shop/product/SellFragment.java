@@ -14,6 +14,7 @@ import com.tv.doubuy.dialog.ModifyPopWindow;
 import com.tv.doubuy.model.responseModel.ProductsListModel;
 import com.tv.doubuy.ui.store.shop.ShopItemDIalogPresenter;
 import com.tv.doubuy.ui.store.shop.adds.AddShopActivity;
+import com.tv.doubuy.ui.store.shop.product.details.ProductDetailsActivity;
 import com.tv.doubuy.utils.ToastUtils;
 import com.tv.doubuy.view.refresh.RefresHelper;
 import com.tv.doubuy.view.refresh.RefreshRecyclerView;

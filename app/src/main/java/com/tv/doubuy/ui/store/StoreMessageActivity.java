@@ -25,8 +25,8 @@ import com.tv.doubuy.R;
 import com.tv.doubuy.base.BaseActivity;
 import com.tv.doubuy.dialog.ActionSheetDialog;
 import com.tv.doubuy.model.requestModel.PutStoreInfoModel;
+import com.tv.doubuy.model.responseModel.StoreInfoModel;
 import com.tv.doubuy.model.responseModel.StoreMessageModel;
-import com.tv.doubuy.model.responseModel.StoreModel;
 import com.tv.doubuy.network.APIService;
 import com.tv.doubuy.network.APIUtils;
 import com.tv.doubuy.network.ProgressSubscriber;
@@ -77,7 +77,7 @@ public class StoreMessageActivity extends BaseActivity implements View.OnClickLi
     private TakePhoto takePhoto;
     private InvokeParam invokeParam;
     private String photoPath;
-    private StoreModel storemodel;
+    private StoreInfoModel storemodel;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -92,13 +92,13 @@ public class StoreMessageActivity extends BaseActivity implements View.OnClickLi
     public void initViews() {
         tvTitle.setText("店铺资料");
         btRight.setText("编辑");
-        storemodel = (StoreModel) getIntent().getSerializableExtra("storeModel");
+        storemodel = (StoreInfoModel) getIntent().getSerializableExtra("storeModel");
 
         if (storemodel != null) {
             etStoreName.setText(storemodel.getName());
             PicassoHelper.getInstance().setAvatar(this, storemodel.getLogo(), ivStoreHead);
             etDescription.setText(storemodel.getDescription());
-            etShopOwner.setText(storemodel.getOwner().getName());
+            etShopOwner.setText(storemodel.getOwner().getName()+"");
             etConatct.setText(storemodel.getOwner().getMobile());
             tvWxCode.setText("//TODO 暂时未获取");
         }

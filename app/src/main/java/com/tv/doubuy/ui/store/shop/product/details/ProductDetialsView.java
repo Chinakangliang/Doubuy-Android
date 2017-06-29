@@ -1,4 +1,4 @@
-package com.tv.doubuy.ui.store.shop.product;
+package com.tv.doubuy.ui.store.shop.product.details;
 
 import android.content.Context;
 

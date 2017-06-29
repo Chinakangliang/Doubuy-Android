@@ -1,17 +1,21 @@
 package com.tv.doubuy.model.responseModel;
 
+import java.io.Serializable;
+
 /**
- * Created by apple on 2017/6/6.
+ * Created by apple on 2017/6/29.
  */
-public class UserInfoModel {
+
+public class StoreInfoOwnerBean implements Serializable {
+
     private int id;
-    private Object userNO;
+    private String userNO;
     private String name;
     private Object openid;
-    private String avatar;
-    private String gender;
+    private Object avatar;
+    private Object gender;
     private Object birthday;
-    private String email;
+    private Object email;
     private String mobile;
     private Object phone;
     private int totalScore;
@@ -21,14 +25,15 @@ public class UserInfoModel {
     private int totalSendGold;
     private int totalChargeGold;
     private int gold;
-    private double totalIncome;
+    private int totalIncome;
     private int balance;
     private Object realName;
     private int totalBoughtAmount;
+    private String passwordDigest;
     private Object isAnchor;
     private boolean anchorAvaliable;
     private Object isStaff;
-    private boolean isAdmin;
+    private Object isAdmin;
     private boolean status;
     private Object city;
     private Object province;
@@ -40,25 +45,16 @@ public class UserInfoModel {
     private Object appOpenid;
     private String created_at;
     private String updated_at;
-    private int watchingLiveId;
-    private ShopInfoModel shop;
+    private Object watchingLiveId;
+    private StoreInfoProfileBean profile;
 
-    public boolean isAdmin() {
-        return isAdmin;
+    public StoreInfoProfileBean getProfile() {
+        return profile;
     }
 
-    public void setAdmin(boolean admin) {
-        isAdmin = admin;
+    public void setProfile(StoreInfoProfileBean profile) {
+        this.profile = profile;
     }
-
-    public ShopInfoModel getShop() {
-        return shop;
-    }
-
-    public void setShop(ShopInfoModel shop) {
-        this.shop = shop;
-    }
-
 
     public int getId() {
         return id;
@@ -68,11 +64,11 @@ public class UserInfoModel {
         this.id = id;
     }
 
-    public Object getUserNO() {
+    public String getUserNO() {
         return userNO;
     }
 
-    public void setUserNO(Object userNO) {
+    public void setUserNO(String userNO) {
         this.userNO = userNO;
     }
 
@@ -92,19 +88,19 @@ public class UserInfoModel {
         this.openid = openid;
     }
 
-    public String getAvatar() {
+    public Object getAvatar() {
         return avatar;
     }
 
-    public void setAvatar(String avatar) {
+    public void setAvatar(Object avatar) {
         this.avatar = avatar;
     }
 
-    public String getGender() {
+    public Object getGender() {
         return gender;
     }
 
-    public void setGender(String gender) {
+    public void setGender(Object gender) {
         this.gender = gender;
     }
 
@@ -116,11 +112,11 @@ public class UserInfoModel {
         this.birthday = birthday;
     }
 
-    public String getEmail() {
+    public Object getEmail() {
         return email;
     }
 
-    public void setEmail(String email) {
+    public void setEmail(Object email) {
         this.email = email;
     }
 
@@ -196,11 +192,11 @@ public class UserInfoModel {
         this.gold = gold;
     }
 
-    public double getTotalIncome() {
+    public int getTotalIncome() {
         return totalIncome;
     }
 
-    public void setTotalIncome(double totalIncome) {
+    public void setTotalIncome(int totalIncome) {
         this.totalIncome = totalIncome;
     }
 
@@ -228,6 +224,14 @@ public class UserInfoModel {
         this.totalBoughtAmount = totalBoughtAmount;
     }
 
+    public String getPasswordDigest() {
+        return passwordDigest;
+    }
+
+    public void setPasswordDigest(String passwordDigest) {
+        this.passwordDigest = passwordDigest;
+    }
+
     public Object getIsAnchor() {
         return isAnchor;
     }
@@ -252,11 +256,11 @@ public class UserInfoModel {
         this.isStaff = isStaff;
     }
 
-    public boolean isIsAdmin() {
+    public Object getIsAdmin() {
         return isAdmin;
     }
 
-    public void setIsAdmin(boolean isAdmin) {
+    public void setIsAdmin(Object isAdmin) {
         this.isAdmin = isAdmin;
     }
 
@@ -348,12 +352,13 @@ public class UserInfoModel {
         this.updated_at = updated_at;
     }
 
-    public int getWatchingLiveId() {
+    public Object getWatchingLiveId() {
         return watchingLiveId;
     }
 
-    public void setWatchingLiveId(int watchingLiveId) {
+    public void setWatchingLiveId(Object watchingLiveId) {
         this.watchingLiveId = watchingLiveId;
     }
+
 
 }
