@@ -18,6 +18,7 @@ import com.tv.doubuy.network.APIUtils;
 import com.tv.doubuy.network.ProgressSubscriber;
 import com.tv.doubuy.network.RetrofitUtils;
 import com.tv.doubuy.network.SubscriberOnNextListener;
+import com.tv.doubuy.ui.store.customer.CustomerActivity;
 import com.tv.doubuy.ui.store.employees.EmployActivity;
 import com.tv.doubuy.ui.store.freight.FreightActivity;
 import com.tv.doubuy.ui.store.shop.ShopListActivity;
@@ -188,6 +189,8 @@ public class StoreFragment extends BaseExtendFragment implements View.OnClickLis
             case 2:
                 break;
             case 3:
+                intent.setClass(getActivity(), CustomerActivity.class);
+                startActivity(intent);
                 break;
             case 4:
                 intent.setClass(getActivity(), FreightActivity.class);

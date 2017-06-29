@@ -146,7 +146,11 @@
         <activity
             android:name=".ui.store.employees.EmployActivity"
             android:screenOrientation="portrait"></activity>
-
+        <!--客户管理-->
+        <activity
+            android:name=".ui.store.customer.CustomerActivity"
+            android:screenOrientation="portrait"></activity>
+        
         <!--编辑商品-->
         <activity
             android:name=".ui.store.shop.editor.EditorProductActivity"
