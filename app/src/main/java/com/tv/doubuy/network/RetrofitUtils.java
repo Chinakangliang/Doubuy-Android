@@ -275,6 +275,16 @@ public class RetrofitUtils {
 
     }
 
+    /**
+     * 获取客户列表
+     */
+    public void getCustomerList(String stroeid, ProgressSubscriber subscriber) {
+        toSubscribe(mApiService.getCustomerList(stroeid), subscriber);
+
+    }
+
+
+
     private <T> void toSubscribe(Observable<T> o, Subscriber s) {
         o.subscribeOn(Schedulers.io())
                 .unsubscribeOn(Schedulers.io())

@@ -146,6 +146,12 @@
         <activity
             android:name=".ui.store.employees.EmployActivity"
             android:screenOrientation="portrait"></activity>
+
+        <!--客户管理-->
+        <activity
+            android:name=".ui.store.customer.CustomerActivity"
+            android:screenOrientation="portrait"></activity>
+
         <activity
             android:name=".wxapi.WXEntryActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
