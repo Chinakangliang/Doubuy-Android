@@ -65,5 +65,5 @@ public class ProgressDialogHandler extends Handler {
                 break;
         }
     }
-
+;
 }

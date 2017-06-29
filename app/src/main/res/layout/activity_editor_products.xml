@@ -2,7 +2,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorf3"
     android:orientation="vertical">
 
     <ScrollView
@@ -37,7 +36,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="15dp"
                         android:text="名称" />
-
 
                     <EditText
                         android:id="@+id/et_name"
@@ -141,6 +139,7 @@
                     android:layout_marginLeft="40dp"
                     android:layout_marginRight="40dp"
                     android:background="@color/colorf3" />
+
             </LinearLayout>
 
             <RelativeLayout
@@ -148,7 +147,7 @@
                 android:layout_height="wrap_content">
 
                 <android.support.v7.widget.RecyclerView
-                    android:id="@+id/recyler_spec"
+                    android:id="@+id/recyler_editor"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
             </RelativeLayout>
@@ -216,8 +215,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="40dp"
-                android:nestedScrollingEnabled="true"
-                />
+                android:nestedScrollingEnabled="true" />
 
         </LinearLayout>
     </ScrollView>
