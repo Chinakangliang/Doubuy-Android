@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:padding="10dp"
+        android:id="@+id/customercell">
+        
+        <ImageView
+            android:id="@+id/iv_customer_icon"
+            android:layout_width="63dp"
+            android:layout_height="63dp"
+            android:src="@mipmap/ic_launcher"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/iv_customer_icon"
+            android:orientation="vertical">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="5dp">
+
+                <TextView
+                    android:id="@+id/tv_username"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@+id/tv_allprice"
+                    android:text="最长2最长行长2行行最长2行长2行行最长2行"
+                    android:layout_alignParentLeft="true"
+                    android:maxLines="2"
+                    android:ellipsize="end"
+                    android:textSize="15sp"
+                    android:textColor="#000"
+                    />
+                <TextView
+                    android:id="@+id/tv_allprice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="10dp"
+                    android:text="¥5500"
+                    android:textSize="19sp"
+                    android:textColor="#fe2851"
+                    android:layout_gravity="left"
+                    />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/iv_gender"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/staff_icon_boy"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_userid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@+id/tv_label"
+                    android:layout_alignParentLeft="true"
+                    android:text="932739724732943"
+                    android:layout_marginLeft="20dp"
+                    android:textSize="13sp"
+                    android:textColor="#808080"
+                    />
+                <TextView
+                    android:id="@+id/tv_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="累计消费"
+                    android:textSize="10sp"
+                    android:layout_alignParentRight="true"
+                    android:textColor="#a8a8a8"
+                    />
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</LinearLayout>

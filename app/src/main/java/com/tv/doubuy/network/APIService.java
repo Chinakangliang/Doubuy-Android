@@ -119,5 +119,8 @@ public interface APIService {
     @PUT("shop/{store_id}/categories/{class_id}")
     Observable<BaseResponse> setmodfiyProduct(@Path("store_id") String id, @Path("class_id") String classid, @Body AddCalssModel addCalssModel);
 
+    @GET("shops/{store_id}/customers")
+    Observable<BaseResponse> getCustomerList(@Path("store_id") String id);
+
 
 }
