@@ -152,6 +152,11 @@
             android:name=".ui.store.shop.editor.EditorProductActivity"
             android:screenOrientation="portrait"></activity>
 
+        <!--商品详情-->
+        <activity
+            android:name=".ui.store.shop.product.ProductDetailsActivity"
+            android:screenOrientation="portrait"></activity>
+
         <activity
             android:name=".wxapi.WXEntryActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"

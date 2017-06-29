@@ -6,6 +6,11 @@ package com.tv.doubuy.model.responseModel;
 public class UserInfoModel {
 
 
+    /**
+     * user : {"id":1,"userNO":null,"name":"东山猕猴桃","openid":null,"avatar":"http://soundlife-app.oss-cn-hangzhou.aliyuncs.com/doubuy/1/img14926825441434.jpg","gender":"male","birthday":null,"email":"tonyq@163.com","mobile":"13671679562","phone":null,"totalScore":11652,"level":1,"score":10011212,"totalReceiveGold":86,"totalSendGold":1121,"totalChargeGold":0,"gold":9998879,"totalIncome":64.02,"balance":10000005,"realName":null,"totalBoughtAmount":0,"isAnchor":null,"anchorAvaliable":true,"isStaff":null,"isAdmin":true,"status":true,"city":null,"province":null,"country":null,"subscribe":null,"subscribeTime":null,"unionid":null,"wechatAppOpenid":null,"appOpenid":null,"created_at":"2016-12-18T09:52:09.014Z","updated_at":"2017-05-31T05:51:42.203Z","watchingLiveId":1063,"shop":{"id":1,"shopNO":"1","name":"豆佰直播","description":"the first shop of doubuy.","cover":"http://soundlife-app.oss-cn-hangzhou.aliyuncs.com/doubuy_common/store%20bg%20default%403x.png","logo":"http://soundlife-app.oss-cn-hangzhou.aliyuncs.com/doubuy/1/img14924249251801.jpg","QRCode":"http://soundlife-app.oss-cn-hangzhou.aliyuncs.com/doubuy/1/img14914629567753.jpg","followCount":13,"serviceAviable":true,"serviceEndDate":null,"totalSaledAmount":4023,"score":4,"isFreeShip":false,"shipFee":10,"levelScore":23,"level":1,"isRecommend":true,"created_at":"2016-12-18T09:52:15.663Z","updated_at":"2017-06-21T09:33:18.590Z","areaId":null,"ownerId":1}}
+     * token : eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwibmFtZSI6IuS4nOWxseeMleeMtOahgyIsImlhdCI6MTQ5ODcwMzU4MCwiZXhwIjoxNDk5MzA4MzgwfQ.IaJM-GzehSgIsvcainBt20ARHm-KKmQalXxD2iOoGQA
+     */
+
     private UserBean user;
     private String token;
 
@@ -26,46 +31,6 @@ public class UserInfoModel {
     }
 
     public static class UserBean {
-
-        private int id;
-        private String userNO;
-        private String name;
-        private Object openid;
-        private String avatar;
-        private String gender;
-        private Object birthday;
-        private Object email;
-        private String mobile;
-        private Object phone;
-        private int totalScore;
-        private int level;
-        private int score;
-        private int totalReceiveGold;
-        private int totalSendGold;
-        private int totalChargeGold;
-        private int gold;
-        private int totalIncome;
-        private int balance;
-        private Object realName;
-        private int totalBoughtAmount;
-        private Object isAnchor;
-        private boolean anchorAvaliable;
-        private Object isStaff;
-        private Object isAdmin;
-        private boolean status;
-        private String city;
-        private String province;
-        private String country;
-        private boolean subscribe;
-        private Object subscribeTime;
-        private String unionid;
-        private Object wechatAppOpenid;
-        private String appOpenid;
-        private String created_at;
-        private String updated_at;
-        private Object watchingLiveId;
-        private ShopInfoModel shop;
-
         public int getId() {
             return id;
         }
@@ -74,11 +39,11 @@ public class UserInfoModel {
             this.id = id;
         }
 
-        public String getUserNO() {
+        public Object getUserNO() {
             return userNO;
         }
 
-        public void setUserNO(String userNO) {
+        public void setUserNO(Object userNO) {
             this.userNO = userNO;
         }
 
@@ -122,11 +87,11 @@ public class UserInfoModel {
             this.birthday = birthday;
         }
 
-        public Object getEmail() {
+        public String getEmail() {
             return email;
         }
 
-        public void setEmail(Object email) {
+        public void setEmail(String email) {
             this.email = email;
         }
 
@@ -202,11 +167,11 @@ public class UserInfoModel {
             this.gold = gold;
         }
 
-        public int getTotalIncome() {
+        public double getTotalIncome() {
             return totalIncome;
         }
 
-        public void setTotalIncome(int totalIncome) {
+        public void setTotalIncome(double totalIncome) {
             this.totalIncome = totalIncome;
         }
 
@@ -258,12 +223,12 @@ public class UserInfoModel {
             this.isStaff = isStaff;
         }
 
-        public Object getIsAdmin() {
+        public boolean isAdmin() {
             return isAdmin;
         }
 
-        public void setIsAdmin(Object isAdmin) {
-            this.isAdmin = isAdmin;
+        public void setAdmin(boolean admin) {
+            isAdmin = admin;
         }
 
         public boolean isStatus() {
@@ -274,35 +239,35 @@ public class UserInfoModel {
             this.status = status;
         }
 
-        public String getCity() {
+        public Object getCity() {
             return city;
         }
 
-        public void setCity(String city) {
+        public void setCity(Object city) {
             this.city = city;
         }
 
-        public String getProvince() {
+        public Object getProvince() {
             return province;
         }
 
-        public void setProvince(String province) {
+        public void setProvince(Object province) {
             this.province = province;
         }
 
-        public String getCountry() {
+        public Object getCountry() {
             return country;
         }
 
-        public void setCountry(String country) {
+        public void setCountry(Object country) {
             this.country = country;
         }
 
-        public boolean isSubscribe() {
+        public Object getSubscribe() {
             return subscribe;
         }
 
-        public void setSubscribe(boolean subscribe) {
+        public void setSubscribe(Object subscribe) {
             this.subscribe = subscribe;
         }
 
@@ -314,11 +279,11 @@ public class UserInfoModel {
             this.subscribeTime = subscribeTime;
         }
 
-        public String getUnionid() {
+        public Object getUnionid() {
             return unionid;
         }
 
-        public void setUnionid(String unionid) {
+        public void setUnionid(Object unionid) {
             this.unionid = unionid;
         }
 
@@ -330,11 +295,11 @@ public class UserInfoModel {
             this.wechatAppOpenid = wechatAppOpenid;
         }
 
-        public String getAppOpenid() {
+        public Object getAppOpenid() {
             return appOpenid;
         }
 
-        public void setAppOpenid(String appOpenid) {
+        public void setAppOpenid(Object appOpenid) {
             this.appOpenid = appOpenid;
         }
 
@@ -354,11 +319,11 @@ public class UserInfoModel {
             this.updated_at = updated_at;
         }
 
-        public Object getWatchingLiveId() {
+        public int getWatchingLiveId() {
             return watchingLiveId;
         }
 
-        public void setWatchingLiveId(Object watchingLiveId) {
+        public void setWatchingLiveId(int watchingLiveId) {
             this.watchingLiveId = watchingLiveId;
         }
 
@@ -369,5 +334,46 @@ public class UserInfoModel {
         public void setShop(ShopInfoModel shop) {
             this.shop = shop;
         }
+
+        private int id;
+        private Object userNO;
+        private String name;
+        private Object openid;
+        private String avatar;
+        private String gender;
+        private Object birthday;
+        private String email;
+        private String mobile;
+        private Object phone;
+        private int totalScore;
+        private int level;
+        private int score;
+        private int totalReceiveGold;
+        private int totalSendGold;
+        private int totalChargeGold;
+        private int gold;
+        private double totalIncome;
+        private int balance;
+        private Object realName;
+        private int totalBoughtAmount;
+        private Object isAnchor;
+        private boolean anchorAvaliable;
+        private Object isStaff;
+        private boolean isAdmin;
+        private boolean status;
+        private Object city;
+        private Object province;
+        private Object country;
+        private Object subscribe;
+        private Object subscribeTime;
+        private Object unionid;
+        private Object wechatAppOpenid;
+        private Object appOpenid;
+        private String created_at;
+        private String updated_at;
+        private int watchingLiveId;
+        private ShopInfoModel shop;
+
     }
+
 }

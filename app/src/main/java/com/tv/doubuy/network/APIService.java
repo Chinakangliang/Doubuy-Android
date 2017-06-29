@@ -120,4 +120,7 @@ public interface APIService {
     Observable<BaseResponse> setmodfiyProduct(@Path("store_id") String id, @Path("class_id") String classid, @Body AddCalssModel addCalssModel);
 
 
+    @GET("shop/{store_id}/products/{product_id}")
+    Observable<BaseResponse> getProductsDetials(@Path("store_id") String id, @Path("product_id") String productido);
+
 }

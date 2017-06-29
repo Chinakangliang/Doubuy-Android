@@ -275,6 +275,15 @@ public class RetrofitUtils {
 
     }
 
+    /**
+     * 商品详情
+     */
+    public void getProductsDetials(String stroeid, String productsid, ProgressSubscriber subscriber) {
+        toSubscribe(mApiService.getProductsDetials(stroeid, productsid), subscriber);
+
+    }
+
+
     private <T> void toSubscribe(Observable<T> o, Subscriber s) {
         o.subscribeOn(Schedulers.io())
                 .unsubscribeOn(Schedulers.io())

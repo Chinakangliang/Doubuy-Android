@@ -112,8 +112,10 @@ public class SellFragment extends BaseExtendFragment implements ShopListPresente
 
 
     @Override
-    public void setItemClick(int position) {
-
+    public void setItemClick(String productsid) {
+        Intent intent = new Intent(getActivity(), ProductDetailsActivity.class);
+        intent.putExtra("productid", productsid);
+        startActivity(intent);
     }
 
 

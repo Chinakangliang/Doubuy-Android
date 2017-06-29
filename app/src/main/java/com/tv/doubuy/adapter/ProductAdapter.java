@@ -61,7 +61,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
             @Override
             public void onClick(View v) {
                 if (callBack != null) {
-                    callBack.setItemClick(position);
+                    callBack.setItemClick(list.get(position).getId() + "");
                 }
             }
         });
@@ -70,7 +70,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
             public void onClick(View v) {
 
                 if (callBack != null) {
-                    callBack.setItemShowPopWindowShow(position, holder.itemIvwindow, list.get(position).getId()+"");
+                    callBack.setItemShowPopWindowShow(position, holder.itemIvwindow, list.get(position).getId() + "");
                 }
             }
         });
@@ -111,7 +111,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
 
 
     public interface EmployAdapteCallBack {
-        void setItemClick(int position);
+        void setItemClick(String productsid);
 
         void setItemShowPopWindowShow(int position, View view, String productid);
     }
