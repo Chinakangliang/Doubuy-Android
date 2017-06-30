@@ -3,6 +3,7 @@ package com.tv.doubuy.view.drawer;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.tv.doubuy.R;
@@ -17,6 +18,7 @@ public class DrawerViewHolder extends RecyclerView.ViewHolder {
     public TextView delete;
     public LinearLayout layout;
     public TextView tvSize;
+    public RelativeLayout relaItem;
 
 
     public DrawerViewHolder(View itemView) {
@@ -26,5 +28,7 @@ public class DrawerViewHolder extends RecyclerView.ViewHolder {
         layout = (LinearLayout) itemView.findViewById(R.id.item_layout);
 
         tvSize = (TextView) itemView.findViewById(R.id.tv_item_size);
+
+//        relaItem= (RelativeLayout) itemView.findViewById(R.id.rela_item);
     }
 }

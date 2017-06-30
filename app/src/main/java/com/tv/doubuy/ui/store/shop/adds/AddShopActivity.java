@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -101,10 +102,18 @@ public class AddShopActivity extends BaseActivity implements SpecAdapter.SpecAda
         setContentView(R.layout.activity_addshop);
         ButterKnife.bind(this);
         initviews();
+        setListener();
 
     }
 
-
+    public void setListener() {
+        ivBack.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+    }
 
 
     public void initviews() {
@@ -192,12 +201,19 @@ public class AddShopActivity extends BaseActivity implements SpecAdapter.SpecAda
                 break;
             case R.id.bt_right:
                 progresloading.loadShow();
+                String name = etName.getText().toString().trim();
+                String unit = etUnit.getText().toString().trim();
                 avatarUpload(imgUrls);
                 try {
                     Thread.sleep(500);
-                    AddShopPresenter addShopPresenter = new AddShopPresenter(this, this);
-                    addShopPresenter.createProducts(ReleaseHelep.getInstance().createRelease(listbean, etName.getText().toString(), etUnit.getText().toString()));
-                    progresloading.cleanload();
+                    if (listbean != null && !TextUtils.isEmpty(name) && !TextUtils.isEmpty(unit)) {
+                        AddShopPresenter addShopPresenter = new AddShopPresenter(this, this);
+                        addShopPresenter.createProducts(ReleaseHelep.getInstance().createRelease(listbean, name, unit));
+                        progresloading.cleanload();
+                    } else {
+                        ToastUtils.getInstance().showToast(this, "请填写完整");
+                    }
+
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }

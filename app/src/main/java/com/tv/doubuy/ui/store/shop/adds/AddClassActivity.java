@@ -33,7 +33,6 @@ public class AddClassActivity extends BaseActivity {
     }
 
     private void initviews() {
-
         String title = getIntent().getStringExtra("title");
         tvTitle.setText(title);
         ivBack.setOnClickListener(new View.OnClickListener() {

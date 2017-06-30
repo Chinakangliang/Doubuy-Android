@@ -117,7 +117,6 @@ public class DrawerRecyclerView extends RecyclerView {
             case MotionEvent.ACTION_MOVE:
                 int dx = mLastX - x;
                 int dy = mLastY - y;
-
                 int scrollX = mItemLayout.getScrollX();
                 if (Math.abs(dx) > Math.abs(dy)) {//左边界检测
                     isItemMoving = true;

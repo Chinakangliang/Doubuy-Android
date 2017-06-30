@@ -2,6 +2,7 @@ package com.tv.doubuy.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,7 @@ import android.widget.TextView;
 import com.tv.doubuy.R;
 import com.tv.doubuy.model.requestModel.ProductSKUsBean;
 import com.tv.doubuy.model.responseModel.CreateProductSKUs;
+import com.tv.doubuy.utils.ToastUtils;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -88,16 +90,27 @@ public class EditorAdapter extends RecyclerView.Adapter<EditorAdapter.ViewHolder
             @Override
             public void onClick(View v) {
                 if (callback != null) {
-                    productSKUsBean.setCount(holder.et_item_inven.getText().toString());
-                    productSKUsBean.setPrice(holder.et_item_pice.getText().toString());
-                    productSKUsBean.setSpec(holder.et_item_spec.getText().toString());
-                    skUsBeanList.add(productSKUsBean);
 
-                    callback.itemonClick(position, skUsBeanList);
-                    holder.linear_item.setVisibility(View.GONE);
-                    holder.et_item_pice.setFocusable(false);
-                    holder.et_item_inven.setFocusable(false);
-                    holder.et_item_inven.setFocusable(false);
+                    String inven = holder.et_item_inven.getText().toString().trim();
+                    String price = holder.et_item_pice.getText().toString().trim();
+                    String sepc = holder.et_item_spec.getText().toString().trim();
+
+
+                    productSKUsBean.setCount(inven);
+                    productSKUsBean.setPrice(price);
+                    productSKUsBean.setSpec(sepc);
+                    if (!TextUtils.isEmpty(inven) && !TextUtils.isEmpty(price) && !TextUtils.isEmpty(sepc)) {
+                        skUsBeanList.add(productSKUsBean);
+
+                        callback.itemonClick(position, skUsBeanList);
+                        holder.tv_save.setVisibility(View.INVISIBLE);
+                        holder.et_item_pice.setFocusable(false);
+                        holder.et_item_inven.setFocusable(false);
+                        holder.et_item_inven.setFocusable(false);
+                    } else {
+                        ToastUtils.getInstance().showToast(context, "请填写完整");
+                    }
+
                 }
             }
         });
