@@ -2,6 +2,7 @@ package com.tv.doubuy.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,7 +13,10 @@ import android.widget.TextView;
 import com.tv.doubuy.R;
 import com.tv.doubuy.model.responseModel.CustomerModel;
 import com.tv.doubuy.utils.PicassoHelper;
+
+import java.util.ArrayList;
 import java.util.List;
+
 
 /**
  * Created by lxy on 2017/6/28.
@@ -20,7 +24,7 @@ import java.util.List;
 
 public class CustomerAdapter extends RecyclerView.Adapter<CustomerAdapter.ViewHolder> {
 
-    private List<CustomerModel> list;
+    private List<CustomerModel.CustomerModelBean> list = new ArrayList<>();
     CustomerAdapteCallBack callBack;
     private LayoutInflater mInflater;
 
@@ -28,8 +32,9 @@ public class CustomerAdapter extends RecyclerView.Adapter<CustomerAdapter.ViewHo
         mInflater = LayoutInflater.from(context);
     }
 
-    public void setData(List<CustomerModel> mlist) {
-        this.list=mlist;
+    public void setData(List<CustomerModel.CustomerModelBean> mlist) {
+        this.list = mlist;
+        notifyDataSetChanged();
     }
 
     @Override
@@ -41,11 +46,11 @@ public class CustomerAdapter extends RecyclerView.Adapter<CustomerAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, final int position) {
-
         holder.itemView.setTag(position);
         PicassoHelper.getInstance().setImage(holder.icon.getContext(), list.get(position).getAvatar(), holder.icon);
         holder.username.setText(list.get(position).getName());
-        holder.userid.setText(list.get(position).getId());
+        holder.userid.setText(list.get(position).getId() + "");
+        holder.price.setText(list.get(position).getTotalBoughtAmount().toString());
         holder.relaitemCustomer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -54,6 +59,11 @@ public class CustomerAdapter extends RecyclerView.Adapter<CustomerAdapter.ViewHo
                 }
             }
         });
+        if (list.get(position).getGender().equals("male")) {
+            holder.gender.setImageResource(R.mipmap.staff_icon_boy);
+        } else  {
+            holder.gender.setImageResource(R.mipmap.staff_icon_girl);
+        }
     }
 
     @Override
@@ -76,7 +86,7 @@ public class CustomerAdapter extends RecyclerView.Adapter<CustomerAdapter.ViewHo
             price = (TextView) itemView.findViewById(R.id.tv_allprice);
             userid = (TextView) itemView.findViewById(R.id.tv_userid);
             username = (TextView) itemView.findViewById(R.id.tv_username);
-            icon = (ImageView) itemView.findViewById(R.id.iv_gender);
+            gender = (ImageView) itemView.findViewById(R.id.iv_gender);
             relaitemCustomer = (RelativeLayout) itemView.findViewById(R.id.customercell);
         }
     }

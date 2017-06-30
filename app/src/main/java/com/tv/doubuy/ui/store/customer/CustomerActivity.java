@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -62,9 +63,9 @@ public class CustomerActivity extends BaseActivity implements CustomerAdapter.Cu
         RetrofitUtils.getInstance(this).getCustomerList(douBuyCache.getStoreId(), new ProgressSubscriber(new SubscriberOnNextListener() {
             @Override
             public void onNext(Object o) {
-                List<CustomerModel> customerModel= (List<CustomerModel>) APIUtils.gson.fromJson(o.toString(),CustomerModel.class);
-                if (customerModel!=null) {
-                    customerAdapter.setData(customerModel);
+                CustomerModel customerModel = APIUtils.gson.fromJson(o.toString(), CustomerModel.class);
+                if (customerModel != null) {
+                    customerAdapter.setData(customerModel.getResults());
                 }
             }
         }, this));

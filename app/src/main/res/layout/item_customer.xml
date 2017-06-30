@@ -74,7 +74,7 @@
                     android:layout_height="wrap_content"
                     android:layout_toLeftOf="@+id/tv_label"
                     android:layout_alignParentLeft="true"
-                    android:text="932739724732943"
+                    android:text="0"
                     android:layout_marginLeft="20dp"
                     android:textSize="13sp"
                     android:textColor="#808080"
