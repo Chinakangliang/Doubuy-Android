@@ -14,6 +14,7 @@ import android.widget.TextView;
 import com.tv.doubuy.R;
 import com.tv.doubuy.base.BaseActivity;
 import com.tv.doubuy.model.responseModel.DetialsProductModel;
+import com.tv.doubuy.model.responseModel.ProductsListModel;
 import com.tv.doubuy.ui.store.shop.editor.EditorProductActivity;
 import com.tv.doubuy.view.products.DragLayout;
 
@@ -51,12 +52,15 @@ public class ProductDetailsActivity extends BaseActivity implements ProductDetia
     private ProductDetialsTopFragment topFragment;
     private DetialsBottomFragment bottomFragmen;
 
+    private DetialsProductModel detialsProductModel;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_product);
         ButterKnife.bind(this);
         initviews();
+        setListener();
     }
 
 
@@ -85,6 +89,8 @@ public class ProductDetailsActivity extends BaseActivity implements ProductDetia
     @Override
     public void geItemProductDetals(DetialsProductModel productModel) {
 
+        this.detialsProductModel = productModel;
+
         Bundle bundle = new Bundle();
         bundle.putSerializable("productModel", productModel);
         topFragment.setArguments(bundle);
@@ -103,8 +109,20 @@ public class ProductDetailsActivity extends BaseActivity implements ProductDetia
         Intent intent = new Intent();
         switch (v.getId()) {
             case R.id.rela_editor:
+                ProductsListModel.ResultsBean bean = new ProductsListModel.ResultsBean();
+                if (detialsProductModel != null) {
+                    bean.setGalleries(detialsProductModel.getGalleries());
+                    bean.setProductSKUs(detialsProductModel.getProductSKUs());
+                    bean.setName(detialsProductModel.getName());
+                    bean.setPrice(detialsProductModel.getPrice());
+                    bean.setDescription(detialsProductModel.getDescription());
+                }
                 intent.setClass(ProductDetailsActivity.this, EditorProductActivity.class);
+                bundel.putSerializable("ResultsBean", bean);
+                intent.putExtra("title", "编辑商品");
+                intent.putExtras(bundel);
                 startActivity(intent);
+
                 break;
             case R.id.rela_shaelves:
                 break;

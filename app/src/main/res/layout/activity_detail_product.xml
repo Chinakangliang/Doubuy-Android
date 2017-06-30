@@ -58,6 +58,7 @@
                 android:layout_gravity="center"
                 android:layout_marginRight="10dp"
                 android:layout_toLeftOf="@+id/tv_editor"
+
                 android:src="@mipmap/product_detail_btn_edit" />
 
             <TextView

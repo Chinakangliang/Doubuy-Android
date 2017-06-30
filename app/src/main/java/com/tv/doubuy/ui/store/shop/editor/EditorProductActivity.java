@@ -52,7 +52,6 @@ import butterknife.ButterKnife;
 /**
  * Created by apple on 2017/6/28.
  */
-//TODO  编辑特意和添加分开来处理 ，以此来希望不引起代码混乱， 保存SKU的地方 还需要处理，编辑后发布的接口未调用
 public class EditorProductActivity extends BaseActivity implements ImageAdapter.ImageAdapterCallBack, TakePhoto.TakeResultListener, InvokeListener, EditorAdapter.SpecAdapterCallback, AddShopView {
 
     @BindView(R.id.iv_back)
