@@ -4,6 +4,7 @@ import android.content.Context;
 
 import com.tv.doubuy.model.responseModel.DeteleModel;
 import com.tv.doubuy.model.responseModel.ProductsListModel;
+import com.tv.doubuy.model.responseModel.SaleModel;
 import com.tv.doubuy.network.APIUtils;
 import com.tv.doubuy.network.ProgressSubscriber;
 import com.tv.doubuy.network.RetrofitUtils;
@@ -33,9 +34,8 @@ public class ShopListView {
     /**
      * 获取商品列表
      */
-    public void getShopList() {
-
-        RetrofitUtils.getInstance(mcontext).getProductList(douBuyCache.getStoreId(), "", "", new ProgressSubscriber(new SubscriberOnNextListener() {
+    public void getShopList(String onsalse) {
+        RetrofitUtils.getInstance(mcontext).getProductList(douBuyCache.getStoreId(), onsalse, "saleDown", new ProgressSubscriber(new SubscriberOnNextListener() {
             @Override
             public void onNext(Object o) {
 
@@ -65,6 +65,46 @@ public class ShopListView {
 
             }
         }, mcontext));
+    }
+
+    /**
+     * 下架
+     */
+    public void putNoSale(String productId) {
+
+        RetrofitUtils.getInstance(mcontext).putProductsDown(douBuyCache.getStoreId(), productId, new ProgressSubscriber(new SubscriberOnNextListener() {
+            @Override
+            public void onNext(Object o) {
+
+                SaleModel saleModel = APIUtils.gson.fromJson(o.toString(), SaleModel.class);
+                if (saleModel != null) {
+                    presenter.noSale(true);
+                } else {
+                    presenter.noSale(false);
+                }
+
+            }
+        }, mcontext));
+    }
+
+    /**
+     * 上架
+     */
+
+    public void putOnSale(String productId) {
+        RetrofitUtils.getInstance(mcontext).putProductsUp(douBuyCache.getStoreId(), productId, new ProgressSubscriber(new SubscriberOnNextListener() {
+            @Override
+            public void onNext(Object o) {
+                SaleModel saleModel = APIUtils.gson.fromJson(o.toString(), SaleModel.class);
+                if (saleModel != null) {
+                    presenter.onSale(true);
+                } else {
+                    presenter.onSale(false);
+                }
+
+            }
+        }, mcontext));
+
     }
 
 

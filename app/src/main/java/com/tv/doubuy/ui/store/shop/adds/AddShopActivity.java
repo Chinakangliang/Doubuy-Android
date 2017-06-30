@@ -36,7 +36,6 @@ import com.tv.doubuy.model.requestModel.ProductSKUsBean;
 import com.tv.doubuy.model.responseModel.ProductsListModel;
 import com.tv.doubuy.ui.store.shop.DescribeActivity;
 import com.tv.doubuy.utils.CustomHelper;
-import com.tv.doubuy.utils.DouBuyApplication;
 import com.tv.doubuy.utils.ToastUtils;
 import com.tv.doubuy.view.CustomLinearLayoutManager;
 import com.tv.doubuy.view.GridManager;
@@ -102,7 +101,10 @@ public class AddShopActivity extends BaseActivity implements SpecAdapter.SpecAda
         setContentView(R.layout.activity_addshop);
         ButterKnife.bind(this);
         initviews();
+
     }
+
+
 
 
     public void initviews() {
@@ -190,14 +192,16 @@ public class AddShopActivity extends BaseActivity implements SpecAdapter.SpecAda
                 break;
             case R.id.bt_right:
                 progresloading.loadShow();
-
                 avatarUpload(imgUrls);
-                List<String> list = DouBuyApplication.getInstance().getList();
-                if (list != null && list.size() > 0) {
+                try {
+                    Thread.sleep(500);
                     AddShopPresenter addShopPresenter = new AddShopPresenter(this, this);
                     addShopPresenter.createProducts(ReleaseHelep.getInstance().createRelease(listbean, etName.getText().toString(), etUnit.getText().toString()));
-
+                    progresloading.cleanload();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
                 }
+
 
                 break;
 
@@ -343,7 +347,7 @@ public class AddShopActivity extends BaseActivity implements SpecAdapter.SpecAda
 
     @Override
     public void onReleaseProducts(CreateProductModel productModel) {
-        progresloading.cleanload();
+
         Toast.makeText(this, "发布成功！", Toast.LENGTH_SHORT).show();
         finish();
     }

@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
 
+import com.tv.doubuy.dialog.Progresloading;
 import com.tv.doubuy.network.APIService;
 import com.tv.doubuy.utils.AliyunUtils;
 import com.tv.doubuy.utils.DouBuyApplication;
@@ -25,6 +26,7 @@ public class ServerUpFile extends Service {
     private UpFileView upfileview;
 
 
+
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {
@@ -35,7 +37,6 @@ public class ServerUpFile extends Service {
     @Override
     public void onStart(Intent intent, int startId) {
         super.onStart(intent, startId);
-
         imgUrls = intent.getStringArrayListExtra("imgUrls");
         onUpdata(imgUrls);
     }
@@ -49,7 +50,6 @@ public class ServerUpFile extends Service {
 
     //TODO 这里应该选择阿里多文件上传
     public void onUpdata(List<String> imgUrl) {
-
         AliyunUtils aliyunUtils = new AliyunUtils();
         for (int i = 0; i < imgUrl.size(); i++) {
 
@@ -63,7 +63,6 @@ public class ServerUpFile extends Service {
                     public void onSuccess(String fileUrl) {
                         imgpath.add(APIService.ALIYUN_OSS_IMAGE_PATH + fileUrl);
                         if (finalI == imgpath.size() - 1) {
-//                            upfileview.imagesList(imgpath);
                             DouBuyApplication.getInstance().imagelist(imgpath);
                         }
 

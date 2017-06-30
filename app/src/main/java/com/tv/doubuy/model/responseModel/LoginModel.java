@@ -373,29 +373,6 @@ public class LoginModel implements Serializable {
         }
 
         public static class ShopBean {
-            /**
-             * id : 78
-             * shopNO : 149759660333278
-             * name : 我的小店
-             * description : 尽可能莫时间默默
-             * cover : aaaaa
-             * logo : http://soundlife-app.oss-cn-hangzhou.aliyuncs.com/doubuy/93/img/14975974987757059.jpg
-             * QRCode : null
-             * followCount : 0
-             * serviceAviable : true
-             * serviceEndDate : null
-             * totalSaledAmount : 0
-             * score : 0
-             * isFreeShip : true
-             * shipFee : 0
-             * levelScore : 0
-             * level : 1
-             * isRecommend : false
-             * created_at : 2017-06-16T07:03:23.318Z
-             * updated_at : 2017-06-16T07:20:29.093Z
-             * areaId : null
-             * ownerId : 93
-             */
 
             private int id;
             private String shopNO;

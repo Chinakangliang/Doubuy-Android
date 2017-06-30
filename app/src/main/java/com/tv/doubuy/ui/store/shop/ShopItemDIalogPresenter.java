@@ -3,10 +3,12 @@ package com.tv.doubuy.ui.store.shop;
 import android.app.Activity;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
 
 import com.tv.doubuy.adapter.ProductAdapter;
 import com.tv.doubuy.dialog.ModifyPopWindow;
 import com.tv.doubuy.dialog.PromptDialog;
+import com.tv.doubuy.ui.store.shop.product.ShopListView;
 import com.tv.doubuy.utils.VerificationUtils;
 
 import java.util.List;
@@ -28,6 +30,8 @@ public class ShopItemDIalogPresenter {
     private RecyclerView recyler;
     private ModifyPopWindow window;
     private List<String> stringList;
+    private ShopListView shopListView;
+    private String productid;
 
     public ShopItemDIalogPresenter(Context context, ModifyPopWindow window, List<String> stringList) {
 
@@ -47,9 +51,13 @@ public class ShopItemDIalogPresenter {
                 switch (type) {
 
                     case "outof":
+                        itemNoSale();
                         break;
                     case "detele":
                         itemDetele();
+                        break;
+                    case "down":
+                        itemOnSale();
                         break;
                 }
 
@@ -68,11 +76,13 @@ public class ShopItemDIalogPresenter {
      * 设置需要的数据
      */
 
-    public void setNeedData(int position, ProductAdapter adapter, RecyclerView recyler) {
+    public void setNeedData(int position, ProductAdapter adapter, RecyclerView recyler, ShopListView shopListView, String productid) {
 
         this.position = position;
         this.adapter = adapter;
         this.recyler = recyler;
+        this.shopListView = shopListView;
+        this.productid = productid;
 
     }
 
@@ -84,10 +94,27 @@ public class ShopItemDIalogPresenter {
 
     }
 
-    /**
-     * 上架
-     */
-    public void itemOutOf() {
+    public void itemOnSale() {
+        adapter.removeItem(position);
+        promptDialog.dismiss();
+        window.popwindwDetele();
+        VerificationUtils.backgroundAlpha(1f, (Activity) mcontext);
+        if (!TextUtils.isEmpty(productid)) {
+            shopListView.putNoSale(productid);
+        }
+
+
+    }
+
+    public void itemNoSale() {
+        adapter.removeItem(position);
+        promptDialog.dismiss();
+        window.popwindwDetele();
+        VerificationUtils.backgroundAlpha(1f, (Activity) mcontext);
+        if (!TextUtils.isEmpty(productid)) {
+            shopListView.putOnSale(productid);
+        }
+
 
     }
 
@@ -107,6 +134,9 @@ public class ShopItemDIalogPresenter {
         promptDialog.dismiss();
         window.popwindwDetele();
         VerificationUtils.backgroundAlpha(1f, (Activity) mcontext);
+        if (!TextUtils.isEmpty(productid)) {
+            shopListView.deteleProduct(productid);
+        }
 
     }
 

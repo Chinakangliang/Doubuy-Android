@@ -79,4 +79,36 @@ public class ReleaseHelep {
 
         return productModel;
     }
+
+    public CreateProductModel createProduct(List<ProductSKUsBean> listbean, String name, String description, List<String> pathlist) {
+        CreateProductModel productModel = new CreateProductModel();
+        List<GalleriesBean> galleriesBeenList = new ArrayList<>();
+        GalleriesBean galleriesBean = new GalleriesBean();
+        List<CreateProductModel.ProductSKUsBean> productSKUsBeanList = new ArrayList<>();
+        CreateProductModel.ProductSKUsBean productSKUsBean = new CreateProductModel.ProductSKUsBean();
+
+        productModel.setName(name);
+        productModel.setDescription(description);
+
+        for (ProductSKUsBean skUsBean : listbean) {
+
+            productSKUsBean.setSpec(skUsBean.getSpec());
+            productSKUsBean.setCount(skUsBean.getCount());
+            productSKUsBean.setPrice(skUsBean.getPrice());
+            productSKUsBeanList.add(productSKUsBean);
+        }
+
+        productModel.setProductSKUs(productSKUsBeanList);
+
+        if (pathlist.size() > 0) {
+            for (String path : pathlist) {
+                galleriesBean.setImage(path);
+                galleriesBeenList.add(galleriesBean);
+            }
+        } else {
+            //// TODO: 2017/6/26  上传图片提示
+        }
+
+        return productModel;
+    }
 }

@@ -109,11 +109,33 @@
             android:background="@color/colorf3" />
     </LinearLayout>
 
-    <ImageView
-        android:id="@+id/iv_detele"
+    <LinearLayout
+        android:id="@+id/linear_item"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginRight="23dp"
-        android:src="@mipmap/product_btn_stan_delete" />
+        android:gravity="center"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:id="@+id/tv_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="10dp"
+            android:padding="10dp"
+            android:text="保存" />
+
+        <ImageView
+            android:id="@+id/iv_detele"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+
+            android:layout_marginRight="23dp"
+            android:src="@mipmap/product_btn_stan_delete" />
+
+    </LinearLayout>
+
 </LinearLayout>

@@ -23,6 +23,7 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import dalvik.system.DexClassLoader;
 
 public class MainActivity extends BaseActivity implements CompoundButton.OnCheckedChangeListener {
 
@@ -43,6 +44,7 @@ public class MainActivity extends BaseActivity implements CompoundButton.OnCheck
     ViewPager viewPager;
     private long exitTime;
     public static final String TAG_EXIT = "exit";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -7,6 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.tv.doubuy.R;
 import com.tv.doubuy.model.requestModel.ProductSKUsBean;
@@ -76,12 +78,26 @@ public class EditorAdapter extends RecyclerView.Adapter<EditorAdapter.ViewHolder
 
                 if (callback != null) {
 
+                    callback.itemDetele(position);
+
+                }
+            }
+        });
+
+        holder.tv_save.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (callback != null) {
                     productSKUsBean.setCount(holder.et_item_inven.getText().toString());
                     productSKUsBean.setPrice(holder.et_item_pice.getText().toString());
                     productSKUsBean.setSpec(holder.et_item_spec.getText().toString());
                     skUsBeanList.add(productSKUsBean);
-                    callback.itemonClick(position, skUsBeanList);
 
+                    callback.itemonClick(position, skUsBeanList);
+                    holder.linear_item.setVisibility(View.GONE);
+                    holder.et_item_pice.setFocusable(false);
+                    holder.et_item_inven.setFocusable(false);
+                    holder.et_item_inven.setFocusable(false);
                 }
             }
         });
@@ -105,6 +121,8 @@ public class EditorAdapter extends RecyclerView.Adapter<EditorAdapter.ViewHolder
         private EditText et_item_pice;
         private EditText et_item_inven;
         private ImageView iv_detele;
+        private TextView tv_save;
+        private LinearLayout linear_item;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -112,6 +130,8 @@ public class EditorAdapter extends RecyclerView.Adapter<EditorAdapter.ViewHolder
             et_item_pice = (EditText) itemView.findViewById(R.id.et_item_pice);
             et_item_inven = (EditText) itemView.findViewById(R.id.et_item_inven);
             iv_detele = (ImageView) itemView.findViewById(R.id.iv_detele);
+            tv_save = (TextView) itemView.findViewById(R.id.tv_save);
+            linear_item = (LinearLayout) itemView.findViewById(R.id.linear_item);
         }
     }
 
