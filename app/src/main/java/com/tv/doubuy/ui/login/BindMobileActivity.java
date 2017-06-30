@@ -14,7 +14,7 @@ import com.tv.doubuy.R;
 import com.tv.doubuy.base.BaseActivity;
 import com.tv.doubuy.model.requestModel.BindMobileModel;
 import com.tv.doubuy.model.requestModel.LoginRequestModel;
-import com.tv.doubuy.model.responseModel.UserInfoModel;
+import com.tv.doubuy.model.responseModel.LoginModel;
 import com.tv.doubuy.network.APIUtils;
 import com.tv.doubuy.network.ProgressSubscriber;
 import com.tv.doubuy.network.RetrofitUtils;
@@ -139,11 +139,12 @@ public class BindMobileActivity extends BaseActivity implements OnClickListener 
             @Override
             public void onNext(Object o) {
 
-                UserInfoModel infoModel = APIUtils.gson.fromJson(o.toString(), UserInfoModel.class);
+                LoginModel infoModel = APIUtils.gson.fromJson(o.toString(), LoginModel.class);
                 if (infoModel.getToken() != null && !infoModel.getToken().equals("")) {
 
                     douBuyCache.saveUserId(infoModel.getUser().getId() + "");
                     douBuyCache.saveUserToken(infoModel.getToken());
+                    douBuyCache.saveStoreId(infoModel.getUser().getShop().getId() + "");
                     Intent intent = new Intent(BindMobileActivity.this, MainActivity.class);
                     startActivity(intent);
                     finish();

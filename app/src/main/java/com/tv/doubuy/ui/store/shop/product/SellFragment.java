@@ -14,6 +14,8 @@ import com.tv.doubuy.dialog.ModifyPopWindow;
 import com.tv.doubuy.model.responseModel.ProductsListModel;
 import com.tv.doubuy.ui.store.shop.ShopItemDIalogPresenter;
 import com.tv.doubuy.ui.store.shop.adds.AddShopActivity;
+import com.tv.doubuy.ui.store.shop.editor.EditorProductActivity;
+import com.tv.doubuy.ui.store.shop.product.details.ProductDetailsActivity;
 import com.tv.doubuy.utils.ToastUtils;
 import com.tv.doubuy.view.refresh.RefresHelper;
 import com.tv.doubuy.view.refresh.RefreshRecyclerView;
@@ -74,6 +76,12 @@ public class SellFragment extends BaseExtendFragment implements ShopListPresente
         View view = inflater.inflate(R.layout.fragment_sell, null);
         ButterKnife.bind(this, view);
         setContentView(view);
+
+    }
+
+    @Override
+    public void onResumeExtend() {
+        super.onResumeExtend();
         initviews();
         setListener();
     }
@@ -87,7 +95,13 @@ public class SellFragment extends BaseExtendFragment implements ShopListPresente
         productAdapter = new ProductAdapter(getActivity());
 
         shopListView = new ShopListView(getActivity(), this);
-        shopListView.getShopList();
+        if (mParam.equals("ondown")) {
+            shopListView.getShopList("true");
+        } else {
+            shopListView.getShopList("false");
+
+        }
+
     }
 
     public void setListener() {
@@ -134,7 +148,15 @@ public class SellFragment extends BaseExtendFragment implements ShopListPresente
 
             @Override
             public void onItemPopWindowOutof() {
-                presenter.shouDialog("确定上架该商品?", "outof");
+                presenter.setNeedData(position, productAdapter, recyler, shopListView, productid);
+                if (mParam.equals("ondown")) {
+
+                    presenter.shouDialog("确定上架该商品?", "down");
+                } else {
+                    presenter.shouDialog("确定下架该商品?", "outof");
+
+                }
+
 
             }
 
@@ -144,7 +166,7 @@ public class SellFragment extends BaseExtendFragment implements ShopListPresente
                 if (lismodelProduct != null) {
 
                     Bundle bundle = new Bundle();
-                    Intent intent = new Intent(getActivity(), AddShopActivity.class);
+                    Intent intent = new Intent(getActivity(), EditorProductActivity.class);
                     bundle.putSerializable("ResultsBean", lismodelProduct.getResults().get(position));
                     intent.putExtra("title", "编辑商品");
                     intent.putExtras(bundle);
@@ -156,9 +178,9 @@ public class SellFragment extends BaseExtendFragment implements ShopListPresente
 
             @Override
             public void onItemPopWinowDetele() {
-                presenter.setNeedData(position, productAdapter, recyler);
-                presenter.shouDialog("确定删除该商品?", "detele");
-                shopListView.deteleProduct(productid);
+                presenter.setNeedData(position, productAdapter, recyler, shopListView, productid);
+                presenter.shouDialog("确定删除该商品?", "down");
+
 
             }
         });
@@ -187,9 +209,32 @@ public class SellFragment extends BaseExtendFragment implements ShopListPresente
 
     @Override
     public void deteleProduct(boolean isdetele) {
+        if (mParam.equals("ondown")) {
+            shopListView.getShopList("true");
+        } else {
+            shopListView.getShopList("false");
 
+        }
         productAdapter.notifyDataSetChanged();
 
+    }
+
+    @Override
+    public void noSale(boolean isSale) {
+        productAdapter.notifyDataSetChanged();
+    }
+
+    @Override
+    public void onSale(boolean isSale) {
+
+
+        if (mParam.equals("ondown")) {
+            shopListView.getShopList("true");
+        } else {
+            shopListView.getShopList("false");
+
+        }
+        productAdapter.notifyDataSetChanged();
     }
 
 

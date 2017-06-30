@@ -14,7 +14,7 @@ import com.tencent.mm.opensdk.openapi.IWXAPI;
 import com.tencent.mm.opensdk.openapi.IWXAPIEventHandler;
 import com.tencent.mm.opensdk.openapi.WXAPIFactory;
 import com.tv.doubuy.MainActivity;
-import com.tv.doubuy.model.responseModel.UserInfoModel;
+import com.tv.doubuy.model.responseModel.LoginModel;
 import com.tv.doubuy.network.APIService;
 import com.tv.doubuy.network.APIUtils;
 import com.tv.doubuy.network.ProgressSubscriber;
@@ -91,12 +91,13 @@ public class WXEntryActivity extends Activity implements IWXAPIEventHandler {
             @Override
             public void onNext(Object o) {
 
-                UserInfoModel infoModel = APIUtils.gson.fromJson(o.toString(), UserInfoModel.class);
+                LoginModel infoModel = APIUtils.gson.fromJson(o.toString(), LoginModel.class);
                 Intent intent = new Intent();
 
                 if (infoModel.getToken() != null || !infoModel.getToken().equals("")) {
                     douBuyCache.saveUserToken(infoModel.getToken());
                     douBuyCache.saveUserId(infoModel.getUser().getId() + "");
+                    douBuyCache.saveStoreId(infoModel.getUser().getShop().getId() + "");
                     intent.setClass(WXEntryActivity.this, MainActivity.class);
                     startActivity(intent);
                     finish();

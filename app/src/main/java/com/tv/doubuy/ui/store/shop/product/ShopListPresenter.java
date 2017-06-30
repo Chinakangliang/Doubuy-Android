@@ -11,4 +11,8 @@ public interface ShopListPresenter {
     void productlistdata(ProductsListModel productsListModel);
 
     void deteleProduct(boolean isdetele);
+
+    void noSale(boolean isSale);
+
+    void onSale(boolean isSale);
 }

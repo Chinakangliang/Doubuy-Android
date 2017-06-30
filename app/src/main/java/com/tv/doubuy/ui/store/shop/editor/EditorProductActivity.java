@@ -4,7 +4,6 @@ import android.Manifest;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -31,10 +30,15 @@ import com.tv.doubuy.adapter.ImageAdapter;
 import com.tv.doubuy.base.BaseActivity;
 import com.tv.doubuy.dialog.ActionSheetDialog;
 import com.tv.doubuy.dialog.Progresloading;
+import com.tv.doubuy.model.requestModel.CreateProductModel;
+import com.tv.doubuy.model.requestModel.ProductSKUsBean;
 import com.tv.doubuy.model.responseModel.CreateProductSKUs;
 import com.tv.doubuy.model.responseModel.ProductGalleriesBean;
 import com.tv.doubuy.model.responseModel.ProductsListModel;
 import com.tv.doubuy.network.APIService;
+import com.tv.doubuy.ui.store.shop.adds.AddShopPresenter;
+import com.tv.doubuy.ui.store.shop.adds.AddShopView;
+import com.tv.doubuy.ui.store.shop.adds.ReleaseHelep;
 import com.tv.doubuy.utils.AliyunUtils;
 import com.tv.doubuy.utils.CustomHelper;
 import com.tv.doubuy.utils.ToastUtils;
@@ -48,8 +52,7 @@ import butterknife.ButterKnife;
 /**
  * Created by apple on 2017/6/28.
  */
-//TODO  编辑特意和添加分开来处理 ，以此来希望不引起代码混乱， 保存SKU的地方 还需要处理，编辑后发布的接口未调用
-public class EditorProductActivity extends BaseActivity implements ImageAdapter.ImageAdapterCallBack, TakePhoto.TakeResultListener, InvokeListener {
+public class EditorProductActivity extends BaseActivity implements ImageAdapter.ImageAdapterCallBack, TakePhoto.TakeResultListener, InvokeListener, EditorAdapter.SpecAdapterCallback, AddShopView {
 
     @BindView(R.id.iv_back)
     ImageView ivBack;
@@ -84,6 +87,11 @@ public class EditorProductActivity extends BaseActivity implements ImageAdapter.
     private int position;
     private Progresloading progresloading;
 
+    private List<CreateProductSKUs> skUsList;
+
+    private List<ProductSKUsBean> listbean;
+    AliyunUtils aliyunUtils = new AliyunUtils();
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -91,15 +99,15 @@ public class EditorProductActivity extends BaseActivity implements ImageAdapter.
         setContentView(R.layout.activity_editor_products);
         ButterKnife.bind(this);
         initviews();
+        setLisenter();
     }
-
-
 
 
     public void initviews() {
 
         title = getIntent().getStringExtra("title");
 
+        btRight.setText("发布");
         resultsBean = (ProductsListModel.ResultsBean) getIntent().getSerializableExtra("ResultsBean");
 
 
@@ -126,13 +134,20 @@ public class EditorProductActivity extends BaseActivity implements ImageAdapter.
             imageAdapter.setData(pathList);
 
 
+            if (resultsBean.getProductSKUs().size() > 0) {
+                skUsList = resultsBean.getProductSKUs();
+            }
+
         }
-        imageAdapter.setAdapterCallBack(this);
 
         recyclerShopImage.setAdapter(imageAdapter);
-        recylerEditor.setAdapter(editorAdapter);
+        imageAdapter.setAdapterCallBack(this);
 
-        final List<CreateProductSKUs> skUsList = resultsBean.getProductSKUs();
+
+        recylerEditor.setAdapter(editorAdapter);
+        editorAdapter.setData(skUsList);
+        editorAdapter.setSpecClick(this);
+
         tvAddSpec.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -142,8 +157,26 @@ public class EditorProductActivity extends BaseActivity implements ImageAdapter.
             }
         });
 
+
+        progresloading = new Progresloading(this);
     }
 
+
+    public void setLisenter() {
+        btRight.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    Thread.sleep(500);
+                    AddShopPresenter addShopPresenter = new AddShopPresenter(EditorProductActivity.this, EditorProductActivity.this);
+                    addShopPresenter.createProducts(ReleaseHelep.getInstance().createProduct(listbean, etName.getText().toString(), etUnit.getText().toString(), pathList));
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        });
+    }
 
     @Override
     public void addImage(int position) {
@@ -155,19 +188,16 @@ public class EditorProductActivity extends BaseActivity implements ImageAdapter.
     public void takeSuccess(TResult result) {
 
         if (result.getImages().size() > 0) {
-
             pathList.remove(position);
-
-            progresloading = new Progresloading(this);
-
-            AliyunUtils aliyunUtils = new AliyunUtils();
-
             aliyunUtils.upFile(result.getImage().getPath(), this);
             aliyunUtils.AliyunUploadCal(new AliyunUtils.AliyunUploadCallback() {
                 @Override
                 public void onSuccess(String fileUrl) {
-                    pathList.remove(position);
                     pathList.add(APIService.ALIYUN_OSS_IMAGE_PATH + fileUrl);
+                    pathList.add("选择");
+                    recyclerShopImage.setAdapter(imageAdapter);
+                    imageAdapter.setData(pathList);
+
                 }
 
                 @Override
@@ -176,8 +206,6 @@ public class EditorProductActivity extends BaseActivity implements ImageAdapter.
                 }
             });
 
-            pathList.add("选择");
-            imageAdapter.setData(pathList);
 
         }
 
@@ -260,12 +288,20 @@ public class EditorProductActivity extends BaseActivity implements ImageAdapter.
     }
 
 
-    public void showAlterDialog() {
-
-        AlertDialog.Builder dialog = new AlertDialog.Builder(this);
-        dialog.setTitle("正在加载？");
-        dialog.create();
-        dialog.show();
+    @Override
+    public void itemonClick(int position, List<ProductSKUsBean> listbean) {
+        this.listbean = listbean;
     }
 
+    @Override
+    public void itemDetele(int position) {
+        editorAdapter.removeitem(position);
+    }
+
+    @Override
+    public void onReleaseProducts(CreateProductModel productModel) {
+        ToastUtils.getInstance().showToast(this, "发布成功");
+        finish();
+
+    }
 }

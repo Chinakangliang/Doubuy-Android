@@ -79,7 +79,6 @@ public interface APIService {
     Observable<BaseResponse> getShopInfo(@Path("store_id") String id);
 
 //    @PUT("shops/{store_id}")
-//    Observable<BaseResponse> putStoreInfo(@Path("store_id") String id, @Body UpStoreInfoModel upStoreInfoModel);
 
     @POST("users/{store_id}/createOrUpdateProfile")
     Observable<BaseResponse> setStoreInfoCard(@Path("store_id") String id, @Body ShopIdCardModel shopIdCardModel);
@@ -125,5 +124,14 @@ public interface APIService {
 
     @GET("shop/{store_id}/products/{product_id}")
     Observable<BaseResponse> getProductsDetials(@Path("store_id") String id, @Path("product_id") String productido);
+
+
+    @PUT("shop/{store_id}/products/{product_id}/onSale")
+    Observable<BaseResponse> putProductsUp(@Path("store_id") String storeId, @Path("product_id") String productId);
+
+
+
+    @PUT("shop/{store_id}/products/{product_id}/noSale")
+    Observable<BaseResponse> putProductsDown(@Path("store_id") String storeId, @Path("product_id") String productId);
 
 }

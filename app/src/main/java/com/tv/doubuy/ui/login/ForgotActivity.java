@@ -3,6 +3,7 @@ package com.tv.doubuy.ui.login;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -13,7 +14,7 @@ import com.tv.doubuy.R;
 import com.tv.doubuy.base.BaseActivity;
 import com.tv.doubuy.model.requestModel.LoginRequestModel;
 import com.tv.doubuy.model.requestModel.SiginModel;
-import com.tv.doubuy.model.responseModel.UserInfoModel;
+import com.tv.doubuy.model.responseModel.LoginModel;
 import com.tv.doubuy.network.APIUtils;
 import com.tv.doubuy.network.ProgressSubscriber;
 import com.tv.doubuy.network.RetrofitUtils;
@@ -123,14 +124,16 @@ public class ForgotActivity extends BaseActivity implements View.OnClickListener
         siginModel.setMobile(etMobile.getText().toString());
         siginModel.setPassword(etPassword.getText().toString());
 
-        RetrofitUtils  retrofitUtils=new RetrofitUtils(this);
+        RetrofitUtils retrofitUtils = new RetrofitUtils(this);
         retrofitUtils.setUserReste(siginModel, new ProgressSubscriber(new SubscriberOnNextListener() {
             @Override
             public void onNext(Object o) {
 
-                UserInfoModel infoModel = APIUtils.gson.fromJson(o.toString(), UserInfoModel.class);
-                if (infoModel != null && infoModel.getToken() != null || !infoModel.getToken().equals("")) {
+                LoginModel infoModel = APIUtils.gson.fromJson(o.toString(), LoginModel.class);
+                if (infoModel != null && !TextUtils.isEmpty(infoModel.getToken())) {
                     douBuyCache.saveUserToken(infoModel.getToken());
+                    douBuyCache.saveUserId(infoModel.getUser().getId() + "");
+                    douBuyCache.saveStoreId(infoModel.getUser().getShop().getId() + "");
                     Intent intent = new Intent(ForgotActivity.this, MainActivity.class);
                     startActivity(intent);
                     finish();

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -13,7 +14,7 @@ import android.widget.TextView;
 import com.tv.doubuy.R;
 import com.tv.doubuy.adapter.StoreGridAdapter;
 import com.tv.doubuy.base.BaseExtendFragment;
-import com.tv.doubuy.model.responseModel.StoreModel;
+import com.tv.doubuy.model.responseModel.StoreInfoModel;
 import com.tv.doubuy.network.APIUtils;
 import com.tv.doubuy.network.ProgressSubscriber;
 import com.tv.doubuy.network.RetrofitUtils;
@@ -22,6 +23,7 @@ import com.tv.doubuy.ui.store.customer.CustomerActivity;
 import com.tv.doubuy.ui.store.employees.EmployActivity;
 import com.tv.doubuy.ui.store.freight.FreightActivity;
 import com.tv.doubuy.ui.store.shop.ShopListActivity;
+import com.tv.doubuy.utils.DouBuyCache;
 import com.tv.doubuy.utils.PicassoHelper;
 
 import butterknife.BindView;
@@ -53,7 +55,7 @@ public class StoreFragment extends BaseExtendFragment implements View.OnClickLis
     ImageView ivStoreHead;
 
     private StoreGridAdapter storeAdapter;
-    private StoreModel storeModel;
+    private StoreInfoModel storeModel;
 
     private static final String ARG_PARAM = "param";
     private String mParam;
@@ -94,13 +96,17 @@ public class StoreFragment extends BaseExtendFragment implements View.OnClickLis
     }
 
     public void initViews() {
-        String id = APIUtils.getInstance(getActivity()).getStoreId();
+//        String id = APIUtils.getInstance(getActivity()).getStoreId();
+
+        DouBuyCache douBuyCache = new DouBuyCache(getActivity());
+
+        Log.i("111", "--douBuyCache---" + douBuyCache.getStoreId());
         RetrofitUtils retrofitUtils = new RetrofitUtils(getActivity());
-        retrofitUtils.getStoreInfo(id, new ProgressSubscriber(new SubscriberOnNextListener() {
+        retrofitUtils.getStoreInfo(douBuyCache.getStoreId(), new ProgressSubscriber(new SubscriberOnNextListener() {
             @Override
             public void onNext(Object o) {
 
-                storeModel = APIUtils.gson.fromJson(o.toString(), StoreModel.class);
+                storeModel = APIUtils.gson.fromJson(o.toString(), StoreInfoModel.class);
 
                 if (storeModel != null) {
                     PicassoHelper.getInstance().setAvatar(getActivity(), storeModel.getLogo(), ivStoreHead);

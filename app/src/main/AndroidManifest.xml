@@ -150,7 +150,7 @@
         <activity
             android:name=".ui.store.customer.CustomerActivity"
             android:screenOrientation="portrait"></activity>
-        
+
         <!--编辑商品-->
         <activity
             android:name=".ui.store.shop.editor.EditorProductActivity"
@@ -158,7 +158,7 @@
 
         <!--商品详情-->
         <activity
-            android:name=".ui.store.shop.product.ProductDetailsActivity"
+            android:name=".ui.store.shop.product.details.ProductDetailsActivity"
             android:screenOrientation="portrait"></activity>
 
         <activity

@@ -43,6 +43,7 @@
                         android:id="@+id/et_name"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
                         android:layout_weight="1"
                         android:background="@null" />
                 </LinearLayout>
@@ -72,6 +73,7 @@
                         android:id="@+id/et_category"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
                         android:layout_weight="1"
                         android:background="@null"
 
@@ -102,6 +104,7 @@
                     <EditText
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
                         android:layout_weight="1"
                         android:background="@null" />
                 </LinearLayout>
@@ -131,6 +134,7 @@
                         android:id="@+id/et_unit"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
                         android:layout_weight="1"
                         android:background="@null" />
                 </LinearLayout>
@@ -216,8 +220,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="40dp"
-                android:nestedScrollingEnabled="true"
-                />
+                android:nestedScrollingEnabled="true" />
 
         </LinearLayout>
     </ScrollView>

@@ -82,8 +82,8 @@ public class AllShopFragment extends BaseExtendFragment implements View.OnClickL
 
         fragmentList = new ArrayList<>();
         stringList = new ArrayList<>();
-        fragmentList.add(SellFragment.newInstance("vbvnbnb"));
-        fragmentList.add(SellFragment.newInstance("aa"));
+        fragmentList.add(SellFragment.newInstance("ondown"));
+        fragmentList.add(SellFragment.newInstance("outof"));
         stringList.add("出售中");
         stringList.add("已下架");
         tabLayout.setTabMode(TabLayout.MODE_FIXED);

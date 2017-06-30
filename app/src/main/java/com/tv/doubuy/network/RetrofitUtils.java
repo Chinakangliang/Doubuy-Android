@@ -292,6 +292,23 @@ public class RetrofitUtils {
 
     }
 
+    /**
+     * 下架
+     */
+    public void putProductsDown(String storeid, String productsid, ProgressSubscriber subscriber) {
+
+        toSubscribe(mApiService.putProductsDown(storeid, productsid), subscriber);
+
+    }
+
+    /**
+     * 上架
+     */
+    public void putProductsUp(String storeid, String productsid, ProgressSubscriber subscriber) {
+
+        toSubscribe(mApiService.putProductsUp(storeid, productsid), subscriber);
+    }
+
 
     private <T> void toSubscribe(Observable<T> o, Subscriber s) {
         o.subscribeOn(Schedulers.io())

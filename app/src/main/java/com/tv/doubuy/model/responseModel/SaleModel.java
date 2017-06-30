@@ -1,15 +1,12 @@
 package com.tv.doubuy.model.responseModel;
 
-import com.tv.doubuy.model.requestModel.GalleriesBean;
-
 import java.io.Serializable;
-import java.util.List;
 
 /**
- * Created by apple on 2017/6/28.
+ * Created by apple on 2017/6/30.
  */
 
-public class DetialsProductModel implements Serializable {
+public class SaleModel  implements Serializable {
 
 
     private int promotionPrice;
@@ -26,7 +23,6 @@ public class DetialsProductModel implements Serializable {
     private boolean allowAuction;
     private Object thumb;
     private boolean onSale;
-
     private int viewCount;
     private int saleCount;
     private int followCount;
@@ -44,18 +40,6 @@ public class DetialsProductModel implements Serializable {
     private Object categoryId;
     private Object promotionDiscountId;
     private Object promotionSecKillId;
-    private ShopInfoModel shop;
-    private Object promotionDiscount;
-    private Object promotionSecKill;
-    private Object auction;
-    private int goodCommentCount;
-    private int middleCommentCount;
-    private int badCommentCount;
-    private List<CreateProductSKUs> productSKUs;
-    private List<ProductGalleriesBean> galleries;
-    private List<?> favoriteUser;
-    private List<?> comments;
-
 
     public int getPromotionPrice() {
         return promotionPrice;
@@ -65,12 +49,12 @@ public class DetialsProductModel implements Serializable {
         this.promotionPrice = promotionPrice;
     }
 
-    public boolean isFollowed() {
+    public boolean isIsFollowed() {
         return isFollowed;
     }
 
-    public void setFollowed(boolean followed) {
-        isFollowed = followed;
+    public void setIsFollowed(boolean isFollowed) {
+        this.isFollowed = isFollowed;
     }
 
     public int getId() {
@@ -304,94 +288,4 @@ public class DetialsProductModel implements Serializable {
     public void setPromotionSecKillId(Object promotionSecKillId) {
         this.promotionSecKillId = promotionSecKillId;
     }
-
-    public ShopInfoModel getShop() {
-        return shop;
-    }
-
-    public void setShop(ShopInfoModel shop) {
-        this.shop = shop;
-    }
-
-    public Object getPromotionDiscount() {
-        return promotionDiscount;
-    }
-
-    public void setPromotionDiscount(Object promotionDiscount) {
-        this.promotionDiscount = promotionDiscount;
-    }
-
-    public Object getPromotionSecKill() {
-        return promotionSecKill;
-    }
-
-    public void setPromotionSecKill(Object promotionSecKill) {
-        this.promotionSecKill = promotionSecKill;
-    }
-
-    public Object getAuction() {
-        return auction;
-    }
-
-    public void setAuction(Object auction) {
-        this.auction = auction;
-    }
-
-    public int getGoodCommentCount() {
-        return goodCommentCount;
-    }
-
-    public void setGoodCommentCount(int goodCommentCount) {
-        this.goodCommentCount = goodCommentCount;
-    }
-
-    public int getMiddleCommentCount() {
-        return middleCommentCount;
-    }
-
-    public void setMiddleCommentCount(int middleCommentCount) {
-        this.middleCommentCount = middleCommentCount;
-    }
-
-    public int getBadCommentCount() {
-        return badCommentCount;
-    }
-
-    public void setBadCommentCount(int badCommentCount) {
-        this.badCommentCount = badCommentCount;
-    }
-
-    public List<CreateProductSKUs> getProductSKUs() {
-        return productSKUs;
-    }
-
-    public void setProductSKUs(List<CreateProductSKUs> productSKUs) {
-        this.productSKUs = productSKUs;
-    }
-
-    public List<ProductGalleriesBean> getGalleries() {
-        return galleries;
-    }
-
-    public void setGalleries(List<ProductGalleriesBean> galleries) {
-        this.galleries = galleries;
-    }
-
-    public List<?> getFavoriteUser() {
-        return favoriteUser;
-    }
-
-    public void setFavoriteUser(List<?> favoriteUser) {
-        this.favoriteUser = favoriteUser;
-    }
-
-    public List<?> getComments() {
-        return comments;
-    }
-
-    public void setComments(List<?> comments) {
-        this.comments = comments;
-    }
-
-
 }
