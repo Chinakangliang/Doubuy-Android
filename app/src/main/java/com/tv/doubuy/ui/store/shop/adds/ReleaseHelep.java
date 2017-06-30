@@ -89,15 +89,15 @@ public class ReleaseHelep {
 
         productModel.setName(name);
         productModel.setDescription(description);
+        if (listbean!=null){
+            for (ProductSKUsBean skUsBean : listbean) {
 
-        for (ProductSKUsBean skUsBean : listbean) {
-
-            productSKUsBean.setSpec(skUsBean.getSpec());
-            productSKUsBean.setCount(skUsBean.getCount());
-            productSKUsBean.setPrice(skUsBean.getPrice());
-            productSKUsBeanList.add(productSKUsBean);
+                productSKUsBean.setSpec(skUsBean.getSpec());
+                productSKUsBean.setCount(skUsBean.getCount());
+                productSKUsBean.setPrice(skUsBean.getPrice());
+                productSKUsBeanList.add(productSKUsBean);
+            }
         }
-
         productModel.setProductSKUs(productSKUsBeanList);
 
         if (pathlist.size() > 0) {

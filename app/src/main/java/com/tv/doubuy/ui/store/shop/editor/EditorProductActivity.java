@@ -163,13 +163,22 @@ public class EditorProductActivity extends BaseActivity implements ImageAdapter.
 
 
     public void setLisenter() {
+        ivBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
         btRight.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try {
                     Thread.sleep(500);
+
                     AddShopPresenter addShopPresenter = new AddShopPresenter(EditorProductActivity.this, EditorProductActivity.this);
                     addShopPresenter.createProducts(ReleaseHelep.getInstance().createProduct(listbean, etName.getText().toString(), etUnit.getText().toString(), pathList));
+
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }

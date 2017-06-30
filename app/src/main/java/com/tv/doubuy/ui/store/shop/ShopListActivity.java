@@ -5,6 +5,7 @@ import android.support.annotation.IdRes;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -43,12 +44,19 @@ public class ShopListActivity extends BaseActivity implements RadioGroup.OnCheck
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shoplist);
         ButterKnife.bind(this);
-        if (savedInstanceState == null) {
-
-        }
         initViews();
+        setListner();
     }
 
+
+    public void setListner() {
+        ivBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+    }
 
     public void initViews() {
         fragments = new ArrayList<>();

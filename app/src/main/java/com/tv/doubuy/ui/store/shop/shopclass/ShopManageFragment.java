@@ -21,7 +21,7 @@ import butterknife.ButterKnife;
  * Created by apple on 2017/6/19.
  */
 
-public class ShopManageFragment extends BaseExtendFragment implements View.OnClickListener, ShopClassView {
+public class ShopManageFragment extends BaseExtendFragment implements View.OnClickListener, ShopClassView, ManageShopAdapter.setItemCliskCallback {
 
     private static final String ARG_PARAM = "param";
     private String mParam;
@@ -160,6 +160,7 @@ public class ShopManageFragment extends BaseExtendFragment implements View.OnCli
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         manageShopAdapter = new ManageShopAdapter(getActivity(), shopClassListModel.getResults());
         recyclerView.setAdapter(manageShopAdapter);
+        manageShopAdapter.setItemClicks(this);
 
     }
 
@@ -168,5 +169,18 @@ public class ShopManageFragment extends BaseExtendFragment implements View.OnCli
 
         manageShopAdapter.notifyDataSetChanged();
         Toast.makeText(getActivity(), "删除成功", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void itemClick(int position) {
+        if (classListModel != null) {
+            Intent intent = new Intent();
+            intent.setClass(getActivity(), AddClassActivity.class);
+            intent.putExtra("title", "修改分类");
+            intent.putExtra("classid", classListModel.getResults().get(position).getId() + "");
+            intent.putExtra("name", classListModel.getResults().get(position).getName());
+            intent.putExtra("desc", classListModel.getResults().get(position).getDescription());
+            startActivity(intent);
+        }
     }
 }

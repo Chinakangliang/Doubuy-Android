@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 
 import com.tv.doubuy.R;
 import com.tv.doubuy.model.responseModel.ShopClassListChildrenBean;
-import com.tv.doubuy.model.responseModel.ShopClassListModel;
 import com.tv.doubuy.view.drawer.DrawerViewHolder;
 
 import java.util.List;
@@ -24,12 +23,13 @@ public class ManageShopAdapter extends RecyclerView.Adapter {
 
     private List<ShopClassListChildrenBean> mlist;
 
+    private setItemCliskCallback callback;
+
     public ManageShopAdapter(Context context, List<ShopClassListChildrenBean> list) {
 
         this.mlist = list;
         mInflater = LayoutInflater.from(context);
     }
-
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -40,13 +40,23 @@ public class ManageShopAdapter extends RecyclerView.Adapter {
     }
 
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
         final DrawerViewHolder viewHolder = (DrawerViewHolder) holder;
 
         viewHolder.itemView.setTag(position);
         viewHolder.content.setText(mlist.get(position).getName());
         viewHolder.tvSize.setText("(" + mlist.get(position).getId() + ")");
+
+//        viewHolder.relaItem.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if (callback != null) {
+//                    callback.itemClick(position);
+//                }
+//            }
+//        });
     }
+
 
     @Override
     public int getItemCount() {
@@ -56,5 +66,15 @@ public class ManageShopAdapter extends RecyclerView.Adapter {
     public void removeItem(int position) {
         mlist.remove(position);
         notifyDataSetChanged();
+    }
+
+    public void setItemClicks(setItemCliskCallback callback) {
+        this.callback = callback;
+    }
+
+    public interface setItemCliskCallback
+
+    {
+        void itemClick(int position);
     }
 }
