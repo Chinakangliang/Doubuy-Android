@@ -65,9 +65,7 @@ public class ServerUpFile extends Service {
                         if (finalI == imgpath.size() - 1) {
                             DouBuyApplication.getInstance().imagelist(imgpath);
                         }
-
                     }
-
                     @Override
                     public void onFailure(Exception e) {
                     }

@@ -46,10 +46,10 @@ public class CreateProductModel {
         this.productSKUs = productSKUs;
     }
 
+
+
+
     public static class GalleriesBean {
-        /**
-         * image : http://soundlife-app.oss-cn-hangzhou.aliyuncs.com/doubuy/1/img14865431644180.jpg
-         */
 
         private String image;
 
@@ -63,11 +63,6 @@ public class CreateProductModel {
     }
 
     public static class ProductSKUsBean {
-        /**
-         * count : 222
-         * price : 2
-         * spec : 222
-         */
 
         private String count;
         private String price;

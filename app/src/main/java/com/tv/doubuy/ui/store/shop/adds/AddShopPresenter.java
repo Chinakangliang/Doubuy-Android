@@ -34,20 +34,21 @@ public class AddShopPresenter {
 
     public void createProducts(CreateProductModel productModel) {
 
-        RetrofitUtils.getInstance(mcontext).setCreateProduct(douBuyCache.getStoreId(), productModel, new ProgressSubscriber(new SubscriberOnNextListener() {
-            @Override
-            public void onNext(Object o) {
-                CreateProductModel createProductModel = APIUtils.gson.fromJson(o.toString(), CreateProductModel.class);
-                if (createProductModel != null) {
-                    addShopView.onReleaseProducts(createProductModel);
-                }
+        if (productModel.getGalleries() != null && productModel.getGalleries().size() > 0) {
+            RetrofitUtils.getInstance(mcontext).setCreateProduct(douBuyCache.getStoreId(), productModel, new ProgressSubscriber(new SubscriberOnNextListener() {
+                @Override
+                public void onNext(Object o) {
+                    CreateProductModel createProductModel = APIUtils.gson.fromJson(o.toString(), CreateProductModel.class);
+                    if (createProductModel != null) {
+                        addShopView.onReleaseProducts(createProductModel);
+                    }
 
-            }
-        }, mcontext));
+                }
+            }, mcontext));
+
+        }
 
     }
-
-
 
 
 }

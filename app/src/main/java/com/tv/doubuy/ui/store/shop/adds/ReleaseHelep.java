@@ -5,7 +5,6 @@ import android.text.TextUtils;
 import com.tv.doubuy.model.requestModel.CreateProductModel;
 import com.tv.doubuy.model.requestModel.GalleriesBean;
 import com.tv.doubuy.model.requestModel.ProductSKUsBean;
-import com.tv.doubuy.utils.DouBuyApplication;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,10 +47,10 @@ public class ReleaseHelep {
     }
 
 
-    public CreateProductModel createRelease(List<ProductSKUsBean> listbean, String name, String description) {
+    public CreateProductModel createRelease(List<ProductSKUsBean> listbean, String name, String description, List<String> paths) {
         CreateProductModel productModel = new CreateProductModel();
-        List<GalleriesBean> galleriesBeenList = new ArrayList<>();
-        GalleriesBean galleriesBean = new GalleriesBean();
+        List<CreateProductModel.GalleriesBean> galleriesBeenList = new ArrayList<>();
+        CreateProductModel.GalleriesBean   galleriesBean = new CreateProductModel.GalleriesBean();
         List<CreateProductModel.ProductSKUsBean> productSKUsBeanList = new ArrayList<>();
         CreateProductModel.ProductSKUsBean productSKUsBean = new CreateProductModel.ProductSKUsBean();
 
@@ -59,26 +58,23 @@ public class ReleaseHelep {
         productModel.setDescription(description);
 
         for (ProductSKUsBean skUsBean : listbean) {
-
             productSKUsBean.setSpec(skUsBean.getSpec());
-            productSKUsBean.setCount(skUsBean.getCount());
-            productSKUsBean.setPrice(skUsBean.getPrice());
+            productSKUsBean.setCount(skUsBean.getCount() + "");
+            productSKUsBean.setPrice(skUsBean.getPrice() + "");
             productSKUsBeanList.add(productSKUsBean);
         }
-
         productModel.setProductSKUs(productSKUsBeanList);
-
-        if (DouBuyApplication.getInstance().getList().size() > 0) {
-            for (String path : DouBuyApplication.getInstance().getList()) {
+        if (paths != null && paths.size() > 0) {
+            for (String path : paths) {
                 galleriesBean.setImage(path);
                 galleriesBeenList.add(galleriesBean);
-            }
-        } else {
-            //// TODO: 2017/6/26  上传图片提示
-        }
 
+            }
+            productModel.setGalleries(galleriesBeenList);
+        }
         return productModel;
     }
+
 
     public CreateProductModel createProduct(List<ProductSKUsBean> listbean, String name, String description, List<String> pathlist) {
         CreateProductModel productModel = new CreateProductModel();
@@ -89,12 +85,12 @@ public class ReleaseHelep {
 
         productModel.setName(name);
         productModel.setDescription(description);
-        if (listbean!=null){
+        if (listbean != null) {
             for (ProductSKUsBean skUsBean : listbean) {
 
                 productSKUsBean.setSpec(skUsBean.getSpec());
-                productSKUsBean.setCount(skUsBean.getCount());
-                productSKUsBean.setPrice(skUsBean.getPrice());
+                productSKUsBean.setCount(skUsBean.getCount() + "");
+                productSKUsBean.setPrice(skUsBean.getPrice() + "");
                 productSKUsBeanList.add(productSKUsBean);
             }
         }
@@ -105,10 +101,7 @@ public class ReleaseHelep {
                 galleriesBean.setImage(path);
                 galleriesBeenList.add(galleriesBean);
             }
-        } else {
-            //// TODO: 2017/6/26  上传图片提示
         }
-
         return productModel;
     }
 }

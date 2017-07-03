@@ -31,11 +31,14 @@ import com.tv.doubuy.adapter.AddImageAdapter;
 import com.tv.doubuy.adapter.SpecAdapter;
 import com.tv.doubuy.base.BaseActivity;
 import com.tv.doubuy.dialog.ActionSheetDialog;
+import com.tv.doubuy.dialog.ProductCheckDialog;
 import com.tv.doubuy.dialog.Progresloading;
 import com.tv.doubuy.model.requestModel.CreateProductModel;
 import com.tv.doubuy.model.requestModel.ProductSKUsBean;
 import com.tv.doubuy.model.responseModel.ProductsListModel;
+import com.tv.doubuy.network.APIService;
 import com.tv.doubuy.ui.store.shop.DescribeActivity;
+import com.tv.doubuy.utils.AliyunUtils;
 import com.tv.doubuy.utils.CustomHelper;
 import com.tv.doubuy.utils.ToastUtils;
 import com.tv.doubuy.view.CustomLinearLayoutManager;
@@ -80,6 +83,14 @@ public class AddShopActivity extends BaseActivity implements SpecAdapter.SpecAda
     EditText etCategory;
     @BindView(R.id.et_unit)
     EditText etUnit;
+    @BindView(R.id.et_spec)
+    EditText etSpec;
+    @BindView(R.id.et_price)
+    EditText etPrice;
+    @BindView(R.id.et_inventory)
+    EditText etInventory;
+    @BindView(R.id.tv_storeClass)
+    TextView tvStoreClass;
 
     private SpecAdapter specAdapter;
     private List<String> mlist;
@@ -91,9 +102,11 @@ public class AddShopActivity extends BaseActivity implements SpecAdapter.SpecAda
 
     private List<String> photourl = new ArrayList<>();
 
-    private List<ProductSKUsBean> listbean;
+    private List<ProductSKUsBean> listbean = new ArrayList<>();
 
     private Progresloading progresloading;
+
+    private List<String> paths = new ArrayList<>();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -173,6 +186,27 @@ public class AddShopActivity extends BaseActivity implements SpecAdapter.SpecAda
         tvInstructions.setOnClickListener(this);
 
         btRight.setOnClickListener(this);
+
+        final List<String> str = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+
+            str.add("item" + i);
+        }
+        tvStoreClass.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final ProductCheckDialog productCheckDialog = new ProductCheckDialog(AddShopActivity.this);
+                productCheckDialog.setListData(str);
+                productCheckDialog.show();
+                productCheckDialog.setSelectListener(new ProductCheckDialog.ProductChecCallback() {
+                    @Override
+                    public void ProductCheckCallBack(int posotion, String newValue) {
+                        tvStoreClass.setText(newValue);
+                        productCheckDialog.dismiss();
+                    }
+                });
+            }
+        });
     }
 
 
@@ -203,22 +237,37 @@ public class AddShopActivity extends BaseActivity implements SpecAdapter.SpecAda
                 progresloading.loadShow();
                 String name = etName.getText().toString().trim();
                 String unit = etUnit.getText().toString().trim();
-                avatarUpload(imgUrls);
+                String sepc = etSpec.getText().toString().trim();
+                String price = etPrice.getText().toString().toString().trim();
+                String invent = etInventory.getText().toString().trim();
+
                 try {
                     Thread.sleep(500);
-                    if (listbean != null && !TextUtils.isEmpty(name) && !TextUtils.isEmpty(unit)) {
+                    if (!TextUtils.isEmpty(name) && !TextUtils.isEmpty(unit) && !TextUtils.isEmpty(sepc) && !TextUtils.isEmpty(price) && !TextUtils.isEmpty(invent)) {
+                        ProductSKUsBean productSKUsBean = new ProductSKUsBean();
+                        productSKUsBean.setSpec(sepc);
+                        productSKUsBean.setPrice(price);
+                        productSKUsBean.setCount(invent);
+                        listbean.add(productSKUsBean);
                         AddShopPresenter addShopPresenter = new AddShopPresenter(this, this);
-                        addShopPresenter.createProducts(ReleaseHelep.getInstance().createRelease(listbean, name, unit));
+
+                        CreateProductModel crateModel = ReleaseHelep.getInstance().createRelease(listbean, name, unit, paths);
+                        if (crateModel.getGalleries() != null) {
+                            addShopPresenter.createProducts(crateModel);
+                            Toast.makeText(this, "图片上传不为空", Toast.LENGTH_SHORT).show();
+                        } else {
+
+                            Toast.makeText(this, "图片上传为空", Toast.LENGTH_SHORT).show();
+                        }
                         progresloading.cleanload();
                     } else {
                         ToastUtils.getInstance().showToast(this, "请填写完整");
+                        progresloading.cleanload();
                     }
 
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-
-
                 break;
 
         }
@@ -277,14 +326,33 @@ public class AddShopActivity extends BaseActivity implements SpecAdapter.SpecAda
     }
 
     @Override
-    public void takeSuccess(TResult result) {
-
+    public void takeSuccess(final TResult result) {
 
         List<String> photoUrls = getPhotoUrls(result.getImages());
         photoUrls.add("选择");
         imgUrls.addAll(photoUrls);
         addImageAdapter.setData(imgUrls);
 
+
+        AliyunUtils aliyunUtils = new AliyunUtils();
+        for (int i = 0; i < result.getImages().size(); i++) {
+            aliyunUtils.upFile(result.getImages().get(i).getPath(), this);
+            aliyunUtils.AliyunUploadCal(new AliyunUtils.AliyunUploadCallback() {
+                @Override
+                public void onSuccess(String fileUrl) {
+
+                    if (paths.size() != result.getImages().size()) {
+
+                        paths.add(APIService.ALIYUN_OSS_IMAGE_PATH + fileUrl);
+                    }
+                }
+
+                @Override
+                public void onFailure(Exception e) {
+
+                }
+            });
+        }
     }
 
     public List<String> getPhotoUrls(ArrayList<TImage> tImages) {

@@ -41,7 +41,7 @@ public class ProgressDialogHandler extends Handler {
                 });
             }
 
-            if (pd != null && !pd.isShowing()) {
+            if (pd != null && !pd.isShowing()&&context.isRestricted()) {
                 pd.show();
             }
         }
@@ -65,5 +65,6 @@ public class ProgressDialogHandler extends Handler {
                 break;
         }
     }
-;
+
+    ;
 }

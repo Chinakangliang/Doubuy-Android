@@ -29,6 +29,7 @@ import com.tv.doubuy.adapter.EditorAdapter;
 import com.tv.doubuy.adapter.ImageAdapter;
 import com.tv.doubuy.base.BaseActivity;
 import com.tv.doubuy.dialog.ActionSheetDialog;
+import com.tv.doubuy.dialog.ProductCheckDialog;
 import com.tv.doubuy.dialog.Progresloading;
 import com.tv.doubuy.model.requestModel.CreateProductModel;
 import com.tv.doubuy.model.requestModel.ProductSKUsBean;
@@ -74,6 +75,8 @@ public class EditorProductActivity extends BaseActivity implements ImageAdapter.
     RecyclerView recyclerShopImage;
     @BindView(R.id.tv_add_spec)
     TextView tvAddSpec;
+    @BindView(R.id.tv_StoreClass)
+    TextView tvStoreClass;
 
     private ProductsListModel.ResultsBean resultsBean;
     private String title;
@@ -121,7 +124,6 @@ public class EditorProductActivity extends BaseActivity implements ImageAdapter.
         imageAdapter = new ImageAdapter(this);
         if (resultsBean != null) {
             etName.setText(resultsBean.getName());
-            etCategory.setText(resultsBean.getDescription());
             editorAdapter.setData(resultsBean.getProductSKUs());
 
 
@@ -157,8 +159,29 @@ public class EditorProductActivity extends BaseActivity implements ImageAdapter.
             }
         });
 
-
         progresloading = new Progresloading(this);
+        final List<String> str = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+
+            str.add("item" + i);
+        }
+
+        tvStoreClass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final ProductCheckDialog productCheckDialog = new ProductCheckDialog(EditorProductActivity.this);
+                productCheckDialog.setListData(str);
+                productCheckDialog.show();
+                productCheckDialog.setSelectListener(new ProductCheckDialog.ProductChecCallback() {
+                    @Override
+                    public void ProductCheckCallBack(int posotion, String newValue) {
+                        tvStoreClass.setText(newValue);
+                        productCheckDialog.dismiss();
+                    }
+                });
+
+            }
+        });
     }
 
 
@@ -178,7 +201,6 @@ public class EditorProductActivity extends BaseActivity implements ImageAdapter.
 
                     AddShopPresenter addShopPresenter = new AddShopPresenter(EditorProductActivity.this, EditorProductActivity.this);
                     addShopPresenter.createProducts(ReleaseHelep.getInstance().createProduct(listbean, etName.getText().toString(), etUnit.getText().toString(), pathList));
-
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -202,10 +224,18 @@ public class EditorProductActivity extends BaseActivity implements ImageAdapter.
             aliyunUtils.AliyunUploadCal(new AliyunUtils.AliyunUploadCallback() {
                 @Override
                 public void onSuccess(String fileUrl) {
-                    pathList.add(APIService.ALIYUN_OSS_IMAGE_PATH + fileUrl);
-                    pathList.add("选择");
-                    recyclerShopImage.setAdapter(imageAdapter);
-                    imageAdapter.setData(pathList);
+
+                    if (pathList.size() > 0) {
+
+                        for (int i = 0; i < pathList.size(); i++) {
+                            if (pathList.get(i).equals("选择")) {
+                                pathList.remove(i);
+                                pathList.add(APIService.ALIYUN_OSS_IMAGE_PATH + fileUrl);
+                                pathList.add("选择");
+                                imageAdapter.setData(pathList);
+                            }
+                        }
+                    }
 
                 }
 
