@@ -68,7 +68,7 @@ public class EmployActivity extends BaseActivity implements EmployAdapter.Employ
     @Override
     public void setItemClick(int position) {
 
-        Toast.makeText(this, "" + position, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "gg" + position, Toast.LENGTH_SHORT).show();
     }
 
     @Override

@@ -113,7 +113,6 @@ public class StoreFragment extends BaseExtendFragment implements View.OnClickLis
                     tvStoreName.setText(storeModel.getName());
                     //// TODO: 2017/6/14  这里需要判断审核状态 ，感觉不是很合理暂时未处理
                     switch (storeModel.getProfile().getRealNameStatus()) {
-
                         case "notApply":
                             lineOpenStore.setVisibility(View.VISIBLE);
                             lineStoreType.setVisibility(View.GONE);
