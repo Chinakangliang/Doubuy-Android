@@ -68,7 +68,7 @@
 
         <!--商品列表-->
         <activity
-            android:name=".ui.store.shop.ShopListActivity"
+            android:name=".ui.store.shop.product.ShopListActivity"
             android:screenOrientation="portrait"></activity>
         <!-- 添加分类-->
         <activity

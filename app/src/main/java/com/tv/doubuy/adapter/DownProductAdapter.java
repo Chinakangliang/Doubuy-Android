@@ -21,14 +21,14 @@ import java.util.List;
  * Created by apple on 2017/6/16.
  */
 
-public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHolder> {
+public class DownProductAdapter extends RecyclerView.Adapter<DownProductAdapter.ViewHolder> {
 
 
     private List<ProductsListModel.ResultsBean> list;
     private EmployAdapteCallBack callBack;
     private LayoutInflater mInflater;
 
-    public ProductAdapter(Context context) {
+    public DownProductAdapter(Context context) {
         mInflater = LayoutInflater.from(context);
     }
 
@@ -53,7 +53,6 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
         holder.tvProductName.setText(list.get(position).getName());
         holder.tvProductPice.setText(APIService.FUHAO + list.get(position).getPromotionPrice());
         holder.tvProductInven.setText(list.get(position).getDescription());
-
 
         PicassoHelper.getInstance().setImage(holder.ivProductHead.getContext(), list.get(position).getThumb(), holder.ivProductHead);
 

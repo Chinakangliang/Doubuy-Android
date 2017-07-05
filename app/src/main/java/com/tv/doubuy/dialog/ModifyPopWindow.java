@@ -2,12 +2,14 @@ package com.tv.doubuy.dialog;
 
 import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
+import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
+import android.widget.TextView;
 
 import com.tv.doubuy.R;
 import com.tv.doubuy.utils.PopupWindowUtil;
@@ -30,13 +32,16 @@ public class ModifyPopWindow extends PopupWindow implements View.OnClickListener
     private LinearLayout liner_outof;
     private LinearLayout liner_edit;
     private LinearLayout liner_detele;
+    private TextView tvtype;
 
     private onPopwindwCallback callback;
+    private String mParam;
 
-    public ModifyPopWindow(Context context, View view) {
+    public ModifyPopWindow(Context context, View view, String mParam) {
 
         this.mcontext = context;
         this.mviews = view;
+        this.mParam = mParam;
     }
 
     public ModifyPopWindow builder() {
@@ -47,13 +52,18 @@ public class ModifyPopWindow extends PopupWindow implements View.OnClickListener
         liner_outof = (LinearLayout) contentView.findViewById(R.id.liner_outof);
         liner_edit = (LinearLayout) contentView.findViewById(R.id.liner_edit);
         liner_detele = (LinearLayout) contentView.findViewById(R.id.liner_detele);
-
+        tvtype = (TextView) contentView.findViewById(R.id.tvtype);
         popupWindow = new PopupWindow(contentView, ViewGroup.LayoutParams.WRAP_CONTENT,
                 ViewGroup.LayoutParams.WRAP_CONTENT);
         popupWindow.setFocusable(true);
         popupWindow.setOutsideTouchable(false);
         showPopupWindow(contentView);
         onListener();
+        if (mParam.equals("ondown")){
+            tvtype.setText("下架");
+        }else {
+            tvtype.setText("上架");
+        }
 
         return this;
     }
@@ -73,6 +83,12 @@ public class ModifyPopWindow extends PopupWindow implements View.OnClickListener
         int windowPos[] = PopupWindowUtil.itemCenter(mviews, contentView);
         popupWindow.showAtLocation(mviews, Gravity.LEFT | Gravity.TOP, windowPos[0], windowPos[1]);
 
+    }
+
+    public void setTextType(String type) {
+        if (!TextUtils.isEmpty(type)) {
+            tvtype.setText(type);
+        }
     }
 
     @Override

@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -22,7 +21,7 @@ import com.tv.doubuy.network.SubscriberOnNextListener;
 import com.tv.doubuy.ui.store.customer.CustomerActivity;
 import com.tv.doubuy.ui.store.employees.EmployActivity;
 import com.tv.doubuy.ui.store.freight.FreightActivity;
-import com.tv.doubuy.ui.store.shop.ShopListActivity;
+import com.tv.doubuy.ui.store.shop.product.ShopListActivity;
 import com.tv.doubuy.utils.DouBuyCache;
 import com.tv.doubuy.utils.PicassoHelper;
 
@@ -96,11 +95,9 @@ public class StoreFragment extends BaseExtendFragment implements View.OnClickLis
     }
 
     public void initViews() {
-//        String id = APIUtils.getInstance(getActivity()).getStoreId();
 
         DouBuyCache douBuyCache = new DouBuyCache(getActivity());
 
-        Log.i("111", "--douBuyCache---" + douBuyCache.getStoreId());
         RetrofitUtils retrofitUtils = new RetrofitUtils(getActivity());
         retrofitUtils.getStoreInfo(douBuyCache.getStoreId(), new ProgressSubscriber(new SubscriberOnNextListener() {
             @Override
@@ -121,9 +118,12 @@ public class StoreFragment extends BaseExtendFragment implements View.OnClickLis
                             lineOpenStore.setVisibility(View.GONE);
                             lineStoreType.setVisibility(View.GONE);
                             linerManage.setVisibility(View.VISIBLE);
-                            initData();
                             break;
                         case "verified":
+                            lineOpenStore.setVisibility(View.GONE);
+                            lineStoreType.setVisibility(View.GONE);
+                            linerManage.setVisibility(View.VISIBLE);
+                            initData();
                             break;
                     }
 

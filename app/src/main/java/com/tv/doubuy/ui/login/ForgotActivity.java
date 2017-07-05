@@ -3,23 +3,22 @@ package com.tv.doubuy.ui.login;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.tv.doubuy.MainActivity;
 import com.tv.doubuy.R;
 import com.tv.doubuy.base.BaseActivity;
 import com.tv.doubuy.model.requestModel.LoginRequestModel;
 import com.tv.doubuy.model.requestModel.SiginModel;
-import com.tv.doubuy.model.responseModel.LoginModel;
+import com.tv.doubuy.model.responseModel.ForgotModel;
 import com.tv.doubuy.network.APIUtils;
 import com.tv.doubuy.network.ProgressSubscriber;
 import com.tv.doubuy.network.RetrofitUtils;
 import com.tv.doubuy.network.SubscriberOnNextListener;
 import com.tv.doubuy.utils.DouBuyCache;
+import com.tv.doubuy.utils.ToastUtils;
 import com.tv.doubuy.view.CountDownView;
 
 import butterknife.BindView;
@@ -61,9 +60,7 @@ public class ForgotActivity extends BaseActivity implements View.OnClickListener
 
     }
 
-
     public void initViews() {
-
         requestModel = new LoginRequestModel();
         countDownView = new CountDownView(60);
         regisPresenter = new RegisPresenter(this);
@@ -83,7 +80,7 @@ public class ForgotActivity extends BaseActivity implements View.OnClickListener
         switch (v.getId()) {
             case R.id.tv_sendCode:
                 requestModel.setMobile(etMobile.getText().toString());
-
+                requestModel.setType("resetPassword");
                 countDownView.onStart();
                 if (requestModel != null) {
                     regisPresenter.setUserCode(requestModel);
@@ -95,7 +92,6 @@ public class ForgotActivity extends BaseActivity implements View.OnClickListener
                         tvSendCode.setTextColor(getResources().getColor(R.color.colora7a7a7));
 
                     }
-
                     @Override
                     public void onFinish() {
                         tvSendCode.setText("点击重新获取");
@@ -107,8 +103,11 @@ public class ForgotActivity extends BaseActivity implements View.OnClickListener
                 break;
 
             case R.id.tv_sigup:
-
-                setResterPassWord();
+                if (etPassword.getText().toString().trim().length() > 5) {
+                    setResterPassWord();
+                }else {
+                    ToastUtils.getInstance().showToast(ForgotActivity.this,"请输入六位或六位以上的密码");
+                }
                 break;
             case R.id.iv_back:
                 finish();
@@ -118,7 +117,6 @@ public class ForgotActivity extends BaseActivity implements View.OnClickListener
     }
 
     public void setResterPassWord() {
-
         SiginModel siginModel = new SiginModel();
         siginModel.setCode(etCode.getText().toString());
         siginModel.setMobile(etMobile.getText().toString());
@@ -129,14 +127,13 @@ public class ForgotActivity extends BaseActivity implements View.OnClickListener
             @Override
             public void onNext(Object o) {
 
-                LoginModel infoModel = APIUtils.gson.fromJson(o.toString(), LoginModel.class);
-                if (infoModel != null && !TextUtils.isEmpty(infoModel.getToken())) {
-                    douBuyCache.saveUserToken(infoModel.getToken());
-                    douBuyCache.saveUserId(infoModel.getUser().getId() + "");
-                    douBuyCache.saveStoreId(infoModel.getUser().getShop().getId() + "");
-                    Intent intent = new Intent(ForgotActivity.this, MainActivity.class);
+                ForgotModel infoModel = APIUtils.gson.fromJson(o.toString(), ForgotModel.class);
+                if (infoModel != null) {
+
+                    Intent intent = new Intent(ForgotActivity.this, LoginActivity.class);
                     startActivity(intent);
                     finish();
+                    ToastUtils.getInstance().showToast(ForgotActivity.this, "已修改成功请重新登录");
                 }
 
 

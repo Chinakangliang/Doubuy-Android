@@ -2,12 +2,15 @@ package com.tv.doubuy.ui.login;
 
 import android.content.Context;
 import android.content.Intent;
+import android.text.TextUtils;
 import android.widget.Toast;
 
 import com.tv.doubuy.MainActivity;
+import com.tv.doubuy.dialog.Progresloading;
 import com.tv.doubuy.model.requestModel.LoginRequestModel;
 import com.tv.doubuy.model.requestModel.SignupModel;
 import com.tv.doubuy.model.responseModel.LoginModel;
+import com.tv.doubuy.model.responseModel.RegisModel;
 import com.tv.doubuy.network.APIUtils;
 import com.tv.doubuy.network.ProgressSubscriber;
 import com.tv.doubuy.network.RetrofitUtils;
@@ -83,25 +86,24 @@ public class RegisPresenter {
 
 
     /**
-     * 登录
+     * 注册
      */
     public void setUserRegis(SignupModel signmodel) {
 
+        final Progresloading progresloading = new Progresloading(mcontext);
+        progresloading.loadShow();
         RetrofitUtils utils = new RetrofitUtils(mcontext);
 
         utils.setUserSigin(signmodel, new ProgressSubscriber(new SubscriberOnNextListener() {
             @Override
             public void onNext(Object o) {
-
-                LoginModel infoModel = APIUtils.gson.fromJson(o.toString(), LoginModel.class);
-
-                if (infoModel != null) {
-
+                RegisModel infoModel = APIUtils.gson.fromJson(o.toString(), RegisModel.class);
+                if (!TextUtils.isEmpty(infoModel.getToken())) {
                     dbCache.saveUserToken(infoModel.getToken());
                     dbCache.saveUserId(infoModel.getUser().getId() + "");
-                    dbCache.saveStoreId(infoModel.getUser().getShop().getId() + "");
-                    Intent intent = new Intent(mcontext, MainActivity.class);
+                    Intent intent = new Intent(mcontext, LoginActivity.class);
                     mcontext.startActivity(intent);
+                    progresloading.cleanload();
                 }
 
 

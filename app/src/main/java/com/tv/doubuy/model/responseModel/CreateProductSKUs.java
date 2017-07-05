@@ -7,48 +7,47 @@ import java.io.Serializable;
  */
 
 public class CreateProductSKUs implements Serializable {
-
-    private int promotionPrice;
-    private int id;
-    private int count;
-    private int price;
+    private String promotionPrice;
+    private String id;
+    private String count;
+    private String price;
     private String spec;
-    private int productId;
-    private String updated_at;
-    private String created_at;
     private Object description;
     private boolean disabled;
     private Object saleCount;
+    private String created_at;
+    private String updated_at;
+    private int productId;
 
-    public int getPromotionPrice() {
+    public String getPromotionPrice() {
         return promotionPrice;
     }
 
-    public void setPromotionPrice(int promotionPrice) {
+    public void setPromotionPrice(String promotionPrice) {
         this.promotionPrice = promotionPrice;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
-    public int getCount() {
+    public String getCount() {
         return count;
     }
 
-    public void setCount(int count) {
+    public void setCount(String count) {
         this.count = count;
     }
 
-    public int getPrice() {
+    public String getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 
@@ -58,30 +57,6 @@ public class CreateProductSKUs implements Serializable {
 
     public void setSpec(String spec) {
         this.spec = spec;
-    }
-
-    public int getProductId() {
-        return productId;
-    }
-
-    public void setProductId(int productId) {
-        this.productId = productId;
-    }
-
-    public String getUpdated_at() {
-        return updated_at;
-    }
-
-    public void setUpdated_at(String updated_at) {
-        this.updated_at = updated_at;
-    }
-
-    public String getCreated_at() {
-        return created_at;
-    }
-
-    public void setCreated_at(String created_at) {
-        this.created_at = created_at;
     }
 
     public Object getDescription() {
@@ -108,6 +83,27 @@ public class CreateProductSKUs implements Serializable {
         this.saleCount = saleCount;
     }
 
+    public String getCreated_at() {
+        return created_at;
+    }
 
+    public void setCreated_at(String created_at) {
+        this.created_at = created_at;
+    }
 
+    public String getUpdated_at() {
+        return updated_at;
+    }
+
+    public void setUpdated_at(String updated_at) {
+        this.updated_at = updated_at;
+    }
+
+    public int getProductId() {
+        return productId;
+    }
+
+    public void setProductId(int productId) {
+        this.productId = productId;
+    }
 }

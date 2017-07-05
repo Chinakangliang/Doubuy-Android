@@ -33,7 +33,6 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ViewHolder> 
     }
 
     public void setData(List<String> list) {
-
         this.mlist = list;
         notifyDataSetChanged();
     }

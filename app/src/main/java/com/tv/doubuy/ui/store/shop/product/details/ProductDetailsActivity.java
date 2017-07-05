@@ -113,8 +113,10 @@ public class ProductDetailsActivity extends BaseActivity implements ProductDetia
                 if (detialsProductModel != null) {
                     bean.setGalleries(detialsProductModel.getGalleries());
                     bean.setProductSKUs(detialsProductModel.getProductSKUs());
+
                     bean.setName(detialsProductModel.getName());
                     bean.setPrice(detialsProductModel.getPrice());
+                    bean.setId(detialsProductModel.getId());
                     bean.setDescription(detialsProductModel.getDescription());
                 }
                 intent.setClass(ProductDetailsActivity.this, EditorProductActivity.class);

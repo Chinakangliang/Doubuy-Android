@@ -1,8 +1,10 @@
 package com.tv.doubuy.ui.store.shop.adds;
 
 import android.content.Context;
+import android.util.Log;
 
 import com.tv.doubuy.model.requestModel.CreateProductModel;
+import com.tv.doubuy.model.responseModel.ModifyProductsModel;
 import com.tv.doubuy.network.APIUtils;
 import com.tv.doubuy.network.ProgressSubscriber;
 import com.tv.doubuy.network.RetrofitUtils;
@@ -47,6 +49,26 @@ public class AddShopPresenter {
             }, mcontext));
 
         }
+
+    }
+
+    /**
+     * 修改
+     */
+    public void modifyProucts(String products, CreateProductModel productModel) {
+
+
+        Log.i("111","------productModel-----"+productModel.getProductSKUs());
+        RetrofitUtils.getInstance(mcontext).putModifyProducts(douBuyCache.getStoreId(), products, productModel, new ProgressSubscriber(new SubscriberOnNextListener() {
+            @Override
+            public void onNext(Object o) {
+
+                ModifyProductsModel modifyProductsModel = APIUtils.gson.fromJson(o.toString(), ModifyProductsModel.class);
+                if (modifyProductsModel != null) {
+                    addShopView.onModifyProducts(modifyProductsModel);
+                }
+            }
+        }, mcontext));
 
     }
 

@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -31,13 +32,16 @@ import com.tv.doubuy.adapter.AddImageAdapter;
 import com.tv.doubuy.adapter.SpecAdapter;
 import com.tv.doubuy.base.BaseActivity;
 import com.tv.doubuy.dialog.ActionSheetDialog;
-import com.tv.doubuy.dialog.ProductCheckDialog;
 import com.tv.doubuy.dialog.Progresloading;
 import com.tv.doubuy.model.requestModel.CreateProductModel;
 import com.tv.doubuy.model.requestModel.ProductSKUsBean;
+import com.tv.doubuy.model.responseModel.ModifyProductsModel;
 import com.tv.doubuy.model.responseModel.ProductsListModel;
+import com.tv.doubuy.model.responseModel.ShopClassListModel;
 import com.tv.doubuy.network.APIService;
 import com.tv.doubuy.ui.store.shop.DescribeActivity;
+import com.tv.doubuy.ui.store.shop.shopclass.ShopClassPresenter;
+import com.tv.doubuy.ui.store.shop.shopclass.ShopClassView;
 import com.tv.doubuy.utils.AliyunUtils;
 import com.tv.doubuy.utils.CustomHelper;
 import com.tv.doubuy.utils.ToastUtils;
@@ -54,7 +58,7 @@ import butterknife.ButterKnife;
  * Created by apple on 2017/6/21.
  */
 
-public class AddShopActivity extends BaseActivity implements SpecAdapter.SpecAdapterCallback, OnClickListener, TakePhoto.TakeResultListener, InvokeListener, AddImageAdapter.addImageViewListenr, AddShopView {
+public class AddShopActivity extends BaseActivity implements SpecAdapter.SpecAdapterCallback, OnClickListener, TakePhoto.TakeResultListener, InvokeListener, AddImageAdapter.addImageViewListenr, AddShopView, ShopClassView {
 
 
     @BindView(R.id.iv_back)
@@ -108,6 +112,8 @@ public class AddShopActivity extends BaseActivity implements SpecAdapter.SpecAda
 
     private List<String> paths = new ArrayList<>();
 
+    private ShopClassPresenter shopClassPresenter;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -126,10 +132,19 @@ public class AddShopActivity extends BaseActivity implements SpecAdapter.SpecAda
                 finish();
             }
         });
+        tvStoreClass.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
     }
 
 
     public void initviews() {
+
+        shopClassPresenter = new ShopClassPresenter(this, this);
+        shopClassPresenter.getCalssList();
 
         String title = getIntent().getStringExtra("title");
 
@@ -186,27 +201,6 @@ public class AddShopActivity extends BaseActivity implements SpecAdapter.SpecAda
         tvInstructions.setOnClickListener(this);
 
         btRight.setOnClickListener(this);
-
-        final List<String> str = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
-
-            str.add("item" + i);
-        }
-        tvStoreClass.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                final ProductCheckDialog productCheckDialog = new ProductCheckDialog(AddShopActivity.this);
-                productCheckDialog.setListData(str);
-                productCheckDialog.show();
-                productCheckDialog.setSelectListener(new ProductCheckDialog.ProductChecCallback() {
-                    @Override
-                    public void ProductCheckCallBack(int posotion, String newValue) {
-                        tvStoreClass.setText(newValue);
-                        productCheckDialog.dismiss();
-                    }
-                });
-            }
-        });
     }
 
 
@@ -254,10 +248,8 @@ public class AddShopActivity extends BaseActivity implements SpecAdapter.SpecAda
                         CreateProductModel crateModel = ReleaseHelep.getInstance().createRelease(listbean, name, unit, paths);
                         if (crateModel.getGalleries() != null) {
                             addShopPresenter.createProducts(crateModel);
-                            Toast.makeText(this, "图片上传不为空", Toast.LENGTH_SHORT).show();
                         } else {
-
-                            Toast.makeText(this, "图片上传为空", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(this, "图片上传不能为空", Toast.LENGTH_SHORT).show();
                         }
                         progresloading.cleanload();
                     } else {
@@ -434,5 +426,24 @@ public class AddShopActivity extends BaseActivity implements SpecAdapter.SpecAda
 
         Toast.makeText(this, "发布成功！", Toast.LENGTH_SHORT).show();
         finish();
+    }
+
+    @Override
+    public void onModifyProducts(ModifyProductsModel modifyProductsModel) {
+
+    }
+
+    @Override
+    public void getListClassData(ShopClassListModel shopClassListModel) {
+        List<String> str = new ArrayList<>();
+        for (int i = 0; i < shopClassListModel.getResults().size(); i++) {
+
+            str.add(shopClassListModel.getResults().get(i).getName());
+        }
+    }
+
+    @Override
+    public void deteleCategories(boolean ifsuccess) {
+
     }
 }

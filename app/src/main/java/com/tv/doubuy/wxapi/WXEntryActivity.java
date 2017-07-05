@@ -91,6 +91,7 @@ public class WXEntryActivity extends Activity implements IWXAPIEventHandler {
             @Override
             public void onNext(Object o) {
 
+
                 LoginModel infoModel = APIUtils.gson.fromJson(o.toString(), LoginModel.class);
                 Intent intent = new Intent();
 

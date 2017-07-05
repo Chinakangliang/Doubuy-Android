@@ -1,4 +1,4 @@
-package com.tv.doubuy.ui.store.shop;
+package com.tv.doubuy.ui.store.shop.product;
 
 import android.app.Activity;
 import android.content.Context;
@@ -9,7 +9,6 @@ import com.tv.doubuy.adapter.DownProductAdapter;
 import com.tv.doubuy.adapter.ProductAdapter;
 import com.tv.doubuy.dialog.ModifyPopWindow;
 import com.tv.doubuy.dialog.PromptDialog;
-import com.tv.doubuy.ui.store.shop.product.ShopListView;
 import com.tv.doubuy.utils.VerificationUtils;
 
 import java.util.List;
@@ -18,7 +17,7 @@ import java.util.List;
  * Created by apple on 2017/6/21.
  */
 
-public class ShopItemDIalogPresenter {
+public class DownPresenter {
 
 
     private Context mcontext;
@@ -26,17 +25,16 @@ public class ShopItemDIalogPresenter {
     private PromptDialog promptDialog;
 
     private int position;
-    private ProductAdapter adapter;
+    private DownProductAdapter adapter;
 
     private RecyclerView recyler;
     private ModifyPopWindow window;
     private List<String> stringList;
     private ShopListView shopListView;
     private String productid;
-    private DownProductAdapter downProductAdapter;
 
 
-    public ShopItemDIalogPresenter(Context context, ModifyPopWindow window, List<String> stringList) {
+    public DownPresenter(Context context, ModifyPopWindow window, List<String> stringList) {
 
         this.mcontext = context;
         this.window = window;
@@ -79,7 +77,7 @@ public class ShopItemDIalogPresenter {
      * 设置需要的数据
      */
 
-    public void setNeedData(int position, ProductAdapter adapter, RecyclerView recyler, ShopListView shopListView, String productid) {
+    public void setNeedData(int position, DownProductAdapter adapter, RecyclerView recyler, ShopListView shopListView, String productid) {
 
         this.position = position;
         this.adapter = adapter;

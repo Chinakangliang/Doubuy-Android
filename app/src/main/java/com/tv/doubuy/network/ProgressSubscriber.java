@@ -1,6 +1,7 @@
 package com.tv.doubuy.network;
 
 import android.content.Context;
+import android.util.Log;
 
 import com.tv.doubuy.model.responseModel.ErrorModel;
 import com.tv.doubuy.utils.ToastUtils;
@@ -75,12 +76,13 @@ public class ProgressSubscriber extends Subscriber implements ProgressCancelList
             ToastUtils.getInstance().showToast(context, "网络中断，请检查您的网络状态");
         } else if (e instanceof HttpException) {
             try {
-
+                if (((HttpException) e).response().errorBody() != null) {
+                    Log.i("111", "---error--" + ((HttpException) e).response().errorBody().toString());
                     ErrorModel model = APIUtils.gson.fromJson(((HttpException) e).response().errorBody().string(), ErrorModel.class);
                     ToastUtils.getInstance().showToast(context, model.getError() + "");
-
-
-
+                } else {
+                    ToastUtils.getInstance().showToast(context, "网络中断，请检查您的网络状态");
+                }
             } catch (IOException e1) {
                 e1.printStackTrace();
             }

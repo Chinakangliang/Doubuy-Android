@@ -90,7 +90,6 @@ public class AliyunUtils {
                 }
             }
         });
-//        task.waitUntilFinished();
     }
 
     public interface AliyunUploadCallback {

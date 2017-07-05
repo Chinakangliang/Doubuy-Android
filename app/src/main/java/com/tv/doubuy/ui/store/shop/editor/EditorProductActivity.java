@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -30,10 +31,10 @@ import com.tv.doubuy.adapter.ImageAdapter;
 import com.tv.doubuy.base.BaseActivity;
 import com.tv.doubuy.dialog.ActionSheetDialog;
 import com.tv.doubuy.dialog.ProductCheckDialog;
-import com.tv.doubuy.dialog.Progresloading;
 import com.tv.doubuy.model.requestModel.CreateProductModel;
 import com.tv.doubuy.model.requestModel.ProductSKUsBean;
 import com.tv.doubuy.model.responseModel.CreateProductSKUs;
+import com.tv.doubuy.model.responseModel.ModifyProductsModel;
 import com.tv.doubuy.model.responseModel.ProductGalleriesBean;
 import com.tv.doubuy.model.responseModel.ProductsListModel;
 import com.tv.doubuy.network.APIService;
@@ -78,6 +79,13 @@ public class EditorProductActivity extends BaseActivity implements ImageAdapter.
     @BindView(R.id.tv_StoreClass)
     TextView tvStoreClass;
 
+    @BindView(R.id.et_spec)
+    EditText etSpec;
+    @BindView(R.id.et_price)
+    EditText et_price;
+    @BindView(R.id.et_inventory)
+    EditText etInventory;
+
     private ProductsListModel.ResultsBean resultsBean;
     private String title;
     private EditorAdapter editorAdapter;
@@ -88,12 +96,14 @@ public class EditorProductActivity extends BaseActivity implements ImageAdapter.
     private TakePhoto takePhoto;
     private InvokeParam invokeParam;
     private int position;
-    private Progresloading progresloading;
 
-    private List<CreateProductSKUs> skUsList;
+    private List<CreateProductSKUs> skUsList = new ArrayList<>();
 
-    private List<ProductSKUsBean> listbean;
+    private List<ProductSKUsBean> listbean = new ArrayList<>();
     AliyunUtils aliyunUtils = new AliyunUtils();
+    private AddShopPresenter addShopPresenter;
+    private String productid;
+    List<ProductSKUsBean> skuben;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -107,12 +117,12 @@ public class EditorProductActivity extends BaseActivity implements ImageAdapter.
 
 
     public void initviews() {
+        addShopPresenter = new AddShopPresenter(EditorProductActivity.this, EditorProductActivity.this);
 
         title = getIntent().getStringExtra("title");
 
         btRight.setText("发布");
         resultsBean = (ProductsListModel.ResultsBean) getIntent().getSerializableExtra("ResultsBean");
-
 
         tvTitle.setText(title);
         recylerEditor.setLayoutManager(new LinearLayoutManager(this));
@@ -121,23 +131,32 @@ public class EditorProductActivity extends BaseActivity implements ImageAdapter.
 
         recyclerShopImage.setLayoutManager(new GridLayoutManager(this, 3));
 
+        pathList = new ArrayList<>();
+
+
         imageAdapter = new ImageAdapter(this);
         if (resultsBean != null) {
             etName.setText(resultsBean.getName());
             editorAdapter.setData(resultsBean.getProductSKUs());
-
-
-            pathList = new ArrayList<>();
+            productid = resultsBean.getId() + "";
             for (ProductGalleriesBean bean : resultsBean.getGalleries()) {
-                pathList.add(bean.getImage());
+                if (bean.getImage() != null && !bean.getImage().equals("选择")) {
+                    pathList.add(bean.getImage());
+                }
+
             }
+            imageAdapter.setData(pathList);
             pathList.add("选择");
 
-            imageAdapter.setData(pathList);
-
-
-            if (resultsBean.getProductSKUs().size() > 0) {
+            if (resultsBean.getProductSKUs().size() > 1) {
                 skUsList = resultsBean.getProductSKUs();
+                etSpec.setText(resultsBean.getProductSKUs().get(0).getSpec());
+                et_price.setText(resultsBean.getProductSKUs().get(0).getPrice() + "");
+                etInventory.setText(resultsBean.getProductSKUs().get(0).getCount() + "");
+            } else if (resultsBean.getProductSKUs().size() == 1) {
+                etSpec.setText(resultsBean.getProductSKUs().get(0).getSpec());
+                et_price.setText(resultsBean.getProductSKUs().get(0).getPrice() + "");
+                etInventory.setText(resultsBean.getProductSKUs().get(0).getCount() + "");
             }
 
         }
@@ -149,17 +168,18 @@ public class EditorProductActivity extends BaseActivity implements ImageAdapter.
         recylerEditor.setAdapter(editorAdapter);
         editorAdapter.setData(skUsList);
         editorAdapter.setSpecClick(this);
-
+        final CreateProductSKUs createProductSKUs = new CreateProductSKUs();
         tvAddSpec.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                CreateProductSKUs createProductSKUs = new CreateProductSKUs();
+                createProductSKUs.setPrice("");
+                createProductSKUs.setSpec("");
+                createProductSKUs.setCount("");
                 skUsList.add(createProductSKUs);
                 editorAdapter.setData(skUsList);
             }
         });
 
-        progresloading = new Progresloading(this);
         final List<String> str = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
 
@@ -192,18 +212,29 @@ public class EditorProductActivity extends BaseActivity implements ImageAdapter.
                 finish();
             }
         });
-
         btRight.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                try {
-                    Thread.sleep(500);
 
-                    AddShopPresenter addShopPresenter = new AddShopPresenter(EditorProductActivity.this, EditorProductActivity.this);
-                    addShopPresenter.createProducts(ReleaseHelep.getInstance().createProduct(listbean, etName.getText().toString(), etUnit.getText().toString(), pathList));
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
+                String count = etInventory.getText().toString().trim();
+                String price = et_price.getText().toString().trim();
+                String spec = etSpec.getText().toString().trim();
+                ProductSKUsBean productSKUsBean = new ProductSKUsBean();
+                if (!TextUtils.isEmpty(count) && !TextUtils.isEmpty(price) && !TextUtils.isEmpty(spec)) {
+                    productSKUsBean.setCount(count);
+                    productSKUsBean.setPrice(price);
+                    productSKUsBean.setSpec(spec);
+                    listbean.add(productSKUsBean);
+                    if (skuben != null) {
+                        listbean.addAll(skuben);
+                    }
+
+                    addShopPresenter.modifyProucts(resultsBean.getId() + "", ReleaseHelep.getInstance().ModifyProduct(listbean, etName.getText().toString(), etUnit.getText().toString(), pathList));
+
+                } else {
+                    ToastUtils.getInstance().showToast(EditorProductActivity.this, "请至少填写一个规格");
                 }
+
 
             }
         });
@@ -218,7 +249,7 @@ public class EditorProductActivity extends BaseActivity implements ImageAdapter.
     @Override
     public void takeSuccess(TResult result) {
 
-        if (result.getImages().size() > 0) {
+        if (result.getImage() != null) {
             pathList.remove(position);
             aliyunUtils.upFile(result.getImage().getPath(), this);
             aliyunUtils.AliyunUploadCal(new AliyunUtils.AliyunUploadCallback() {
@@ -230,11 +261,13 @@ public class EditorProductActivity extends BaseActivity implements ImageAdapter.
                         for (int i = 0; i < pathList.size(); i++) {
                             if (pathList.get(i).equals("选择")) {
                                 pathList.remove(i);
+                            } else {
                                 pathList.add(APIService.ALIYUN_OSS_IMAGE_PATH + fileUrl);
-                                pathList.add("选择");
-                                imageAdapter.setData(pathList);
                             }
                         }
+                        pathList.add("选择");
+                        imageAdapter.setData(pathList);
+
                     }
 
                 }
@@ -329,18 +362,25 @@ public class EditorProductActivity extends BaseActivity implements ImageAdapter.
 
     @Override
     public void itemonClick(int position, List<ProductSKUsBean> listbean) {
-        this.listbean = listbean;
+        this.skuben = listbean;
     }
 
     @Override
     public void itemDetele(int position) {
-        editorAdapter.removeitem(position);
+        skUsList.remove(position);
+        editorAdapter.setData(skUsList);
     }
 
     @Override
     public void onReleaseProducts(CreateProductModel productModel) {
-        ToastUtils.getInstance().showToast(this, "发布成功");
-        finish();
+
 
     }
+
+    @Override
+    public void onModifyProducts(ModifyProductsModel modifyProductsModel) {
+        ToastUtils.getInstance().showToast(this, "发布成功");
+        finish();
+    }
+
 }

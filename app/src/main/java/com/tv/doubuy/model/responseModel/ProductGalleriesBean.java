@@ -7,16 +7,6 @@ import java.io.Serializable;
  */
 
 public class ProductGalleriesBean implements Serializable {
-
-    private int id;
-    private Object name;
-    private String image;
-    private Object description;
-    private Object sort;
-    private String created_at;
-    private String updated_at;
-    private int productId;
-
     public int getId() {
         return id;
     }
@@ -80,6 +70,15 @@ public class ProductGalleriesBean implements Serializable {
     public void setProductId(int productId) {
         this.productId = productId;
     }
+
+    private int id;
+    private Object name;
+    private String image;
+    private Object description;
+    private Object sort;
+    private String created_at;
+    private String updated_at;
+    private int productId;
 
 
 }

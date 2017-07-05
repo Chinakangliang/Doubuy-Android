@@ -3,7 +3,6 @@ package com.tv.doubuy.ui.store.shop.adds;
 import android.text.TextUtils;
 
 import com.tv.doubuy.model.requestModel.CreateProductModel;
-import com.tv.doubuy.model.requestModel.GalleriesBean;
 import com.tv.doubuy.model.requestModel.ProductSKUsBean;
 
 import java.util.ArrayList;
@@ -50,14 +49,13 @@ public class ReleaseHelep {
     public CreateProductModel createRelease(List<ProductSKUsBean> listbean, String name, String description, List<String> paths) {
         CreateProductModel productModel = new CreateProductModel();
         List<CreateProductModel.GalleriesBean> galleriesBeenList = new ArrayList<>();
-        CreateProductModel.GalleriesBean   galleriesBean = new CreateProductModel.GalleriesBean();
         List<CreateProductModel.ProductSKUsBean> productSKUsBeanList = new ArrayList<>();
-        CreateProductModel.ProductSKUsBean productSKUsBean = new CreateProductModel.ProductSKUsBean();
 
         productModel.setName(name);
         productModel.setDescription(description);
 
         for (ProductSKUsBean skUsBean : listbean) {
+            CreateProductModel.ProductSKUsBean productSKUsBean = new CreateProductModel.ProductSKUsBean();
             productSKUsBean.setSpec(skUsBean.getSpec());
             productSKUsBean.setCount(skUsBean.getCount() + "");
             productSKUsBean.setPrice(skUsBean.getPrice() + "");
@@ -65,10 +63,10 @@ public class ReleaseHelep {
         }
         productModel.setProductSKUs(productSKUsBeanList);
         if (paths != null && paths.size() > 0) {
-            for (String path : paths) {
-                galleriesBean.setImage(path);
+            for (int i = 0; i < paths.size(); i++) {
+                CreateProductModel.GalleriesBean galleriesBean = new CreateProductModel.GalleriesBean();
+                galleriesBean.setImage(paths.get(i));
                 galleriesBeenList.add(galleriesBean);
-
             }
             productModel.setGalleries(galleriesBeenList);
         }
@@ -76,31 +74,35 @@ public class ReleaseHelep {
     }
 
 
-    public CreateProductModel createProduct(List<ProductSKUsBean> listbean, String name, String description, List<String> pathlist) {
+    public CreateProductModel ModifyProduct(List<ProductSKUsBean> listbean, String name, String description, List<String> pathlist) {
         CreateProductModel productModel = new CreateProductModel();
-        List<GalleriesBean> galleriesBeenList = new ArrayList<>();
-        GalleriesBean galleriesBean = new GalleriesBean();
+        List<CreateProductModel.GalleriesBean> galleriesBeenList = new ArrayList<>();
         List<CreateProductModel.ProductSKUsBean> productSKUsBeanList = new ArrayList<>();
-        CreateProductModel.ProductSKUsBean productSKUsBean = new CreateProductModel.ProductSKUsBean();
-
         productModel.setName(name);
         productModel.setDescription(description);
         if (listbean != null) {
-            for (ProductSKUsBean skUsBean : listbean) {
-
-                productSKUsBean.setSpec(skUsBean.getSpec());
-                productSKUsBean.setCount(skUsBean.getCount() + "");
-                productSKUsBean.setPrice(skUsBean.getPrice() + "");
+            for (int i = 0; i < listbean.size(); i++) {
+                CreateProductModel.ProductSKUsBean productSKUsBean = new CreateProductModel.ProductSKUsBean();
+                productSKUsBean.setPrice(listbean.get(i).getPrice());
+                productSKUsBean.setSpec(listbean.get(i).getSpec());
+                productSKUsBean.setCount(listbean.get(i).getCount());
                 productSKUsBeanList.add(productSKUsBean);
             }
+            productModel.setProductSKUs(productSKUsBeanList);
+
         }
-        productModel.setProductSKUs(productSKUsBeanList);
 
         if (pathlist.size() > 0) {
-            for (String path : pathlist) {
-                galleriesBean.setImage(path);
-                galleriesBeenList.add(galleriesBean);
+            for (int i = 0; i < pathlist.size(); i++) {
+                CreateProductModel.GalleriesBean galleriesBean = new CreateProductModel.GalleriesBean();
+                if (pathlist.equals("选择")) {
+                    pathlist.remove(i);
+                } else {
+                    galleriesBean.setImage(pathlist.get(i));
+                    galleriesBeenList.add(galleriesBean);
+                }
             }
+            productModel.setGalleries(galleriesBeenList);
         }
         return productModel;
     }

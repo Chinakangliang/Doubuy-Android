@@ -10,40 +10,11 @@ import java.util.List;
 public class StoreInfoModel implements Serializable {
 
 
-    /**
-     * id : 78
-     * shopNO : 149759660333278
-     * name : 我的小店
-     * description : 尽可能莫时间默默
-     * cover : aaaaa
-     * logo : http://soundlife-app.oss-cn-hangzhou.aliyuncs.com/doubuy/93/img/14975974987757059.jpg
-     * QRCode : null
-     * followCount : 0
-     * serviceAviable : true
-     * serviceEndDate : null
-     * totalSaledAmount : 0
-     * score : 0
-     * isFreeShip : true
-     * shipFee : 0
-     * levelScore : 0
-     * level : 1
-     * isRecommend : false
-     * created_at : 2017-06-16T07:03:23.318Z
-     * updated_at : 2017-06-16T07:20:29.093Z
-     * areaId : null
-     * ownerId : 93
-     * owner : {"id":93,"userNO":"149759645281293","name":null,"openid":null,"avatar":null,"gender":null,"birthday":null,"email":null,"mobile":"13166217355","phone":null,"totalScore":0,"level":1,"score":0,"totalReceiveGold":0,"totalSendGold":0,"totalChargeGold":0,"gold":0,"totalIncome":0,"balance":0,"realName":null,"totalBoughtAmount":0,"passwordDigest":"$2a$10$apjBAaKPU0M56nFjFtLVBeWSWTvO.6i4KV3fo9PN5IjBfRLO9AbI2","isAnchor":null,"anchorAvaliable":true,"isStaff":null,"isAdmin":null,"status":true,"city":null,"province":null,"country":null,"subscribe":null,"subscribeTime":null,"unionid":null,"wechatAppOpenid":null,"appOpenid":null,"created_at":"2017-06-16T07:00:52.676Z","updated_at":"2017-06-16T08:24:42.666Z","watchingLiveId":null,"profile":{"id":24,"bankAccount":null,"payeeName":null,"bankOfDeposit":null,"openid":null,"wechatName":null,"alipayAccount":null,"realName":"看了看","idCardNO":"6699","idCardImage1":null,"idCardImage2":"http://soundlife-app.oss-cn-hangzhou.aliyuncs.com/doubuy/93/img/14975972776672818.jpg","realNameStatus":"pending","verifyType":"zhima","created_at":"2017-06-16T07:03:23.410Z","updated_at":"2017-06-16T07:14:38.569Z","userId":93}}
-     * staffs : [{"id":93,"userNO":"149759645281293","name":null,"openid":null,"avatar":null,"gender":null,"birthday":null,"email":null,"mobile":"13166217355","phone":null,"totalScore":0,"level":1,"score":0,"totalReceiveGold":0,"totalSendGold":0,"totalChargeGold":0,"gold":0,"totalIncome":0,"balance":0,"realName":null,"totalBoughtAmount":0,"passwordDigest":"$2a$10$apjBAaKPU0M56nFjFtLVBeWSWTvO.6i4KV3fo9PN5IjBfRLO9AbI2","isAnchor":null,"anchorAvaliable":true,"isStaff":null,"isAdmin":null,"status":true,"city":null,"province":null,"country":null,"subscribe":null,"subscribeTime":null,"unionid":null,"wechatAppOpenid":null,"appOpenid":null,"created_at":"2017-06-16T07:00:52.676Z","updated_at":"2017-06-16T08:24:42.666Z","watchingLiveId":null,"shopStaffs":{"description":null}}]
-     * customers : []
-     * profile : {"id":68,"companyName":null,"businessAddress":null,"businessPhone":null,"shippingAddress":null,"bankAccount":null,"bankOfDeposit":null,"wechatSubscriptionId":null,"wechatSubscriptionKeyt":null,"legalPerson":null,"legalPersonNO":null,"legalPersonLicenceImage1":null,"legalPersonLicenceImage2":null,"licenseNO":null,"licenseImage":null,"taxLicenseImage":null,"realNameStatus":"pending","realShopStatus":"notApply","created_at":"2017-06-16T07:03:23.372Z","updated_at":"2017-06-16T07:14:38.605Z","shopId":78}
-     * isFollowed : false
-     */
-
     private int id;
     private String shopNO;
     private String name;
     private String description;
-    private String cover;
+    private Object cover;
     private String logo;
     private Object QRCode;
     private int followCount;
@@ -98,11 +69,11 @@ public class StoreInfoModel implements Serializable {
         this.description = description;
     }
 
-    public String getCover() {
+    public Object getCover() {
         return cover;
     }
 
-    public void setCover(String cover) {
+    public void setCover(Object cover) {
         this.cover = cover;
     }
 
@@ -274,10 +245,10 @@ public class StoreInfoModel implements Serializable {
         this.customers = customers;
     }
 
-    public static class OwnerBean {
+    public static class OwnerBean implements Serializable {
         /**
-         * id : 93
-         * userNO : 149759645281293
+         * id : 96
+         * userNO : 149904852575596
          * name : null
          * openid : null
          * avatar : null
@@ -297,7 +268,7 @@ public class StoreInfoModel implements Serializable {
          * balance : 0
          * realName : null
          * totalBoughtAmount : 0
-         * passwordDigest : $2a$10$apjBAaKPU0M56nFjFtLVBeWSWTvO.6i4KV3fo9PN5IjBfRLO9AbI2
+         * passwordDigest : $2a$10$5.fX/Xu0Ee3CygniCEPj/OPwZel1vUUoX/VYStwHapKduyxYj7Mhm
          * isAnchor : null
          * anchorAvaliable : true
          * isStaff : null
@@ -311,15 +282,15 @@ public class StoreInfoModel implements Serializable {
          * unionid : null
          * wechatAppOpenid : null
          * appOpenid : null
-         * created_at : 2017-06-16T07:00:52.676Z
-         * updated_at : 2017-06-16T08:24:42.666Z
+         * created_at : 2017-07-03T02:22:05.637Z
+         * updated_at : 2017-07-03T02:22:05.756Z
          * watchingLiveId : null
-         * profile : {"id":24,"bankAccount":null,"payeeName":null,"bankOfDeposit":null,"openid":null,"wechatName":null,"alipayAccount":null,"realName":"看了看","idCardNO":"6699","idCardImage1":null,"idCardImage2":"http://soundlife-app.oss-cn-hangzhou.aliyuncs.com/doubuy/93/img/14975972776672818.jpg","realNameStatus":"pending","verifyType":"zhima","created_at":"2017-06-16T07:03:23.410Z","updated_at":"2017-06-16T07:14:38.569Z","userId":93}
+         * profile : {"id":25,"bankAccount":null,"payeeName":null,"bankOfDeposit":null,"openid":null,"wechatName":null,"alipayAccount":null,"realName":"建模","idCardNO":"6669985","idCardImage1":null,"idCardImage2":"http://soundlife-app.oss-cn-hangzhou.aliyuncs.com/doubuy/96/img/14990519381207412.jpg","realNameStatus":"pending","verifyType":"zhima","created_at":"2017-07-03T03:18:43.803Z","updated_at":"2017-07-03T03:18:59.889Z","userId":96}
          */
 
         private int id;
         private String userNO;
-        private String name;
+        private Object name;
         private Object openid;
         private Object avatar;
         private Object gender;
@@ -373,11 +344,11 @@ public class StoreInfoModel implements Serializable {
             this.userNO = userNO;
         }
 
-        public String getName() {
+        public Object getName() {
             return name;
         }
 
-        public void setName(String name) {
+        public void setName(Object name) {
             this.name = name;
         }
 
@@ -669,24 +640,24 @@ public class StoreInfoModel implements Serializable {
             this.profile = profile;
         }
 
-        public static class ProfileBean {
+        public static class ProfileBean implements Serializable {
             /**
-             * id : 24
+             * id : 25
              * bankAccount : null
              * payeeName : null
              * bankOfDeposit : null
              * openid : null
              * wechatName : null
              * alipayAccount : null
-             * realName : 看了看
-             * idCardNO : 6699
+             * realName : 建模
+             * idCardNO : 6669985
              * idCardImage1 : null
-             * idCardImage2 : http://soundlife-app.oss-cn-hangzhou.aliyuncs.com/doubuy/93/img/14975972776672818.jpg
+             * idCardImage2 : http://soundlife-app.oss-cn-hangzhou.aliyuncs.com/doubuy/96/img/14990519381207412.jpg
              * realNameStatus : pending
              * verifyType : zhima
-             * created_at : 2017-06-16T07:03:23.410Z
-             * updated_at : 2017-06-16T07:14:38.569Z
-             * userId : 93
+             * created_at : 2017-07-03T03:18:43.803Z
+             * updated_at : 2017-07-03T03:18:59.889Z
+             * userId : 96
              */
 
             private int id;
@@ -836,9 +807,9 @@ public class StoreInfoModel implements Serializable {
         }
     }
 
-    public static class ProfileBeanX {
+    public static class ProfileBeanX implements Serializable {
         /**
-         * id : 68
+         * id : 69
          * companyName : null
          * businessAddress : null
          * businessPhone : null
@@ -856,9 +827,9 @@ public class StoreInfoModel implements Serializable {
          * taxLicenseImage : null
          * realNameStatus : pending
          * realShopStatus : notApply
-         * created_at : 2017-06-16T07:03:23.372Z
-         * updated_at : 2017-06-16T07:14:38.605Z
-         * shopId : 78
+         * created_at : 2017-07-03T03:18:43.769Z
+         * updated_at : 2017-07-03T03:18:59.923Z
+         * shopId : 79
          */
 
         private int id;
@@ -1052,10 +1023,10 @@ public class StoreInfoModel implements Serializable {
         }
     }
 
-    public static class StaffsBean {
+    public static class StaffsBean implements Serializable {
         /**
-         * id : 93
-         * userNO : 149759645281293
+         * id : 96
+         * userNO : 149904852575596
          * name : null
          * openid : null
          * avatar : null
@@ -1075,7 +1046,7 @@ public class StoreInfoModel implements Serializable {
          * balance : 0
          * realName : null
          * totalBoughtAmount : 0
-         * passwordDigest : $2a$10$apjBAaKPU0M56nFjFtLVBeWSWTvO.6i4KV3fo9PN5IjBfRLO9AbI2
+         * passwordDigest : $2a$10$5.fX/Xu0Ee3CygniCEPj/OPwZel1vUUoX/VYStwHapKduyxYj7Mhm
          * isAnchor : null
          * anchorAvaliable : true
          * isStaff : null
@@ -1089,8 +1060,8 @@ public class StoreInfoModel implements Serializable {
          * unionid : null
          * wechatAppOpenid : null
          * appOpenid : null
-         * created_at : 2017-06-16T07:00:52.676Z
-         * updated_at : 2017-06-16T08:24:42.666Z
+         * created_at : 2017-07-03T02:22:05.637Z
+         * updated_at : 2017-07-03T02:22:05.756Z
          * watchingLiveId : null
          * shopStaffs : {"description":null}
          */
@@ -1447,7 +1418,7 @@ public class StoreInfoModel implements Serializable {
             this.shopStaffs = shopStaffs;
         }
 
-        public static class ShopStaffsBean {
+        public static class ShopStaffsBean implements Serializable {
             /**
              * description : null
              */

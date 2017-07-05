@@ -13,6 +13,7 @@ import com.tv.doubuy.adapter.TabLayoutPagerAdapter;
 import com.tv.doubuy.base.BaseExtendFragment;
 import com.tv.doubuy.dialog.ProductCheckDialog;
 import com.tv.doubuy.dialog.SpinnerPopWindow;
+import com.tv.doubuy.ui.store.shop.product.DownFragment;
 import com.tv.doubuy.ui.store.shop.product.SellFragment;
 
 import java.util.ArrayList;
@@ -83,7 +84,7 @@ public class AllShopFragment extends BaseExtendFragment implements View.OnClickL
         fragmentList = new ArrayList<>();
         stringList = new ArrayList<>();
         fragmentList.add(SellFragment.newInstance("ondown"));
-        fragmentList.add(SellFragment.newInstance("outof"));
+        fragmentList.add(DownFragment.newInstance("outof"));
         stringList.add("出售中");
         stringList.add("已下架");
         tabLayout.setTabMode(TabLayout.MODE_FIXED);

@@ -2,7 +2,6 @@ package com.tv.doubuy.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,10 +13,8 @@ import android.widget.TextView;
 import com.tv.doubuy.R;
 import com.tv.doubuy.model.requestModel.ProductSKUsBean;
 import com.tv.doubuy.model.responseModel.CreateProductSKUs;
-import com.tv.doubuy.utils.ToastUtils;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -30,8 +27,6 @@ public class EditorAdapter extends RecyclerView.Adapter<EditorAdapter.ViewHolder
 
     private Context context;
 
-    private HashMap<String, String> hashMap;
-    private List<HashMap> hashMapList;
 
     private LayoutInflater mInflater;
     private SpecAdapterCallback callback;
@@ -40,11 +35,10 @@ public class EditorAdapter extends RecyclerView.Adapter<EditorAdapter.ViewHolder
 
     private List<ProductSKUsBean> skUsBeanList;
 
+
     public EditorAdapter(Context context) {
         this.context = context;
         mInflater = LayoutInflater.from(context);
-        hashMap = new HashMap<>();
-        hashMapList = new ArrayList<>();
         productSKUsBean = new ProductSKUsBean();
 
         skUsBeanList = new ArrayList<>();
@@ -52,8 +46,13 @@ public class EditorAdapter extends RecyclerView.Adapter<EditorAdapter.ViewHolder
 
     public void setData(List<CreateProductSKUs> list) {
         this.list = list;
-        notifyDataSetChanged();
+        notifyItemChanged(list.size() - 1);
+    }
 
+
+    public void setNotifyData(List<CreateProductSKUs> list, int position) {
+        this.list = list;
+        notifyItemInserted(position);
     }
 
     @Override
@@ -67,20 +66,39 @@ public class EditorAdapter extends RecyclerView.Adapter<EditorAdapter.ViewHolder
     @Override
     public void onBindViewHolder(final ViewHolder holder, final int position) {
 
-        holder.itemView.setTag(position);
+        holder.itemView.setTag(position + 1);
+        holder.et_item_inven.setTag(position + 1);
+        holder.et_item_spec.setTag(position + 1);
+        holder.et_item_pice.setTag(position + 1);
+        holder.iv_detele.setTag(position + 1);
 
-        holder.et_item_pice.setText(list.get(position).getPrice() + "");
+        holder.et_item_pice.setText(list.get(position + 1).getPrice() + "");
+        holder.et_item_spec.setText(list.get(position + 1).getSpec());
+        holder.et_item_inven.setText(list.get(position + 1).getCount() + "");
 
-        holder.et_item_spec.setText(list.get(position).getSpec());
-        holder.et_item_inven.setText(list.get(position).getCount() + "");
+        final String inven = holder.et_item_inven.getText().toString().trim();
+        final String price = holder.et_item_pice.getText().toString().trim();
+        final String sepc = holder.et_item_spec.getText().toString().trim();
+
+        productSKUsBean.setCount(inven);
+        productSKUsBean.setPrice(price);
+        productSKUsBean.setSpec(sepc);
+        skUsBeanList.add(productSKUsBean);
+
+        if (skUsBeanList.size() > 0) {
+            holder.et_item_pice.setText(skUsBeanList.get(position).getPrice());
+            holder.et_item_spec.setText(skUsBeanList.get(position).getSpec());
+            holder.et_item_inven.setText(skUsBeanList.get(position).getCount() + "");
+
+        }
 
         holder.iv_detele.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                if (callback != null) {
+                if (callback != null && (int) holder.iv_detele.getTag() == position + 1) {
 
-                    callback.itemDetele(position);
+                    callback.itemDetele(position + 1);
 
                 }
             }
@@ -90,26 +108,11 @@ public class EditorAdapter extends RecyclerView.Adapter<EditorAdapter.ViewHolder
             @Override
             public void onClick(View v) {
                 if (callback != null) {
-
-                    String inven = holder.et_item_inven.getText().toString().trim();
-                    String price = holder.et_item_pice.getText().toString().trim();
-                    String sepc = holder.et_item_spec.getText().toString().trim();
-
-
-                    productSKUsBean.setCount(inven);
-                    productSKUsBean.setPrice(price);
-                    productSKUsBean.setSpec(sepc);
-                    if (!TextUtils.isEmpty(inven) && !TextUtils.isEmpty(price) && !TextUtils.isEmpty(sepc)) {
-                        skUsBeanList.add(productSKUsBean);
-
-                        callback.itemonClick(position, skUsBeanList);
-                        holder.tv_save.setVisibility(View.INVISIBLE);
-                        holder.et_item_pice.setFocusable(false);
-                        holder.et_item_inven.setFocusable(false);
-                        holder.et_item_inven.setFocusable(false);
-                    } else {
-                        ToastUtils.getInstance().showToast(context, "请填写完整");
-                    }
+                    callback.itemonClick(position + 1, skUsBeanList);
+                    holder.tv_save.setVisibility(View.INVISIBLE);
+                    holder.et_item_pice.setFocusable(false);
+                    holder.et_item_inven.setFocusable(false);
+                    holder.et_item_inven.setFocusable(false);
 
                 }
             }
@@ -118,13 +121,13 @@ public class EditorAdapter extends RecyclerView.Adapter<EditorAdapter.ViewHolder
 
     @Override
     public int getItemCount() {
-        return list != null ? list.size() : 0;
+        return list != null ? list.size() - 1 : 0;
     }
 
 
     public void removeitem(int position) {
         list.remove(position);
-        notifyDataSetChanged();
+        notifyItemInserted(position - 1);
     }
 
 
@@ -160,4 +163,6 @@ public class EditorAdapter extends RecyclerView.Adapter<EditorAdapter.ViewHolder
 
         this.callback = callback;
     }
+
+
 }

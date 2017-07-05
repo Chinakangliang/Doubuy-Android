@@ -1,110 +1,170 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.tv.doubuy.view.products.CustScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-
-    <com.youth.banner.Banner
-        android:id="@+id/banner"
-        android:layout_width="match_parent"
-        android:layout_height="360dp" />
-
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="96dp"
+        android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/tv_productname"
+        <com.youth.banner.Banner
+            android:id="@+id/banner"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:layout_marginTop="20dp"
-            android:text="AAAAA"
-            android:textSize="16sp" />
+            android:layout_height="360dp" />
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp">
+            android:layout_height="96dp"
+            android:orientation="vertical">
 
             <TextView
-                android:id="@+id/tv_productprcie"
-                android:layout_width="wrap_content"
+                android:id="@+id/tv_productname"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-
                 android:layout_marginLeft="15dp"
-                android:text="aaa"
-                android:textColor="@color/color2851"
-                android:textSize="23sp" />
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="20dp"
+                android:text="AAAAA"
+                android:textSize="16sp" />
 
-            <ImageView
-                android:id="@+id/tv_productShare"
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp">
+
+                <TextView
+                    android:id="@+id/tv_productprcie"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="15dp"
+                    android:text="aaa"
+                    android:textColor="@color/color2851"
+                    android:textSize="23sp" />
+
+                <ImageView
+                    android:id="@+id/tv_productShare"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="24dp"
+                    android:src="@mipmap/product_detail_btn_share" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/colorf3" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:layout_marginRight="24dp"
-                android:src="@mipmap/product_detail_btn_share" />
-        </RelativeLayout>
-    </LinearLayout>
+                android:layout_gravity="center"
+                android:layout_marginLeft="25dp"
+                android:text="销量" />
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1px"
-        android:background="@color/colorf3" />
+            <TextView
+                android:id="@+id/tv_viewCount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:text="600"
+                android:textColor="@color/color2851" />
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="35dp"
-        android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="库存" />
 
-        <TextView
+            <TextView
+                android:id="@+id/tv_count"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:text="600"
+                android:textColor="@color/color2851" />
+
+        </LinearLayout>
+
+        <View
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="25dp"
-            android:layout_gravity="center"
-            android:text="价格" />
+            android:layout_height="5dp"
+            android:background="@color/colorf3" />
 
-        <TextView
-            android:id="@+id/tv_skuPrice"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_weight="1"
-            android:layout_gravity="center"
-            android:text="600"
-            android:textColor="@color/color2851" />
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
-
-        <TextView
+        <View
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="库存" />
+            android:layout_height="1px"
+            android:background="@color/colorf3" />
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_weight="1"
-            android:text="600"
-            android:layout_gravity="center"
-            android:textColor="@color/color2851" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="25dp"
+                android:text="价格" />
+
+            <TextView
+                android:id="@+id/tv_TagPrice"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:text="600"
+                android:textColor="@color/color2851" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="库存" />
+
+            <TextView
+                android:id="@+id/tv_TagCount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:text="600"
+                android:textColor="@color/color2851" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:background="@color/colorf3"
+
+            />
     </LinearLayout>
-
-    <View
-        android:layout_width="wrap_content"
-        android:layout_height="10dp"
-        android:background="@color/colorf3"></View>
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recyler"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-</LinearLayout>
+</com.tv.doubuy.view.products.CustScrollView>

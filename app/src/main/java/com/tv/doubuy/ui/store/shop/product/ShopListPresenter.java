@@ -12,7 +12,5 @@ public interface ShopListPresenter {
 
     void deteleProduct(boolean isdetele);
 
-    void noSale(boolean isSale);
-
     void onSale(boolean isSale);
 }

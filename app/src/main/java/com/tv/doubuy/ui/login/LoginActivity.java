@@ -215,20 +215,20 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
             @Override
             public void onNext(Object o) {
                 LoginModel infoModel = APIUtils.gson.fromJson(o.toString(), LoginModel.class);
+
                 if (!TextUtils.isEmpty(infoModel.getToken())) {
-
-
                     douBuyCache.saveUserToken(infoModel.getToken());
                     douBuyCache.saveUserId(infoModel.getUser().getId() + "");
-                    douBuyCache.saveStoreId(infoModel.getUser().getShop().getId() + "");
                     DouBuyApplication.getInstance().setUserToken(infoModel.getToken());
+                    if (infoModel.getUser().getShop() != null) {
+                        douBuyCache.saveStoreId(infoModel.getUser().getShop().getId() + "");
+                    }
 
                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                     startActivity(intent);
                     finish();
                 }
-
-
+                ;
             }
 
         }, this));

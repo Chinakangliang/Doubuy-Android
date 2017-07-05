@@ -35,7 +35,6 @@ android {
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
     compile files('libs/SocialSDK_WeChat_Simplify.jar')
     compile files('libs/umeng_social_api.jar')
     compile files('libs/umeng_social_net.jar')

@@ -45,6 +45,7 @@
             android:src="@mipmap/product_btn_outof_stock" />
 
         <TextView
+            android:id="@+id/tvtype"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"

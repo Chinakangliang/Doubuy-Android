@@ -70,7 +70,7 @@ public class RegisActivity extends BaseActivity implements View.OnClickListener 
         switch (v.getId()) {
             case R.id.tv_sendCode:
                 requestModel.setMobile(etMobile.getText().toString());
-                requestModel.setType("resetPassword");
+//                requestModel.setType("resetPassword");
                 countDownView.onStart();
                 if (requestModel != null) {
                     regisPresenter.setUserCode(requestModel);

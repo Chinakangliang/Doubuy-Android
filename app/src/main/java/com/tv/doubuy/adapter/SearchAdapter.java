@@ -11,30 +11,34 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.tv.doubuy.R;
-import com.tv.doubuy.model.responseModel.ProductsListModel;
+import com.tv.doubuy.model.responseModel.SearchModels;
 import com.tv.doubuy.network.APIService;
 import com.tv.doubuy.utils.PicassoHelper;
 
 import java.util.List;
 
 /**
- * Created by apple on 2017/6/16.
+ * Created by apple on 2017/7/3.
  */
 
-public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHolder> {
+public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder> {
 
-
-    private List<ProductsListModel.ResultsBean> list;
-    private EmployAdapteCallBack callBack;
+    private Context mcontext;
     private LayoutInflater mInflater;
+    private List<SearchModels.ResultsBean> resultsBeen;
 
-    public ProductAdapter(Context context) {
+    private AdapteCallBack callBack;
+
+    public SearchAdapter(Context context) {
+
+        this.mcontext = context;
+
         mInflater = LayoutInflater.from(context);
     }
 
-    public void setData(List<ProductsListModel.ResultsBean> mlist) {
-        this.list = mlist;
-        notifyDataSetChanged();
+    public void setData(List<SearchModels.ResultsBean> results) {
+
+        this.resultsBeen = results;
     }
 
     @Override
@@ -46,55 +50,35 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
     }
 
     @Override
-    public void onBindViewHolder(final ViewHolder holder, final int position) {
+    public void onBindViewHolder(ViewHolder holder, final int position) {
 
-        holder.itemView.setTag(position);
-
-        holder.tvProductName.setText(list.get(position).getName());
-        holder.tvProductPice.setText(APIService.FUHAO + list.get(position).getPromotionPrice());
-        holder.tvProductInven.setText(list.get(position).getDescription());
-
-
-        PicassoHelper.getInstance().setImage(holder.ivProductHead.getContext(), list.get(position).getThumb(), holder.ivProductHead);
-
+        holder.itemIvwindow.setVisibility(View.INVISIBLE);
+        holder.tvProductName.setText(resultsBeen.get(position).getName());
+        holder.tvProductPice.setText(APIService.FUHAO + resultsBeen.get(position).getScore());
+        PicassoHelper.getInstance().setImage(mcontext, resultsBeen.get(position).getAvatar(), holder.ivProductHead);
+        holder.tvProductInven.setText(resultsBeen.get(position).getTotalIncome() + "'");
         holder.relaitemProduct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (callBack != null) {
-                    callBack.setItemClick(list.get(position).getId() + "");
+                if (callBack!=null){
+                    callBack.setItemClick(resultsBeen.get(position).getId());
                 }
             }
         });
-        holder.itemIvwindow.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                if (callBack != null) {
-                    callBack.setItemShowPopWindowShow(position, holder.itemIvwindow, list.get(position).getId() + "");
-                }
-            }
-        });
-
-
     }
 
     @Override
     public int getItemCount() {
-        return list != null ? list.size() : 0;
+        return resultsBeen != null ? resultsBeen.size() : 0;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         private CheckBox itemIvwindow;
-
         private TextView tvProductName;
-
         private TextView tvProductPice;
-
         private TextView tvProductInven;
-
         private ImageView ivProductHead;
-
         private RelativeLayout relaitemProduct;
 
         public ViewHolder(View itemView) {
@@ -106,23 +90,19 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
             tvProductInven = (TextView) itemView.findViewById(R.id.tv_productinven);
             ivProductHead = (ImageView) itemView.findViewById(R.id.iv_product_head);
             relaitemProduct = (RelativeLayout) itemView.findViewById(R.id.rela_item_product);
+
         }
     }
 
+    public interface AdapteCallBack {
+        void setItemClick(int productsid);
 
-    public interface EmployAdapteCallBack {
-        void setItemClick(String productsid);
-
-        void setItemShowPopWindowShow(int position, View view, String productid);
     }
 
-    public void setAdapterClick(EmployAdapteCallBack callBack) {
+    public void setAdapterClick(AdapteCallBack callBack) {
 
         this.callBack = callBack;
     }
 
-    public void removeItem(int position) {
-        list.remove(position);
-        notifyDataSetChanged();
-    }
+
 }

@@ -1,5 +1,6 @@
-package com.tv.doubuy.ui.store.shop;
+package com.tv.doubuy.ui.store.shop.product;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.support.annotation.Nullable;
@@ -12,6 +13,8 @@ import android.widget.RadioGroup;
 
 import com.tv.doubuy.R;
 import com.tv.doubuy.base.BaseActivity;
+import com.tv.doubuy.ui.store.shop.AllShopFragment;
+import com.tv.doubuy.ui.store.shop.search.SearchActivity;
 import com.tv.doubuy.ui.store.shop.shopclass.ShopManageFragment;
 
 import java.util.ArrayList;
@@ -54,6 +57,13 @@ public class ShopListActivity extends BaseActivity implements RadioGroup.OnCheck
             @Override
             public void onClick(View v) {
                 finish();
+            }
+        });
+        ivSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ShopListActivity.this, SearchActivity.class);
+                startActivity(intent);
             }
         });
     }

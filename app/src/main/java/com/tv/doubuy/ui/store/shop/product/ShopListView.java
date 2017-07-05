@@ -35,7 +35,7 @@ public class ShopListView {
      * 获取商品列表
      */
     public void getShopList(String onsalse) {
-        RetrofitUtils.getInstance(mcontext).getProductList(douBuyCache.getStoreId(), "true", "saleDown", new ProgressSubscriber(new SubscriberOnNextListener() {
+        RetrofitUtils.getInstance(mcontext).getProductList(douBuyCache.getStoreId(), onsalse, "saleDown", new ProgressSubscriber(new SubscriberOnNextListener() {
             @Override
             public void onNext(Object o) {
 
@@ -77,11 +77,7 @@ public class ShopListView {
             public void onNext(Object o) {
 
                 SaleModel saleModel = APIUtils.gson.fromJson(o.toString(), SaleModel.class);
-                if (saleModel != null) {
-                    presenter.noSale(true);
-                } else {
-                    presenter.noSale(false);
-                }
+
 
             }
         }, mcontext));

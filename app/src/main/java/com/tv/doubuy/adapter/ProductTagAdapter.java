@@ -5,11 +5,13 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 
 import com.tv.doubuy.R;
 import com.tv.doubuy.model.responseModel.CreateProductSKUs;
 
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -24,6 +26,10 @@ public class ProductTagAdapter extends RecyclerView.Adapter<ProductTagAdapter.Vi
 
     private List<CreateProductSKUs> mlist;
 
+    private Itemcallback itemcallback;
+
+    HashMap<Integer, Boolean> state = new HashMap<>();
+
     public ProductTagAdapter(Context context) {
 
         this.mcontext = context;
@@ -33,6 +39,12 @@ public class ProductTagAdapter extends RecyclerView.Adapter<ProductTagAdapter.Vi
     public void setData(List<CreateProductSKUs> createProductSKUses) {
 
         this.mlist = createProductSKUses;
+    }
+
+
+    public void setHasMap(HashMap<Integer, Boolean> hasMap) {
+
+        this.state = hasMap;
     }
 
     @Override
@@ -45,9 +57,27 @@ public class ProductTagAdapter extends RecyclerView.Adapter<ProductTagAdapter.Vi
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(final ViewHolder holder, final int position) {
+
 
         holder.tvDetialTage.setText(mlist.get(position).getSpec());
+
+        if (state != null) {
+            holder.tvDetialTage.setChecked(state.get(position));
+        }
+
+        holder.tvDetialTage.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+                if (itemcallback != null) {
+                    itemcallback.isCheckTag(position, mlist);
+                    buttonView.setTextColor(mcontext.getResources().getColor(R.color.color2525));
+                }
+
+            }
+        });
+
     }
 
     @Override
@@ -57,11 +87,21 @@ public class ProductTagAdapter extends RecyclerView.Adapter<ProductTagAdapter.Vi
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView tvDetialTage;
+        private CheckBox tvDetialTage;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            tvDetialTage = (TextView) itemView.findViewById(R.id.tv_detials_tag);
+            tvDetialTage = (CheckBox) itemView.findViewById(R.id.tv_detials_tag);
         }
+    }
+
+    public interface Itemcallback {
+
+        void isCheckTag(int position, List<CreateProductSKUs> mlist);
+    }
+
+    public void ItemTagListClick(Itemcallback callback) {
+
+        this.itemcallback = callback;
     }
 }

@@ -309,6 +309,14 @@ public class RetrofitUtils {
         toSubscribe(mApiService.putProductsUp(storeid, productsid), subscriber);
     }
 
+    /**
+     * 修改商品
+     */
+    public void putModifyProducts(String storeid, String productsid, CreateProductModel productModel, ProgressSubscriber subscriber) {
+        toSubscribe(mApiService.modifyProducts(storeid, productsid, productModel), subscriber);
+
+    }
+
 
     private <T> void toSubscribe(Observable<T> o, Subscriber s) {
         o.subscribeOn(Schedulers.io())

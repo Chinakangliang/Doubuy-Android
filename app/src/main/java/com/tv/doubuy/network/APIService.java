@@ -78,15 +78,12 @@ public interface APIService {
     @GET("admin/shops/{store_id}")
     Observable<BaseResponse> getShopInfo(@Path("store_id") String id);
 
-//    @PUT("shops/{store_id}")
-
     @POST("users/{store_id}/createOrUpdateProfile")
     Observable<BaseResponse> setStoreInfoCard(@Path("store_id") String id, @Body ShopIdCardModel shopIdCardModel);
 
     @PUT("shops/{store_id}/info")
     Observable<BaseResponse> putStoreInfo(@Path("store_id") String id, @Body PutStoreInfoModel putStoreInfoModel);
 
-    //    http://{{dbuy_api_server}}/shops/1/searchUser?searchStr=豆
     @GET("shops/{store_id}/searchUser")
     Observable<BaseResponse> searchshop(@Path("store_id") String id, @Query("searchStr") String str);
 
@@ -98,6 +95,8 @@ public interface APIService {
     @POST("shop/{store_id}/products")
     Observable<BaseResponse> createProduct(@Path("store_id") String id, @Body CreateProductModel createProductModel);
 
+    @PUT("shop/{store_id}/products/{productid}")
+    Observable<BaseResponse> modifyProducts(@Path("store_id") String id, @Path("productid") String productid, @Body CreateProductModel createProductModel);
 
     @DELETE("/shop/{store_id}/products/{productid}")
     Observable<BaseResponse> deteleProduct(@Path("store_id") String id, @Path("productid") String productid);
@@ -128,7 +127,6 @@ public interface APIService {
 
     @PUT("shop/{store_id}/products/{product_id}/onSale")
     Observable<BaseResponse> putProductsUp(@Path("store_id") String storeId, @Path("product_id") String productId);
-
 
 
     @PUT("shop/{store_id}/products/{product_id}/noSale")
